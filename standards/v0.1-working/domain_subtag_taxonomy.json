@@ -347,6 +347,769 @@
       ]
     },
     {
+      "sector_name": "Energy",
+      "sector_code": "ENE",
+      "dimensions": [
+        {
+          "dimension": "Hydrocarbon Fuels & Upstream",
+          "subtags": [
+            {"code": "OG", "name": "Oil & Gas"},
+            {"code": "CRU", "name": "Crude Oil"},
+            {"code": "NGS", "name": "Natural Gas"},
+            {"code": "NGL", "name": "Natural Gas Liquids"},
+            {"code": "SHALE", "name": "Shale & Tight Oil & Gas"},
+            {"code": "DEEP", "name": "Deepwater & Offshore"},
+            {"code": "CONV", "name": "Conventional Onshore"},
+            {"code": "CBM", "name": "Coalbed Methane"},
+            {"code": "EOR", "name": "Enhanced Oil Recovery"},
+            {"code": "EP", "name": "Exploration & Production"},
+            {"code": "DRLG", "name": "Drilling"},
+            {"code": "OFSV", "name": "Oilfield Services"},
+            {"code": "WELL", "name": "Well Completions & Workover"}
+          ]
+        },
+        {
+          "dimension": "Midstream & LNG",
+          "subtags": [
+            {"code": "MID", "name": "Midstream"},
+            {"code": "PIPE", "name": "Pipelines"},
+            {"code": "LNG", "name": "LNG (Liquefied Natural Gas)"},
+            {"code": "LPG", "name": "LPG (Liquefied Petroleum Gas)"},
+            {"code": "STOR", "name": "Storage & Terminals"},
+            {"code": "GATH", "name": "Gathering & Processing"},
+            {"code": "TRAD", "name": "Commodity Trading & Marketing"}
+          ]
+        },
+        {
+          "dimension": "Downstream & Refining",
+          "subtags": [
+            {"code": "RFNG", "name": "Refining"},
+            {"code": "PETE", "name": "Petrochemicals"},
+            {"code": "FUEL", "name": "Fuels Distribution"},
+            {"code": "BUNK", "name": "Bunker Fuel"},
+            {"code": "ASPH", "name": "Asphalt & Bitumen"}
+          ]
+        },
+        {
+          "dimension": "Power Generation & Utilities",
+          "subtags": [
+            {"code": "PWR", "name": "Power Generation"},
+            {"code": "UTIL", "name": "Electric Utilities"},
+            {"code": "GRID", "name": "Transmission & Distribution Grid"},
+            {"code": "EDIST", "name": "Electric Distribution"},
+            {"code": "WATU", "name": "Water Utilities"},
+            {"code": "GASU", "name": "Gas Utilities"},
+            {"code": "COGEN", "name": "Cogeneration & Combined Heat and Power"},
+            {"code": "PEAK", "name": "Peaking & Merchant Power"}
+          ]
+        },
+        {
+          "dimension": "Renewables",
+          "subtags": [
+            {"code": "REN", "name": "Renewables (General)"},
+            {"code": "SOLAR", "name": "Solar"},
+            {"code": "WIND", "name": "Wind (Onshore)"},
+            {"code": "OFFSHW", "name": "Offshore Wind"},
+            {"code": "HYDRO", "name": "Hydropower"},
+            {"code": "GEO", "name": "Geothermal"},
+            {"code": "BIOM", "name": "Biomass & Bioenergy"},
+            {"code": "BIOG", "name": "Biogas & Renewable Natural Gas"},
+            {"code": "TIDAL", "name": "Tidal & Wave Energy"},
+            {"code": "BESS", "name": "Battery Energy Storage"},
+            {"code": "PSHYD", "name": "Pumped Hydro Storage"}
+          ]
+        },
+        {
+          "dimension": "Nuclear",
+          "subtags": [
+            {"code": "NUC", "name": "Nuclear Power"},
+            {"code": "SMR", "name": "Small Modular Reactors"},
+            {"code": "URAN", "name": "Uranium"},
+            {"code": "NWST", "name": "Nuclear Waste Management"}
+          ]
+        },
+        {
+          "dimension": "Energy Transition & Emerging",
+          "subtags": [
+            {"code": "HYD", "name": "Hydrogen"},
+            {"code": "GRNH", "name": "Green Hydrogen"},
+            {"code": "CCS", "name": "Carbon Capture & Storage"},
+            {"code": "CCUS", "name": "CCUS (Carbon Capture, Utilization & Storage)"},
+            {"code": "ECAR", "name": "Electric Vehicles & Charging Infrastructure"},
+            {"code": "VPPG", "name": "Virtual Power Plants"},
+            {"code": "MICRO", "name": "Microgrids"},
+            {"code": "DECARB", "name": "Decarbonization Programs"},
+            {"code": "CARBCR", "name": "Carbon Credits & Offsets"}
+          ]
+        },
+        {
+          "dimension": "Energy Services & Technology",
+          "subtags": [
+            {"code": "ENGSV", "name": "Energy Services"},
+            {"code": "EMNG", "name": "Energy Management"},
+            {"code": "SMART", "name": "Smart Grid & Metering"},
+            {"code": "ESFT", "name": "Energy Software & Analytics"},
+            {"code": "EPC", "name": "EPC (Engineering, Procurement & Construction)"},
+            {"code": "OMS", "name": "Operations & Maintenance Services"},
+            {"code": "ESEC", "name": "Energy Security & Reliability"},
+            {"code": "REGS", "name": "Energy Regulation & Policy"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Agribusiness",
+      "sector_code": "AG",
+      "dimensions": [
+        {
+          "dimension": "Crop Production",
+          "subtags": [
+            {"code": "CRN", "name": "Corn"},
+            {"code": "SOY", "name": "Soybeans"},
+            {"code": "WHT", "name": "Wheat"},
+            {"code": "RICE", "name": "Rice"},
+            {"code": "COTT", "name": "Cotton"},
+            {"code": "SGRN", "name": "Sorghum"},
+            {"code": "BARL", "name": "Barley"},
+            {"code": "OATS", "name": "Oats"},
+            {"code": "CNLA", "name": "Canola & Rapeseed"},
+            {"code": "SUGC", "name": "Sugarcane"},
+            {"code": "SUGB", "name": "Sugar Beets"},
+            {"code": "HEMP", "name": "Hemp & Industrial Hemp"},
+            {"code": "TOBA", "name": "Tobacco"},
+            {"code": "PNTS", "name": "Peanuts"},
+            {"code": "SUNF", "name": "Sunflowers"},
+            {"code": "VFRT", "name": "Vegetables & Fruits"},
+            {"code": "TREC", "name": "Tree Crops & Orchards"},
+            {"code": "NUTS", "name": "Nuts (Almonds, Walnuts, Pistachios)"},
+            {"code": "SPECROP", "name": "Specialty Crops"},
+            {"code": "ORGN", "name": "Organic Crops"}
+          ]
+        },
+        {
+          "dimension": "Animal Agriculture",
+          "subtags": [
+            {"code": "BEEF", "name": "Beef Cattle"},
+            {"code": "DAIRY", "name": "Dairy"},
+            {"code": "HOG", "name": "Hogs & Pork"},
+            {"code": "POUL", "name": "Poultry"},
+            {"code": "AQUA", "name": "Aquaculture & Seafood"},
+            {"code": "SHEEP", "name": "Sheep & Wool"},
+            {"code": "GOAT", "name": "Goats"},
+            {"code": "EGGS", "name": "Eggs"},
+            {"code": "FEED", "name": "Animal Feed & Feed Ingredients"}
+          ]
+        },
+        {
+          "dimension": "Agricultural Inputs",
+          "subtags": [
+            {"code": "FERT", "name": "Fertilizers"},
+            {"code": "NITR", "name": "Nitrogen Fertilizers"},
+            {"code": "PHOS", "name": "Phosphate Fertilizers"},
+            {"code": "POTA", "name": "Potash"},
+            {"code": "PEST", "name": "Pesticides & Herbicides"},
+            {"code": "SEED", "name": "Seeds & Genetics"},
+            {"code": "BIOCTL", "name": "Biocontrols & Biopesticides"},
+            {"code": "IRRIG", "name": "Irrigation Systems"},
+            {"code": "SOILA", "name": "Mulch & Soil Amendments"}
+          ]
+        },
+        {
+          "dimension": "Agricultural Equipment & Technology",
+          "subtags": [
+            {"code": "EQPT", "name": "Agricultural Equipment & Machinery"},
+            {"code": "TRAC", "name": "Tractors & Power Equipment"},
+            {"code": "HARV", "name": "Harvesters & Combines"},
+            {"code": "PREC", "name": "Precision Agriculture"},
+            {"code": "DRONE", "name": "Agricultural Drones & UAV"},
+            {"code": "AGTECH", "name": "AgTech (General)"},
+            {"code": "SENS", "name": "Agricultural Sensors & IoT"},
+            {"code": "FARMSW", "name": "Farm Management Software"},
+            {"code": "ROBOT", "name": "Agricultural Robotics & Automation"},
+            {"code": "SATIMG", "name": "Satellite Imagery & Remote Sensing"}
+          ]
+        },
+        {
+          "dimension": "Food Processing Inputs & Ag Supply Chain",
+          "subtags": [
+            {"code": "GRAIN", "name": "Grain Handling & Storage"},
+            {"code": "ELEV", "name": "Grain Elevators & Merchandising"},
+            {"code": "PROC", "name": "Food Processing Inputs"},
+            {"code": "COLD", "name": "Cold Chain & Refrigerated Storage"},
+            {"code": "PACK", "name": "Agricultural Packaging"},
+            {"code": "LOGAG", "name": "Agricultural Logistics & Shipping"},
+            {"code": "COMOD", "name": "Agricultural Commodity Trading"}
+          ]
+        },
+        {
+          "dimension": "Farmland & Alternative Agriculture",
+          "subtags": [
+            {"code": "FLAND", "name": "Farmland"},
+            {"code": "VERT", "name": "Vertical Farming"},
+            {"code": "CELL", "name": "Cellular Agriculture & Cultivated Protein"},
+            {"code": "ALTP", "name": "Alternative Proteins"},
+            {"code": "CANNA", "name": "Cannabis Agriculture"},
+            {"code": "FOREST", "name": "Forestry & Timber"},
+            {"code": "BIOF", "name": "Biofuels Feedstocks"}
+          ]
+        },
+        {
+          "dimension": "Regulatory & Certification",
+          "subtags": [
+            {"code": "USDA", "name": "USDA Programs"},
+            {"code": "EPAAG", "name": "EPA Agricultural Regulations"},
+            {"code": "FSA", "name": "Farm Service Agency"},
+            {"code": "CROPINS", "name": "Crop Insurance"},
+            {"code": "CERTORG", "name": "Organic Certification"},
+            {"code": "FAIRTRD", "name": "Fair Trade Certification"},
+            {"code": "GAPCC", "name": "GAP & Food Safety Certification"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Logistics & Transportation",
+      "sector_code": "LT",
+      "dimensions": [
+        {
+          "dimension": "Trucking & Ground Freight",
+          "subtags": [
+            {"code": "TRK", "name": "Trucking (General)"},
+            {"code": "TL", "name": "Truckload (TL)"},
+            {"code": "LTL", "name": "Less-than-Truckload (LTL)"},
+            {"code": "FLATB", "name": "Flatbed & Specialized Trucking"},
+            {"code": "RFRTK", "name": "Refrigerated Trucking"},
+            {"code": "TANK", "name": "Tanker Trucking"},
+            {"code": "HZMT", "name": "Hazmat Transportation"},
+            {"code": "OTR", "name": "Over-the-Road (OTR)"},
+            {"code": "DRAY", "name": "Drayage"},
+            {"code": "FLMGMT", "name": "Fleet Management"}
+          ]
+        },
+        {
+          "dimension": "Rail",
+          "subtags": [
+            {"code": "RAIL", "name": "Rail Freight"},
+            {"code": "INTMD", "name": "Intermodal Rail"},
+            {"code": "BULKRL", "name": "Bulk Rail (Coal, Grain, Minerals)"},
+            {"code": "TANKCAR", "name": "Tank Car (Rail)"},
+            {"code": "AUTOCAR", "name": "Auto & Coil Carrier (Rail)"}
+          ]
+        },
+        {
+          "dimension": "Ocean & Ports",
+          "subtags": [
+            {"code": "OCN", "name": "Ocean Freight"},
+            {"code": "FCL", "name": "Full Container Load (FCL)"},
+            {"code": "LCL", "name": "Less-than-Container Load (LCL)"},
+            {"code": "BULKSH", "name": "Bulk Shipping (Dry & Liquid)"},
+            {"code": "RORO", "name": "Roll-on Roll-off (RoRo)"},
+            {"code": "PORT", "name": "Port Operations & Terminals"},
+            {"code": "STEV", "name": "Stevedoring & Cargo Handling"}
+          ]
+        },
+        {
+          "dimension": "Air Cargo",
+          "subtags": [
+            {"code": "AIR", "name": "Air Freight"},
+            {"code": "EXP", "name": "Express & Overnight Air"},
+            {"code": "AIRCH", "name": "Charter Air Cargo"},
+            {"code": "BELLYF", "name": "Belly Freight"}
+          ]
+        },
+        {
+          "dimension": "Last Mile & Parcel",
+          "subtags": [
+            {"code": "LASTM", "name": "Last Mile Delivery"},
+            {"code": "PARCEL", "name": "Parcel & Small Package"},
+            {"code": "COUR", "name": "Courier & Messenger Services"},
+            {"code": "CROWD", "name": "Crowdsourced Delivery"},
+            {"code": "LOCKER", "name": "Parcel Lockers & Pickup Points"},
+            {"code": "DRONED", "name": "Drone Delivery"}
+          ]
+        },
+        {
+          "dimension": "3PL, 4PL & Freight Brokerage",
+          "subtags": [
+            {"code": "3PL", "name": "Third-Party Logistics (3PL)"},
+            {"code": "4PL", "name": "Fourth-Party Logistics (4PL)"},
+            {"code": "FRBKR", "name": "Freight Brokerage"},
+            {"code": "NVO", "name": "NVOCC & Freight Forwarding"},
+            {"code": "CUSTBR", "name": "Customs Brokerage"},
+            {"code": "SUPCH", "name": "Supply Chain Management"}
+          ]
+        },
+        {
+          "dimension": "Warehousing & Fulfillment",
+          "subtags": [
+            {"code": "WHSE", "name": "Warehousing"},
+            {"code": "FULFIL", "name": "Fulfillment Centers"},
+            {"code": "CLDSTR", "name": "Cold Storage Warehousing"},
+            {"code": "BONDED", "name": "Bonded Warehouses"},
+            {"code": "PUBWH", "name": "Public Warehousing"},
+            {"code": "CROSS", "name": "Cross-Docking"},
+            {"code": "FTZW", "name": "Foreign Trade Zones"}
+          ]
+        },
+        {
+          "dimension": "Logistics Technology",
+          "subtags": [
+            {"code": "TMS", "name": "Transportation Management Systems (TMS)"},
+            {"code": "WMS", "name": "Warehouse Management Systems (WMS)"},
+            {"code": "VISIB", "name": "Supply Chain Visibility Platforms"},
+            {"code": "TELEMTC", "name": "Telematics & IoT Tracking"},
+            {"code": "AUTOM", "name": "Warehouse Automation & Robotics"},
+            {"code": "LTECH", "name": "Logistics Technology (General)"},
+            {"code": "ELD", "name": "Electronic Logging Devices (ELD)"}
+          ]
+        },
+        {
+          "dimension": "Specialized Transport",
+          "subtags": [
+            {"code": "HVYWT", "name": "Heavy Haul & Oversized"},
+            {"code": "WHITEGL", "name": "White Glove Delivery"},
+            {"code": "MEDLOG", "name": "Medical & Pharma Logistics"},
+            {"code": "AUTOST", "name": "Automotive Logistics"},
+            {"code": "DEFLOG", "name": "Defense & Government Logistics"},
+            {"code": "REVLOG", "name": "Reverse Logistics"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Distribution",
+      "sector_code": "DIST",
+      "dimensions": [
+        {
+          "dimension": "Industrial & MRO Distribution",
+          "subtags": [
+            {"code": "INDD", "name": "Industrial Distribution"},
+            {"code": "MRO", "name": "MRO (Maintenance, Repair & Operations)"},
+            {"code": "SAFD", "name": "Safety Products Distribution"},
+            {"code": "FASTNR", "name": "Fasteners & Fittings Distribution"},
+            {"code": "FLUID", "name": "Fluid Power & Hydraulics Distribution"},
+            {"code": "ELECD", "name": "Electrical Distribution"},
+            {"code": "BEAR", "name": "Bearings & Power Transmission Distribution"},
+            {"code": "MILL", "name": "Mill Supply Distribution"}
+          ]
+        },
+        {
+          "dimension": "Building Products & Construction Distribution",
+          "subtags": [
+            {"code": "BLDG", "name": "Building Products Distribution"},
+            {"code": "LMBR", "name": "Lumber & Building Materials"},
+            {"code": "HVACD", "name": "HVAC Distribution"},
+            {"code": "PLUMB", "name": "Plumbing Supplies Distribution"},
+            {"code": "ROOF", "name": "Roofing Distribution"},
+            {"code": "FLOOR", "name": "Flooring Distribution"},
+            {"code": "WNDRS", "name": "Windows & Doors Distribution"},
+            {"code": "INSUL", "name": "Insulation Distribution"}
+          ]
+        },
+        {
+          "dimension": "Technology & Electronics Distribution",
+          "subtags": [
+            {"code": "TECHD", "name": "Technology Products Distribution"},
+            {"code": "VAR", "name": "Value-Added Resellers (VAR)"},
+            {"code": "SEMIC", "name": "Electronic Components Distribution"},
+            {"code": "WIRE", "name": "Wire & Cable Distribution"},
+            {"code": "NETWKD", "name": "Networking & Communications Distribution"}
+          ]
+        },
+        {
+          "dimension": "Healthcare & Life Sciences Distribution",
+          "subtags": [
+            {"code": "MEDD", "name": "Medical Supplies Distribution"},
+            {"code": "PHARMD", "name": "Pharmaceutical Distribution"},
+            {"code": "DENTD", "name": "Dental Supplies Distribution"},
+            {"code": "VETD", "name": "Veterinary Supplies Distribution"},
+            {"code": "LABD", "name": "Laboratory Supplies Distribution"}
+          ]
+        },
+        {
+          "dimension": "Food & Beverage Distribution",
+          "subtags": [
+            {"code": "FOODD", "name": "Foodservice Distribution"},
+            {"code": "GROD", "name": "Grocery & Specialty Food Distribution"},
+            {"code": "BEVD", "name": "Beverage Distribution"},
+            {"code": "ALCOH", "name": "Alcoholic Beverage Distribution"},
+            {"code": "RSTRNT", "name": "Restaurant Supply Distribution"},
+            {"code": "CANDY", "name": "Candy & Confectionery Distribution"}
+          ]
+        },
+        {
+          "dimension": "Janitorial, Sanitation & Facility Supplies Distribution",
+          "subtags": [
+            {"code": "JANSAN", "name": "Janitorial & Sanitation Distribution"},
+            {"code": "CLEAND", "name": "Cleaning Products Distribution"},
+            {"code": "PAPERD", "name": "Paper & Packaging Distribution"},
+            {"code": "UNIFMD", "name": "Uniforms & Workwear Distribution"}
+          ]
+        },
+        {
+          "dimension": "Specialty Distribution",
+          "subtags": [
+            {"code": "CHEMD", "name": "Chemical Distribution"},
+            {"code": "PETRD", "name": "Petroleum Products Distribution"},
+            {"code": "PROPD", "name": "Propane Distribution"},
+            {"code": "AGRD", "name": "Agricultural Inputs Distribution"},
+            {"code": "PETSD", "name": "Pet Supplies Distribution"},
+            {"code": "SPRTD", "name": "Sports & Recreation Distribution"},
+            {"code": "ARTSD", "name": "Arts & Crafts Supplies Distribution"},
+            {"code": "OFFSUP", "name": "Office Supplies Distribution"},
+            {"code": "PRINTD", "name": "Printing Supplies Distribution"}
+          ]
+        },
+        {
+          "dimension": "Distribution Models & Operations",
+          "subtags": [
+            {"code": "WHLSL", "name": "Wholesale Distribution"},
+            {"code": "JIT", "name": "Just-in-Time Distribution"},
+            {"code": "DROP", "name": "Drop Shipping"},
+            {"code": "XDOCK", "name": "Cross-Dock Distribution"},
+            {"code": "VADS", "name": "Value-Added Distribution Services"},
+            {"code": "DISTECH", "name": "Distribution Technology & Platforms"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Business Services",
+      "sector_code": "BS",
+      "dimensions": [
+        {
+          "dimension": "Staffing & Workforce Solutions",
+          "subtags": [
+            {"code": "STAFF", "name": "Staffing & Temporary Labor"},
+            {"code": "PERM", "name": "Permanent Placement & Recruiting"},
+            {"code": "EXECS", "name": "Executive Search"},
+            {"code": "PROFST", "name": "Professional & Technical Staffing"},
+            {"code": "LINDST", "name": "Light Industrial Staffing"},
+            {"code": "HLTHST", "name": "Healthcare Staffing"},
+            {"code": "MSP", "name": "Managed Service Provider (MSP)"},
+            {"code": "PEO", "name": "Professional Employer Organizations (PEO)"},
+            {"code": "HRO", "name": "HR Outsourcing (HRO)"},
+            {"code": "PAYRL", "name": "Payroll Services"}
+          ]
+        },
+        {
+          "dimension": "Outsourcing & BPO",
+          "subtags": [
+            {"code": "BPO", "name": "Business Process Outsourcing (BPO)"},
+            {"code": "KPO", "name": "Knowledge Process Outsourcing (KPO)"},
+            {"code": "ITO", "name": "IT Outsourcing (ITO)"},
+            {"code": "CALLCTR", "name": "Contact Centers & Call Centers"},
+            {"code": "BACKOFF", "name": "Back Office Services"},
+            {"code": "DOCS", "name": "Document Management & Processing"},
+            {"code": "DATAENT", "name": "Data Entry & Processing"}
+          ]
+        },
+        {
+          "dimension": "Accounting, Finance & Tax Services",
+          "subtags": [
+            {"code": "ACCTG", "name": "Accounting Services"},
+            {"code": "AUDIT", "name": "Audit Services"},
+            {"code": "TAXSV", "name": "Tax Services"},
+            {"code": "BKPG", "name": "Bookkeeping Services"},
+            {"code": "CFOSV", "name": "Outsourced CFO & Finance Services"},
+            {"code": "PAYABL", "name": "Accounts Payable Outsourcing"},
+            {"code": "RECVBL", "name": "Accounts Receivable & Collections"}
+          ]
+        },
+        {
+          "dimension": "Marketing & Advertising Services",
+          "subtags": [
+            {"code": "MKTSV", "name": "Marketing Services"},
+            {"code": "ADV", "name": "Advertising Agencies"},
+            {"code": "DGTLMKT", "name": "Digital Marketing"},
+            {"code": "SEO", "name": "Search Engine Optimization (SEO)"},
+            {"code": "PR", "name": "Public Relations"},
+            {"code": "BRAND", "name": "Branding & Creative Services"},
+            {"code": "PRNTMKT", "name": "Print & Direct Mail Marketing"},
+            {"code": "PROMO", "name": "Promotions & Events"}
+          ]
+        },
+        {
+          "dimension": "Facilities Management & Support Services",
+          "subtags": [
+            {"code": "FM", "name": "Facilities Management"},
+            {"code": "CLENSV", "name": "Commercial Cleaning Services"},
+            {"code": "JANITL", "name": "Janitorial Services"},
+            {"code": "LAWN", "name": "Landscaping & Grounds Maintenance"},
+            {"code": "PESTSV", "name": "Pest Control Services"},
+            {"code": "UNIFSV", "name": "Uniform & Linen Services"},
+            {"code": "MAINTSV", "name": "Maintenance & Repair Services"},
+            {"code": "FIRESV", "name": "Fire Protection & Safety Services"},
+            {"code": "SECUR", "name": "Security Services"},
+            {"code": "PARKING", "name": "Parking Management"}
+          ]
+        },
+        {
+          "dimension": "Professional & Consulting Services",
+          "subtags": [
+            {"code": "MGMTC", "name": "Management Consulting"},
+            {"code": "STRATC", "name": "Strategy Consulting"},
+            {"code": "OPSC", "name": "Operations Consulting"},
+            {"code": "ITC", "name": "IT Consulting"},
+            {"code": "HRC", "name": "HR Consulting"},
+            {"code": "ENVC", "name": "Environmental Consulting"},
+            {"code": "LEGALSV", "name": "Legal Services"},
+            {"code": "COMPSV", "name": "Compliance & Risk Management Services"},
+            {"code": "INSSV", "name": "Insurance Services & Brokerage"}
+          ]
+        },
+        {
+          "dimension": "Testing, Inspection & Certification",
+          "subtags": [
+            {"code": "TIC", "name": "Testing, Inspection & Certification (TIC)"},
+            {"code": "QUALSV", "name": "Quality Assurance Services"},
+            {"code": "LABSV", "name": "Laboratory Testing Services"},
+            {"code": "CERTSV", "name": "Certification Services"},
+            {"code": "INSPSV", "name": "Inspection Services"}
+          ]
+        },
+        {
+          "dimension": "Research & Data Services",
+          "subtags": [
+            {"code": "MKTRES", "name": "Market Research"},
+            {"code": "DATASV", "name": "Data & Analytics Services"},
+            {"code": "SURV", "name": "Surveys & Polling"},
+            {"code": "INFOSV", "name": "Information Services"},
+            {"code": "PRINTSV", "name": "Printing & Fulfillment Services"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Education",
+      "sector_code": "EDU",
+      "dimensions": [
+        {
+          "dimension": "K-12 Education",
+          "subtags": [
+            {"code": "K12", "name": "K-12 Education"},
+            {"code": "ELEM", "name": "Elementary Education"},
+            {"code": "MIDSCH", "name": "Middle School"},
+            {"code": "HIGHSCH", "name": "High School"},
+            {"code": "CHARTR", "name": "Charter Schools"},
+            {"code": "PRIVK12", "name": "Private & Independent Schools"},
+            {"code": "MONTSS", "name": "Montessori Schools"},
+            {"code": "RELIG", "name": "Religious & Faith-Based Schools"},
+            {"code": "SPED", "name": "Special Education"},
+            {"code": "EARLYC", "name": "Early Childhood & Pre-K"},
+            {"code": "DAYCARE", "name": "Childcare & Daycare Centers"},
+            {"code": "AFTERSCH", "name": "After-School Programs"}
+          ]
+        },
+        {
+          "dimension": "Higher Education",
+          "subtags": [
+            {"code": "HED", "name": "Higher Education"},
+            {"code": "UNIV", "name": "Universities & Colleges"},
+            {"code": "COMMCOL", "name": "Community Colleges"},
+            {"code": "FORPRF", "name": "For-Profit Higher Education"},
+            {"code": "ONLINED", "name": "Online Degree Programs"},
+            {"code": "MBA", "name": "MBA & Graduate Business Programs"},
+            {"code": "BOOT", "name": "Bootcamps & Accelerated Programs"},
+            {"code": "STUDYAB", "name": "Study Abroad Programs"}
+          ]
+        },
+        {
+          "dimension": "Vocational & Workforce Training",
+          "subtags": [
+            {"code": "VOC", "name": "Vocational & Trade Schools"},
+            {"code": "APPREN", "name": "Apprenticeships"},
+            {"code": "CTE", "name": "Career & Technical Education (CTE)"},
+            {"code": "COSM", "name": "Cosmetology & Beauty Schools"},
+            {"code": "CDLTR", "name": "CDL & Truck Driver Training"},
+            {"code": "HVACTR", "name": "HVAC & Trades Training"},
+            {"code": "WELDTR", "name": "Welding & Manufacturing Training"},
+            {"code": "ALLHTH", "name": "Allied Health Training"},
+            {"code": "CODING", "name": "Coding & Tech Skills Training"},
+            {"code": "FLIGHT", "name": "Flight Training & Aviation Schools"}
+          ]
+        },
+        {
+          "dimension": "Test Preparation & Tutoring",
+          "subtags": [
+            {"code": "TESTPREP", "name": "Test Preparation"},
+            {"code": "SATACT", "name": "SAT & ACT Prep"},
+            {"code": "GREGMAT", "name": "GRE & GMAT Prep"},
+            {"code": "LSAT", "name": "LSAT Prep"},
+            {"code": "MCAT", "name": "MCAT Prep"},
+            {"code": "TUT", "name": "Tutoring Services"},
+            {"code": "LEARNCTR", "name": "Learning Centers"},
+            {"code": "LANG", "name": "Language Learning & ESL"}
+          ]
+        },
+        {
+          "dimension": "Corporate & Professional Training",
+          "subtags": [
+            {"code": "CORPTRN", "name": "Corporate Training"},
+            {"code": "LD", "name": "Leadership Development"},
+            {"code": "COMPTRN", "name": "Compliance Training"},
+            {"code": "SALSTR", "name": "Sales Training"},
+            {"code": "SOFTSK", "name": "Soft Skills Training"},
+            {"code": "SAFETR", "name": "Safety Training"},
+            {"code": "CREDTR", "name": "Professional Credentialing & Certifications"},
+            {"code": "ONBD", "name": "Onboarding & Employee Training Platforms"}
+          ]
+        },
+        {
+          "dimension": "EdTech & Digital Learning",
+          "subtags": [
+            {"code": "EDTECH", "name": "EdTech (General)"},
+            {"code": "LMS", "name": "Learning Management Systems (LMS)"},
+            {"code": "MOOC", "name": "MOOCs & Online Courses"},
+            {"code": "GAMEL", "name": "Gamification & Game-Based Learning"},
+            {"code": "ADAPTL", "name": "Adaptive Learning Platforms"},
+            {"code": "ASSESS", "name": "Assessment & Testing Technology"},
+            {"code": "VIRTCL", "name": "Virtual Classrooms"},
+            {"code": "STEMSV", "name": "STEM Education Programs & Tools"},
+            {"code": "SIS", "name": "Student Information Systems (SIS)"},
+            {"code": "EDCRM", "name": "Enrollment & Admissions CRM"}
+          ]
+        },
+        {
+          "dimension": "Enrichment & Supplemental",
+          "subtags": [
+            {"code": "ENRICH", "name": "Enrichment Programs"},
+            {"code": "ARTSE", "name": "Arts & Music Education"},
+            {"code": "SPORTSE", "name": "Sports & Athletics Programs"},
+            {"code": "SUMCAMP", "name": "Summer Camps & Programs"},
+            {"code": "COLPREP", "name": "College Counseling & Admissions Prep"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Government Services",
+      "sector_code": "GOV",
+      "dimensions": [
+        {
+          "dimension": "Defense Contracting",
+          "subtags": [
+            {"code": "DEF", "name": "Defense Contracting (General)"},
+            {"code": "DOD", "name": "Department of Defense (DoD)"},
+            {"code": "INTEL", "name": "Intelligence Community"},
+            {"code": "SYSINT", "name": "Defense Systems Integration"},
+            {"code": "C4ISR", "name": "C4ISR (Command, Control, Communications, Computers, Intelligence, Surveillance, Reconnaissance)"},
+            {"code": "WPNS", "name": "Weapons Systems & Munitions"},
+            {"code": "MILVEH", "name": "Military Vehicles & Platforms"},
+            {"code": "MILLOG", "name": "Military Logistics & Base Support"},
+            {"code": "SURVSYS", "name": "Surveillance & Reconnaissance Systems"},
+            {"code": "CYBERD", "name": "Cybersecurity (Defense)"},
+            {"code": "SPACED", "name": "Space & Satellite (Defense)"},
+            {"code": "SIMTR", "name": "Defense Simulation & Training"},
+            {"code": "MROD", "name": "Defense Maintenance & Sustainment"}
+          ]
+        },
+        {
+          "dimension": "IT & Technology Services for Government",
+          "subtags": [
+            {"code": "GOVIT", "name": "Government IT Services"},
+            {"code": "CLOUDG", "name": "Cloud Services for Government"},
+            {"code": "CYBG", "name": "Cybersecurity (Government)"},
+            {"code": "DIGXFRM", "name": "Digital Transformation for Government"},
+            {"code": "ERPG", "name": "Government ERP & Enterprise Systems"},
+            {"code": "DATAG", "name": "Government Data & Analytics"},
+            {"code": "CASEMG", "name": "Case Management Systems"},
+            {"code": "GOVCRM", "name": "Citizen Engagement Platforms"},
+            {"code": "LEGACY", "name": "Legacy Systems Modernization"}
+          ]
+        },
+        {
+          "dimension": "Healthcare & Human Services for Government",
+          "subtags": [
+            {"code": "MCARE", "name": "Medicare Programs"},
+            {"code": "MCAID", "name": "Medicaid Programs"},
+            {"code": "CHIP", "name": "CHIP (Children's Health Insurance Program)"},
+            {"code": "VAHC", "name": "Veterans Health Administration"},
+            {"code": "TRICA", "name": "TRICARE"},
+            {"code": "BEHAVG", "name": "Behavioral Health (Government)"},
+            {"code": "SOCSV", "name": "Social Services Administration"},
+            {"code": "SNAP", "name": "SNAP & Food Assistance Programs"},
+            {"code": "HOUSG", "name": "Housing Assistance Programs"},
+            {"code": "EMERG", "name": "Emergency Management & FEMA"},
+            {"code": "CHILDG", "name": "Child Welfare Services"}
+          ]
+        },
+        {
+          "dimension": "Consulting & Advisory for Government",
+          "subtags": [
+            {"code": "GOVC", "name": "Government Management Consulting"},
+            {"code": "PROGMG", "name": "Program Management & PMO"},
+            {"code": "AUDITG", "name": "Government Audit & Accounting Services"},
+            {"code": "PROCG", "name": "Procurement Consulting"},
+            {"code": "POLICY", "name": "Policy Consulting & Advisory"},
+            {"code": "FINMG", "name": "Government Financial Management"},
+            {"code": "GRANT", "name": "Grant Management"},
+            {"code": "TRANSG", "name": "Government Transformation & Change Management"}
+          ]
+        },
+        {
+          "dimension": "Facilities, Infrastructure & Construction for Government",
+          "subtags": [
+            {"code": "GOVFM", "name": "Government Facilities Management"},
+            {"code": "INFRAG", "name": "Public Infrastructure"},
+            {"code": "BASESV", "name": "Military Base Operations & Support"},
+            {"code": "UTILG", "name": "Government Utilities Management"},
+            {"code": "ENVREM", "name": "Environmental Remediation (Government)"},
+            {"code": "CONSG", "name": "Government Construction"},
+            {"code": "ARCHENG", "name": "Architecture & Engineering for Government"}
+          ]
+        },
+        {
+          "dimension": "Justice, Law Enforcement & Public Safety",
+          "subtags": [
+            {"code": "JUST", "name": "Justice & Corrections"},
+            {"code": "COURT", "name": "Courts & Judicial Systems"},
+            {"code": "CORR", "name": "Corrections & Detention"},
+            {"code": "LAWENF", "name": "Law Enforcement Technology & Services"},
+            {"code": "FIREG", "name": "Fire & Emergency Services"},
+            {"code": "BORDER", "name": "Border Security & Immigration"},
+            {"code": "FORENS", "name": "Forensic & Crime Lab Services"}
+          ]
+        },
+        {
+          "dimension": "Education & Training for Government",
+          "subtags": [
+            {"code": "MILTR", "name": "Military Training & Education"},
+            {"code": "GOVTR", "name": "Government Workforce Training"},
+            {"code": "CITIZEN", "name": "Citizen Services & Public Programs"},
+            {"code": "GOVSTEM", "name": "STEM & Workforce Programs (Government)"}
+          ]
+        },
+        {
+          "dimension": "Contract Vehicles & Procurement",
+          "subtags": [
+            {"code": "IDIQ", "name": "IDIQ Contracts"},
+            {"code": "GWAC", "name": "GWACs (Government-Wide Acquisition Contracts)"},
+            {"code": "GSA", "name": "GSA Schedules"},
+            {"code": "SBIR", "name": "SBIR & STTR Programs"},
+            {"code": "LPTA", "name": "LPTA Awards"},
+            {"code": "OTA", "name": "OTA (Other Transaction Authority)"},
+            {"code": "SMALLBZ", "name": "Small Business Set-Asides"},
+            {"code": "JV", "name": "Government Joint Ventures & Teaming"}
+          ]
+        },
+        {
+          "dimension": "Specific Agencies & Client Groups",
+          "subtags": [
+            {"code": "DHS", "name": "DHS (Department of Homeland Security)"},
+            {"code": "HHS", "name": "HHS (Department of Health & Human Services)"},
+            {"code": "DOTG", "name": "DOT (Department of Transportation)"},
+            {"code": "EDGOV", "name": "Department of Education"},
+            {"code": "SSA", "name": "Social Security Administration"},
+            {"code": "IRSG", "name": "IRS & Treasury"},
+            {"code": "STATELC", "name": "State & Local Government"},
+            {"code": "FEDCIV", "name": "Federal Civilian Agencies"},
+            {"code": "NATO", "name": "NATO & Allied Defense"}
+          ]
+        }
+      ]
+    },
+    {
       "sector_name": "Travel & Hospitality",
       "sector_code": "TH",
       "dimensions": [
