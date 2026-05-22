@@ -278,8 +278,110 @@ def write_principles(wb, data: dict):
     set_col_widths(ws, [6, 35, 75])
 
 
+def write_readme(wb):
+    ws = wb.create_sheet("README", 0)
+    ws.column_dimensions["A"].width = 22
+    ws.column_dimensions["B"].width = 90
+
+    def heading(row, text, size=13, color="1F3864"):
+        c = ws.cell(row=row, column=1, value=text)
+        c.font = Font(size=size, bold=True, color=color)
+        ws.merge_cells(f"A{row}:B{row}")
+        c.alignment = Alignment(wrap_text=True)
+        return row + 1
+
+    def body(row, text, bold_label=None):
+        if bold_label:
+            ws.cell(row=row, column=1, value=bold_label).font = Font(bold=True, color="2F5496")
+        c = ws.cell(row=row, column=2 if bold_label else 1, value=text)
+        c.alignment = Alignment(wrap_text=True, vertical="top")
+        if not bold_label:
+            ws.merge_cells(f"A{row}:B{row}")
+        ws.row_dimensions[row].height = 30
+        return row + 1
+
+    def spacer(row):
+        ws.row_dimensions[row].height = 8
+        return row + 1
+
+    r = 1
+    c = ws.cell(row=r, column=1, value="GAQP Standards Package — Deconstructor's Guide")
+    c.font = Font(size=16, bold=True, color="1F3864")
+    ws.merge_cells(f"A{r}:B{r}")
+    ws.row_dimensions[r].height = 28
+    r += 1
+    r = spacer(r)
+
+    r = heading(r, "What this workbook is")
+    r = body(r, (
+        "This workbook is the GAQP Standards Package — the machine-readable rulebook for "
+        "GAQP-compliant document deconstruction. It defines every rule a deconstructor must "
+        "follow: what counts as a valid claim, how to classify it, how to tag it, and how to "
+        "package it in a .intel sidecar file. All sheets are derived from the JSON source files "
+        "in the IQS standards repository."
+    ))
+    r = spacer(r)
+
+    r = heading(r, "What deconstruction is — and is not")
+    r = body(r, (
+        "Deconstruction is the governed extraction of atomic qualitative claims from a source document. "
+        "Each extracted claim (a 'nugget') must pass all seven admission tests before it is admitted. "
+        "Deconstruction ends when the .intel sidecar file is written. What happens to nuggets after "
+        "that — querying, synthesis, corroboration, reporting — is reconstruction, which is outside "
+        "GAQP's jurisdiction."
+    ))
+    r = spacer(r)
+
+    r = heading(r, "Deconstruction workflow")
+    steps = [
+        ("1. Read the source document", "Identify the document type, creation date, author, and page structure. Record these in the .intel source_binding section."),
+        ("2. Apply the seven admission tests", "See the Admission Tests sheet. Every candidate claim must pass all seven gates. A claim that fails any test is not born — it is not recorded anywhere."),
+        ("3. Assign a claim type", "See the Claim Types sheet. Choose exactly one type from the closed 25-type register. Use the forbidden labels remap table if tempted to use an unlisted label."),
+        ("4. Write the source quote", "Copy the verbatim passage from the source document that the claim is drawn from. This is required. Paraphrase is not permitted."),
+        ("5. Set the inference flag", "If the claim goes beyond what the source explicitly states, set inference_flag = TRUE. Never hide inference."),
+        ("6. Assign sector and domain tags", "See Sector Vocabulary and Domain Subtags sheets. Assign primary_sector and domain_tags_pipe. NULL is valid for sector-agnostic claims."),
+        ("7. Assign cross-cutting tags", "See Tags Vocabulary sheet. Assign tags_pipe using func:, risk:, topic:, and geo: prefixes. NULL is valid."),
+        ("8. Set confidence level", "See Confidence Ladder sheet. New claims extracted from a single source start at 'seed' (0.50). Confidence advances only through independent corroboration."),
+        ("9. Write the .intel file", "Package all admitted claims into the .intel sidecar file. See the Cover sheet for the file specification reference. The .intel file contains admitted claims only — no rejected candidates, no needs-review records."),
+    ]
+    for label, text in steps:
+        r = body(r, text, bold_label=label)
+    r = spacer(r)
+
+    r = heading(r, "Key rules — do not violate these")
+    rules = [
+        ("Source locality", "A .intel file contains only claims from its corresponding source document. No cross-document content."),
+        ("Existence = admitted", "If a claim record is in the .intel file, it passed all seven tests. There are no rejected or needs-review records in a compliant .intel file."),
+        ("Source quote required", "Every admitted claim must carry the verbatim source_quote. No exceptions."),
+        ("Inference must be labeled", "inference_flag = TRUE for any claim that goes beyond the source text. Never hide inference."),
+        ("Claim types are closed", "The 25-type register is the complete list. Do not invent new types. Use the forbidden labels remap table."),
+        ("Confidence starts at seed", "A single-source extraction starts at seed (0.50). It cannot be self-promoted — only independent corroboration advances confidence."),
+        ("Security inherits upward", "A .intel sidecar must carry access controls equal to or stricter than its source document. Never weaker."),
+    ]
+    for label, text in rules:
+        r = body(r, text, bold_label=label)
+    r = spacer(r)
+
+    r = heading(r, "Sheet navigation guide")
+    nav = [
+        ("Cover", "Package identity, version, status, and checksum."),
+        ("Claim Types", "The closed 25-type claim register with definitions and forbidden label remaps."),
+        ("Admission Tests", "The seven gates every candidate claim must pass."),
+        ("Confidence Ladder", "Six confidence levels, numeric scores, and promotion rules."),
+        ("Metadata Schema", "The 29 required and optional fields every admitted claim record must carry."),
+        ("Source Anchor Schema", "The 20 fields in a source anchor record — exact location within the source document."),
+        ("Conformance Levels", "L1 through L7 — the compliance maturity ladder for deconstruction implementations."),
+        ("Sector Vocabulary", "30 industry sectors with GICS, SIC, and NAICS crosswalks. Used for primary_sector field."),
+        ("Domain Subtags", "3,580 subtags across all 30 sectors organized by dimension. Used for domain_tags_pipe field."),
+        ("Tags Vocabulary", "Cross-cutting tag prefixes: func, risk, topic, geo. Used for tags_pipe field."),
+        ("Principles", "The 10 constitutional principles governing GAQP."),
+    ]
+    for label, text in nav:
+        r = body(r, text, bold_label=label)
+
+
 def write_cover(wb, manifest: dict):
-    ws = wb.create_sheet("Cover", 0)
+    ws = wb.create_sheet("Cover", 1)
 
     title_cell = ws.cell(row=1, column=1, value=manifest["standard_name"])
     title_cell.font = Font(size=18, bold=True, color="1F3864")
@@ -415,6 +517,7 @@ def main():
     wb = openpyxl.Workbook()
     wb.remove(wb.active)
 
+    write_readme(wb)
     write_cover(wb, manifest)
     write_claim_types(wb, claim_types)
     write_admission_tests(wb, admission_tests)
