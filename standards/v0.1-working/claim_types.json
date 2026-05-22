@@ -1,0 +1,143 @@
+{
+  "gaqp_version": "0.1-working",
+  "register_status": "closed",
+  "register_note": "No implementation may create, infer, rename, abbreviate, pluralize, or substitute claim types. Every admitted claim maps to exactly one of these 25 types.",
+  "claim_types": [
+    {
+      "id": 1,
+      "claim_type": "Axiom",
+      "definition": "Foundational assertion treated as a first principle within the source's own logic"
+    },
+    {
+      "id": 2,
+      "claim_type": "Definition",
+      "definition": "A source-local explanation of what a term, category, process, or concept means"
+    },
+    {
+      "id": 3,
+      "claim_type": "Ontological Assertion",
+      "definition": "A claim that something exists, has a particular nature, or belongs to a stated category"
+    },
+    {
+      "id": 4,
+      "claim_type": "Principle",
+      "definition": "A general rule, standard, or governing idea that guides judgment or action"
+    },
+    {
+      "id": 5,
+      "claim_type": "Doctrine",
+      "definition": "A formalized or institutionalized operating belief, policy logic, or governing position"
+    },
+    {
+      "id": 6,
+      "claim_type": "Heuristic",
+      "definition": "A practical rule of thumb that helps make decisions under uncertainty"
+    },
+    {
+      "id": 7,
+      "claim_type": "Best Practice",
+      "definition": "A recommended method, discipline, or operational pattern presented as preferable"
+    },
+    {
+      "id": 8,
+      "claim_type": "Tendency",
+      "definition": "A recurring pattern, propensity, or direction of movement broader than one event"
+    },
+    {
+      "id": 9,
+      "claim_type": "Observation",
+      "definition": "A source-supported noted fact, condition, or state of affairs without required causal interpretation"
+    },
+    {
+      "id": 10,
+      "claim_type": "Event",
+      "definition": "A discrete occurrence, action, milestone, transaction, or incident anchored to a moment or sequence"
+    },
+    {
+      "id": 11,
+      "claim_type": "Institutional Precedent",
+      "definition": "A prior institutional action, decision, practice, or pattern used as a reference point"
+    },
+    {
+      "id": 12,
+      "claim_type": "Constraint",
+      "definition": "A limitation, boundary, dependency, rule, or operating condition that limits action"
+    },
+    {
+      "id": 13,
+      "claim_type": "Threshold Condition",
+      "definition": "A minimum condition, trigger, breakpoint, or gating criterion that changes eligibility, status, or action"
+    },
+    {
+      "id": 14,
+      "claim_type": "Objective",
+      "definition": "A desired end state, goal, target, mandate, or outcome sought by an actor or institution"
+    },
+    {
+      "id": 15,
+      "claim_type": "Tradeoff",
+      "definition": "A tension or exchange in which pursuing one value or option burdens another"
+    },
+    {
+      "id": 16,
+      "claim_type": "Causal Claim",
+      "definition": "An assertion that one factor produces, drives, prevents, enables, worsens, or improves another"
+    },
+    {
+      "id": 17,
+      "claim_type": "Declaration of Value",
+      "definition": "A claim about importance, preference, worth, priority, or what should be valued"
+    },
+    {
+      "id": 18,
+      "claim_type": "Diagnostic Signal",
+      "definition": "An indicator that suggests an underlying condition, risk, opportunity, weakness, or pattern"
+    },
+    {
+      "id": 19,
+      "claim_type": "Stakeholder Complaint Claim",
+      "definition": "A complaint, objection, grievance, pain point, or dissatisfaction expressed by a stakeholder"
+    },
+    {
+      "id": 20,
+      "claim_type": "Strength",
+      "definition": "A favorable internal attribute, capability, position, resource, or advantage"
+    },
+    {
+      "id": 21,
+      "claim_type": "Weakness",
+      "definition": "An unfavorable internal deficit, vulnerability, limitation, gap, or underperformance"
+    },
+    {
+      "id": 22,
+      "claim_type": "Opportunity",
+      "definition": "An external or situational upside, opening, favorable condition, or exploitable possibility"
+    },
+    {
+      "id": 23,
+      "claim_type": "Threat",
+      "definition": "An external or situational downside, adverse force, risk, or harmful development"
+    },
+    {
+      "id": 24,
+      "claim_type": "Asset",
+      "definition": "A resource, relationship, capability, right, dataset, or item with reusable value"
+    },
+    {
+      "id": 25,
+      "claim_type": "Liability",
+      "definition": "An obligation, exposure, burden, dependency, or source of downside value"
+    }
+  ],
+  "forbidden_labels": [
+    { "forbidden": "Requirement", "remap_to": ["Constraint", "Threshold Condition", "Best Practice"] },
+    { "forbidden": "Caution", "remap_to": ["Threat", "Weakness", "Constraint", "Diagnostic Signal"] },
+    { "forbidden": "Data Point", "remap_to": ["Observation", "Event"] },
+    { "forbidden": "Trend", "remap_to": ["Tendency"] },
+    { "forbidden": "Capability", "remap_to": ["Strength", "Asset", "Ontological Assertion"] },
+    { "forbidden": "Problem", "remap_to": ["Weakness", "Threat", "Stakeholder Complaint Claim"] },
+    { "forbidden": "Risk", "remap_to": ["Threat", "Diagnostic Signal", "Constraint"] },
+    { "forbidden": "Finding", "remap_to": ["Observation", "Causal Claim"], "note": "reconstruction artifact only" },
+    { "forbidden": "Pattern", "remap_to": ["Tendency", "Observation"], "note": "reconstruction artifact only" }
+  ]
+}

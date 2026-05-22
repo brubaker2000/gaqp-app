@@ -1,0 +1,42 @@
+{
+  "gaqp_version": "0.1-working",
+  "operational_discipline": "Be generous at candidate-identification. Be strict at admission. Optimize for governed admissibility, source fidelity, and boundary discipline — not claim volume.",
+  "admission_statuses": ["admitted", "needs_review", "rejected"],
+  "tests": [
+    {
+      "id": 1,
+      "name": "Standalone",
+      "pass_condition": "Retains full meaning outside its source paragraph without surrounding context"
+    },
+    {
+      "id": 2,
+      "name": "Disputability",
+      "pass_condition": "A serious person can agree, challenge, or qualify it — genuinely contentful"
+    },
+    {
+      "id": 3,
+      "name": "Governance",
+      "pass_condition": "Can be tagged, sourced, scoped, and audited under the GAQP schema"
+    },
+    {
+      "id": 4,
+      "name": "Activation",
+      "pass_condition": "A system can determine when and where this claim matters"
+    },
+    {
+      "id": 5,
+      "name": "Durability",
+      "pass_condition": "Remains useful beyond the moment of utterance"
+    },
+    {
+      "id": 6,
+      "name": "Composability",
+      "pass_condition": "Can combine with other governed claims into larger judgment structures"
+    },
+    {
+      "id": 7,
+      "name": "Non-Triviality",
+      "pass_condition": "Carries strategic, interpretive, factual, operational, or diagnostic weight"
+    }
+  ]
+}

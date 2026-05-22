@@ -1,0 +1,56 @@
+{
+  "gaqp_version": "0.1-working",
+  "note": "Suggested runtime interface methods for compliant implementations. These methods should load from the Standards Package — not from hard-coded application logic.",
+  "methods": [
+    {
+      "method": "load_standards_package",
+      "signature": "load_standards_package(version?: string) -> StandardsPackage",
+      "description": "Load and verify the Standards Package. Verifies checksum. If version omitted, loads latest."
+    },
+    {
+      "method": "get_claim_types",
+      "signature": "get_claim_types() -> ClaimType[]",
+      "description": "Returns the closed 25-type claim register."
+    },
+    {
+      "method": "get_admission_tests",
+      "signature": "get_admission_tests() -> AdmissionTest[]",
+      "description": "Returns the seven admission tests with pass conditions."
+    },
+    {
+      "method": "get_tag_families",
+      "signature": "get_tag_families() -> TagFamily[]",
+      "description": "Returns core controlled-vocabulary tag families. Must not be mutated at user or client level."
+    },
+    {
+      "method": "get_metadata_fields",
+      "signature": "get_metadata_fields() -> MetadataField[]",
+      "description": "Returns required and additional metadata fields for claim records."
+    },
+    {
+      "method": "get_source_anchor_fields",
+      "signature": "get_source_anchor_fields() -> AnchorField[]",
+      "description": "Returns the source anchor schema fields."
+    },
+    {
+      "method": "get_domain_modules",
+      "signature": "get_domain_modules(sector?: string) -> DomainModule[]",
+      "description": "Returns domain modules from the consolidated domain module table. Optionally filtered by sector."
+    },
+    {
+      "method": "get_validation_rules",
+      "signature": "get_validation_rules() -> ValidationRules",
+      "description": "Returns validation rules for claim records and .intel packages."
+    },
+    {
+      "method": "get_vocabulary",
+      "signature": "get_vocabulary() -> Vocabulary",
+      "description": "Returns controlled sector vocabulary, forbidden labels, and remap table."
+    },
+    {
+      "method": "get_synonym_map",
+      "signature": "get_synonym_map() -> SynonymMap",
+      "description": "Returns tag synonym mappings for controlled vocabulary normalization."
+    }
+  ]
+}

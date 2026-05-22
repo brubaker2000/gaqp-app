@@ -1,0 +1,69 @@
+{
+  "gaqp_version": "0.1-working",
+  "compliance_rule": "Every admitted claim must point to the exact location in its source. A claim without a source anchor is not GAQP-compliant.",
+  "fields": [
+    {
+      "field": "anchor_id",
+      "notes": "Unique anchor identifier"
+    },
+    {
+      "field": "source_id",
+      "notes": "Links back to source manifest"
+    },
+    {
+      "field": "source_sha256",
+      "notes": "SHA-256 hash — detects drift and staleness"
+    },
+    {
+      "field": "page",
+      "notes": "Page number (PDF/print formats)"
+    },
+    {
+      "field": "section",
+      "notes": "Heading or section label"
+    },
+    {
+      "field": "paragraph",
+      "notes": "Paragraph number within section"
+    },
+    {
+      "field": "sentence",
+      "notes": "Sentence number within paragraph"
+    },
+    {
+      "field": "clause",
+      "notes": "Contract/legal clause reference"
+    },
+    {
+      "field": "slide",
+      "notes": "Slide number (presentation sources)"
+    },
+    {
+      "field": "speaker_turn",
+      "notes": "Speaker turn ID (transcripts)"
+    },
+    {
+      "field": "timestamp",
+      "notes": "Audio/video timestamp"
+    },
+    {
+      "field": "char_start",
+      "notes": "Character start offset"
+    },
+    {
+      "field": "char_end",
+      "notes": "Character end offset"
+    },
+    {
+      "field": "quote_hash",
+      "notes": "SHA-256 of anchored text span"
+    },
+    {
+      "field": "anchor_confidence",
+      "notes": "high / medium / low",
+      "enum": ["high", "medium", "low"]
+    }
+  ],
+  "total_fields": 20,
+  "note": "Schema has 20 fields total; additional fields to be enumerated at standards package freeze."
+}

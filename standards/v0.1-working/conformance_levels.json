@@ -1,0 +1,41 @@
+{
+  "gaqp_version": "0.1-working",
+  "note": "Seven staged levels. Compliant tools adopt progressively.",
+  "levels": [
+    {
+      "level": "L1",
+      "name": "Classification",
+      "capability": "Claims classified using the 25-type GAQP register"
+    },
+    {
+      "level": "L2",
+      "name": "Provenance",
+      "capability": "Claims carry source anchors to specific source locations"
+    },
+    {
+      "level": "L3",
+      "name": "Admissibility",
+      "capability": "Claims pass all seven admission tests before entering corpus"
+    },
+    {
+      "level": "L4",
+      "name": "Confidence",
+      "capability": "Claims carry governed confidence levels based on corroboration"
+    },
+    {
+      "level": "L5",
+      "name": "Sidecar-Enabled",
+      "capability": "Source documents carry .intel sidecar files"
+    },
+    {
+      "level": "L6",
+      "name": "Cross-Document Corpus",
+      "capability": "Multiple .intel files queryable as a governed corpus"
+    },
+    {
+      "level": "L7",
+      "name": "Activation",
+      "capability": "Claims surface at moment of decision in role-aware applications"
+    }
+  ]
+}

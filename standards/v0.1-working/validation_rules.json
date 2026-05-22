@@ -1,0 +1,40 @@
+{
+  "gaqp_version": "0.1-working",
+  "deconstruction_failure_modes": [
+    {
+      "failure": "Summarizing the corpus",
+      "note": "Reconstruction behavior masquerading as deconstruction. Reject."
+    },
+    {
+      "failure": "Producing broad themes",
+      "note": "Reconstruction behavior masquerading as deconstruction. Reject."
+    },
+    {
+      "failure": "Turning the corpus into recommendations",
+      "note": "Reconstruction behavior masquerading as deconstruction. Reject."
+    }
+  ],
+  "developer_rules": [
+    "Do not hard-code claim types, admission tests, metadata fields, tag families, or validation rules in application logic. Load them from the Standards Package at runtime.",
+    "Every generated artifact — claim record, .intel package, synthesis artifact — must record standards_package_version.",
+    "When the Standards Package changes, runtime behavior updates without rewriting core application logic.",
+    "Core tag families must not be mutated at the user or client level. Domain modules may extend under them.",
+    "Domain modules must be stored in a single consolidated table, not one table per industry.",
+    "A source .intel file that contains cross-document content fails validation. Reject it.",
+    "Stale detection: if source SHA-256 hash changes, downstream .intel status must become stale or trigger regeneration."
+  ],
+  "claim_record_validation": [
+    "claim_type must be one of the 25 canonical types — no substitution, abbreviation, or inference",
+    "admission_status must be admitted / needs_review / rejected",
+    "confidence_level must be from the canonical ladder",
+    "source_location must be specific (page, paragraph, section) — document-only attribution fails",
+    "inference_flag must be explicitly set — never omitted",
+    "standards_package_version must be recorded on every artifact"
+  ],
+  "intel_package_validation": [
+    "All required sections must be present",
+    "claims section must contain source-local claims only",
+    "No cross-document synthesis content permitted in any section",
+    "Security classification must be equal to or stricter than source document"
+  ]
+}

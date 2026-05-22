@@ -1,0 +1,122 @@
+{
+  "gaqp_version": "0.1-working",
+  "compliance_rule": "Every GAQP-compliant claim record must carry all required fields. A claim missing any required field is not GAQP-compliant.",
+  "required_fields": [
+    {
+      "field": "claim_id",
+      "required": true,
+      "definition": "Unique record identifier"
+    },
+    {
+      "field": "claim_type",
+      "required": true,
+      "definition": "One of the exact 25 canonical types. Closed register. No substitution."
+    },
+    {
+      "field": "claim_text",
+      "required": true,
+      "definition": "Exact wording of the governed claim as extracted from source"
+    },
+    {
+      "field": "admission_status",
+      "required": true,
+      "definition": "admitted / needs_review / rejected",
+      "enum": ["admitted", "needs_review", "rejected"]
+    },
+    {
+      "field": "confidence_level",
+      "required": true,
+      "definition": "From the canonical confidence ladder",
+      "enum": ["seed", "single_source", "developing", "corroborated", "structural", "disputed"]
+    },
+    {
+      "field": "confidence_score",
+      "required": true,
+      "definition": "Numeric score per confidence ladder"
+    },
+    {
+      "field": "source_document",
+      "required": true,
+      "definition": "The document from which the claim was extracted"
+    },
+    {
+      "field": "source_location",
+      "required": true,
+      "definition": "Specific location within the source — page, paragraph, timestamp, section. A claim attributed only to a document without a location is not GAQP-compliant."
+    },
+    {
+      "field": "source_anchor_id",
+      "required": true,
+      "definition": "Links to source anchor record"
+    },
+    {
+      "field": "source_hash",
+      "required": true,
+      "definition": "SHA-256 hash of source file. Enables stale detection."
+    },
+    {
+      "field": "inference_flag",
+      "required": true,
+      "definition": "TRUE if claim involves any deconstructor inference beyond what source explicitly states. Inference must be labeled — never hidden.",
+      "type": "boolean"
+    },
+    {
+      "field": "tags_pipe",
+      "required": true,
+      "definition": "Pipe-delimited controlled vocabulary tags"
+    },
+    {
+      "field": "primary_sector",
+      "required": true,
+      "definition": "Controlled sector vocabulary label"
+    },
+    {
+      "field": "standards_package_version",
+      "required": true,
+      "definition": "Version of GAQP Standards Package used to generate this record"
+    },
+    {
+      "field": "extraction_method",
+      "required": true,
+      "definition": "How the claim was produced"
+    },
+    {
+      "field": "fingerprint",
+      "required": true,
+      "definition": "SHA-256 deterministic identity hash"
+    }
+  ],
+  "additional_fields": [
+    "source_quote",
+    "source_section",
+    "source_page",
+    "source_paragraph",
+    "primary_tag",
+    "secondary_sectors_pipe",
+    "sic_2",
+    "sic_4",
+    "entities_pipe",
+    "relationship_hints_pipe",
+    "validation_flags_pipe",
+    "review_notes",
+    "record_id",
+    "record_type",
+    "source_id",
+    "line_start",
+    "line_end",
+    "rejection_reason",
+    "reason_for_review",
+    "standalone_test",
+    "disputability_test",
+    "governance_test",
+    "activation_test",
+    "durability_test",
+    "composability_test",
+    "non_triviality_test",
+    "duplicate_check_status",
+    "quote_support_status",
+    "claim_type_validation_status",
+    "deconstructor_note"
+  ],
+  "total_columns_v0_4_reference": 37
+}
