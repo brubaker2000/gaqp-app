@@ -312,6 +312,72 @@ def write_cover(wb, manifest: dict):
     set_col_widths(ws, [28, 55, 20])
 
 
+def write_domain_modules(wb, data: dict):
+    ws = wb.create_sheet("Domain Subtags")
+    ws.freeze_panes = "A2"
+
+    headers = ["Sector Code", "Sector Name", "Dimension", "Subtag Code", "Subtag Name"]
+    for col, h in enumerate(headers, 1):
+        style_header(ws.cell(row=1, column=col, value=h))
+
+    row = 2
+    for sector in data["sectors"]:
+        for dim in sector["dimensions"]:
+            for i, subtag in enumerate(dim["subtags"]):
+                alt = row % 2 == 0
+                for col, val in enumerate([
+                    sector["sector_code"],
+                    sector["sector_name"],
+                    dim["dimension"],
+                    subtag["code"],
+                    subtag["name"],
+                ], 1):
+                    style_cell(ws.cell(row=row, column=col, value=val), alt)
+                row += 1
+
+    note_row = row + 1
+    ws.cell(row=note_row, column=1, value=f"Total subtags: {row - 2}").font = Font(bold=True)
+    ws.cell(row=note_row, column=2, value=data.get("tagging_rule", "")).fill = NOTE_FILL
+    ws.merge_cells(f"B{note_row}:E{note_row}")
+
+    set_col_widths(ws, [12, 28, 30, 20, 40])
+
+
+def write_tags_vocabulary(wb, data: dict):
+    ws = wb.create_sheet("Tags Vocabulary")
+    ws.freeze_panes = "A2"
+
+    headers = ["Prefix", "Label", "Value", "Description"]
+    for col, h in enumerate(headers, 1):
+        style_header(ws.cell(row=1, column=col, value=h))
+
+    row = 2
+    for prefix_entry in data["prefixes"]:
+        for i, value in enumerate(prefix_entry["values"]):
+            alt = row % 2 == 0
+            for col, val in enumerate([
+                prefix_entry["prefix"],
+                prefix_entry["label"],
+                value,
+                prefix_entry["description"] if i == 0 else "",
+            ], 1):
+                style_cell(ws.cell(row=row, column=col, value=val), alt)
+            row += 1
+
+    note_row = row + 1
+    ws.cell(row=note_row, column=1, value="Example:").font = Font(bold=True)
+    c = ws.cell(row=note_row, column=2, value=data.get("example", ""))
+    c.fill = NOTE_FILL
+    ws.merge_cells(f"B{note_row}:D{note_row}")
+    note_row += 1
+    ws.cell(row=note_row, column=1, value="Null rule:").font = Font(bold=True)
+    c = ws.cell(row=note_row, column=2, value=data.get("null_rule", ""))
+    c.fill = NOTE_FILL
+    ws.merge_cells(f"B{note_row}:D{note_row}")
+
+    set_col_widths(ws, [10, 22, 25, 60])
+
+
 def compute_package_checksum(version_dir: Path) -> str:
     h = hashlib.sha256()
     for f in sorted(version_dir.glob("*.json")):
@@ -340,6 +406,8 @@ def main():
     conformance = load_json(version_dir, "conformance_levels.json")
     sectors = load_json(version_dir, "sector_vocabulary.json")
     principles = load_json(version_dir, "principles.json")
+    domain_modules = load_json(version_dir, "domain_modules.json")
+    tags_vocabulary = load_json(version_dir, "tags_vocabulary.json")
 
     checksum = compute_package_checksum(version_dir)
     manifest["checksum_sha256"] = checksum
@@ -355,6 +423,8 @@ def main():
     write_source_anchor_schema(wb, source_anchor)
     write_conformance_levels(wb, conformance)
     write_sector_vocabulary(wb, sectors)
+    write_domain_modules(wb, domain_modules)
+    write_tags_vocabulary(wb, tags_vocabulary)
     write_principles(wb, principles)
 
     out_dir = Path(args.out)
