@@ -1,0 +1,57 @@
+{
+  "gaqp_version": "0.1-working",
+  "field": "tags_pipe",
+  "description": "Cross-cutting tags for the tags_pipe field. Format: prefix:Value|prefix:Value. Prefixes are a closed set. Values within each prefix are a controlled but extensible vocabulary — new values may be added via the standard suggestion process.",
+  "note": "sector and vertical dimensions are handled by primary_sector and domain_tags_pipe respectively. tags_pipe carries only cross-cutting dimensions that apply regardless of sector.",
+  "prefixes": [
+    {
+      "prefix": "func",
+      "label": "Business Function",
+      "description": "The organizational or operational function the claim pertains to",
+      "values": [
+        "Accounting", "Compliance", "CorpDev", "CustomerSuccess",
+        "Finance", "HR", "IT", "InvestorRelations", "Legal",
+        "Marketing", "Operations", "Procurement", "ProductDev",
+        "RiskMgmt", "R&D", "Sales", "Strategy", "SupplyChain",
+        "Treasury"
+      ]
+    },
+    {
+      "prefix": "risk",
+      "label": "Risk Category",
+      "description": "The type of risk the claim describes, implies, or is relevant to",
+      "values": [
+        "Commodity", "Competition", "CustomerConcentration", "Currency",
+        "Cyber", "ESG", "Geopolitical", "Integration", "InterestRate",
+        "KeyPerson", "Litigation", "Liquidity", "Leverage", "Macro",
+        "Operational", "Regulatory", "Reputational", "Technology",
+        "VendorConcentration"
+      ]
+    },
+    {
+      "prefix": "topic",
+      "label": "Subject Topic",
+      "description": "A specific cross-sector subject the claim addresses",
+      "values": [
+        "CapEx", "Churn", "Culture", "ESG", "Governance",
+        "Growth", "Innovation", "Integration", "Leadership",
+        "Leverage", "Liquidity", "Margin", "NPS", "Pricing",
+        "Regulation", "Retention", "Technology", "Valuation",
+        "WorkingCapital"
+      ]
+    },
+    {
+      "prefix": "geo",
+      "label": "Geography",
+      "description": "Geographic scope or location relevant to the claim",
+      "values": [
+        "Global", "US", "Canada", "LatAm", "Brazil", "Mexico",
+        "Europe", "UK", "Germany", "France", "Nordics",
+        "APAC", "China", "Japan", "India", "SEAsia",
+        "MEA", "Midwest", "Northeast", "Southeast", "Southwest", "West"
+      ]
+    }
+  ],
+  "example": "func:Procurement|risk:VendorConcentration|topic:SupplyChain|geo:APAC",
+  "null_rule": "tags_pipe may be NULL for nuggets where no cross-cutting dimension applies. This is valid and common."
+}
