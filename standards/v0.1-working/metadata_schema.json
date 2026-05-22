@@ -1,7 +1,7 @@
 {
   "gaqp_version": "0.1-working",
   "compliance_rule": "Every GAQP-compliant claim record must carry all required fields. A claim missing any required field is not GAQP-compliant. A claim record that exists in a .intel file is by definition admitted — there are no rejected or needs_review records in a compliant .intel file.",
-  "canonical_field_count": 28,
+  "canonical_field_count": 29,
   "fields": [
     {
       "field": "claim_id",
