@@ -380,22 +380,18 @@
             {"code": "REVPAR", "name": "RevPAR"},
             {"code": "OCCUPANCY", "name": "Occupancy Rate"},
             {"code": "TREVPAR", "name": "TRevPAR / Total Revenue Per Available Room"},
-            {"code": "GOP", "name": "Gross Operating Profit (GOP)"},
-            {"code": "GOPPAR", "name": "GOPPAR"},
+            {"code": "GOPPAR", "name": "GOPPAR / Gross Operating Profit Per Available Room"},
             {"code": "ROOMREV", "name": "Rooms Revenue"},
             {"code": "FNBREV", "name": "Food & Beverage Revenue (Hotel)"},
-            {"code": "SPAREV", "name": "Spa & Wellness Revenue"},
             {"code": "MEETINGREV", "name": "Meetings & Events Revenue"},
             {"code": "ANCILLARY", "name": "Ancillary Revenue"},
-            {"code": "CHANNEL_MX", "name": "Channel Mix (Hotel)"},
             {"code": "DIRECTBOOK", "name": "Direct Booking"},
             {"code": "OTABOOK", "name": "OTA Booking"},
             {"code": "GDS", "name": "Global Distribution System (GDS)"},
             {"code": "GROUPSEG", "name": "Group Segment"},
             {"code": "TRANSIENT", "name": "Transient Segment"},
             {"code": "CONTRACT", "name": "Contract / Corporate Rate"},
-            {"code": "RATEMGMT", "name": "Rate Management / Revenue Management"},
-            {"code": "YIELDMGMT", "name": "Yield Management"}
+            {"code": "RATEMGMT", "name": "Revenue Management System"}
           ]
         },
         {
@@ -424,11 +420,9 @@
             {"code": "CARGO", "name": "Air Cargo"},
             {"code": "CABINCLASS", "name": "Cabin Class (First / Business / Economy)"},
             {"code": "ANCILLAIR", "name": "Ancillary Revenue (Airline)"},
-            {"code": "YIELDAIR", "name": "Yield Management (Airline)"},
             {"code": "SLOTCTRL", "name": "Slot Control / Airport Access"},
             {"code": "CODESHARE", "name": "Codeshare / Alliance"},
             {"code": "HUB", "name": "Hub & Spoke Network"},
-            {"code": "POINTPOINT", "name": "Point-to-Point Network"},
             {"code": "ROUTE", "name": "Route Network"},
             {"code": "FLEET", "name": "Fleet / Aircraft Type"},
             {"code": "MRO", "name": "Maintenance, Repair & Overhaul (MRO)"}
@@ -468,8 +462,7 @@
             {"code": "TRAVELAGCY", "name": "Traditional Travel Agency"},
             {"code": "TMC", "name": "Travel Management Company (TMC)"},
             {"code": "CORPTRAVEL", "name": "Corporate Travel Program"},
-            {"code": "DESTMGMT", "name": "Destination Management Company (DMC)"},
-            {"code": "TOUROPRT", "name": "Tour Operator"},
+            {"code": "TOUROPRT", "name": "Tour Operator / DMC"},
             {"code": "BEDBANK", "name": "Bed Bank / Wholesaler"},
             {"code": "DIRECTDIST", "name": "Direct Distribution Channel"},
             {"code": "REVMGMT", "name": "Revenue Management System (RMS)"},
@@ -489,9 +482,6 @@
             {"code": "CASINO_ATT", "name": "Casino / Gaming Attraction"},
             {"code": "SKIRESORT", "name": "Ski Resort"},
             {"code": "GOLFCOURSE", "name": "Golf Course"},
-            {"code": "MARINA", "name": "Marina / Nautical Attraction"},
-            {"code": "DINEEXP", "name": "Dining Experience / Restaurant Attraction"},
-            {"code": "ESCAPE", "name": "Escape Room / Interactive Entertainment"},
             {"code": "TOURATTRACT", "name": "Tour / Guided Experience"},
             {"code": "ECOTRAVEL", "name": "Ecotourism / Nature Experience"},
             {"code": "FESTIVALEV", "name": "Festival & Events"}
@@ -505,7 +495,6 @@
             {"code": "CRUISELOY", "name": "Cruise Loyalty Program"},
             {"code": "ALLIANCES", "name": "Global Alliance (Star Alliance / Oneworld / SkyTeam)"},
             {"code": "MILES", "name": "Miles & Points Currency"},
-            {"code": "COBRANDED", "name": "Co-Branded Credit Card (Travel)"},
             {"code": "ELITESTATUS", "name": "Elite Status Tier"},
             {"code": "POINTSSALE", "name": "Points Monetization / Miles Sales"},
             {"code": "PARTNERLOYAL", "name": "Partnership Redemption Network"}
@@ -532,7 +521,6 @@
             {"code": "BEACHRESORT", "name": "Beach / Coastal Resort"},
             {"code": "MOUNTAINRES", "name": "Mountain / Alpine Resort"},
             {"code": "URBANHOTEL", "name": "Urban / Metro Market"},
-            {"code": "AIRPORTS", "name": "Airport Corridor"},
             {"code": "GATEWAY", "name": "Gateway City"},
             {"code": "INTLDEST", "name": "International Destination"}
           ]

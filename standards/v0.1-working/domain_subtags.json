@@ -675,5 +675,653 @@
         }
       ]
     }
+  ,
+    {
+      "sector_name": "Aerospace & Defense",
+      "sector_code": "AD",
+      "dimensions": [
+        {
+          "dimension": "Aircraft Platforms",
+          "subtags": [
+            {"code": "FIXEDWING", "name": "Fixed Wing Aircraft"},
+            {"code": "ROTOR", "name": "Rotorcraft"},
+            {"code": "FIGHTER", "name": "Fighter Aircraft"},
+            {"code": "BOMBER", "name": "Bomber Aircraft"},
+            {"code": "TANKER", "name": "Tanker Aircraft"},
+            {"code": "TRANSPORT", "name": "Military Transport Aircraft"},
+            {"code": "PATROL", "name": "Maritime Patrol Aircraft"},
+            {"code": "ISR", "name": "ISR Aircraft"},
+            {"code": "TRAINER", "name": "Trainer Aircraft"},
+            {"code": "NARROWBODY", "name": "Narrowbody Commercial Aircraft"},
+            {"code": "WIDEBODY", "name": "Widebody Commercial Aircraft"},
+            {"code": "REGIONAL_JET", "name": "Regional Jet"},
+            {"code": "BIZJET", "name": "Business Jet"},
+            {"code": "TURBOPROP", "name": "Turboprop Aircraft"},
+            {"code": "HELICOPTER", "name": "Helicopter"},
+            {"code": "TILTROTOR", "name": "Tiltrotor Aircraft"},
+            {"code": "UAV", "name": "Unmanned Aerial Vehicle (UAV / Drone)"},
+            {"code": "UAS", "name": "Unmanned Aerial System (UAS)"},
+            {"code": "UCAV", "name": "Unmanned Combat Air Vehicle (UCAV)"},
+            {"code": "EVTOL", "name": "Electric Vertical Takeoff and Landing Aircraft (eVTOL)"},
+            {"code": "SUPERSONIC", "name": "Supersonic Aircraft"},
+            {"code": "HYPERSONIC", "name": "Hypersonic Vehicle"},
+            {"code": "SEAPLANE", "name": "Seaplane / Amphibious Aircraft"}
+          ]
+        },
+        {
+          "dimension": "Space Systems",
+          "subtags": [
+            {"code": "SATELLITE", "name": "Satellite"},
+            {"code": "LAUNCH_VEHICLE", "name": "Launch Vehicle"},
+            {"code": "SPACECRAFT", "name": "Spacecraft"},
+            {"code": "SPACE_STATION", "name": "Space Station"},
+            {"code": "SMALLSAT", "name": "Small Satellite / CubeSat"},
+            {"code": "GEO_SAT", "name": "Geostationary Satellite (GEO)"},
+            {"code": "LEO_CONSTELL", "name": "Low Earth Orbit Constellation (LEO)"},
+            {"code": "MEO_SAT", "name": "Medium Earth Orbit Satellite (MEO)"},
+            {"code": "REENTRY", "name": "Reentry Vehicle"},
+            {"code": "ROCKET_ENGINE", "name": "Rocket Engine / Propulsion"},
+            {"code": "GROUND_SEGMENT", "name": "Ground Segment / Mission Control"},
+            {"code": "SATCOM", "name": "Satellite Communications (SATCOM)"},
+            {"code": "GPS_GNSS", "name": "GPS / GNSS Navigation System"},
+            {"code": "EARTHOBS", "name": "Earth Observation Payload"}
+          ]
+        },
+        {
+          "dimension": "Defense Platforms & Weapons",
+          "subtags": [
+            {"code": "MISSILE", "name": "Missile System"},
+            {"code": "MUNITION", "name": "Munition / Ordnance"},
+            {"code": "TORPEDO", "name": "Torpedo"},
+            {"code": "RADAR", "name": "Radar System"},
+            {"code": "EW_SYSTEM", "name": "Electronic Warfare System"},
+            {"code": "C2_SYSTEM", "name": "Command and Control System (C2)"},
+            {"code": "C4ISR", "name": "C4ISR System"},
+            {"code": "MILCOMM", "name": "Military Communications System"},
+            {"code": "SATGUIDANCE", "name": "Satellite Guidance System"},
+            {"code": "NAVAL_VESSEL", "name": "Naval Vessel"},
+            {"code": "SUBMARINE", "name": "Submarine"},
+            {"code": "GROUND_VEHICLE", "name": "Military Ground Vehicle"},
+            {"code": "ARMORED_VEHICLE", "name": "Armored Vehicle"},
+            {"code": "ARTILLERY", "name": "Artillery System"},
+            {"code": "COUNTER_UAS", "name": "Counter-UAS System"},
+            {"code": "BMD", "name": "Ballistic Missile Defense (BMD)"},
+            {"code": "DIRECTED_ENERGY", "name": "Directed Energy Weapon"},
+            {"code": "CYBER_SYS", "name": "Cyber / Electronic Offense System"},
+            {"code": "NIGHT_VISION", "name": "Night Vision / Electro-Optical System"},
+            {"code": "SONAR", "name": "Sonar System"},
+            {"code": "ARMOR", "name": "Armor / Protection System"},
+            {"code": "NBC_PROTECT", "name": "NBC Protection System"}
+          ]
+        },
+        {
+          "dimension": "Propulsion",
+          "subtags": [
+            {"code": "TURBOFAN", "name": "Turbofan Engine"},
+            {"code": "TURBOJET", "name": "Turbojet Engine"},
+            {"code": "TURBOPROP_ENG", "name": "Turboprop Engine"},
+            {"code": "TURBOSHAFT", "name": "Turboshaft Engine"},
+            {"code": "RAMJET", "name": "Ramjet / Scramjet Engine"},
+            {"code": "PISTON_ENG", "name": "Piston Engine (Aviation)"},
+            {"code": "ELECTRIC_PROP", "name": "Electric Propulsion System (Aviation)"},
+            {"code": "APU", "name": "Auxiliary Power Unit (APU)"},
+            {"code": "ENGINE_NACELLE", "name": "Engine Nacelle"},
+            {"code": "THRUST_REVERSER", "name": "Thrust Reverser"}
+          ]
+        },
+        {
+          "dimension": "Avionics & Onboard Systems",
+          "subtags": [
+            {"code": "AVIONICS", "name": "Avionics Suite"},
+            {"code": "FMS", "name": "Flight Management System (FMS)"},
+            {"code": "AUTOPILOT", "name": "Autopilot System"},
+            {"code": "FBW", "name": "Fly-by-Wire System"},
+            {"code": "INERTIAL_NAV", "name": "Inertial Navigation System (INS)"},
+            {"code": "ECS", "name": "Environmental Control System (ECS)"},
+            {"code": "HYDRAULICS", "name": "Aircraft Hydraulic System"},
+            {"code": "LANDING_GEAR", "name": "Landing Gear System"},
+            {"code": "FUEL_SYSTEM", "name": "Aircraft Fuel System"},
+            {"code": "ELECTRICAL_SYS", "name": "Aircraft Electrical System"},
+            {"code": "IFF", "name": "Identification Friend or Foe (IFF)"},
+            {"code": "HMD", "name": "Helmet-Mounted Display (HMD)"},
+            {"code": "HUD", "name": "Head-Up Display (HUD)"},
+            {"code": "COCKPIT", "name": "Cockpit / Flight Deck System"},
+            {"code": "EGRESS", "name": "Ejection Seat / Egress System"},
+            {"code": "AIRFRAME", "name": "Airframe Structure"}
+          ]
+        },
+        {
+          "dimension": "MRO & Sustainment",
+          "subtags": [
+            {"code": "MRO", "name": "Maintenance, Repair & Overhaul (MRO)"},
+            {"code": "DEPOT_MRO", "name": "Depot-Level MRO"},
+            {"code": "LINE_MRO", "name": "Line Maintenance"},
+            {"code": "HEAVY_MX", "name": "Heavy Maintenance Check"},
+            {"code": "ENGINE_SHOP", "name": "Engine Shop Visit"},
+            {"code": "COMPONENT_MRO", "name": "Component MRO"},
+            {"code": "PBL", "name": "Performance-Based Logistics (PBL)"},
+            {"code": "CLS", "name": "Contractor Logistics Support (CLS)"},
+            {"code": "SUPPLY_CHAIN_AD", "name": "Aerospace Supply Chain"},
+            {"code": "SPARES", "name": "Spare Parts / Rotable Pool"},
+            {"code": "AOG", "name": "Aircraft on Ground (AOG) Support"},
+            {"code": "AIRWORTHINESS", "name": "Airworthiness / Return to Service"}
+          ]
+        },
+        {
+          "dimension": "DoD Programs & Contracting",
+          "subtags": [
+            {"code": "DOD_PROGRAM", "name": "DoD Acquisition Program"},
+            {"code": "IDIQ_AD", "name": "IDIQ Contract (Aerospace & Defense)"},
+            {"code": "LPTA", "name": "LPTA Contract"},
+            {"code": "SBIR", "name": "SBIR / STTR Program"},
+            {"code": "OTA", "name": "Other Transaction Authority (OTA)"},
+            {"code": "FMS_PROG", "name": "Foreign Military Sales (FMS)"},
+            {"code": "DCS", "name": "Direct Commercial Sales (DCS)"},
+            {"code": "ITAR", "name": "ITAR Compliance"},
+            {"code": "EAR_AD", "name": "Export Administration Regulations (EAR)"},
+            {"code": "NAVSEA", "name": "NAVSEA Program"},
+            {"code": "NAVAIR", "name": "NAVAIR Program"},
+            {"code": "AFRL", "name": "Air Force Research Laboratory (AFRL) Program"},
+            {"code": "SOCOM_PROG", "name": "SOCOM / Special Operations Program"},
+            {"code": "DARPA_PROG", "name": "DARPA Program"}
+          ]
+        },
+        {
+          "dimension": "Regulatory & Quality Standards (AD)",
+          "subtags": [
+            {"code": "FAR_DFARS", "name": "FAR / DFARS Regulation"},
+            {"code": "AS9100", "name": "AS9100 Quality Standard"},
+            {"code": "AS9110", "name": "AS9110 MRO Quality Standard"},
+            {"code": "NADCAP", "name": "NADCAP Accreditation"},
+            {"code": "FAA_CERT", "name": "FAA Certification / Type Certificate"},
+            {"code": "EASA_CERT", "name": "EASA Certification"},
+            {"code": "MIL_SPEC", "name": "Military Specification (MIL-SPEC)"},
+            {"code": "DO178", "name": "DO-178 Software Standard"},
+            {"code": "DO254", "name": "DO-254 Hardware Standard"},
+            {"code": "AMS_SPEC", "name": "AMS Material Specification"},
+            {"code": "CMMC", "name": "CMMC Cybersecurity Standard"},
+            {"code": "DISA_STIG", "name": "DISA STIG Security Standard"}
+          ]
+        },
+        {
+          "dimension": "Materials & Aerospace Manufacturing",
+          "subtags": [
+            {"code": "COMPOSITE", "name": "Composite Materials (Aerospace)"},
+            {"code": "TITANIUM", "name": "Titanium / Titanium Alloys"},
+            {"code": "SUPERALLOY", "name": "Nickel Superalloy"},
+            {"code": "ALUM_ALLOY", "name": "Aluminum Alloy (Aerospace Grade)"},
+            {"code": "AM_AERO", "name": "Additive Manufacturing (Aerospace)"},
+            {"code": "FORGING_AD", "name": "Aerospace Forging"},
+            {"code": "CASTING_AD", "name": "Aerospace Casting"},
+            {"code": "COATING_AD", "name": "Aerospace Coating / Surface Treatment"},
+            {"code": "NDT", "name": "Non-Destructive Testing (NDT)"},
+            {"code": "DFM_AD", "name": "Design for Manufacturability (Aerospace)"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Automotive",
+      "sector_code": "AUTO",
+      "dimensions": [
+        {
+          "dimension": "Vehicle Platforms",
+          "subtags": [
+            {"code": "PASSENGER_CAR", "name": "Passenger Car"},
+            {"code": "SUV", "name": "SUV / Crossover"},
+            {"code": "PICKUP_TRUCK", "name": "Pickup Truck"},
+            {"code": "MINIVAN", "name": "Minivan / MPV"},
+            {"code": "COMMERCIAL_VEH", "name": "Commercial Vehicle"},
+            {"code": "LIGHT_TRUCK", "name": "Light-Duty Truck"},
+            {"code": "MEDIUM_TRUCK", "name": "Medium-Duty Truck"},
+            {"code": "HEAVY_TRUCK", "name": "Heavy-Duty Truck"},
+            {"code": "BUS_COACH", "name": "Bus / Coach"},
+            {"code": "MOTORCYCLE", "name": "Motorcycle / Powersport Vehicle"},
+            {"code": "BEV", "name": "Battery Electric Vehicle (BEV)"},
+            {"code": "PHEV", "name": "Plug-In Hybrid Vehicle (PHEV)"},
+            {"code": "HEV", "name": "Hybrid Electric Vehicle (HEV)"},
+            {"code": "FCEV", "name": "Fuel Cell Electric Vehicle (FCEV)"},
+            {"code": "AUTONOMOUS_VEH", "name": "Autonomous Vehicle"},
+            {"code": "CONNECTED_VEH", "name": "Connected Vehicle"},
+            {"code": "PERFORMANCE_CAR", "name": "Performance / Luxury Vehicle"},
+            {"code": "FLEET_VEH", "name": "Fleet Vehicle"}
+          ]
+        },
+        {
+          "dimension": "Powertrain & Drivetrain",
+          "subtags": [
+            {"code": "ICE", "name": "Internal Combustion Engine (ICE)"},
+            {"code": "GASOLINE_ENG", "name": "Gasoline Engine"},
+            {"code": "DIESEL_ENG", "name": "Diesel Engine"},
+            {"code": "TRANSMISSION", "name": "Transmission"},
+            {"code": "AT_TRANSMISSION", "name": "Automatic Transmission"},
+            {"code": "DCT", "name": "Dual-Clutch Transmission (DCT)"},
+            {"code": "CVT", "name": "Continuously Variable Transmission (CVT)"},
+            {"code": "AXLE_DRIVELINE", "name": "Axle / Driveline"},
+            {"code": "AWD_4WD", "name": "AWD / 4WD System"},
+            {"code": "ELECTRIC_MOTOR", "name": "Electric Motor (Automotive)"},
+            {"code": "INVERTER", "name": "Inverter / Power Electronics (Automotive)"},
+            {"code": "BATTERY_PACK", "name": "Battery Pack / Cell"},
+            {"code": "BMS", "name": "Battery Management System (BMS)"},
+            {"code": "CHARGING_SYSTEM", "name": "Charging System / EVSE"},
+            {"code": "FUEL_CELL_SYS", "name": "Fuel Cell System (Automotive)"},
+            {"code": "EXHAUST_SYSTEM", "name": "Exhaust System"},
+            {"code": "EMISSION_CTRL", "name": "Emission Control System"},
+            {"code": "TURBO_SUPER", "name": "Turbocharger / Supercharger"}
+          ]
+        },
+        {
+          "dimension": "Body, Chassis & Safety",
+          "subtags": [
+            {"code": "BODY_STRUCT", "name": "Body Structure / Body-in-White (BIW)"},
+            {"code": "CHASSIS", "name": "Chassis / Frame"},
+            {"code": "SUSPENSION", "name": "Suspension System"},
+            {"code": "STEERING", "name": "Steering System"},
+            {"code": "BRAKING", "name": "Braking System"},
+            {"code": "ABS_ESC", "name": "ABS / Electronic Stability Control"},
+            {"code": "AIRBAG", "name": "Airbag System"},
+            {"code": "SEATBELT", "name": "Seatbelt / Restraint System"},
+            {"code": "BUMPER_FASCIA", "name": "Bumper / Fascia"},
+            {"code": "DOOR_MODULE", "name": "Door Module / Closure System"},
+            {"code": "GLAZING", "name": "Automotive Glazing / Windshield"},
+            {"code": "SEAT_SYSTEM", "name": "Seat System"},
+            {"code": "ROOF_SYSTEM", "name": "Roof System / Sunroof"},
+            {"code": "CRASHWORTHINESS", "name": "Crashworthiness / Passive Safety"}
+          ]
+        },
+        {
+          "dimension": "Electronics & Software (Automotive)",
+          "subtags": [
+            {"code": "ECU", "name": "Electronic Control Unit (ECU)"},
+            {"code": "ADAS", "name": "Advanced Driver Assistance Systems (ADAS)"},
+            {"code": "INFOTAINMENT", "name": "Infotainment / Head Unit"},
+            {"code": "TELEMATICS", "name": "Telematics System"},
+            {"code": "OTA_UPDATE", "name": "Over-the-Air (OTA) Software Update"},
+            {"code": "VEHICLE_SW", "name": "Vehicle Software / OS"},
+            {"code": "SENSOR_LIDAR", "name": "LiDAR Sensor"},
+            {"code": "SENSOR_RADAR", "name": "Radar Sensor (Automotive)"},
+            {"code": "SENSOR_CAMERA", "name": "Camera Sensor System"},
+            {"code": "V2X", "name": "V2X Communication"},
+            {"code": "CAN_BUS", "name": "CAN Bus / Vehicle Network"},
+            {"code": "FUNCTIONAL_SAFE", "name": "Functional Safety (ISO 26262)"},
+            {"code": "CYBERSEC_AUTO", "name": "Vehicle Cybersecurity (UN R155)"},
+            {"code": "DIGITAL_COCKPIT", "name": "Digital Cockpit / Instrument Cluster"}
+          ]
+        },
+        {
+          "dimension": "OEMs, Suppliers & Components",
+          "subtags": [
+            {"code": "OEM", "name": "Original Equipment Manufacturer (OEM)"},
+            {"code": "TIER1", "name": "Tier 1 Supplier"},
+            {"code": "TIER2", "name": "Tier 2 / Tier 3 Supplier"},
+            {"code": "STAMPING_AUTO", "name": "Metal Stamping (Automotive)"},
+            {"code": "PLASTICS_TRIM", "name": "Plastics / Interior Trim"},
+            {"code": "CASTING_AUTO", "name": "Die Casting (Automotive)"},
+            {"code": "FORGING_AUTO", "name": "Forging (Automotive)"},
+            {"code": "WIRING_HARNESS", "name": "Wiring Harness"},
+            {"code": "GLASS_AUTO", "name": "Automotive Glass"},
+            {"code": "THERMAL_MGMT", "name": "Thermal Management System"},
+            {"code": "FASTENERS_AUTO", "name": "Fasteners / Hardware (Automotive)"},
+            {"code": "RUBBER_SEALS", "name": "Rubber / Seals / Gaskets (Automotive)"},
+            {"code": "TIRES", "name": "Tires"},
+            {"code": "WHEELS_RIMS", "name": "Wheels / Rims"},
+            {"code": "TPMS", "name": "Tire Pressure Monitoring System (TPMS)"}
+          ]
+        },
+        {
+          "dimension": "Retail, Dealerships & Aftermarket",
+          "subtags": [
+            {"code": "DEALERSHIP", "name": "Dealership / Franchise Dealer"},
+            {"code": "NEW_CAR_SALES", "name": "New Vehicle Sales"},
+            {"code": "USED_CAR", "name": "Used Vehicle / Certified Pre-Owned (CPO)"},
+            {"code": "F_AND_I", "name": "Finance & Insurance (F&I)"},
+            {"code": "FIXED_OPS", "name": "Fixed Operations (Service & Parts)"},
+            {"code": "AFTERMARKET", "name": "Aftermarket Parts & Accessories"},
+            {"code": "COLLISION_REPAIR", "name": "Collision Repair"},
+            {"code": "AUTO_AUCTION", "name": "Auto Auction / Remarketing"},
+            {"code": "FLEET_MGMT", "name": "Fleet Management / Mobility Service"},
+            {"code": "RENTAL_CAR", "name": "Rental Car / Short-Term Rental"},
+            {"code": "AUTO_INSURANCE", "name": "Auto Insurance"}
+          ]
+        },
+        {
+          "dimension": "Regulatory & Standards (Automotive)",
+          "subtags": [
+            {"code": "CAFE_STANDARD", "name": "CAFE Fuel Economy Standard"},
+            {"code": "EURO_NCAP", "name": "Euro NCAP / NHTSA Safety Rating"},
+            {"code": "IATF16949", "name": "IATF 16949 Quality Standard"},
+            {"code": "REACH_ROHS", "name": "REACH / RoHS Compliance (Automotive)"},
+            {"code": "HOMOLOGATION", "name": "Vehicle Homologation / Type Approval"},
+            {"code": "RECALL", "name": "Safety Recall / Field Action"},
+            {"code": "WARRANTY_AUTO", "name": "Warranty Program (Automotive)"},
+            {"code": "ZEV_MANDATE", "name": "Zero Emission Vehicle (ZEV) Mandate"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Manufacturing",
+      "sector_code": "MFG",
+      "dimensions": [
+        {
+          "dimension": "Production Processes",
+          "subtags": [
+            {"code": "MACHINING", "name": "Machining"},
+            {"code": "CNC", "name": "CNC Machining"},
+            {"code": "STAMPING_MFG", "name": "Metal Stamping"},
+            {"code": "WELDING", "name": "Welding"},
+            {"code": "CASTING_MFG", "name": "Casting"},
+            {"code": "FORGING_MFG", "name": "Forging"},
+            {"code": "EXTRUSION", "name": "Extrusion"},
+            {"code": "INJECTION_MOLD", "name": "Injection Molding"},
+            {"code": "BLOW_MOLD", "name": "Blow Molding"},
+            {"code": "THERMOFORM", "name": "Thermoforming"},
+            {"code": "FABRICATION", "name": "Metal Fabrication"},
+            {"code": "SHEET_METAL", "name": "Sheet Metal Forming"},
+            {"code": "GRINDING", "name": "Grinding / Finishing"},
+            {"code": "HEAT_TREAT", "name": "Heat Treatment"},
+            {"code": "SURFACE_TREAT", "name": "Surface Treatment / Plating"},
+            {"code": "PAINTING_COAT", "name": "Painting / Powder Coating"},
+            {"code": "ASSEMBLY_LINE", "name": "Assembly Line"},
+            {"code": "ADDITIVE_MFG", "name": "Additive Manufacturing / 3D Printing"},
+            {"code": "LASER_CUTTING", "name": "Laser Cutting / Waterjet Cutting"},
+            {"code": "ELECTRONICS_MFG", "name": "Electronics Manufacturing / PCB Assembly"},
+            {"code": "CONTRACT_MFG", "name": "Contract Manufacturing"},
+            {"code": "CONVERTING", "name": "Converting / Slitting / Laminating"},
+            {"code": "COMPOUNDING", "name": "Compounding / Blending"}
+          ]
+        },
+        {
+          "dimension": "Lean, Operations & Continuous Improvement",
+          "subtags": [
+            {"code": "LEAN_MFG", "name": "Lean Manufacturing"},
+            {"code": "SIX_SIGMA", "name": "Six Sigma"},
+            {"code": "KAIZEN", "name": "Kaizen / Continuous Improvement"},
+            {"code": "5S", "name": "5S Workplace Organization"},
+            {"code": "VSM", "name": "Value Stream Mapping (VSM)"},
+            {"code": "TPM", "name": "Total Productive Maintenance (TPM)"},
+            {"code": "KANBAN", "name": "Kanban System"},
+            {"code": "JIT", "name": "Just-in-Time (JIT) Production"},
+            {"code": "OEE", "name": "Overall Equipment Effectiveness (OEE)"},
+            {"code": "SMED", "name": "SMED / Changeover Reduction"},
+            {"code": "POKA_YOKE", "name": "Poka-Yoke / Error Proofing"},
+            {"code": "ANDON", "name": "Andon / Visual Management System"},
+            {"code": "HEIJUNKA", "name": "Heijunka / Production Leveling"},
+            {"code": "TAKT_TIME", "name": "Takt Time Management"}
+          ]
+        },
+        {
+          "dimension": "Quality Systems",
+          "subtags": [
+            {"code": "QMS", "name": "Quality Management System (QMS)"},
+            {"code": "ISO9001", "name": "ISO 9001"},
+            {"code": "ISO13485", "name": "ISO 13485 (Medical Device Manufacturing)"},
+            {"code": "APQP", "name": "Advanced Product Quality Planning (APQP)"},
+            {"code": "PPAP", "name": "Production Part Approval Process (PPAP)"},
+            {"code": "FMEA", "name": "Failure Mode and Effects Analysis (FMEA)"},
+            {"code": "SPC", "name": "Statistical Process Control (SPC)"},
+            {"code": "INSP_METROL", "name": "Inspection / Metrology"},
+            {"code": "CMM", "name": "Coordinate Measuring Machine (CMM)"},
+            {"code": "FIRST_ARTICLE", "name": "First Article Inspection (FAI)"},
+            {"code": "CORRECTIVE_ACT", "name": "Corrective Action System (CAPA)"},
+            {"code": "NONCONFORMANCE", "name": "Nonconformance Management"},
+            {"code": "WARRANTY_MFG", "name": "Warranty / Field Returns Analysis"},
+            {"code": "SUPPLIER_QA", "name": "Supplier Quality Management"}
+          ]
+        },
+        {
+          "dimension": "Tooling & Equipment",
+          "subtags": [
+            {"code": "TOOLING", "name": "Tooling / Dies / Fixtures"},
+            {"code": "JIGS", "name": "Jigs / Assembly Fixtures"},
+            {"code": "MOLD_TOOL", "name": "Mold / Die Tooling"},
+            {"code": "CUTTING_TOOLS", "name": "Cutting Tools"},
+            {"code": "PRESS_EQUIP", "name": "Press Equipment"},
+            {"code": "ROBOT_WELD", "name": "Robotic Welding Cell"},
+            {"code": "CONVEYOR_MFG", "name": "Conveyor System (Manufacturing)"},
+            {"code": "CAPITAL_EQUIP", "name": "Capital Equipment"},
+            {"code": "MACHINE_TOOL", "name": "Machine Tool"},
+            {"code": "TEST_EQUIP", "name": "Test Equipment / End-of-Line Testing"},
+            {"code": "CLEAN_ROOM_MFG", "name": "Cleanroom Facility (Manufacturing)"}
+          ]
+        },
+        {
+          "dimension": "Supply Chain & Procurement",
+          "subtags": [
+            {"code": "PROCUREMENT", "name": "Procurement / Sourcing"},
+            {"code": "STRATEGIC_SRC", "name": "Strategic Sourcing"},
+            {"code": "RAW_MATERIAL", "name": "Raw Material"},
+            {"code": "COMMODITY_MGMT", "name": "Commodity Management"},
+            {"code": "SOLE_SOURCE", "name": "Sole Source Supplier"},
+            {"code": "DUAL_SOURCE", "name": "Dual Sourcing Strategy"},
+            {"code": "NEARSHORE", "name": "Nearshoring / Reshoring"},
+            {"code": "OFFSHORE_SRC", "name": "Offshore Sourcing"},
+            {"code": "SUPPLY_RISK", "name": "Supply Chain Risk Management"},
+            {"code": "VENDOR_MGMT", "name": "Vendor Management"},
+            {"code": "INBOUND_LOG", "name": "Inbound Logistics"},
+            {"code": "OUTBOUND_LOG", "name": "Outbound Logistics"},
+            {"code": "MAKE_BUY", "name": "Make vs. Buy Decision"}
+          ]
+        },
+        {
+          "dimension": "Facilities & Plant Operations",
+          "subtags": [
+            {"code": "PLANT_LAYOUT", "name": "Plant Layout / Floor Plan"},
+            {"code": "CELL_MFG", "name": "Cellular Manufacturing"},
+            {"code": "MAINTENANCE_MFG", "name": "Preventive / Predictive Maintenance"},
+            {"code": "FACILITY_MGMT", "name": "Facility Management"},
+            {"code": "ENERGY_MGMT", "name": "Energy Management (Manufacturing)"},
+            {"code": "WASTE_MGMT_MFG", "name": "Waste Management / Scrap (Manufacturing)"},
+            {"code": "EHS", "name": "Environmental Health & Safety (EHS)"},
+            {"code": "OSHA_COMP", "name": "OSHA Compliance (Manufacturing)"},
+            {"code": "CAPACITY_PLAN", "name": "Capacity Planning"},
+            {"code": "SHIFT_SCHED", "name": "Shift Scheduling / Labor Planning"}
+          ]
+        },
+        {
+          "dimension": "Digital & Industry 4.0",
+          "subtags": [
+            {"code": "MES", "name": "Manufacturing Execution System (MES)"},
+            {"code": "ERP_MFG", "name": "ERP System (Manufacturing)"},
+            {"code": "PLM", "name": "Product Lifecycle Management (PLM)"},
+            {"code": "CAD_CAM", "name": "CAD / CAM Software"},
+            {"code": "SCADA_MFG", "name": "SCADA System (Manufacturing)"},
+            {"code": "IIOT", "name": "Industrial IoT (IIoT)"},
+            {"code": "DIGITAL_TWIN", "name": "Digital Twin"},
+            {"code": "AUTOMATION_MFG", "name": "Factory Automation"},
+            {"code": "COBOTS_MFG", "name": "Collaborative Robots / Cobots (Manufacturing)"},
+            {"code": "PREDICTIVE_MX", "name": "Predictive Maintenance Analytics"},
+            {"code": "VISION_INSPECT", "name": "Machine Vision Inspection"},
+            {"code": "WMS_MFG", "name": "Warehouse Management System (WMS)"},
+            {"code": "TRACEABILITY", "name": "Product Traceability System"}
+          ]
+        },
+        {
+          "dimension": "Product Development & Engineering",
+          "subtags": [
+            {"code": "NPD", "name": "New Product Development (NPD)"},
+            {"code": "DFM", "name": "Design for Manufacturability (DFM)"},
+            {"code": "PROTOTYPING", "name": "Prototyping / Pilot Production"},
+            {"code": "BOM", "name": "Bill of Materials (BOM)"},
+            {"code": "ECO", "name": "Engineering Change Order (ECO)"},
+            {"code": "PRODUCT_LINE", "name": "Product Line / SKU Portfolio"},
+            {"code": "CUSTOM_MFG", "name": "Custom / Configure-to-Order Manufacturing"},
+            {"code": "WORK_INSTR", "name": "Manufacturing Specification / Work Instruction"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Industrials",
+      "sector_code": "IND",
+      "dimensions": [
+        {
+          "dimension": "Industrial Equipment & Machinery",
+          "subtags": [
+            {"code": "PUMPS", "name": "Pumps"},
+            {"code": "COMPRESSORS", "name": "Compressors"},
+            {"code": "VALVES", "name": "Valves"},
+            {"code": "ACTUATORS", "name": "Actuators"},
+            {"code": "GEARBOXES", "name": "Gearboxes / Gear Drives"},
+            {"code": "BEARINGS", "name": "Bearings"},
+            {"code": "MOTORS_IND", "name": "Electric Motors (Industrial)"},
+            {"code": "GENERATORS", "name": "Generators"},
+            {"code": "DRIVES_VFD", "name": "Variable Frequency Drives (VFD)"},
+            {"code": "HEAT_EXCH", "name": "Heat Exchangers"},
+            {"code": "FANS_BLOWERS", "name": "Fans / Blowers"},
+            {"code": "MIXERS", "name": "Mixers / Agitators"},
+            {"code": "CONVEYORS_IND", "name": "Conveyors (Industrial)"},
+            {"code": "HOISTS_CRANES", "name": "Hoists / Cranes / Lifting Equipment"},
+            {"code": "BOILERS_IND", "name": "Boilers (Industrial)"},
+            {"code": "PRESSURE_VESSEL", "name": "Pressure Vessels"},
+            {"code": "TANKS_STORAGE", "name": "Tanks / Storage Equipment"},
+            {"code": "METERING", "name": "Metering Equipment"},
+            {"code": "LEVEL_INSTR", "name": "Level Instrumentation"},
+            {"code": "FLOW_INSTR", "name": "Flow Instrumentation"},
+            {"code": "PRESSURE_INSTR", "name": "Pressure Instrumentation"},
+            {"code": "TEMP_INSTR", "name": "Temperature Instrumentation"}
+          ]
+        },
+        {
+          "dimension": "HVAC & Building Systems",
+          "subtags": [
+            {"code": "HVAC_IND", "name": "HVAC System (Industrial / Commercial)"},
+            {"code": "CHILLERS", "name": "Chillers"},
+            {"code": "COOLING_TOWERS", "name": "Cooling Towers"},
+            {"code": "AHU", "name": "Air Handling Units (AHU)"},
+            {"code": "RTU", "name": "Rooftop Units (RTU)"},
+            {"code": "BOILER_HVAC", "name": "Boiler (HVAC)"},
+            {"code": "DUCTWORK_IND", "name": "Ductwork / Air Distribution (Industrial)"},
+            {"code": "REFRIGERANT", "name": "Refrigerants"},
+            {"code": "BUILDING_CTRL", "name": "Building Automation / Controls"},
+            {"code": "BMS_HVAC", "name": "Building Management System (BMS)"},
+            {"code": "FIRE_SUPPRESS", "name": "Fire Suppression / Sprinkler System"},
+            {"code": "CLEAN_ENV", "name": "Cleanroom HVAC / Controlled Environment"}
+          ]
+        },
+        {
+          "dimension": "Filtration & Separation",
+          "subtags": [
+            {"code": "FILTRATION", "name": "Filtration Systems"},
+            {"code": "AIR_FILTER", "name": "Air Filtration"},
+            {"code": "LIQUID_FILTER", "name": "Liquid Filtration"},
+            {"code": "DUST_COLLECT", "name": "Dust Collection"},
+            {"code": "MEMBRANE_FILTER", "name": "Membrane Filtration"},
+            {"code": "CENTRIFUGE", "name": "Centrifuge / Separation Equipment"},
+            {"code": "WATER_TREAT_IND", "name": "Water Treatment Equipment (Industrial)"},
+            {"code": "SCRUBBERS", "name": "Scrubbers / Gas Treatment"},
+            {"code": "CYCLONE_SEP", "name": "Cyclone Separators"}
+          ]
+        },
+        {
+          "dimension": "Automation & Robotics",
+          "subtags": [
+            {"code": "INDUSTRIAL_ROBOT", "name": "Industrial Robot"},
+            {"code": "COBOT_IND", "name": "Collaborative Robot (Cobot)"},
+            {"code": "PLC", "name": "Programmable Logic Controller (PLC)"},
+            {"code": "DCS_IND", "name": "Distributed Control System (DCS)"},
+            {"code": "SCADA_IND", "name": "SCADA / HMI System"},
+            {"code": "MOTION_CTRL", "name": "Motion Control System"},
+            {"code": "SERVO_SYSTEM", "name": "Servo System"},
+            {"code": "AGV", "name": "Automated Guided Vehicle (AGV)"},
+            {"code": "AMR", "name": "Autonomous Mobile Robot (AMR)"},
+            {"code": "PROCESS_AUTO", "name": "Process Automation"},
+            {"code": "SAFETY_SYS", "name": "Machine Safety System"},
+            {"code": "VISION_IND", "name": "Industrial Vision / Inspection System"},
+            {"code": "WELD_AUTO_IND", "name": "Automated Welding System (Industrial)"}
+          ]
+        },
+        {
+          "dimension": "MRO Distribution & Industrial Services",
+          "subtags": [
+            {"code": "MRO_DIST", "name": "MRO Distribution"},
+            {"code": "IND_DIST", "name": "Industrial Distribution"},
+            {"code": "VMI", "name": "Vendor-Managed Inventory (VMI)"},
+            {"code": "CONSIGNMENT", "name": "Consignment Inventory Program"},
+            {"code": "CRIB_MGMT", "name": "Crib Management / Tool Crib"},
+            {"code": "SPARE_PARTS_IND", "name": "Spare Parts Management (Industrial)"},
+            {"code": "FIELD_SERVICE", "name": "Field Service / On-Site Support"},
+            {"code": "REPAIR_OVHL", "name": "Repair & Overhaul (Industrial)"},
+            {"code": "AFTERMARKET_IND", "name": "Aftermarket Parts (Industrial)"},
+            {"code": "CATALOG_MGMT", "name": "Product Catalog Management"},
+            {"code": "ECOMM_IND", "name": "Industrial eCommerce / Digital Commerce"}
+          ]
+        },
+        {
+          "dimension": "Power, Energy & Electrical (Industrial)",
+          "subtags": [
+            {"code": "POWER_DIST", "name": "Power Distribution Equipment"},
+            {"code": "SWITCHGEAR", "name": "Switchgear"},
+            {"code": "TRANSFORMERS", "name": "Transformers"},
+            {"code": "UPS_SYSTEM", "name": "Uninterruptible Power Supply (UPS)"},
+            {"code": "BACKUP_POWER", "name": "Backup Power / Genset"},
+            {"code": "MOTOR_CTRL_CTR", "name": "Motor Control Center (MCC)"},
+            {"code": "SOLAR_IND", "name": "Solar / Renewable Energy Systems (Industrial)"},
+            {"code": "COGEN_IND", "name": "Cogeneration / Combined Heat and Power (Industrial)"},
+            {"code": "ENERGY_STOR_IND", "name": "Industrial Energy Storage"}
+          ]
+        },
+        {
+          "dimension": "Fluid Handling & Process Systems",
+          "subtags": [
+            {"code": "PIPING", "name": "Piping Systems"},
+            {"code": "FITTINGS", "name": "Pipe Fittings / Flanges"},
+            {"code": "HYDRAULIC_IND", "name": "Hydraulic Systems (Industrial)"},
+            {"code": "PNEUMATIC", "name": "Pneumatic Systems"},
+            {"code": "HOSES_COUPLINGS", "name": "Hoses / Couplings"},
+            {"code": "SEALS_GASKETS", "name": "Seals / Gaskets (Industrial)"},
+            {"code": "LUBRICATION", "name": "Lubrication Systems / Products"},
+            {"code": "FLOW_CONTROL", "name": "Flow Control Equipment"},
+            {"code": "PROCESS_VESSEL", "name": "Process Vessels / Reactors"},
+            {"code": "CHEM_INJECT", "name": "Chemical Injection Systems"}
+          ]
+        },
+        {
+          "dimension": "Test, Measurement & Instrumentation",
+          "subtags": [
+            {"code": "TEST_MEAS", "name": "Test & Measurement Equipment"},
+            {"code": "CALIBRATION", "name": "Calibration Services / Equipment"},
+            {"code": "DATA_LOGGER", "name": "Data Logger / Recorder"},
+            {"code": "SENSOR_IND", "name": "Industrial Sensor"},
+            {"code": "CONTROL_VALVE", "name": "Control Valve"},
+            {"code": "ANALYTICAL_INSTR", "name": "Analytical Instrumentation"},
+            {"code": "VIBRATION_ANAL", "name": "Vibration Analysis Equipment"},
+            {"code": "THERMAL_IMAGING", "name": "Thermal Imaging / Infrared"},
+            {"code": "CONDITION_MON", "name": "Condition Monitoring System"}
+          ]
+        },
+        {
+          "dimension": "Safety, Standards & Compliance (Industrial)",
+          "subtags": [
+            {"code": "ISO9001_IND", "name": "ISO 9001 (Industrial)"},
+            {"code": "ISO14001", "name": "ISO 14001 Environmental Management"},
+            {"code": "ISO45001", "name": "ISO 45001 Occupational Health & Safety"},
+            {"code": "ATEX_HAZLOC", "name": "ATEX / Hazardous Location Certification"},
+            {"code": "UL_CERT", "name": "UL Certification"},
+            {"code": "CE_MARK", "name": "CE Marking"},
+            {"code": "ASME_STANDARD", "name": "ASME Standard"},
+            {"code": "NFPA_CODE", "name": "NFPA Code"},
+            {"code": "EPA_IND", "name": "EPA Regulations (Industrial)"},
+            {"code": "PSM", "name": "Process Safety Management (PSM)"},
+            {"code": "LOTO", "name": "Lockout / Tagout (LOTO)"}
+          ]
+        },
+        {
+          "dimension": "End Markets (Industrial Equipment)",
+          "subtags": [
+            {"code": "OIL_GAS_IND", "name": "Oil & Gas (Industrial Equipment)"},
+            {"code": "CHEMICAL_PROC", "name": "Chemical Processing"},
+            {"code": "FOOD_PROC_IND", "name": "Food & Beverage Processing"},
+            {"code": "PHARMA_MFG", "name": "Pharmaceutical Manufacturing"},
+            {"code": "PULP_PAPER", "name": "Pulp & Paper"},
+            {"code": "MINING_IND", "name": "Mining & Minerals"},
+            {"code": "WATER_WSTEWTR", "name": "Water / Wastewater Treatment"},
+            {"code": "POWER_GEN", "name": "Power Generation"},
+            {"code": "SEMICON_FAB", "name": "Semiconductor Fabrication"},
+            {"code": "DATA_CENTER_IND", "name": "Data Center Infrastructure"}
+          ]
+        }
+      ]
+    }
   ]
 }
