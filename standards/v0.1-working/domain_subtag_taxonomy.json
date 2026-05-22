@@ -1289,6 +1289,660 @@
           ]
         }
       ]
+    },
+    {
+      "sector_name": "Life Sciences",
+      "sector_code": "LS",
+      "sector_id": 21,
+      "dimensions": [
+        {
+          "dimension": "Therapeutic Area",
+          "subtags": [
+            {"code": "ONCO", "name": "Oncology"},
+            {"code": "HEMONC", "name": "Hematology / Hematologic Oncology"},
+            {"code": "NEURO", "name": "Neurology"},
+            {"code": "PSYCH", "name": "Psychiatry / CNS Psychiatric Disorders"},
+            {"code": "CARDIO", "name": "Cardiovascular"},
+            {"code": "METAB", "name": "Metabolic & Endocrine Disorders"},
+            {"code": "IMMUNO", "name": "Immunology / Autoimmune"},
+            {"code": "INFECT", "name": "Infectious Disease"},
+            {"code": "RESP", "name": "Respiratory / Pulmonology"},
+            {"code": "GI", "name": "Gastroenterology"},
+            {"code": "DERM", "name": "Dermatology"},
+            {"code": "OPHTHO", "name": "Ophthalmology"},
+            {"code": "RARE", "name": "Rare Disease / Orphan Disease"},
+            {"code": "PAIN", "name": "Pain Management"},
+            {"code": "RENAL", "name": "Nephrology / Renal Disease"},
+            {"code": "REPRO", "name": "Reproductive Health / Women's Health"},
+            {"code": "PEDS", "name": "Pediatrics"},
+            {"code": "MUSCULO", "name": "Musculoskeletal / Rheumatology"},
+            {"code": "ENDO_LS", "name": "Endocrinology"},
+            {"code": "HEMATO", "name": "Hematology (non-oncology)"},
+            {"code": "UROLOGY", "name": "Urology"},
+            {"code": "VACCINE", "name": "Vaccines / Prophylactic Immunization"},
+            {"code": "ANTIVIR", "name": "Antiviral"},
+            {"code": "ANTIBIO", "name": "Antibiotics / Antimicrobials"},
+            {"code": "HEPATO", "name": "Hepatology / Liver Disease"},
+            {"code": "NEUROMUS", "name": "Neuromuscular Disease"}
+          ]
+        },
+        {
+          "dimension": "Drug Modality & Molecule Type",
+          "subtags": [
+            {"code": "SMOL", "name": "Small Molecule"},
+            {"code": "MAB", "name": "Monoclonal Antibody"},
+            {"code": "BISPEC", "name": "Bispecific Antibody"},
+            {"code": "ADC", "name": "Antibody-Drug Conjugate"},
+            {"code": "FUSION", "name": "Fusion Protein"},
+            {"code": "PEPTIDE", "name": "Therapeutic Peptide"},
+            {"code": "PROTEIN", "name": "Recombinant Protein / Biologic"},
+            {"code": "ENZYME_LS", "name": "Enzyme Replacement Therapy"},
+            {"code": "MRNA", "name": "mRNA Therapy"},
+            {"code": "GTHERAPY", "name": "Gene Therapy"},
+            {"code": "GENEDIT", "name": "Gene Editing (CRISPR / nuclease-based)"},
+            {"code": "CELLTHY", "name": "Cell Therapy"},
+            {"code": "CART", "name": "CAR-T Cell Therapy"},
+            {"code": "TCRTHY", "name": "TCR-T Cell Therapy"},
+            {"code": "STEMCELL", "name": "Stem Cell Therapy"},
+            {"code": "OLIGO", "name": "Oligonucleotide (ASO / siRNA / miRNA)"},
+            {"code": "SIRNA", "name": "siRNA / RNAi Therapy"},
+            {"code": "LNP", "name": "Lipid Nanoparticle (delivery system)"},
+            {"code": "AAVVECT", "name": "AAV Vector"},
+            {"code": "LENTIVIR", "name": "Lentiviral Vector"},
+            {"code": "BIOSIM", "name": "Biosimilar"},
+            {"code": "GENERIC_LS", "name": "Generic Drug / Paragraph IV"},
+            {"code": "TCELL_ENG", "name": "T-Cell Engager"},
+            {"code": "RADIOLIG", "name": "Radioligand Therapy"},
+            {"code": "PROTDEG", "name": "Targeted Protein Degrader (PROTAC / molecular glue)"}
+          ]
+        },
+        {
+          "dimension": "Regulatory Pathway & Designation",
+          "subtags": [
+            {"code": "NDA", "name": "New Drug Application (NDA)"},
+            {"code": "BLA", "name": "Biologics License Application (BLA)"},
+            {"code": "IND", "name": "Investigational New Drug Application (IND)"},
+            {"code": "K510", "name": "510(k) Premarket Notification"},
+            {"code": "PMA", "name": "Premarket Approval (PMA)"},
+            {"code": "DENOU", "name": "De Novo Classification"},
+            {"code": "BTHERAPY", "name": "Breakthrough Therapy Designation"},
+            {"code": "FASTTRACK", "name": "Fast Track Designation"},
+            {"code": "ACCAPPR", "name": "Accelerated Approval"},
+            {"code": "PRIORREV", "name": "Priority Review Designation"},
+            {"code": "ORPHANDES", "name": "Orphan Drug Designation"},
+            {"code": "RAREPED", "name": "Rare Pediatric Disease Designation"},
+            {"code": "PDUFA", "name": "PDUFA Date / User Fee Act Timeline"},
+            {"code": "REMS", "name": "REMS (Risk Evaluation and Mitigation Strategy)"},
+            {"code": "EUA", "name": "Emergency Use Authorization"},
+            {"code": "MAA", "name": "Marketing Authorization Application (EMA)"},
+            {"code": "PRIME", "name": "PRIME Designation (EMA)"},
+            {"code": "PMDA", "name": "PMDA (Japan Regulatory Authority)"},
+            {"code": "CEMARK", "name": "CE Mark (EU Medical Device)"},
+            {"code": "B2PATH", "name": "505(b)(2) Application Pathway"}
+          ]
+        },
+        {
+          "dimension": "Regulatory Agency",
+          "subtags": [
+            {"code": "FDA", "name": "FDA (U.S. Food and Drug Administration)"},
+            {"code": "EMA", "name": "EMA (European Medicines Agency)"},
+            {"code": "ICH", "name": "ICH (International Council for Harmonisation)"},
+            {"code": "WHO_LS", "name": "WHO (World Health Organization)"},
+            {"code": "CDC_LS", "name": "CDC (U.S. Centers for Disease Control)"},
+            {"code": "NIH", "name": "NIH (National Institutes of Health)"},
+            {"code": "CMS", "name": "CMS (Centers for Medicare & Medicaid Services)"},
+            {"code": "MHRA", "name": "MHRA (UK Medicines & Healthcare products Regulatory Agency)"},
+            {"code": "HEALTH_CA", "name": "Health Canada"},
+            {"code": "TGA", "name": "TGA (Therapeutic Goods Administration, Australia)"},
+            {"code": "NMPA", "name": "NMPA (National Medical Products Administration, China)"}
+          ]
+        },
+        {
+          "dimension": "Clinical Development",
+          "subtags": [
+            {"code": "PH1", "name": "Phase 1 Clinical Trial"},
+            {"code": "PH2", "name": "Phase 2 Clinical Trial"},
+            {"code": "PH3", "name": "Phase 3 Clinical Trial"},
+            {"code": "PH4", "name": "Phase 4 / Post-Marketing Study"},
+            {"code": "RCT", "name": "Randomized Controlled Trial"},
+            {"code": "ENDPOINT", "name": "Clinical Endpoint"},
+            {"code": "PRIMEP", "name": "Primary Endpoint"},
+            {"code": "SECONDP", "name": "Secondary Endpoint"},
+            {"code": "SURROGATE", "name": "Surrogate Endpoint"},
+            {"code": "PFS", "name": "Progression-Free Survival (PFS)"},
+            {"code": "OS", "name": "Overall Survival (OS)"},
+            {"code": "ORR", "name": "Objective Response Rate (ORR)"},
+            {"code": "CRO", "name": "Contract Research Organization (CRO)"},
+            {"code": "BIOSTAT", "name": "Biostatistics / Statistical Analysis Plan"},
+            {"code": "PROTOCOL", "name": "Clinical Trial Protocol"},
+            {"code": "IRB", "name": "IRB / Ethics Committee"},
+            {"code": "SAE", "name": "Serious Adverse Event (SAE)"},
+            {"code": "SAFETY", "name": "Safety Profile / Tolerability"},
+            {"code": "TOXICITY", "name": "Toxicity / Dose-Limiting Toxicity"},
+            {"code": "MTD", "name": "Maximum Tolerated Dose (MTD)"},
+            {"code": "PK", "name": "Pharmacokinetics (PK)"},
+            {"code": "PD_LS", "name": "Pharmacodynamics (PD)"},
+            {"code": "PKPD", "name": "PK/PD Modeling"},
+            {"code": "BIOMARKER", "name": "Biomarker"},
+            {"code": "CDX", "name": "Companion Diagnostic"},
+            {"code": "PATSEL", "name": "Patient Selection / Enrichment Strategy"},
+            {"code": "ADAPTIVE", "name": "Adaptive Trial Design"},
+            {"code": "BASKET", "name": "Basket Trial Design"},
+            {"code": "UMBRELLA", "name": "Umbrella Trial Design"},
+            {"code": "PLATFORM", "name": "Platform Trial Design"}
+          ]
+        },
+        {
+          "dimension": "Manufacturing & CDMO",
+          "subtags": [
+            {"code": "CDMO", "name": "Contract Development and Manufacturing Organization (CDMO)"},
+            {"code": "GMP_LS", "name": "GMP (Good Manufacturing Practice)"},
+            {"code": "CMC", "name": "CMC (Chemistry, Manufacturing, and Controls)"},
+            {"code": "ASEPTIC", "name": "Aseptic Processing / Fill-Finish"},
+            {"code": "UPSTREAM", "name": "Upstream Bioprocessing (cell culture / fermentation)"},
+            {"code": "DOWNSTREAM", "name": "Downstream Bioprocessing (purification / chromatography)"},
+            {"code": "FORMDEV", "name": "Formulation Development"},
+            {"code": "DRUGSUBST", "name": "Drug Substance (API)"},
+            {"code": "DRUGPROD", "name": "Drug Product (finished dosage form)"},
+            {"code": "SCALEMFG", "name": "Scale-Up / Technology Transfer"},
+            {"code": "BIOREACT", "name": "Bioreactor"},
+            {"code": "CHOFERM", "name": "CHO Cell / Mammalian Cell Culture"},
+            {"code": "MICROBIAL", "name": "Microbial Fermentation (E. coli / yeast)"},
+            {"code": "COLDCHAIN_LS", "name": "Cold Chain / Temperature-Controlled Logistics"},
+            {"code": "LYOPHIL", "name": "Lyophilization / Freeze-Drying"},
+            {"code": "PACKDEV", "name": "Primary Packaging / Container-Closure System"},
+            {"code": "CGMPAUD", "name": "cGMP Audit / Warning Letter"},
+            {"code": "WARNINGLTR", "name": "FDA Warning Letter / Form 483"},
+            {"code": "MFGSITE", "name": "Manufacturing Site / Facility"}
+          ]
+        },
+        {
+          "dimension": "Diagnostics & Instruments",
+          "subtags": [
+            {"code": "IVD", "name": "In Vitro Diagnostic (IVD)"},
+            {"code": "PCR", "name": "PCR / qPCR / RT-PCR"},
+            {"code": "NGSSEQ", "name": "Next-Generation Sequencing (NGS)"},
+            {"code": "FLOWCYT", "name": "Flow Cytometry"},
+            {"code": "ELISA", "name": "ELISA / Immunoassay"},
+            {"code": "MASSSPEC", "name": "Mass Spectrometry"},
+            {"code": "MRI", "name": "MRI / Magnetic Resonance Imaging"},
+            {"code": "PETIMG", "name": "PET Imaging"},
+            {"code": "PATHOLOGY", "name": "Digital Pathology / Histopathology"},
+            {"code": "LIQBIO", "name": "Liquid Biopsy"},
+            {"code": "WGSSEQ", "name": "Whole Genome Sequencing"},
+            {"code": "MICROARRAY", "name": "Microarray"},
+            {"code": "POCT", "name": "Point-of-Care Test (POCT)"},
+            {"code": "LAB_AUTO", "name": "Laboratory Automation / Robotics"}
+          ]
+        },
+        {
+          "dimension": "Genomics & Molecular Biology",
+          "subtags": [
+            {"code": "GENOMICS", "name": "Genomics"},
+            {"code": "PROTEOM", "name": "Proteomics"},
+            {"code": "TRANSCR", "name": "Transcriptomics"},
+            {"code": "EPIGEN", "name": "Epigenomics / Epigenetics"},
+            {"code": "MULTIOMICS", "name": "Multi-Omics"},
+            {"code": "SINGLECELL", "name": "Single-Cell Analysis"},
+            {"code": "CRISPR", "name": "CRISPR / Cas9 Gene Editing"},
+            {"code": "SYNBIO", "name": "Synthetic Biology"},
+            {"code": "MICROBIOME", "name": "Microbiome"},
+            {"code": "METAGENOM", "name": "Metagenomics"}
+          ]
+        },
+        {
+          "dimension": "Medical Devices & Digital Health",
+          "subtags": [
+            {"code": "IMPLANT", "name": "Implantable Medical Device"},
+            {"code": "SURGICAL", "name": "Surgical Device / Robotic Surgery"},
+            {"code": "WEARABLE", "name": "Wearable Medical Device"},
+            {"code": "DIGTHX", "name": "Digital Therapeutics (DTx)"},
+            {"code": "SOFTMDX", "name": "Software as a Medical Device (SaMD)"},
+            {"code": "REMOTE", "name": "Remote Patient Monitoring"},
+            {"code": "AI_DX", "name": "AI-Aided Diagnostics"},
+            {"code": "PUMP", "name": "Drug Delivery Pump / Infusion System"},
+            {"code": "CATHETER", "name": "Catheter / Vascular Access Device"},
+            {"code": "STENT", "name": "Stent / Cardiovascular Implant"},
+            {"code": "ORTHO_DEV", "name": "Orthopedic Implant / Joint Replacement"}
+          ]
+        },
+        {
+          "dimension": "Business & Deal Structure",
+          "subtags": [
+            {"code": "LICENSE_LS", "name": "Licensing Agreement / In-License / Out-License"},
+            {"code": "COLLAB", "name": "Collaboration Agreement / Co-Development"},
+            {"code": "MILESTON", "name": "Milestone Payment (clinical / regulatory / commercial)"},
+            {"code": "ROYALTY_LS", "name": "Royalty Structure"},
+            {"code": "SPINOUT", "name": "Spinout / Carve-Out"},
+            {"code": "IPO_LS", "name": "Life Sciences IPO / SPAC"},
+            {"code": "PRICENEGOT", "name": "Drug Pricing / Reimbursement Negotiation"},
+            {"code": "PBMCONTRACT", "name": "PBM / Formulary Contract"},
+            {"code": "PAP", "name": "Patient Assistance Program"},
+            {"code": "LAUNCH", "name": "Commercial Launch"},
+            {"code": "PATENT_LS", "name": "Patent / IP Protection (Life Sciences)"},
+            {"code": "EXCLUSIV", "name": "Market Exclusivity / Data Exclusivity"}
+          ]
+        },
+        {
+          "dimension": "Standards & Regulatory Frameworks",
+          "subtags": [
+            {"code": "GCP", "name": "GCP (Good Clinical Practice)"},
+            {"code": "GLP", "name": "GLP (Good Laboratory Practice)"},
+            {"code": "GMP_STD", "name": "GMP Standard (ICH Q7 / 21 CFR Part 211)"},
+            {"code": "GDP_LS", "name": "GDP (Good Distribution Practice)"},
+            {"code": "ICHQ10", "name": "ICH Q10 Pharmaceutical Quality System"},
+            {"code": "CONSORT", "name": "CONSORT Reporting Standard (RCTs)"},
+            {"code": "CDISC", "name": "CDISC Data Standards"},
+            {"code": "HIPAA", "name": "HIPAA (Health Data Privacy)"},
+            {"code": "ISO13485", "name": "ISO 13485 (Medical Device Quality Management)"},
+            {"code": "IVDR", "name": "EU IVDR (In Vitro Diagnostic Regulation)"},
+            {"code": "MDR_EU", "name": "EU MDR (Medical Device Regulation)"},
+            {"code": "CFR21P11", "name": "21 CFR Part 11 (Electronic Records)"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Chemicals",
+      "sector_code": "CHEM",
+      "sector_id": 5,
+      "dimensions": [
+        {
+          "dimension": "Chemical Segment / End Market",
+          "subtags": [
+            {"code": "SPEC_CH", "name": "Specialty Chemicals"},
+            {"code": "COMMOD_CH", "name": "Commodity Chemicals"},
+            {"code": "AGCHEM", "name": "Agrochemicals / Crop Protection"},
+            {"code": "PETROCHEM", "name": "Petrochemicals"},
+            {"code": "FINECHEM", "name": "Fine Chemicals"},
+            {"code": "FLAVFRAG", "name": "Flavors & Fragrances"},
+            {"code": "COSMET_CH", "name": "Cosmetic / Personal Care Chemicals"},
+            {"code": "SURFACT", "name": "Surfactants"},
+            {"code": "LUBRICANT", "name": "Lubricants & Functional Fluids"},
+            {"code": "BIOCIDE", "name": "Biocides / Industrial Antimicrobials"},
+            {"code": "CATALYST", "name": "Catalysts / Catalytic Additives"},
+            {"code": "PROCHEM", "name": "Process Chemicals"},
+            {"code": "ELECT_CH", "name": "Electronic Chemicals / Semiconductor Chemicals"},
+            {"code": "MINING_CH", "name": "Mining Chemicals"},
+            {"code": "OILFIELD", "name": "Oilfield Chemicals"},
+            {"code": "WATER_CH", "name": "Water Treatment Chemicals"},
+            {"code": "FOOD_CH", "name": "Food & Feed Chemicals / Ingredients"},
+            {"code": "PHARMA_CH", "name": "Pharmaceutical Chemicals / API Intermediates"}
+          ]
+        },
+        {
+          "dimension": "Polymer & Plastic",
+          "subtags": [
+            {"code": "POLYMER", "name": "Polymer (general)"},
+            {"code": "THERMO", "name": "Thermoplastic"},
+            {"code": "THERMOSET", "name": "Thermoset Resin"},
+            {"code": "ELASTOMER", "name": "Elastomer / Rubber"},
+            {"code": "POLYOL", "name": "Polyol"},
+            {"code": "POLYURETH", "name": "Polyurethane (PU)"},
+            {"code": "EPOXY", "name": "Epoxy Resin"},
+            {"code": "POLYEST", "name": "Polyester (PET / PBT)"},
+            {"code": "POLYOLEF", "name": "Polyolefin (PE / PP)"},
+            {"code": "POLYSTYR", "name": "Polystyrene (PS / EPS / HIPS)"},
+            {"code": "PVC", "name": "PVC (Polyvinyl Chloride)"},
+            {"code": "NYLON", "name": "Nylon / Polyamide"},
+            {"code": "ACRYLIC", "name": "Acrylic / PMMA"},
+            {"code": "POLYCARB", "name": "Polycarbonate (PC)"},
+            {"code": "FLUOROPOL", "name": "Fluoropolymer (PTFE / PVDF)"},
+            {"code": "BIOPOLYM", "name": "Biopolymer / Bio-Based Polymer"},
+            {"code": "RECPOLY", "name": "Recycled / Circular Polymer"},
+            {"code": "SILICONE", "name": "Silicone"},
+            {"code": "ABS_CH", "name": "ABS (Acrylonitrile Butadiene Styrene)"}
+          ]
+        },
+        {
+          "dimension": "Coatings, Adhesives & Sealants",
+          "subtags": [
+            {"code": "COATING", "name": "Coating (industrial / architectural)"},
+            {"code": "ARCHCOAT", "name": "Architectural Coating / Decorative Paint"},
+            {"code": "INDCOAT", "name": "Industrial Coating"},
+            {"code": "MCOAT", "name": "Marine & Protective Coating"},
+            {"code": "AEROCOAT", "name": "Aerospace Coating"},
+            {"code": "PWDRCOAT", "name": "Powder Coating"},
+            {"code": "ADHESIVE", "name": "Adhesive"},
+            {"code": "SEALANT", "name": "Sealant"},
+            {"code": "WBCOAT", "name": "Water-Based / Waterborne Coating"},
+            {"code": "UVCOAT", "name": "UV-Curable Coating"},
+            {"code": "HOTMELT", "name": "Hot Melt Adhesive"},
+            {"code": "STRUCT_ADH", "name": "Structural Adhesive"},
+            {"code": "PRESSADH", "name": "Pressure-Sensitive Adhesive (PSA)"}
+          ]
+        },
+        {
+          "dimension": "Agrochemicals",
+          "subtags": [
+            {"code": "HERBICIDE", "name": "Herbicide"},
+            {"code": "INSECT_CH", "name": "Insecticide"},
+            {"code": "FUNGICIDE", "name": "Fungicide"},
+            {"code": "NEMAT", "name": "Nematicide"},
+            {"code": "BIOPEST", "name": "Biopesticide / Biological Crop Protection"},
+            {"code": "FERTIL", "name": "Fertilizer / Plant Nutrition"},
+            {"code": "PGROWTH", "name": "Plant Growth Regulator"},
+            {"code": "SEEDTREAT", "name": "Seed Treatment"},
+            {"code": "SOILAM", "name": "Soil Amendment"},
+            {"code": "AGFORM", "name": "Agrochemical Formulation Technology"},
+            {"code": "AIACTIVE", "name": "Active Ingredient (AI) / Technical Grade"},
+            {"code": "GENERIC_AG", "name": "Generic Agrochemical"}
+          ]
+        },
+        {
+          "dimension": "Raw Materials & Feedstocks",
+          "subtags": [
+            {"code": "ETHYLENE", "name": "Ethylene"},
+            {"code": "PROPYLENE", "name": "Propylene"},
+            {"code": "BENZENE", "name": "Benzene"},
+            {"code": "TOLUENE", "name": "Toluene"},
+            {"code": "XYLENE", "name": "Xylene"},
+            {"code": "METHANOL", "name": "Methanol"},
+            {"code": "ETHANOL_CH", "name": "Ethanol / Bio-Ethanol"},
+            {"code": "CHLORINE", "name": "Chlorine / Chlor-Alkali"},
+            {"code": "CAUSTIC", "name": "Caustic Soda (NaOH)"},
+            {"code": "SULFURIC", "name": "Sulfuric Acid"},
+            {"code": "NITROGEN_CH", "name": "Nitrogen (industrial gas)"},
+            {"code": "AMMONIA", "name": "Ammonia"},
+            {"code": "NAPHTHA", "name": "Naphtha"},
+            {"code": "NGF", "name": "Natural Gas Feedstock / NGL"},
+            {"code": "BIOFD", "name": "Bio-Based Feedstock"},
+            {"code": "CO2_FD", "name": "CO2 Utilization / Carbon Feedstock"}
+          ]
+        },
+        {
+          "dimension": "Process Technology & Operations",
+          "subtags": [
+            {"code": "DISTIL", "name": "Distillation"},
+            {"code": "REACT", "name": "Reactor Technology / Reaction Engineering"},
+            {"code": "CATALYSIS", "name": "Catalysis / Catalytic Process"},
+            {"code": "CRACKING", "name": "Cracking / Steam Cracking"},
+            {"code": "POLYM_PROC", "name": "Polymerization Process"},
+            {"code": "EXTRUDE_CH", "name": "Extrusion (chemicals)"},
+            {"code": "COMPOUND_CH", "name": "Compounding"},
+            {"code": "FERMENT_CH", "name": "Fermentation (industrial / white biotech)"},
+            {"code": "ELECTROLYS", "name": "Electrolysis / Electrochemical Process"},
+            {"code": "CRYSTALL", "name": "Crystallization"},
+            {"code": "SPRAY_DRY", "name": "Spray Drying"},
+            {"code": "MICROENC", "name": "Microencapsulation"},
+            {"code": "GRIND", "name": "Milling / Grinding / Particle Size Reduction"},
+            {"code": "BLENDING", "name": "Blending / Mixing"}
+          ]
+        },
+        {
+          "dimension": "Functional Additives",
+          "subtags": [
+            {"code": "PLASTICIZ", "name": "Plasticizer"},
+            {"code": "FLAMERETD", "name": "Flame Retardant"},
+            {"code": "ANTIOX_CH", "name": "Antioxidant (polymer / chemical)"},
+            {"code": "UVSTAB", "name": "UV Stabilizer / Light Stabilizer"},
+            {"code": "PIGMENT", "name": "Pigment / Colorant"},
+            {"code": "DYE", "name": "Dye"},
+            {"code": "RHEOLOG", "name": "Rheology Modifier / Thickener"},
+            {"code": "DISPERSANT", "name": "Dispersant"},
+            {"code": "EMULSIF", "name": "Emulsifier"},
+            {"code": "CORRINH", "name": "Corrosion Inhibitor"},
+            {"code": "DEFOAMER", "name": "Defoamer"},
+            {"code": "BLOWAGENT", "name": "Blowing Agent"},
+            {"code": "CURING", "name": "Curing Agent / Crosslinker"},
+            {"code": "NANOCOMP", "name": "Nano-Additive / Nanocomposite Filler"}
+          ]
+        },
+        {
+          "dimension": "Regulatory & Compliance",
+          "subtags": [
+            {"code": "REACH", "name": "REACH Regulation (EU)"},
+            {"code": "GHS", "name": "GHS / SDS (Globally Harmonized System)"},
+            {"code": "EPA_CH", "name": "EPA (U.S. Environmental Protection Agency)"},
+            {"code": "TSCA", "name": "TSCA (Toxic Substances Control Act)"},
+            {"code": "CPSC_CH", "name": "CPSC / Consumer Product Safety"},
+            {"code": "HAZMAT", "name": "Hazardous Materials / DOT Classification"},
+            {"code": "PFAS", "name": "PFAS / Per- and Polyfluoroalkyl Substances"},
+            {"code": "VOC_REG", "name": "VOC Regulations"},
+            {"code": "ISO9001_CH", "name": "ISO 9001 (Quality Management)"},
+            {"code": "ISO14001", "name": "ISO 14001 (Environmental Management)"},
+            {"code": "RCRA", "name": "RCRA (Resource Conservation and Recovery Act)"},
+            {"code": "BPAFREE", "name": "BPA-Free / Bisphenol Regulations"},
+            {"code": "FOOD_CONT", "name": "Food Contact Compliance (FDA / EU)"}
+          ]
+        },
+        {
+          "dimension": "Sustainability & Green Chemistry",
+          "subtags": [
+            {"code": "GREENCHEMR", "name": "Green Chemistry Principles"},
+            {"code": "CIRC_CH", "name": "Circular Chemistry / Chemical Recycling"},
+            {"code": "BIODEG", "name": "Biodegradable Chemistry"},
+            {"code": "BIOBASED", "name": "Bio-Based Chemistry"},
+            {"code": "CARBONCAP", "name": "Carbon Capture / CO2 Utilization"},
+            {"code": "SOLVENT_SW", "name": "Solvent Substitution / Green Solvents"},
+            {"code": "ATOM_ECON", "name": "Atom Economy / Process Efficiency"}
+          ]
+        },
+        {
+          "dimension": "Market Structure & Commercial",
+          "subtags": [
+            {"code": "TOLL_MFG", "name": "Toll Manufacturing"},
+            {"code": "PRIV_LBL_CH", "name": "Private Label Chemicals"},
+            {"code": "DIST_CH", "name": "Chemical Distribution"},
+            {"code": "TAKEORPAY", "name": "Take-or-Pay Contract"},
+            {"code": "LONGTERM", "name": "Long-Term Supply Agreement"},
+            {"code": "CAPTIVE", "name": "Captive Production / Backward Integration"},
+            {"code": "COMMOD_CYC", "name": "Commodity Cycle / Trough / Peak"},
+            {"code": "FRWDINT", "name": "Forward Integration"},
+            {"code": "SWITCH_CH", "name": "Switching Cost (customer stickiness)"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Materials",
+      "sector_code": "MAT",
+      "sector_id": 24,
+      "dimensions": [
+        {
+          "dimension": "Metals & Mining",
+          "subtags": [
+            {"code": "STEEL", "name": "Steel"},
+            {"code": "ALUM", "name": "Aluminum"},
+            {"code": "COPPER", "name": "Copper"},
+            {"code": "NICKEL", "name": "Nickel"},
+            {"code": "ZINC", "name": "Zinc"},
+            {"code": "LEAD_M", "name": "Lead"},
+            {"code": "TIN", "name": "Tin"},
+            {"code": "TITANIUM", "name": "Titanium"},
+            {"code": "STAINLESS", "name": "Stainless Steel"},
+            {"code": "CAST_IRON", "name": "Cast Iron / Ductile Iron"},
+            {"code": "PRECIOUS", "name": "Precious Metals (Gold / Silver / PGM)"},
+            {"code": "RAREEARTH", "name": "Rare Earth Elements"},
+            {"code": "COBALT_M", "name": "Cobalt"},
+            {"code": "LITHIUM_M", "name": "Lithium"},
+            {"code": "MANGANESE", "name": "Manganese"},
+            {"code": "CHROMIUM", "name": "Chromium"},
+            {"code": "MOLYBDEN", "name": "Molybdenum"},
+            {"code": "TUNGSTEN", "name": "Tungsten"},
+            {"code": "MAGNESIUM", "name": "Magnesium"},
+            {"code": "IRONORE", "name": "Iron Ore"},
+            {"code": "BAUXITE", "name": "Bauxite"},
+            {"code": "FERROALLOY", "name": "Ferroalloy"},
+            {"code": "SCRAP", "name": "Scrap Metal / Secondary Metal"}
+          ]
+        },
+        {
+          "dimension": "Mining Operations & Extraction",
+          "subtags": [
+            {"code": "OPENPIT", "name": "Open-Pit Mining"},
+            {"code": "UNDERGRD", "name": "Underground Mining"},
+            {"code": "HEAP_LEACH", "name": "Heap Leaching"},
+            {"code": "FLOTATION", "name": "Flotation"},
+            {"code": "SMELTING", "name": "Smelting / Pyrometallurgy"},
+            {"code": "HYDROMET", "name": "Hydrometallurgy"},
+            {"code": "ELECTROWIN", "name": "Electrowinning / Electrorefining"},
+            {"code": "TAILINGS", "name": "Tailings Management"},
+            {"code": "MINE_PLAN", "name": "Mine Plan / Resource Estimate"},
+            {"code": "ROYALTY_M", "name": "Mining Royalty / Streaming"},
+            {"code": "CONCESSION", "name": "Mining Concession / Permit"}
+          ]
+        },
+        {
+          "dimension": "Construction Materials",
+          "subtags": [
+            {"code": "CEMENT", "name": "Cement"},
+            {"code": "CONCRETE", "name": "Concrete / Ready-Mix Concrete"},
+            {"code": "AGGREG", "name": "Aggregates (crushed stone / sand / gravel)"},
+            {"code": "ASPHALT", "name": "Asphalt / Bitumen"},
+            {"code": "BRICK", "name": "Brick / Masonry Unit"},
+            {"code": "DRYWL", "name": "Drywall / Gypsum Board"},
+            {"code": "INSULAT", "name": "Insulation (thermal / acoustic)"},
+            {"code": "ROOFING", "name": "Roofing Materials"},
+            {"code": "SIDING", "name": "Siding / Cladding"},
+            {"code": "FLOOR_MAT", "name": "Flooring Material"},
+            {"code": "PRECAST", "name": "Precast Concrete"},
+            {"code": "PLASTER", "name": "Plaster / Stucco"},
+            {"code": "TILE_MAT", "name": "Ceramic / Porcelain Tile"},
+            {"code": "WINDOW_MAT", "name": "Window / Fenestration System"},
+            {"code": "PIPE_MAT", "name": "Pipe / Tube (structural / utility)"}
+          ]
+        },
+        {
+          "dimension": "Paper, Packaging & Fiber",
+          "subtags": [
+            {"code": "PULP", "name": "Pulp (chemical / mechanical)"},
+            {"code": "PAPER", "name": "Paper"},
+            {"code": "PAPERBOARD", "name": "Paperboard / Boxboard"},
+            {"code": "CORRUGATED", "name": "Corrugated Packaging"},
+            {"code": "TISSUE", "name": "Tissue / Hygiene Paper"},
+            {"code": "KRAFTPAPER", "name": "Kraft Paper / Sack Kraft"},
+            {"code": "COATEDPAP", "name": "Coated Paper / Specialty Paper"},
+            {"code": "LABEL_MAT", "name": "Label Material / Release Liner"},
+            {"code": "FLEXPACK", "name": "Flexible Packaging Film"},
+            {"code": "RIGIDPACK", "name": "Rigid Packaging (PET bottle / HDPE container)"},
+            {"code": "FOREST_M", "name": "Forestry / Timber / Wood Products"},
+            {"code": "LUMBER", "name": "Lumber / Dimensional Lumber"},
+            {"code": "PLYWOOD", "name": "Plywood / OSB / Engineered Wood"},
+            {"code": "NONWOVEN", "name": "Nonwoven Fabric / Fiber"}
+          ]
+        },
+        {
+          "dimension": "Glass",
+          "subtags": [
+            {"code": "FLATGLASS", "name": "Flat Glass"},
+            {"code": "CONTGLASS", "name": "Container Glass"},
+            {"code": "FIBGLASS", "name": "Fiberglass / Glass Fiber"},
+            {"code": "SPECGLASS", "name": "Specialty Glass"},
+            {"code": "ARCHGLASS", "name": "Architectural / Laminated Glass"},
+            {"code": "AUTOGLASS", "name": "Automotive Glass"},
+            {"code": "BOROSIL", "name": "Borosilicate Glass"},
+            {"code": "OPTICGLASS", "name": "Optical Glass / Precision Glass"}
+          ]
+        },
+        {
+          "dimension": "Ceramics & Refractories",
+          "subtags": [
+            {"code": "TECHCERAM", "name": "Technical / Advanced Ceramics"},
+            {"code": "REFRACT", "name": "Refractory Materials"},
+            {"code": "ALUMOXID", "name": "Alumina / Aluminum Oxide"},
+            {"code": "SILICAC", "name": "Silicon Carbide (SiC)"},
+            {"code": "ZIRCONIA", "name": "Zirconia"},
+            {"code": "PORCELAIN", "name": "Porcelain"},
+            {"code": "PIEZO", "name": "Piezoelectric Ceramic"},
+            {"code": "ABRASIVE", "name": "Abrasives"},
+            {"code": "SILICA", "name": "Silica / Fused Silica / Quartz"}
+          ]
+        },
+        {
+          "dimension": "Advanced & Composite Materials",
+          "subtags": [
+            {"code": "CFRP", "name": "Carbon Fiber Reinforced Polymer (CFRP)"},
+            {"code": "GFRP", "name": "Glass Fiber Reinforced Polymer (GFRP)"},
+            {"code": "CARBON_FB", "name": "Carbon Fiber"},
+            {"code": "PREPREG", "name": "Prepreg"},
+            {"code": "SANDWICH", "name": "Sandwich Panel / Core Material"},
+            {"code": "HONEYCOMB", "name": "Honeycomb Structure"},
+            {"code": "MMC", "name": "Metal Matrix Composite (MMC)"},
+            {"code": "CMC_MAT", "name": "Ceramic Matrix Composite (CMC)"},
+            {"code": "NANOMAT", "name": "Nanomaterial / Nanocomposite"},
+            {"code": "GRAPHENE", "name": "Graphene / Carbon Nanotube"},
+            {"code": "AEROGEL", "name": "Aerogel"},
+            {"code": "NATURALFIB", "name": "Natural Fiber Composite (flax / hemp / bamboo)"},
+            {"code": "BIOMATERIAL", "name": "Biomaterial (medical implant grade)"},
+            {"code": "SHAPEALLOY", "name": "Shape Memory Alloy"},
+            {"code": "AMORPHMET", "name": "Amorphous Metal / Metallic Glass"}
+          ]
+        },
+        {
+          "dimension": "Functional & Electronic Materials",
+          "subtags": [
+            {"code": "SEMICOND", "name": "Semiconductor Material"},
+            {"code": "SILICON_M", "name": "Silicon (polysilicon / monocrystalline)"},
+            {"code": "GALLNIT", "name": "Gallium Nitride (GaN)"},
+            {"code": "SICPOWER", "name": "Silicon Carbide (SiC) — Power Electronics"},
+            {"code": "MAGNETS", "name": "Permanent Magnets / NdFeB"},
+            {"code": "SUPERALLOY", "name": "Superalloy (nickel / cobalt base)"},
+            {"code": "BATTMAT", "name": "Battery Materials (cathode / anode / electrolyte)"},
+            {"code": "CATHODMAT", "name": "Cathode Active Material (NMC / LFP / NCA)"},
+            {"code": "ANODEMAT", "name": "Anode Material (graphite / silicon-graphite)"},
+            {"code": "ELECTROLYTE", "name": "Electrolyte (battery / fuel cell)"},
+            {"code": "SEPARATOR", "name": "Battery Separator"},
+            {"code": "SOLARCELL", "name": "Solar Cell / PV Material"},
+            {"code": "FUELCELL", "name": "Fuel Cell Materials"},
+            {"code": "SUPERCOND", "name": "Superconductor"},
+            {"code": "PHOMAT", "name": "Photonic / Optical Material"},
+            {"code": "COATFILM", "name": "Thin Film / Functional Coating"}
+          ]
+        },
+        {
+          "dimension": "Metal Processing & Manufacturing",
+          "subtags": [
+            {"code": "CASTING", "name": "Casting / Die Casting"},
+            {"code": "FORGING", "name": "Forging"},
+            {"code": "ROLLING", "name": "Rolling / Hot Rolling / Cold Rolling"},
+            {"code": "EXTRUDE_M", "name": "Extrusion (metals)"},
+            {"code": "STAMPING", "name": "Stamping / Sheet Metal"},
+            {"code": "MACHINING", "name": "Machining / CNC"},
+            {"code": "WELD", "name": "Welding / Joining"},
+            {"code": "HEATTREAT", "name": "Heat Treatment"},
+            {"code": "SURFTREAT", "name": "Surface Treatment / Plating / Anodizing"},
+            {"code": "POWDER_MET", "name": "Powder Metallurgy / Sintering"},
+            {"code": "ADDMFG", "name": "Additive Manufacturing / 3D Printing (metals)"},
+            {"code": "MILLING_M", "name": "Milling / Processing (ore / mineral)"}
+          ]
+        },
+        {
+          "dimension": "Standards, Certifications & Regulatory",
+          "subtags": [
+            {"code": "ASTM", "name": "ASTM International Standards"},
+            {"code": "ISO_MAT", "name": "ISO Material Standards"},
+            {"code": "DIN", "name": "DIN Standards (German)"},
+            {"code": "EN_STD", "name": "EN Standards (European Norm)"},
+            {"code": "LEED", "name": "LEED Certification (Green Building)"},
+            {"code": "FSC_M", "name": "FSC Certification (Forestry)"},
+            {"code": "PEFC", "name": "PEFC Certification (Sustainable Forestry)"},
+            {"code": "API_STD", "name": "API Standards (American Petroleum Institute)"},
+            {"code": "SAE_STD", "name": "SAE Standards (automotive / aerospace materials)"},
+            {"code": "RoHS", "name": "RoHS (Restriction of Hazardous Substances)"},
+            {"code": "MSHA", "name": "MSHA (Mine Safety and Health Administration)"},
+            {"code": "ISO45001", "name": "ISO 45001 (Occupational Health & Safety)"},
+            {"code": "REACH_M", "name": "REACH Regulation (Materials context)"},
+            {"code": "CONFLICT", "name": "Conflict Minerals / Dodd-Frank 1502 / OECD Guidelines"},
+            {"code": "LME", "name": "LME (London Metal Exchange)"}
+          ]
+        },
+        {
+          "dimension": "Sustainability & Circular Economy",
+          "subtags": [
+            {"code": "RECYCL", "name": "Recycling / Closed-Loop"},
+            {"code": "MECH_REC", "name": "Mechanical Recycling"},
+            {"code": "CHEM_REC", "name": "Chemical Recycling (depolymerization / pyrolysis)"},
+            {"code": "SCRAP_USE", "name": "Scrap Utilization / Secondary Raw Material"},
+            {"code": "LIGHTWTG", "name": "Lightweighting"},
+            {"code": "ECO_DESIGN", "name": "Eco-Design / Design for Disassembly"},
+            {"code": "CARBON_M", "name": "Carbon Footprint / Scope 1-2-3 (Materials)"},
+            {"code": "GREENST", "name": "Green Steel / Low-Carbon Steel"},
+            {"code": "EPD", "name": "Environmental Product Declaration (EPD)"},
+            {"code": "CIRC_ECO", "name": "Circular Economy / Industrial Symbiosis"}
+          ]
+        }
+      ]
     }
   ]
 }
