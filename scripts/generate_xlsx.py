@@ -160,29 +160,36 @@ def write_metadata_schema(wb, data: dict):
     ws = wb.create_sheet("Metadata Schema")
     ws.freeze_panes = "A2"
 
-    headers = ["Field", "Required", "Definition"]
+    headers = ["Field", "Group", "Required", "Type", "Definition"]
     for col, h in enumerate(headers, 1):
         style_header(ws.cell(row=1, column=col, value=h))
 
-    for i, f in enumerate(data["required_fields"]):
+    for i, f in enumerate(data["fields"]):
         row = i + 2
         alt = i % 2 == 1
-        req = "Required" if f["required"] else "Optional"
+        req = "Required" if f.get("required") else "Optional"
         definition = f["definition"]
         if "enum" in f:
-            definition += f" [enum: {', '.join(f['enum'])}]"
-        for col, val in enumerate([f["field"], req, definition], 1):
+            definition += f"  [enum: {', '.join(str(v) for v in f['enum'])}]"
+        if f.get("nullable"):
+            definition += "  [nullable]"
+        if "ref" in f:
+            definition += f"  [ref: {f['ref']}]"
+        for col, val in enumerate([f["field"], f.get("group", ""), req, f.get("type", ""), definition], 1):
             style_cell(ws.cell(row=row, column=col, value=val), alt)
 
-    add_row = len(data["required_fields"]) + 3
-    ws.cell(row=add_row, column=1, value="ADDITIONAL FIELDS (37-column reference)").font = Font(bold=True)
-    add_row += 1
-    ws.cell(row=add_row, column=1, value=", ".join(data["additional_fields"]))
-    ws.cell(row=add_row, column=1).alignment = Alignment(wrap_text=True)
-    ws.merge_cells(f"A{add_row}:C{add_row}")
-    ws.row_dimensions[add_row].height = 60
+    removed_start = len(data["fields"]) + 3
+    ws.cell(row=removed_start, column=1, value="REMOVED FIELDS").font = Font(bold=True, color="C00000")
+    headers2 = ["Field", "Reason"]
+    for col, h in enumerate(headers2, 1):
+        style_header(ws.cell(row=removed_start + 1, column=col), sub=True)
+        ws.cell(row=removed_start + 1, column=col, value=h)
+    for i, rf in enumerate(data.get("removed_fields", [])):
+        r = removed_start + 2 + i
+        ws.cell(row=r, column=1, value=rf["field"])
+        ws.cell(row=r, column=2, value=rf["reason"])
 
-    set_col_widths(ws, [35, 12, 75])
+    set_col_widths(ws, [30, 18, 12, 12, 70])
 
 
 def write_source_anchor_schema(wb, data: dict):
@@ -226,17 +233,32 @@ def write_sector_vocabulary(wb, data: dict):
     ws = wb.create_sheet("Sector Vocabulary")
     ws.freeze_panes = "A2"
 
-    style_header(ws.cell(row=1, column=1, value="primary_sector"))
-    style_header(ws.cell(row=1, column=2, value="Notes"))
+    headers = ["Code", "Sector Name", "GICS Sector", "SIC Range", "NAICS Range", "Mapping Notes"]
+    for col, h in enumerate(headers, 1):
+        style_header(ws.cell(row=1, column=col, value=h))
 
-    for i, sector in enumerate(sorted(data["sectors"])):
+    sorted_sectors = sorted(data["sectors"], key=lambda s: s["sector_name"])
+    for i, sector in enumerate(sorted_sectors):
         row = i + 2
         alt = i % 2 == 1
-        style_cell(ws.cell(row=row, column=1, value=sector), alt)
-        note = "Fallback — use when no specific sector applies" if sector == data["fallback"] else ""
-        style_cell(ws.cell(row=row, column=2, value=note), alt)
+        for col, val in enumerate([
+            sector["sector_code"],
+            sector["sector_name"],
+            sector.get("gics_sector", ""),
+            sector.get("sic_range", ""),
+            sector.get("naics_range", ""),
+            sector.get("mapping_notes", ""),
+        ], 1):
+            style_cell(ws.cell(row=row, column=col, value=val), alt)
 
-    set_col_widths(ws, [35, 45])
+    fallback = data.get("fallback")
+    if fallback:
+        r = len(sorted_sectors) + 3
+        ws.cell(row=r, column=1, value="Fallback:").font = Font(bold=True)
+        c = ws.cell(row=r, column=2, value=fallback)
+        c.fill = NOTE_FILL
+
+    set_col_widths(ws, [8, 28, 22, 18, 18, 50])
 
 
 def write_principles(wb, data: dict):
