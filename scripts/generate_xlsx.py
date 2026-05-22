@@ -326,9 +326,9 @@ def write_readme(wb):
     r = body(r, (
         "Deconstruction is the governed extraction of atomic qualitative claims from a source document. "
         "Each extracted claim (a 'nugget') must pass all seven admission tests before it is admitted. "
-        "Deconstruction ends when the .intel sidecar file is written. What happens to nuggets after "
-        "that — querying, synthesis, corroboration, reporting — is reconstruction, which is outside "
-        "GAQP's jurisdiction."
+        "Current working output: a spreadsheet of admitted nuggets. Future output: a .intel sidecar file "
+        "that travels with the source document. What happens to nuggets after delivery — querying, "
+        "synthesis, corroboration, reporting — is reconstruction, which is outside GAQP's jurisdiction."
     ))
     r = spacer(r)
 
@@ -342,7 +342,13 @@ def write_readme(wb):
         ("6. Assign sector and domain tags", "See Sector Vocabulary and Domain Subtags sheets. Assign primary_sector and domain_tags_pipe. NULL is valid for sector-agnostic claims."),
         ("7. Assign cross-cutting tags", "See Tags Vocabulary sheet. Assign tags_pipe using func:, risk:, topic:, and geo: prefixes. NULL is valid."),
         ("8. Set confidence level", "See Confidence Ladder sheet. New claims extracted from a single source start at 'seed' (0.50). Confidence advances only through independent corroboration."),
-        ("9. Write the .intel file", "Package all admitted claims into the .intel sidecar file. See the Cover sheet for the file specification reference. The .intel file contains admitted claims only — no rejected candidates, no needs-review records."),
+        ("9. Deliver the output", (
+            "Current version: export all admitted nuggets to a spreadsheet. Each row is one admitted claim "
+            "carrying all 29 fields. Multiple source documents can be deconstructed and their nuggets combined "
+            "into a single spreadsheet for cross-document analysis. "
+            "Future version: package admitted claims into a .intel sidecar file that travels with the source document. "
+            "The .intel spec is defined in this package — implementation is in progress."
+        )),
     ]
     for label, text in steps:
         r = body(r, text, bold_label=label)
