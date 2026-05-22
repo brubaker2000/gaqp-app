@@ -1,0 +1,543 @@
+{
+  "gaqp_version": "0.1-working",
+  "schema": "domain_subtag_taxonomy",
+  "description": "Controlled subtag vocabulary for GAQP domain_tags_pipe field. Subtags are nouns and proper names only — formats, channels, categories, models, and segments. Descriptive classification is handled by claim_type. Format: Sector:SubtagCode (e.g. RET:BIGBOX).",
+  "usage_note": "A nugget's domain_tags_pipe may carry one or more subtags from one or more sectors, pipe-delimited. Subtags are not mutually exclusive within a sector. Use the most specific applicable tag(s).",
+  "sectors": [
+    {
+      "sector_name": "Retail",
+      "sector_code": "RET",
+      "dimensions": [
+        {
+          "dimension": "Store Format",
+          "subtags": [
+            {"code": "BIGBOX", "name": "Big Box"},
+            {"code": "SPEC", "name": "Specialty Retail"},
+            {"code": "DEPT", "name": "Department Store"},
+            {"code": "DISC", "name": "Discount Store"},
+            {"code": "OFFPRC", "name": "Off-Price Retail"},
+            {"code": "OUTLET", "name": "Outlet Store"},
+            {"code": "CLUB", "name": "Warehouse Club"},
+            {"code": "CONV", "name": "Convenience Store"},
+            {"code": "DRGSTRE", "name": "Drug Store / Pharmacy Retail"},
+            {"code": "GROC", "name": "Grocery / Supermarket"},
+            {"code": "NATGROC", "name": "Natural & Organic Grocery"},
+            {"code": "HARDDISC", "name": "Hard Discount (ALDI/Lidl model)"},
+            {"code": "DOLLAR", "name": "Dollar Store"},
+            {"code": "BOUTIQ", "name": "Boutique / Independent Retail"},
+            {"code": "FLAGSHP", "name": "Flagship Store"},
+            {"code": "POPUPSTR", "name": "Pop-Up Store"},
+            {"code": "KIOSK", "name": "Kiosk / Cart Retail"},
+            {"code": "SHOPNCTR", "name": "Shopping Center / Mall Tenant"},
+            {"code": "INLINEST", "name": "Inline Store"},
+            {"code": "FREESTAND", "name": "Freestanding Store"}
+          ]
+        },
+        {
+          "dimension": "Merchandise Category",
+          "subtags": [
+            {"code": "APPAREL", "name": "Apparel & Clothing"},
+            {"code": "FOOTWEAR", "name": "Footwear"},
+            {"code": "ACCESSORY", "name": "Accessories & Handbags"},
+            {"code": "JEWELRY", "name": "Jewelry & Watches"},
+            {"code": "BEAUTY", "name": "Beauty & Cosmetics"},
+            {"code": "PCARE", "name": "Personal Care Products"},
+            {"code": "HOMEFURN", "name": "Home Furnishings"},
+            {"code": "HOMEDECOR", "name": "Home Decor"},
+            {"code": "HOMEIMPROV", "name": "Home Improvement / Hardware"},
+            {"code": "ELEC", "name": "Consumer Electronics"},
+            {"code": "SPORTING", "name": "Sporting Goods & Outdoor"},
+            {"code": "TOYS", "name": "Toys & Games"},
+            {"code": "PETS", "name": "Pet Supplies"},
+            {"code": "BOOKS", "name": "Books & Media"},
+            {"code": "MUSIC", "name": "Musical Instruments & Audio"},
+            {"code": "OFFICESUP", "name": "Office Supplies"},
+            {"code": "AUTO_ACC", "name": "Automotive Parts & Accessories"},
+            {"code": "CRAFTS", "name": "Craft & Hobby Supplies"},
+            {"code": "FLORAL", "name": "Floral & Garden"},
+            {"code": "BABYKIT", "name": "Baby & Kids Products"},
+            {"code": "LUXTGDS", "name": "Luxury Goods"},
+            {"code": "ACTIVEWEAR", "name": "Activewear & Athleisure"},
+            {"code": "INTIMATES", "name": "Intimates & Lingerie"},
+            {"code": "EYEWEAR", "name": "Eyewear & Optical"},
+            {"code": "MATERNITY", "name": "Maternity & Nursing"},
+            {"code": "UNIFORMS", "name": "Uniforms & Workwear"},
+            {"code": "VINTAGE", "name": "Vintage & Resale Merchandise"}
+          ]
+        },
+        {
+          "dimension": "Channel & Commerce Model",
+          "subtags": [
+            {"code": "ECOMM", "name": "E-Commerce / Online Retail"},
+            {"code": "MCOMMERCE", "name": "Mobile Commerce"},
+            {"code": "OMNICHAN", "name": "Omnichannel Retail"},
+            {"code": "BOPIS", "name": "Buy Online Pick Up In Store (BOPIS)"},
+            {"code": "CURBSIDE", "name": "Curbside Pickup"},
+            {"code": "SAMEDAY", "name": "Same-Day Delivery"},
+            {"code": "SUBSCBOX", "name": "Subscription Box / Auto-Replenishment"},
+            {"code": "LIVESHOP", "name": "Live Commerce / Live Shopping"},
+            {"code": "SOCIALMKT", "name": "Social Commerce"},
+            {"code": "MKTPLACE", "name": "Online Marketplace"},
+            {"code": "DTC", "name": "Direct-to-Consumer (DTC)"},
+            {"code": "WHOLESALE", "name": "Wholesale Channel"},
+            {"code": "CONSIGN", "name": "Consignment Retail"},
+            {"code": "RENTAL_RET", "name": "Rental / Try-Before-Buy"},
+            {"code": "RESALE", "name": "Resale / Recommerce Platform"}
+          ]
+        },
+        {
+          "dimension": "Store Operations",
+          "subtags": [
+            {"code": "STORELYT", "name": "Store Layout & Planogram"},
+            {"code": "VISUALMER", "name": "Visual Merchandising"},
+            {"code": "ASSORTMNT", "name": "Assortment Planning"},
+            {"code": "INVMGMT", "name": "Inventory Management"},
+            {"code": "SHRNKAGE", "name": "Shrinkage / Loss Prevention"},
+            {"code": "STORELAB", "name": "Store Labor Model"},
+            {"code": "CASHWRAP", "name": "Checkout / Point of Sale"},
+            {"code": "SELFCHKOUT", "name": "Self-Checkout"},
+            {"code": "FITTING", "name": "Fitting Room Operations"},
+            {"code": "CONCIERGE", "name": "In-Store Concierge / Associate Services"},
+            {"code": "CLICKCOL", "name": "Click-and-Collect Infrastructure"},
+            {"code": "MICROFLFL", "name": "Micro-Fulfillment Center"},
+            {"code": "DARKSTORE", "name": "Dark Store"},
+            {"code": "STORENET", "name": "Store Network / Fleet"},
+            {"code": "COLTLOC", "name": "Colocation / Shop-in-Shop"},
+            {"code": "RETAILMED", "name": "Retail Media Network"}
+          ]
+        },
+        {
+          "dimension": "Supply Chain & Sourcing",
+          "subtags": [
+            {"code": "PRIVLBL", "name": "Private Label / Own Brand"},
+            {"code": "NATBRAND", "name": "National Brand Merchandise"},
+            {"code": "EXCLBRAND", "name": "Exclusive Brand / Collaboration"},
+            {"code": "DOMESRC", "name": "Domestic Sourcing"},
+            {"code": "IMPORTSRC", "name": "Import Sourcing / Offshore Manufacturing"},
+            {"code": "NEARSHORE", "name": "Nearshoring"},
+            {"code": "DROPSHIP", "name": "Drop Shipping"},
+            {"code": "VENDMGMT", "name": "Vendor Management"},
+            {"code": "DISTRCTR", "name": "Distribution Center"},
+            {"code": "CROSSDOCK", "name": "Cross-Docking"},
+            {"code": "COLDCHAIN", "name": "Cold Chain Logistics"},
+            {"code": "RTLSUPPLY", "name": "Retail Supply Chain"}
+          ]
+        },
+        {
+          "dimension": "Customer & Loyalty",
+          "subtags": [
+            {"code": "LOYPGM", "name": "Loyalty Program"},
+            {"code": "MEMCLUB", "name": "Membership / Club Model"},
+            {"code": "CRMRET", "name": "Retail CRM"},
+            {"code": "CREDITCARD", "name": "Co-Branded Credit Card"},
+            {"code": "GIFTREG", "name": "Gift Registry"},
+            {"code": "PERSDATA", "name": "Personalization & Customer Data"},
+            {"code": "CUSTACQ", "name": "Customer Acquisition"},
+            {"code": "RETMKT", "name": "Retention Marketing"},
+            {"code": "RETURNS", "name": "Returns & Reverse Logistics"}
+          ]
+        },
+        {
+          "dimension": "Real Estate & Site",
+          "subtags": [
+            {"code": "ENCLOSEDML", "name": "Enclosed Mall"},
+            {"code": "OPENAIRML", "name": "Open-Air / Lifestyle Center"},
+            {"code": "STRIPCTRL", "name": "Strip Center / Neighborhood Center"},
+            {"code": "PWRCTR", "name": "Power Center"},
+            {"code": "HISTREET", "name": "High Street / Urban Retail"},
+            {"code": "REALESTATE", "name": "Retail Real Estate Portfolio"},
+            {"code": "STORELSNG", "name": "Store Lease Obligations"},
+            {"code": "DENSEPACK", "name": "Dense Market Penetration"},
+            {"code": "WHITESPC", "name": "White Space / Underpenetrated Markets"}
+          ]
+        },
+        {
+          "dimension": "Pricing & Promotions",
+          "subtags": [
+            {"code": "FULLPRC", "name": "Full-Price Selling"},
+            {"code": "PROMO", "name": "Promotional Pricing"},
+            {"code": "MARKDOWN", "name": "Markdown / Clearance"},
+            {"code": "DYNPRC", "name": "Dynamic Pricing"},
+            {"code": "EVDYLOWPRC", "name": "Everyday Low Price (EDLP)"},
+            {"code": "BUNDLING", "name": "Bundling"},
+            {"code": "FLASHSALE", "name": "Flash Sale"},
+            {"code": "LOYPROMO", "name": "Loyalty-Exclusive Pricing"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Franchised Brands",
+      "sector_code": "FRAN",
+      "dimensions": [
+        {
+          "dimension": "Franchise System Type",
+          "subtags": [
+            {"code": "QSR", "name": "Quick Service Restaurant (QSR)"},
+            {"code": "FASTCAS", "name": "Fast Casual Restaurant"},
+            {"code": "CASDINE", "name": "Casual Dining"},
+            {"code": "COFFEEBAR", "name": "Coffee & Tea Bar"},
+            {"code": "ICECREAM", "name": "Ice Cream & Frozen Dessert"},
+            {"code": "BAKERY", "name": "Bakery / Bread / Pastry"},
+            {"code": "PIZZA", "name": "Pizza"},
+            {"code": "BURGER", "name": "Burger / Sandwich"},
+            {"code": "CHICKEN", "name": "Chicken"},
+            {"code": "MEXICAN", "name": "Mexican / Tex-Mex"},
+            {"code": "ASIAN_QSR", "name": "Asian QSR"},
+            {"code": "SUBS", "name": "Subs & Wraps"},
+            {"code": "WINGSTYLE", "name": "Wings & Sports Bar"},
+            {"code": "SEAFOOD", "name": "Seafood"},
+            {"code": "BREAKFAST", "name": "Breakfast / Brunch Chain"},
+            {"code": "JUICE_SMTH", "name": "Juice Bar & Smoothie"},
+            {"code": "HEALTHFOOD", "name": "Health Food / Better-for-You QSR"}
+          ]
+        },
+        {
+          "dimension": "Personal Services",
+          "subtags": [
+            {"code": "HAIRSALON", "name": "Hair Salon"},
+            {"code": "BARBERSHOP", "name": "Barbershop"},
+            {"code": "NAILSALON", "name": "Nail Salon"},
+            {"code": "SKINCARE", "name": "Skincare / Facial Studio"},
+            {"code": "MEDISPA", "name": "Medical Spa / Aesthetics"},
+            {"code": "MASSAGE", "name": "Massage Therapy"},
+            {"code": "DRYCLEAN", "name": "Dry Cleaning & Laundry"},
+            {"code": "TANNING", "name": "Tanning Salon"},
+            {"code": "LASHBROW", "name": "Lash & Brow Studio"}
+          ]
+        },
+        {
+          "dimension": "Health, Wellness & Fitness",
+          "subtags": [
+            {"code": "FITCLUB", "name": "Fitness Club / Gym"},
+            {"code": "BOUTFITNS", "name": "Boutique Fitness Studio"},
+            {"code": "YOGA", "name": "Yoga Studio"},
+            {"code": "CYCLING", "name": "Cycling / Spin Studio"},
+            {"code": "PILATES", "name": "Pilates Studio"},
+            {"code": "BOXING", "name": "Boxing / MMA Fitness"},
+            {"code": "CROSSTRN", "name": "Cross-Training / Functional Fitness"},
+            {"code": "SWIM", "name": "Swim School"},
+            {"code": "MARTLARTS", "name": "Martial Arts School"},
+            {"code": "PHYSTHERA", "name": "Physical Therapy / Rehab Franchise"},
+            {"code": "CHIROPRAC", "name": "Chiropractic Franchise"},
+            {"code": "DENTALFRN", "name": "Dental Services Franchise"},
+            {"code": "OPTOFRN", "name": "Optical / Vision Franchise"},
+            {"code": "HEARINGFRN", "name": "Hearing Care Franchise"},
+            {"code": "WEIGHTMGT", "name": "Weight Management Franchise"}
+          ]
+        },
+        {
+          "dimension": "Children & Education Services",
+          "subtags": [
+            {"code": "CHILDCARE", "name": "Childcare / Daycare"},
+            {"code": "PRESCHOOL", "name": "Preschool / Early Education"},
+            {"code": "KIDSTUTOR", "name": "Tutoring / Academic Enrichment"},
+            {"code": "STEMKIDS", "name": "STEM / Coding Education for Kids"},
+            {"code": "SPORTSKIDS", "name": "Youth Sports / Athletics"},
+            {"code": "ARTSKIDS", "name": "Arts & Music for Kids"},
+            {"code": "AFTERSCHOOL", "name": "After-School Programs"},
+            {"code": "CAMPFRN", "name": "Summer Camp Franchise"}
+          ]
+        },
+        {
+          "dimension": "Automotive Services",
+          "subtags": [
+            {"code": "OILCHANGE", "name": "Oil Change & Lube"},
+            {"code": "AUTOBODY", "name": "Auto Body / Collision Repair"},
+            {"code": "AUTOREPAIR", "name": "General Auto Repair"},
+            {"code": "CARWASH", "name": "Car Wash"},
+            {"code": "GLASREPAIR", "name": "Auto Glass Repair"},
+            {"code": "TRANSMSSN", "name": "Transmission Repair"},
+            {"code": "TIRESVC", "name": "Tire Service"},
+            {"code": "DETAILING", "name": "Auto Detailing"},
+            {"code": "ROADASSIST", "name": "Roadside Assistance Services"}
+          ]
+        },
+        {
+          "dimension": "Home Services",
+          "subtags": [
+            {"code": "CLEANING", "name": "Residential Cleaning"},
+            {"code": "LANDSCAPING", "name": "Lawn & Landscape Services"},
+            {"code": "PESTCTRL", "name": "Pest Control"},
+            {"code": "HVACFRN", "name": "HVAC Services"},
+            {"code": "PLUMBFRN", "name": "Plumbing Services"},
+            {"code": "ELECTRICN", "name": "Electrical Services"},
+            {"code": "PAINTFRN", "name": "Painting Services"},
+            {"code": "ROOFFRN", "name": "Roofing Services"},
+            {"code": "HANDYMAN", "name": "Handyman Services"},
+            {"code": "JUNKREMOV", "name": "Junk Removal"},
+            {"code": "MOVINGFRN", "name": "Moving Services"},
+            {"code": "POOLSVC", "name": "Pool Services"},
+            {"code": "WINDOWSVC", "name": "Window Cleaning & Treatment"},
+            {"code": "FLOORINGFR", "name": "Flooring Installation & Repair"},
+            {"code": "RESTORATN", "name": "Restoration Services (Water/Fire)"}
+          ]
+        },
+        {
+          "dimension": "Pet Services",
+          "subtags": [
+            {"code": "PETGRM", "name": "Pet Grooming"},
+            {"code": "DOGTRN", "name": "Dog Training"},
+            {"code": "PETBOARD", "name": "Pet Boarding / Doggy Daycare"},
+            {"code": "VETRFRN", "name": "Veterinary Franchise"},
+            {"code": "PETRETL", "name": "Pet Retail Franchise"},
+            {"code": "DOGSIT", "name": "Dog Walking / Pet Sitting"}
+          ]
+        },
+        {
+          "dimension": "Business & Professional Franchises",
+          "subtags": [
+            {"code": "STAFFINGFR", "name": "Staffing & Recruiting Franchise"},
+            {"code": "TAXFRN", "name": "Tax Preparation Franchise"},
+            {"code": "ACCOUNTFRN", "name": "Accounting & Bookkeeping Franchise"},
+            {"code": "PRINTFRN", "name": "Printing & Signage Franchise"},
+            {"code": "SHIPPINGFR", "name": "Shipping & Mailbox Franchise"},
+            {"code": "SENIORCARE", "name": "Senior Care / Home Health Franchise"},
+            {"code": "HOMEHLTH", "name": "Home Health Aide Franchise"},
+            {"code": "REALESTATFR", "name": "Real Estate Brokerage Franchise"},
+            {"code": "INSFRN", "name": "Insurance Agency Franchise"}
+          ]
+        },
+        {
+          "dimension": "Franchise System Structure",
+          "subtags": [
+            {"code": "FDD", "name": "Franchise Disclosure Document (FDD)"},
+            {"code": "UNITFRN", "name": "Unit Franchisee"},
+            {"code": "AREADEV", "name": "Area Developer"},
+            {"code": "MASTERFRN", "name": "Master Franchisee"},
+            {"code": "MULTIUNIT", "name": "Multi-Unit Operator (MUO)"},
+            {"code": "MEGAFRNSE", "name": "Mega-Franchisee"},
+            {"code": "CORPSTORE", "name": "Corporate-Owned Unit"},
+            {"code": "CODEV", "name": "Co-Development Agreement"},
+            {"code": "SUBFRNSE", "name": "Sub-Franchisor"},
+            {"code": "CONVRSN", "name": "Conversion Franchise"},
+            {"code": "RENEWALRT", "name": "Renewal Rate / System Retention"}
+          ]
+        },
+        {
+          "dimension": "Franchise Economics",
+          "subtags": [
+            {"code": "ROYALTY", "name": "Royalty Fee"},
+            {"code": "INITFEE", "name": "Initial Franchise Fee"},
+            {"code": "ADVFUND", "name": "Advertising Fund / National Marketing Fee"},
+            {"code": "TECHFEE", "name": "Technology Fee"},
+            {"code": "BUILDOUT", "name": "Buildout / Leasehold Investment"},
+            {"code": "AUV", "name": "Average Unit Volume (AUV)"},
+            {"code": "UNITECONO", "name": "Unit Economics / 4-Wall EBITDA"},
+            {"code": "FRANCHREV", "name": "Franchisor Revenue Streams"},
+            {"code": "ITEMSEVEN", "name": "Item 19 Financial Performance Representation"},
+            {"code": "RAMPUP", "name": "Ramp-Up Period"},
+            {"code": "OPENINGCST", "name": "Opening Cost / Initial Investment (Items 5-7)"}
+          ]
+        },
+        {
+          "dimension": "Brand & System Standards",
+          "subtags": [
+            {"code": "BRANDSTND", "name": "Brand Standards"},
+            {"code": "OPSMANUAL", "name": "Operations Manual"},
+            {"code": "TRAINING", "name": "Training System"},
+            {"code": "TECHSTACK", "name": "Technology Stack / POS System"},
+            {"code": "SUPCHAIN_FR", "name": "Approved Supplier / Supply Chain"},
+            {"code": "COMPLIANCEFR", "name": "Franchise Compliance"},
+            {"code": "REFRNSHM", "name": "Refresh / Remodel Program"},
+            {"code": "MENUS", "name": "Menu / Service Offering"},
+            {"code": "INNOVATION", "name": "Menu Innovation / R&D"}
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Travel & Hospitality",
+      "sector_code": "TH",
+      "dimensions": [
+        {
+          "dimension": "Lodging Type",
+          "subtags": [
+            {"code": "LUXHOTEL", "name": "Luxury Hotel"},
+            {"code": "UPSCALE", "name": "Upper Upscale Hotel"},
+            {"code": "UPPERMID", "name": "Upper Midscale Hotel"},
+            {"code": "MIDSCALE", "name": "Midscale Hotel"},
+            {"code": "ECONOMY", "name": "Economy / Budget Hotel"},
+            {"code": "EXTENDED", "name": "Extended Stay Hotel"},
+            {"code": "RESORT", "name": "Resort Property"},
+            {"code": "BOUTIQUE", "name": "Boutique Hotel"},
+            {"code": "LIFESTYLE", "name": "Lifestyle Hotel"},
+            {"code": "CASINO", "name": "Casino Hotel"},
+            {"code": "CONFCTR", "name": "Conference Center Hotel"},
+            {"code": "ALLINCL", "name": "All-Inclusive Resort"},
+            {"code": "MOTEL", "name": "Motel"},
+            {"code": "HOSTEL", "name": "Hostel"},
+            {"code": "VRENTAL", "name": "Vacation Rental / Short-Term Rental"},
+            {"code": "TIMESHARE", "name": "Timeshare / Vacation Ownership"},
+            {"code": "RVPARK", "name": "RV Park & Campground"},
+            {"code": "APARTHTL", "name": "Apart-Hotel / Serviced Apartment"}
+          ]
+        },
+        {
+          "dimension": "Hotel Operations",
+          "subtags": [
+            {"code": "ADR", "name": "Average Daily Rate (ADR)"},
+            {"code": "REVPAR", "name": "RevPAR"},
+            {"code": "OCCUPANCY", "name": "Occupancy Rate"},
+            {"code": "TREVPAR", "name": "TRevPAR / Total Revenue Per Available Room"},
+            {"code": "GOP", "name": "Gross Operating Profit (GOP)"},
+            {"code": "GOPPAR", "name": "GOPPAR"},
+            {"code": "ROOMREV", "name": "Rooms Revenue"},
+            {"code": "FNBREV", "name": "Food & Beverage Revenue (Hotel)"},
+            {"code": "SPAREV", "name": "Spa & Wellness Revenue"},
+            {"code": "MEETINGREV", "name": "Meetings & Events Revenue"},
+            {"code": "ANCILLARY", "name": "Ancillary Revenue"},
+            {"code": "CHANNEL_MX", "name": "Channel Mix (Hotel)"},
+            {"code": "DIRECTBOOK", "name": "Direct Booking"},
+            {"code": "OTABOOK", "name": "OTA Booking"},
+            {"code": "GDS", "name": "Global Distribution System (GDS)"},
+            {"code": "GROUPSEG", "name": "Group Segment"},
+            {"code": "TRANSIENT", "name": "Transient Segment"},
+            {"code": "CONTRACT", "name": "Contract / Corporate Rate"},
+            {"code": "RATEMGMT", "name": "Rate Management / Revenue Management"},
+            {"code": "YIELDMGMT", "name": "Yield Management"}
+          ]
+        },
+        {
+          "dimension": "Hotel Ownership & Management Models",
+          "subtags": [
+            {"code": "OWNED", "name": "Owned Hotel"},
+            {"code": "LEASED", "name": "Leased Hotel"},
+            {"code": "MGMTCONT", "name": "Management Contract"},
+            {"code": "FRANHOTEL", "name": "Franchised Hotel"},
+            {"code": "HYBRIDS", "name": "Hybrid Ownership Model"},
+            {"code": "REIT", "name": "Hotel REIT"},
+            {"code": "ASSET_LT", "name": "Asset-Light Model"},
+            {"code": "JOINTVENT", "name": "Joint Venture Hotel"},
+            {"code": "CONDO_HTL", "name": "Condo Hotel"}
+          ]
+        },
+        {
+          "dimension": "Airline & Aviation",
+          "subtags": [
+            {"code": "FSC", "name": "Full-Service Carrier (FSC)"},
+            {"code": "LCC", "name": "Low-Cost Carrier (LCC)"},
+            {"code": "ULCC", "name": "Ultra-Low-Cost Carrier (ULCC)"},
+            {"code": "REGIONAL", "name": "Regional Carrier"},
+            {"code": "CHARTER", "name": "Charter Airline"},
+            {"code": "BIZAV", "name": "Business Aviation / Private Jet"},
+            {"code": "CARGO", "name": "Air Cargo"},
+            {"code": "CABINCLASS", "name": "Cabin Class (First / Business / Economy)"},
+            {"code": "ANCILLAIR", "name": "Ancillary Revenue (Airline)"},
+            {"code": "YIELDAIR", "name": "Yield Management (Airline)"},
+            {"code": "SLOTCTRL", "name": "Slot Control / Airport Access"},
+            {"code": "CODESHARE", "name": "Codeshare / Alliance"},
+            {"code": "HUB", "name": "Hub & Spoke Network"},
+            {"code": "POINTPOINT", "name": "Point-to-Point Network"},
+            {"code": "ROUTE", "name": "Route Network"},
+            {"code": "FLEET", "name": "Fleet / Aircraft Type"},
+            {"code": "MRO", "name": "Maintenance, Repair & Overhaul (MRO)"}
+          ]
+        },
+        {
+          "dimension": "Cruise",
+          "subtags": [
+            {"code": "MASSCRUISE", "name": "Mass Market Cruise"},
+            {"code": "LUXCRUISE", "name": "Luxury / Ultra-Luxury Cruise"},
+            {"code": "PREMCRUISE", "name": "Premium Cruise"},
+            {"code": "EXPCRUISE", "name": "Expedition / Adventure Cruise"},
+            {"code": "RIVERCRUISE", "name": "River Cruise"},
+            {"code": "SHIP", "name": "Cruise Ship / Vessel"},
+            {"code": "HOMEPORT", "name": "Homeport / Embarkation Port"},
+            {"code": "ITINERARY", "name": "Cruise Itinerary"},
+            {"code": "CABINCAT", "name": "Cabin Category"},
+            {"code": "ONBOARD", "name": "Onboard Revenue"},
+            {"code": "DRYDOCK", "name": "Dry Dock / Refurbishment"}
+          ]
+        },
+        {
+          "dimension": "Car Rental & Ground Transportation",
+          "subtags": [
+            {"code": "CARRENTAL", "name": "Car Rental"},
+            {"code": "RIDESHARE", "name": "Rideshare Platform"},
+            {"code": "BIZAVGROUND", "name": "Black Car / Limousine Service"},
+            {"code": "RENTALFLEET", "name": "Rental Fleet Management"},
+            {"code": "VRENTAL_LOC", "name": "Rental Location Type (Airport / Off-Airport)"}
+          ]
+        },
+        {
+          "dimension": "Online Travel & Distribution",
+          "subtags": [
+            {"code": "OTA", "name": "Online Travel Agency (OTA)"},
+            {"code": "METASRCH", "name": "Metasearch Platform"},
+            {"code": "TRAVELAGCY", "name": "Traditional Travel Agency"},
+            {"code": "TMC", "name": "Travel Management Company (TMC)"},
+            {"code": "CORPTRAVEL", "name": "Corporate Travel Program"},
+            {"code": "DESTMGMT", "name": "Destination Management Company (DMC)"},
+            {"code": "TOUROPRT", "name": "Tour Operator"},
+            {"code": "BEDBANK", "name": "Bed Bank / Wholesaler"},
+            {"code": "DIRECTDIST", "name": "Direct Distribution Channel"},
+            {"code": "REVMGMT", "name": "Revenue Management System (RMS)"},
+            {"code": "PMS", "name": "Property Management System (PMS)"},
+            {"code": "CRS", "name": "Central Reservation System (CRS)"}
+          ]
+        },
+        {
+          "dimension": "Attractions & Experiences",
+          "subtags": [
+            {"code": "THEMEPARK", "name": "Theme Park / Amusement Park"},
+            {"code": "WATERPARK", "name": "Water Park"},
+            {"code": "MUSEUM", "name": "Museum / Cultural Attraction"},
+            {"code": "ZOO", "name": "Zoo / Aquarium"},
+            {"code": "CONCERT", "name": "Concert Venue / Performing Arts"},
+            {"code": "SPORTSVENUE", "name": "Sports Venue / Stadium"},
+            {"code": "CASINO_ATT", "name": "Casino / Gaming Attraction"},
+            {"code": "SKIRESORT", "name": "Ski Resort"},
+            {"code": "GOLFCOURSE", "name": "Golf Course"},
+            {"code": "MARINA", "name": "Marina / Nautical Attraction"},
+            {"code": "DINEEXP", "name": "Dining Experience / Restaurant Attraction"},
+            {"code": "ESCAPE", "name": "Escape Room / Interactive Entertainment"},
+            {"code": "TOURATTRACT", "name": "Tour / Guided Experience"},
+            {"code": "ECOTRAVEL", "name": "Ecotourism / Nature Experience"},
+            {"code": "FESTIVALEV", "name": "Festival & Events"}
+          ]
+        },
+        {
+          "dimension": "Loyalty & Rewards",
+          "subtags": [
+            {"code": "FREQFLYER", "name": "Frequent Flyer Program"},
+            {"code": "HOTELLOY", "name": "Hotel Loyalty Program"},
+            {"code": "CRUISELOY", "name": "Cruise Loyalty Program"},
+            {"code": "ALLIANCES", "name": "Global Alliance (Star Alliance / Oneworld / SkyTeam)"},
+            {"code": "MILES", "name": "Miles & Points Currency"},
+            {"code": "COBRANDED", "name": "Co-Branded Credit Card (Travel)"},
+            {"code": "ELITESTATUS", "name": "Elite Status Tier"},
+            {"code": "POINTSSALE", "name": "Points Monetization / Miles Sales"},
+            {"code": "PARTNERLOYAL", "name": "Partnership Redemption Network"}
+          ]
+        },
+        {
+          "dimension": "Segments & Customer Types",
+          "subtags": [
+            {"code": "LEISURE", "name": "Leisure Traveler"},
+            {"code": "BUSINESSTRV", "name": "Business Traveler"},
+            {"code": "BLENDED", "name": "Bleisure / Blended Travel"},
+            {"code": "GROUP", "name": "Group Travel"},
+            {"code": "MICE", "name": "MICE (Meetings, Incentives, Conferences, Exhibitions)"},
+            {"code": "INTLTRV", "name": "International Traveler"},
+            {"code": "DOMESTIC", "name": "Domestic Traveler"},
+            {"code": "FAMILY_TRV", "name": "Family Travel"},
+            {"code": "ADVENTRTRV", "name": "Adventure Traveler"},
+            {"code": "LUXTRV", "name": "Luxury Traveler"}
+          ]
+        },
+        {
+          "dimension": "Geography & Destination",
+          "subtags": [
+            {"code": "BEACHRESORT", "name": "Beach / Coastal Resort"},
+            {"code": "MOUNTAINRES", "name": "Mountain / Alpine Resort"},
+            {"code": "URBANHOTEL", "name": "Urban / Metro Market"},
+            {"code": "AIRPORTS", "name": "Airport Corridor"},
+            {"code": "GATEWAY", "name": "Gateway City"},
+            {"code": "INTLDEST", "name": "International Destination"}
+          ]
+        }
+      ]
+    }
+  ]
+}

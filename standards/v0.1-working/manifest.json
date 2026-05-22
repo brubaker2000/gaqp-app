@@ -21,11 +21,12 @@
     { "file": "sector_vocabulary.json", "description": "Controlled sector vocabulary labels" },
     { "file": "validation_rules.json", "description": "Forbidden labels, remap table, developer rules" },
     { "file": "principles.json", "description": "10 core GAQP principles" },
-    { "file": "runtime_interface.json", "description": "Suggested runtime interface methods" }
+    { "file": "runtime_interface.json", "description": "Suggested runtime interface methods" },
+    { "file": "domain_subtags_consumer_fb_me.json", "description": "Domain subtag taxonomy for Consumer (CON), Food & Beverage (FB), and Media & Entertainment (ME) sectors — 106, 100, and 128 subtags respectively. Used in domain_tags_pipe field." }
   ],
   "notes": {
-    "tag_families": "Tag families not yet enumerated. Stub to be added when controlled vocabulary is supplied.",
-    "domain_modules": "Domain module table not yet populated. To be added as statutory content.",
+    "tag_families": "Partial. Consumer, Food & Beverage, and Media & Entertainment subtag taxonomies added in domain_subtags_consumer_fb_me.json. Remaining sectors pending.",
+    "domain_modules": "Domain module subtag taxonomy partially populated. Consumer (CON): 106 subtags, Food & Beverage (FB): 100 subtags, Media & Entertainment (ME): 128 subtags. Remaining sectors to be added.",
     "schema_freeze": "Must reconcile full 37-column schema before GAQP v1.0 public release."
   }
 }
