@@ -14,7 +14,7 @@
     { "file": "claim_types.json", "description": "25-type closed claim register" },
     { "file": "admission_tests.json", "description": "Seven admission tests with pass conditions" },
     { "file": "confidence_ladder.json", "description": "Confidence levels and scores" },
-    { "file": "metadata_schema.json", "description": "Required claim record fields (37 columns)" },
+    { "file": "metadata_schema.json", "description": "Canonical 29-field claim record schema with field groups, types, and nullability rules" },
     { "file": "source_anchor_schema.json", "description": "Source anchor fields (20 fields)" },
     { "file": "intel_package_structure.json", "description": ".intel sidecar 14-section structure" },
     { "file": "conformance_levels.json", "description": "L1–L7 conformance ladder" },
@@ -22,13 +22,12 @@
     { "file": "validation_rules.json", "description": "Forbidden labels, remap table, developer rules" },
     { "file": "principles.json", "description": "10 core GAQP principles" },
     { "file": "runtime_interface.json", "description": "Suggested runtime interface methods" },
-    { "file": "domain_subtags_consumer_fb_me.json", "description": "Domain subtag taxonomy for Consumer (CON), Food & Beverage (FB), and Media & Entertainment (ME) sectors — 106, 100, and 128 subtags respectively. Used in domain_tags_pipe field." },
+    { "file": "domain_modules.json", "description": "Complete domain subtag taxonomy for all 30 sectors — ~3,126 subtags total. Used in domain_tags_pipe field. Statutory layer: updated as industries evolve without requiring a version bump." },
     { "file": "tags_vocabulary.json", "description": "Controlled vocabulary for the tags_pipe field. Four closed prefixes: func (business function), risk (risk category), topic (subject topic), geo (geography). Extensible values via IQS suggestion process." },
     { "file": "intel_file_spec.json", "description": ".intel sidecar file format specification: naming convention, 14-section structure, validation rules, and example skeleton." }
   ],
   "notes": {
-    "tag_families": "Partial. Consumer, Food & Beverage, and Media & Entertainment subtag taxonomies added in domain_subtags_consumer_fb_me.json. Remaining sectors pending.",
-    "domain_modules": "Domain module subtag taxonomy partially populated. Consumer (CON): 106 subtags, Food & Beverage (FB): 100 subtags, Media & Entertainment (ME): 128 subtags. Remaining sectors to be added.",
-    "schema_freeze": "Must reconcile full 37-column schema before GAQP v1.0 public release."
+    "domain_modules": "All 30 sectors populated in domain_modules.json. Subtag taxonomy is statutory — additions do not require a version bump.",
+    "schema_freeze": "Canonical 29-field schema established. Constitutional layer is stable. Checksum and release_date will be set at v1.0 freeze."
   }
 }
