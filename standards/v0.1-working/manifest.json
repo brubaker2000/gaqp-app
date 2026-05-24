@@ -1,6 +1,6 @@
 {
   "package_name": "GAQP Standards Package",
-  "version": "0.1-working",
+  "version": "0.2-working",
   "status": "working-draft",
   "standards_body": "Institute for Qualitative Standards",
   "standards_body_abbreviation": "IQS",
@@ -27,7 +27,7 @@
     { "file": "intel_file_spec.json", "description": ".intel sidecar file format specification: naming convention, 14-section structure, validation rules, and example skeleton." }
   ],
   "notes": {
-    "domain_modules": "All 30 sectors populated in domain_modules.json. Subtag taxonomy is statutory — additions do not require a version bump.",
+    "domain_modules": "31 sectors with domain subtags in domain_modules.json (GEN General/Cross-Sector carries no subtags by design). v0.2 adds Military (MIL) — 247 subtags across 15 dimensions, including the unique GAQP Intelligence Functions dimension. Subtag taxonomy is statutory — additions do not require a version bump.",
     "schema_freeze": "Canonical 29-field schema established. Constitutional layer is stable. Checksum and release_date will be set at v1.0 freeze."
   }
 }

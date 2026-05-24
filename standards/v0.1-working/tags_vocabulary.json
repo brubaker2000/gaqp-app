@@ -1,5 +1,5 @@
 {
-  "gaqp_version": "0.1-working",
+  "gaqp_version": "0.2-working",
   "field": "tags_pipe",
   "description": "Cross-cutting tags for the tags_pipe field. Format: prefix:Value|prefix:Value. Prefixes are a closed set. Values within each prefix are a controlled but extensible vocabulary — new values may be added via the standard suggestion process.",
   "note": "sector and vertical dimensions are handled by primary_sector and domain_tags_pipe respectively. tags_pipe carries only cross-cutting dimensions that apply regardless of sector.",
@@ -9,11 +9,12 @@
       "label": "Business Function",
       "description": "The organizational or operational function the claim pertains to",
       "values": [
-        "Accounting", "Compliance", "CorpDev", "CustomerSuccess",
-        "Finance", "HR", "IT", "InvestorRelations", "Legal",
-        "Marketing", "Operations", "Procurement", "ProductDev",
+        "Accounting", "AcquisitionMIL", "CommandControl", "Compliance",
+        "CorpDev", "CustomerSuccess", "Finance", "ForceReadiness",
+        "HR", "IT", "Intelligence", "InvestorRelations", "Legal",
+        "Logistics_MIL", "Marketing", "Operations", "Procurement", "ProductDev",
         "RiskMgmt", "R&D", "Sales", "Strategy", "SupplyChain",
-        "Treasury"
+        "TrainingExercises", "Treasury"
       ]
     },
     {
@@ -21,11 +22,14 @@
       "label": "Risk Category",
       "description": "The type of risk the claim describes, implies, or is relevant to",
       "values": [
-        "Commodity", "Competition", "CustomerConcentration", "Currency",
-        "Cyber", "ESG", "Geopolitical", "Integration", "InterestRate",
-        "KeyPerson", "Litigation", "Liquidity", "Leverage", "Macro",
-        "Operational", "Regulatory", "Reputational", "Technology",
-        "VendorConcentration"
+        "AlliedCohesion", "CBRNExposure", "Commodity", "Competition",
+        "CustomerConcentration", "Currency", "Cyber", "CyberCompromise",
+        "ESG", "Escalation", "Geopolitical", "Integration", "InterestRate",
+        "IntelFailure", "KeyPerson", "LethalAutonomy", "Litigation",
+        "Liquidity", "Leverage", "Macro", "MissionFailure",
+        "Operational", "ReadinessShortfall", "Regulatory", "Reputational",
+        "StrategicSurprise", "SupplyChain_MIL", "Technology",
+        "VendorConcentration", "ForceSurvivability"
       ]
     },
     {
@@ -33,11 +37,11 @@
       "label": "Subject Topic",
       "description": "A specific cross-sector subject the claim addresses",
       "values": [
-        "CapEx", "Churn", "Culture", "ESG", "Governance",
-        "Growth", "Innovation", "Integration", "Leadership",
-        "Leverage", "Liquidity", "Margin", "NPS", "Pricing",
-        "Regulation", "Retention", "Technology", "Valuation",
-        "WorkingCapital"
+        "CapEx", "Churn", "Counterterrorism", "Culture", "Deterrence",
+        "ESG", "Governance", "Growth", "Innovation", "Integration",
+        "Leadership", "Leverage", "Liquidity", "Margin", "MilitaryReadiness",
+        "NPS", "NationalSecurity", "Pricing", "Regulation", "Retention",
+        "Technology", "Valuation", "WMD", "Warfighting", "WorkingCapital"
       ]
     },
     {
@@ -48,7 +52,10 @@
         "Global", "US", "Canada", "LatAm", "Brazil", "Mexico",
         "Europe", "UK", "Germany", "France", "Nordics",
         "APAC", "China", "Japan", "India", "SEAsia",
-        "MEA", "Midwest", "Northeast", "Southeast", "Southwest", "West"
+        "MEA", "Midwest", "Northeast", "Southeast", "Southwest", "West",
+        "IndoPacific", "NATO_Europe", "SouthChinaSea", "Taiwan_Strait",
+        "Korean_Peninsula", "BlackSea", "Arctic", "Sahel",
+        "MiddleEast", "PersianGulf", "EasternEurope"
       ]
     }
   ],

@@ -1,9 +1,9 @@
 {
-  "gaqp_version": "0.1-working",
+  "gaqp_version": "0.2-working",
   "module_type": "domain_modules",
   "module_status": "working-draft",
   "tagging_rule": "Subtags are NOUNS and proper names only. Tag format in domain_tags_pipe: SectorCode:SubtagCode (e.g., HC:MOB, FIN:LBO). primary_sector field uses sector_name. domain_tags_pipe accepts NULL for sector-agnostic nuggets.",
-  "total_sectors": 30,
+  "total_sectors": 31,
   "sectors": [
     {
       "sector_name": "Aerospace & Defense",
@@ -15895,6 +15895,1075 @@
             {
               "code": "INTLDEST",
               "name": "International Destination"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sector_name": "Military",
+      "sector_code": "MIL",
+      "dimensions": [
+        {
+          "dimension": "Doctrine & Warfighting Concepts",
+          "subtags": [
+            {
+              "code": "DOCTRINE",
+              "name": "Military Doctrine"
+            },
+            {
+              "code": "STRATEGY",
+              "name": "Military Strategy"
+            },
+            {
+              "code": "OPERATIONAL_ART",
+              "name": "Operational Art"
+            },
+            {
+              "code": "TACTICS",
+              "name": "Tactics"
+            },
+            {
+              "code": "MANEUVER",
+              "name": "Maneuver Warfare"
+            },
+            {
+              "code": "FIRES_DOC",
+              "name": "Joint Fires Doctrine"
+            },
+            {
+              "code": "DETERRENCE",
+              "name": "Deterrence Theory"
+            },
+            {
+              "code": "ESCALATION_MGMT",
+              "name": "Escalation Management"
+            },
+            {
+              "code": "MULTIDOM",
+              "name": "Multi-Domain Operations"
+            },
+            {
+              "code": "HYBRID_WAR",
+              "name": "Hybrid Warfare"
+            },
+            {
+              "code": "GREY_ZONE",
+              "name": "Grey Zone Competition"
+            },
+            {
+              "code": "COIN",
+              "name": "Counterinsurgency (COIN)"
+            },
+            {
+              "code": "STABILITY_OPS",
+              "name": "Stability Operations"
+            },
+            {
+              "code": "PEACE_OPS",
+              "name": "Peacekeeping Operations"
+            },
+            {
+              "code": "UW_DOC",
+              "name": "Unconventional Warfare Doctrine"
+            },
+            {
+              "code": "EFFECTS_BASED",
+              "name": "Effects-Based Operations"
+            },
+            {
+              "code": "MISSION_CMD",
+              "name": "Mission Command"
+            },
+            {
+              "code": "AIRLND",
+              "name": "Air-Land Battle / Multi-Domain Integration"
+            },
+            {
+              "code": "MARITIME_DOC",
+              "name": "Maritime Doctrine"
+            },
+            {
+              "code": "AMP_DOC",
+              "name": "Amphibious Doctrine"
+            },
+            {
+              "code": "SPACE_DOC",
+              "name": "Space Doctrine"
+            }
+          ]
+        },
+        {
+          "dimension": "Command, Control & Communications (C3)",
+          "subtags": [
+            {
+              "code": "COCOM",
+              "name": "Combatant Commands"
+            },
+            {
+              "code": "JTF",
+              "name": "Joint Task Force"
+            },
+            {
+              "code": "UNIFIED_CMD",
+              "name": "Unified Command Structure"
+            },
+            {
+              "code": "ROE",
+              "name": "Rules of Engagement"
+            },
+            {
+              "code": "OPCON",
+              "name": "Operational Control (OPCON/TACON)"
+            },
+            {
+              "code": "BATTLE_MGT",
+              "name": "Battle Management"
+            },
+            {
+              "code": "C2_SYSTEMS",
+              "name": "C2 Systems & Software"
+            },
+            {
+              "code": "SATCOM",
+              "name": "Satellite Communications"
+            },
+            {
+              "code": "LINK16",
+              "name": "Link 16 / JTIDS / Tactical Data Links"
+            },
+            {
+              "code": "COMSEC",
+              "name": "Communications Security (COMSEC)"
+            },
+            {
+              "code": "SIGNAL_OPS",
+              "name": "Signal Operations"
+            },
+            {
+              "code": "FIRES_CTRL",
+              "name": "Fires Control Networks"
+            },
+            {
+              "code": "COP",
+              "name": "Common Operational Picture (COP)"
+            },
+            {
+              "code": "COMMAND_POST",
+              "name": "Command Post Operations"
+            },
+            {
+              "code": "SITREP_PROC",
+              "name": "Situation Reporting Procedures"
+            },
+            {
+              "code": "C2_RESIL",
+              "name": "C2 Resilience & Survivability"
+            }
+          ]
+        },
+        {
+          "dimension": "Intelligence, Surveillance & Reconnaissance (ISR)",
+          "subtags": [
+            {
+              "code": "HUMINT",
+              "name": "Human Intelligence (HUMINT)"
+            },
+            {
+              "code": "SIGINT",
+              "name": "Signals Intelligence (SIGINT)"
+            },
+            {
+              "code": "IMINT",
+              "name": "Imagery Intelligence (IMINT)"
+            },
+            {
+              "code": "GEOINT",
+              "name": "Geospatial Intelligence (GEOINT)"
+            },
+            {
+              "code": "MASINT",
+              "name": "Measurement & Signature Intelligence (MASINT)"
+            },
+            {
+              "code": "OSINT",
+              "name": "Open Source Intelligence (OSINT)"
+            },
+            {
+              "code": "TECHINT",
+              "name": "Technical Intelligence (TECHINT)"
+            },
+            {
+              "code": "COUNTERINT",
+              "name": "Counterintelligence"
+            },
+            {
+              "code": "ALL_SOURCE",
+              "name": "All-Source Intelligence"
+            },
+            {
+              "code": "INTEL_FUSION",
+              "name": "Intelligence Fusion"
+            },
+            {
+              "code": "COLLECTION_MGT",
+              "name": "Collection Management"
+            },
+            {
+              "code": "TARGETING_INT",
+              "name": "Targeting Intelligence"
+            },
+            {
+              "code": "THREAT_ASSESS",
+              "name": "Threat Assessment"
+            },
+            {
+              "code": "ORDER_BATTLE",
+              "name": "Order of Battle Analysis"
+            },
+            {
+              "code": "PREDICTIVE_INT",
+              "name": "Predictive Intelligence"
+            },
+            {
+              "code": "ISR_PLATFORMS",
+              "name": "ISR Platforms & Assets"
+            },
+            {
+              "code": "FINISHED_INTEL",
+              "name": "Finished Intelligence Products"
+            },
+            {
+              "code": "INTEL_CYCLE",
+              "name": "Intelligence Cycle Management"
+            },
+            {
+              "code": "DISSEM",
+              "name": "Intelligence Dissemination"
+            },
+            {
+              "code": "WARN_INTEL",
+              "name": "Warning Intelligence"
+            },
+            {
+              "code": "WEATHER_INT",
+              "name": "Weather & Environmental Intelligence"
+            },
+            {
+              "code": "TACTICAL_ISR",
+              "name": "Tactical ISR Integration"
+            }
+          ]
+        },
+        {
+          "dimension": "Force Structure & Organization",
+          "subtags": [
+            {
+              "code": "ARMY_STRUCT",
+              "name": "Army / Land Forces Structure"
+            },
+            {
+              "code": "NAVY_STRUCT",
+              "name": "Navy / Maritime Forces Structure"
+            },
+            {
+              "code": "AIRFORCE_STRUCT",
+              "name": "Air Force / Aviation Forces Structure"
+            },
+            {
+              "code": "MARINES_STRUCT",
+              "name": "Marine Corps / Amphibious Forces Structure"
+            },
+            {
+              "code": "SPACEFORCE",
+              "name": "Space Force"
+            },
+            {
+              "code": "COASTGUARD",
+              "name": "Coast Guard"
+            },
+            {
+              "code": "SOF_STRUCT",
+              "name": "Special Operations Forces (SOF) Structure"
+            },
+            {
+              "code": "GUARD_RESERVE",
+              "name": "National Guard & Reserve"
+            },
+            {
+              "code": "ALLIED_FORCE",
+              "name": "Allied Military Forces"
+            },
+            {
+              "code": "JOINT_FORCE",
+              "name": "Joint Force Organization"
+            },
+            {
+              "code": "BCT",
+              "name": "Brigade Combat Team (BCT)"
+            },
+            {
+              "code": "DIVISION",
+              "name": "Division"
+            },
+            {
+              "code": "CARRIER_GRP",
+              "name": "Carrier Strike Group"
+            },
+            {
+              "code": "MEU",
+              "name": "Marine Expeditionary Unit (MEU / MEF)"
+            },
+            {
+              "code": "AIRWING",
+              "name": "Air Wing / Air Expeditionary Wing"
+            },
+            {
+              "code": "BATTALION",
+              "name": "Battalion / Squadron"
+            },
+            {
+              "code": "COMPANY",
+              "name": "Company / Troop / Battery"
+            },
+            {
+              "code": "CYBER_FORCE",
+              "name": "Cyber Mission Forces"
+            },
+            {
+              "code": "SPACE_ORG",
+              "name": "Space Operations Organization"
+            },
+            {
+              "code": "REORG",
+              "name": "Force Reorganization & Redesign"
+            },
+            {
+              "code": "RECRUIT_ACC",
+              "name": "Recruitment & Accession"
+            },
+            {
+              "code": "FORCE_INT",
+              "name": "Integration of New Units & Capabilities"
+            }
+          ]
+        },
+        {
+          "dimension": "Weapon Systems & Platforms (Operational)",
+          "subtags": [
+            {
+              "code": "GROUND_VEH",
+              "name": "Ground Combat Vehicles"
+            },
+            {
+              "code": "INFANTRY_WPN",
+              "name": "Infantry Weapons & Equipment"
+            },
+            {
+              "code": "ARTILLERY",
+              "name": "Artillery & Indirect Fire Systems"
+            },
+            {
+              "code": "AIR_DEFENSE",
+              "name": "Air Defense Systems (Operational)"
+            },
+            {
+              "code": "NAVAL_VESSEL",
+              "name": "Naval Vessels & Warships"
+            },
+            {
+              "code": "SUB",
+              "name": "Submarines (Attack & Ballistic Missile)"
+            },
+            {
+              "code": "STRIKE_ACFT_OP",
+              "name": "Strike Aircraft (Operational Employment)"
+            },
+            {
+              "code": "ROTARY_OP",
+              "name": "Rotary Wing (Operational Employment)"
+            },
+            {
+              "code": "UAS_OPS",
+              "name": "UAS Operations"
+            },
+            {
+              "code": "MISSILES_OP",
+              "name": "Missiles & Guided Munitions (Operational)"
+            },
+            {
+              "code": "SPACE_ASSET",
+              "name": "Space Assets (Operational)"
+            },
+            {
+              "code": "DIRECTED_ENERGY",
+              "name": "Directed Energy Weapons"
+            },
+            {
+              "code": "HYPERSONIC",
+              "name": "Hypersonic Systems"
+            },
+            {
+              "code": "NUCLEAR_ASSET",
+              "name": "Nuclear Weapons & Delivery Systems"
+            },
+            {
+              "code": "EW_SYSTEMS",
+              "name": "Electronic Warfare Systems"
+            },
+            {
+              "code": "COUNTER_UAS",
+              "name": "Counter-UAS Systems"
+            },
+            {
+              "code": "MINES",
+              "name": "Naval Mines & Undersea Systems"
+            },
+            {
+              "code": "LASER_WPN",
+              "name": "Laser & High-Energy Weapons"
+            }
+          ]
+        },
+        {
+          "dimension": "Operations & Campaigns",
+          "subtags": [
+            {
+              "code": "COMBAT_OPS",
+              "name": "Combat Operations"
+            },
+            {
+              "code": "AMPHIBIOUS_OPS",
+              "name": "Amphibious Operations"
+            },
+            {
+              "code": "AIRBORNE_OPS",
+              "name": "Airborne Operations"
+            },
+            {
+              "code": "AIR_ASSAULT",
+              "name": "Air Assault Operations"
+            },
+            {
+              "code": "MARITIME_OPS",
+              "name": "Maritime Operations"
+            },
+            {
+              "code": "STRIKE_OPS",
+              "name": "Strike Operations (Air & Missile)"
+            },
+            {
+              "code": "SOF_OPS",
+              "name": "Special Operations Execution"
+            },
+            {
+              "code": "HADR",
+              "name": "Humanitarian Assistance / Disaster Relief (HADR)"
+            },
+            {
+              "code": "NEO",
+              "name": "Noncombatant Evacuation Operations (NEO)"
+            },
+            {
+              "code": "FID_OPS",
+              "name": "Foreign Internal Defense (FID)"
+            },
+            {
+              "code": "COUNTER_TERROR",
+              "name": "Counterterrorism Operations"
+            },
+            {
+              "code": "SEAD",
+              "name": "Suppression / Destruction of Enemy Air Defenses (SEAD/DEAD)"
+            },
+            {
+              "code": "SEALIFT_OPS",
+              "name": "Strategic Sealift & Prepositioning"
+            },
+            {
+              "code": "THEATER_LOG",
+              "name": "Theater Logistics Operations"
+            },
+            {
+              "code": "SPACE_OPS_EX",
+              "name": "Space Operations Execution"
+            },
+            {
+              "code": "CYBER_OPS_EX",
+              "name": "Cyberspace Operations Execution"
+            },
+            {
+              "code": "COUNTER_PROLIF",
+              "name": "Counter-Proliferation Operations"
+            },
+            {
+              "code": "INFO_OPS_CAMP",
+              "name": "Information Operations in Campaign"
+            }
+          ]
+        },
+        {
+          "dimension": "Personnel & Readiness",
+          "subtags": [
+            {
+              "code": "READINESS",
+              "name": "Unit Readiness Reporting"
+            },
+            {
+              "code": "TRAINING",
+              "name": "Training & Education"
+            },
+            {
+              "code": "PME",
+              "name": "Professional Military Education (PME)"
+            },
+            {
+              "code": "RETENTION",
+              "name": "Retention & Reenlistment"
+            },
+            {
+              "code": "DEPLOYMENT_CYC",
+              "name": "Deployment Cycle Management"
+            },
+            {
+              "code": "CASUALTY",
+              "name": "Casualty Management"
+            },
+            {
+              "code": "MORALE",
+              "name": "Morale, Welfare & Recreation (MWR)"
+            },
+            {
+              "code": "LEADER_DEV",
+              "name": "Leader Development"
+            },
+            {
+              "code": "PROMOTIONS",
+              "name": "Promotions & Assignments"
+            },
+            {
+              "code": "DIVERSITY_MIL",
+              "name": "Diversity & Inclusion (Military)"
+            },
+            {
+              "code": "MENTAL_HEALTH",
+              "name": "Mental Health & Resilience"
+            },
+            {
+              "code": "PHYSICAL_FIT",
+              "name": "Physical Fitness Standards"
+            },
+            {
+              "code": "MOS_QUAL",
+              "name": "MOS / Rating Qualification"
+            },
+            {
+              "code": "DWELL_TIME",
+              "name": "Dwell Time & Deployment Ratios"
+            },
+            {
+              "code": "FORCE_MGMT",
+              "name": "Force Management Policy"
+            },
+            {
+              "code": "BENEFITS",
+              "name": "Military Benefits & Compensation"
+            },
+            {
+              "code": "TRANSITION",
+              "name": "Transition & Veteran Services"
+            },
+            {
+              "code": "LEGAL_ASSIST",
+              "name": "Legal Assistance & Judge Advocate (JAG)"
+            },
+            {
+              "code": "PERSONNEL_MGMT",
+              "name": "Personnel Management Systems"
+            }
+          ]
+        },
+        {
+          "dimension": "Logistics & Sustainment",
+          "subtags": [
+            {
+              "code": "SUPPLY_CHAIN_MIL",
+              "name": "Military Supply Chain"
+            },
+            {
+              "code": "MAINTENANCE_SUS",
+              "name": "Maintenance & Sustainment"
+            },
+            {
+              "code": "PREPOSITION",
+              "name": "Prepositioning & Forward Basing"
+            },
+            {
+              "code": "POL",
+              "name": "Petroleum, Oil & Lubricants (POL)"
+            },
+            {
+              "code": "AMMO_LOG",
+              "name": "Ammunition Logistics"
+            },
+            {
+              "code": "MEDICAL_LOG",
+              "name": "Medical Logistics"
+            },
+            {
+              "code": "AIRLIFT_LOG",
+              "name": "Airlift & Sealift Logistics"
+            },
+            {
+              "code": "DEPOT",
+              "name": "Depot Maintenance & Industrial Base"
+            },
+            {
+              "code": "HOST_NATION",
+              "name": "Host Nation Support"
+            },
+            {
+              "code": "CONTRACTORS_LOG",
+              "name": "Contractor Logistics Support"
+            },
+            {
+              "code": "DISTRIBUTION_MIL",
+              "name": "Distribution & Transportation (Military)"
+            },
+            {
+              "code": "PARTS",
+              "name": "Spare Parts & Provisioning"
+            },
+            {
+              "code": "BASE_OPS",
+              "name": "Base Operations & Support"
+            },
+            {
+              "code": "WATER_MIL",
+              "name": "Water Supply & Field Purification"
+            },
+            {
+              "code": "COLD_CHAIN",
+              "name": "Cold Chain & Hazardous Materials Logistics"
+            }
+          ]
+        },
+        {
+          "dimension": "CBRN & Unconventional Threats",
+          "subtags": [
+            {
+              "code": "CHEM_THREAT",
+              "name": "Chemical Threats & Defense"
+            },
+            {
+              "code": "BIO_THREAT",
+              "name": "Biological Threats & Defense"
+            },
+            {
+              "code": "RADIO_THREAT",
+              "name": "Radiological Threats & Defense"
+            },
+            {
+              "code": "NUCLEAR_THREAT",
+              "name": "Nuclear Threats & Deterrence"
+            },
+            {
+              "code": "WMD_GENERAL",
+              "name": "Weapons of Mass Destruction (General)"
+            },
+            {
+              "code": "CBRN_DETECT",
+              "name": "CBRN Detection & Warning Systems"
+            },
+            {
+              "code": "DECON",
+              "name": "Decontamination Operations"
+            },
+            {
+              "code": "CBRN_PPE",
+              "name": "CBRN Protective Equipment"
+            },
+            {
+              "code": "MED_COUNTER",
+              "name": "Medical Countermeasures"
+            },
+            {
+              "code": "PROLIF",
+              "name": "WMD Nonproliferation"
+            },
+            {
+              "code": "IED",
+              "name": "IED & Improvised Explosive Threats"
+            },
+            {
+              "code": "NUCLEAR_SURV",
+              "name": "Nuclear Survivability"
+            },
+            {
+              "code": "BIOSURV",
+              "name": "Biosurveillance & Pandemic Military Response"
+            }
+          ]
+        },
+        {
+          "dimension": "Cyber & Information Warfare",
+          "subtags": [
+            {
+              "code": "CYBER_DEF_MIL",
+              "name": "Cyberspace Defense (Military)"
+            },
+            {
+              "code": "CYBER_OFF",
+              "name": "Cyberspace Attack / Offensive Cyber Operations"
+            },
+            {
+              "code": "IO_MIL",
+              "name": "Information Operations (IO)"
+            },
+            {
+              "code": "PSYOP_MIL",
+              "name": "Psychological Operations (PSYOP)"
+            },
+            {
+              "code": "MILDEC",
+              "name": "Military Deception (MILDEC)"
+            },
+            {
+              "code": "OPSEC",
+              "name": "Operations Security (OPSEC)"
+            },
+            {
+              "code": "EW_MIL",
+              "name": "Electronic Warfare"
+            },
+            {
+              "code": "JAMMING",
+              "name": "Jamming & Spectrum Denial"
+            },
+            {
+              "code": "SPECTRUM",
+              "name": "Electromagnetic Spectrum Management"
+            },
+            {
+              "code": "DISINFORM",
+              "name": "Disinformation & Counter-Narrative"
+            },
+            {
+              "code": "SPACE_CYBER",
+              "name": "Space-Cyber Nexus"
+            },
+            {
+              "code": "CN_OPS",
+              "name": "Computer Network Operations"
+            },
+            {
+              "code": "CRITICAL_INF_MIL",
+              "name": "Critical Infrastructure Defense (Military)"
+            },
+            {
+              "code": "CYBER_RESIL",
+              "name": "Cyber Resilience & Mission Assurance"
+            },
+            {
+              "code": "AI_CYBER",
+              "name": "AI-Enabled Cyber Operations"
+            }
+          ]
+        },
+        {
+          "dimension": "Special Operations",
+          "subtags": [
+            {
+              "code": "DIRECT_ACTION",
+              "name": "Direct Action"
+            },
+            {
+              "code": "SR",
+              "name": "Special Reconnaissance"
+            },
+            {
+              "code": "FID_SOF",
+              "name": "Foreign Internal Defense (SOF)"
+            },
+            {
+              "code": "UW_SOF",
+              "name": "Unconventional Warfare (SOF)"
+            },
+            {
+              "code": "PSYOP_SOF",
+              "name": "Psychological Operations (SOF)"
+            },
+            {
+              "code": "CA",
+              "name": "Civil Affairs"
+            },
+            {
+              "code": "MIO",
+              "name": "Maritime Interdiction Operations"
+            },
+            {
+              "code": "CT_SOF",
+              "name": "Counterterrorism (SOF)"
+            },
+            {
+              "code": "HOSTAGE",
+              "name": "Hostage Rescue & Personnel Recovery"
+            },
+            {
+              "code": "SOF_AVIATION",
+              "name": "SOF Aviation Support"
+            },
+            {
+              "code": "SOF_MEDIC",
+              "name": "Special Operations Medical"
+            },
+            {
+              "code": "SOJTF",
+              "name": "Special Operations Joint Task Force"
+            }
+          ]
+        },
+        {
+          "dimension": "Joint & Multinational Operations",
+          "subtags": [
+            {
+              "code": "NATO_OPS",
+              "name": "NATO Operations & Commitments"
+            },
+            {
+              "code": "COALITION",
+              "name": "Coalition Operations"
+            },
+            {
+              "code": "INTEROP_MIL",
+              "name": "Interoperability Standards (Military)"
+            },
+            {
+              "code": "SOFA",
+              "name": "Status of Forces Agreements (SOFA)"
+            },
+            {
+              "code": "SECURITY_COOP",
+              "name": "Security Cooperation"
+            },
+            {
+              "code": "TRAIN_ADVISE",
+              "name": "Train, Advise & Assist (TAA)"
+            },
+            {
+              "code": "ALLIANCE",
+              "name": "Alliance Management"
+            },
+            {
+              "code": "COMBINED_JTF",
+              "name": "Combined Joint Task Force"
+            },
+            {
+              "code": "UN_OPS",
+              "name": "UN Peacekeeping Contributions"
+            },
+            {
+              "code": "BILATERAL",
+              "name": "Bilateral Military Relations"
+            },
+            {
+              "code": "BURDEN_SHARE",
+              "name": "Burden Sharing & Cost Sharing"
+            },
+            {
+              "code": "THEATER_SC",
+              "name": "Theater Security Cooperation"
+            }
+          ]
+        },
+        {
+          "dimension": "Military Law & Policy",
+          "subtags": [
+            {
+              "code": "UCMJ",
+              "name": "Uniform Code of Military Justice (UCMJ)"
+            },
+            {
+              "code": "LOAC",
+              "name": "Law of Armed Conflict (LOAC)"
+            },
+            {
+              "code": "ROE_POLICY",
+              "name": "Rules of Engagement Policy"
+            },
+            {
+              "code": "ARMS_CTRL",
+              "name": "Arms Control Agreements"
+            },
+            {
+              "code": "EXPORT_CTRL_MIL",
+              "name": "Military Export Controls (ITAR/EAR)"
+            },
+            {
+              "code": "CIVILIAN_HARM",
+              "name": "Civilian Harm Mitigation"
+            },
+            {
+              "code": "DETAINEE",
+              "name": "Detainee Policy & Treatment"
+            },
+            {
+              "code": "OVERSIGHT_MIL",
+              "name": "Congressional & Executive Oversight (Military)"
+            },
+            {
+              "code": "AUMF",
+              "name": "Authorization for Use of Military Force (AUMF)"
+            },
+            {
+              "code": "ACQUISITION_LAW",
+              "name": "Defense Acquisition Law & Regulation"
+            },
+            {
+              "code": "CYBER_LAW",
+              "name": "Cyber Operations Legal Framework"
+            },
+            {
+              "code": "AUTONOMOUS_LAW",
+              "name": "Autonomous Weapons & Lethal Autonomy Law"
+            }
+          ]
+        },
+        {
+          "dimension": "Force Modernization & Requirements",
+          "subtags": [
+            {
+              "code": "REQUIREMENTS",
+              "name": "Requirements Generation (JCIDS)"
+            },
+            {
+              "code": "ACQUISITION_POL",
+              "name": "Defense Acquisition Policy"
+            },
+            {
+              "code": "RDT_E",
+              "name": "Research, Development, Test & Evaluation (RDT&E)"
+            },
+            {
+              "code": "POM",
+              "name": "Program Objective Memorandum (POM)"
+            },
+            {
+              "code": "BUDGET_POL",
+              "name": "Defense Budget Policy & Authorization"
+            },
+            {
+              "code": "CAPABILITY_GAP",
+              "name": "Capability Gap Analysis"
+            },
+            {
+              "code": "TECH_TRANSITION",
+              "name": "Technology Transition"
+            },
+            {
+              "code": "DIB",
+              "name": "Defense Industrial Base"
+            },
+            {
+              "code": "DIVESTITURE",
+              "name": "Force Divestiture & Retirement"
+            },
+            {
+              "code": "PIVOT",
+              "name": "Strategic Pivot & Reorientation"
+            },
+            {
+              "code": "WARGAMING",
+              "name": "Wargaming & Experimentation"
+            },
+            {
+              "code": "PROTOTYPING",
+              "name": "Rapid Prototyping & Fielding"
+            },
+            {
+              "code": "INNOVATION_DEF",
+              "name": "Defense Innovation (DIU, AFWERX, Army Futures)"
+            },
+            {
+              "code": "AI_AUTONOMY",
+              "name": "AI & Autonomous Systems (Military)"
+            }
+          ]
+        },
+        {
+          "dimension": "GAQP Intelligence Functions",
+          "subtags": [
+            {
+              "code": "INTEL_ESTIMATE",
+              "name": "Intelligence Estimate"
+            },
+            {
+              "code": "THREAT_BRIEF",
+              "name": "Threat Briefing"
+            },
+            {
+              "code": "OPORD",
+              "name": "Operations Order (OPORD)"
+            },
+            {
+              "code": "WARNO",
+              "name": "Warning Order (WARNO)"
+            },
+            {
+              "code": "FRAGORD",
+              "name": "Fragmentary Order (FRAGO)"
+            },
+            {
+              "code": "CONOP",
+              "name": "Concept of Operations (CONOP)"
+            },
+            {
+              "code": "OPLAN",
+              "name": "Operations Plan (OPLAN)"
+            },
+            {
+              "code": "AAR",
+              "name": "After-Action Review (AAR)"
+            },
+            {
+              "code": "SITREP_DOC",
+              "name": "Situation Report (SITREP)"
+            },
+            {
+              "code": "LESSON_LEARNED",
+              "name": "Lessons Learned Report"
+            },
+            {
+              "code": "EXERCISE_RPT",
+              "name": "Exercise Report & Assessment"
+            },
+            {
+              "code": "STRATEGY_DOC",
+              "name": "Strategy Document (NDS/NMS/NSS)"
+            },
+            {
+              "code": "DOCTRINAL_PUB",
+              "name": "Doctrinal Publication (FM/JP/NWP/AFI)"
+            },
+            {
+              "code": "INTEL_RPT",
+              "name": "Intelligence Report (PIR/SALUTE)"
+            },
+            {
+              "code": "CAMPAIGN_ASSESS",
+              "name": "Campaign Assessment"
+            },
+            {
+              "code": "POLICY_MEMO",
+              "name": "Policy Memorandum & Directive"
+            },
+            {
+              "code": "BUDGET_DOC",
+              "name": "Defense Budget Document (FYDP/PB)"
+            },
+            {
+              "code": "CONGRESSIONAL",
+              "name": "Congressional Testimony / Posture Statement"
             }
           ]
         }

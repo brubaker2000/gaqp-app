@@ -1,8 +1,8 @@
 {
-  "gaqp_version": "0.1-working",
+  "gaqp_version": "0.2-working",
   "field": "primary_sector",
   "fallback": "General / Cross-Sector",
-  "notes": "GAQP sector taxonomy is derived from private equity demand structure and is the primary classification. GICS and SIC fields are cross-reference bridges for interoperability with financial data systems and regulatory databases — they do not govern GAQP classification.",
+  "notes": "GAQP sector taxonomy is derived from private equity demand structure and is the primary classification. GICS and SIC fields are cross-reference bridges for interoperability with financial data systems and regulatory databases \u2014 they do not govern GAQP classification.",
   "sectors": [
     {
       "sector_id": 1,
@@ -376,6 +376,18 @@
       "sic_range": "4510-4522, 7000-7011",
       "naics_range": "481, 721, 722",
       "mapping_notes": "Aligns with GICS Hotels, Restaurants & Leisure industry. GAQP separates Travel & Hospitality from Franchised Brands despite overlap in QSR."
+    },
+    {
+      "sector_id": 32,
+      "sector_name": "Military",
+      "sector_code": "MIL",
+      "gics_sector": "Industrials",
+      "gics_industry_group": "Capital Goods",
+      "gics_industry": "Aerospace & Defense",
+      "gics_code": "20101010",
+      "sic_range": "9711, 9721",
+      "naics_range": "9281, 9282",
+      "mapping_notes": "No direct GICS equivalent for military operations. Closest GICS proxy is Aerospace & Defense (Industrials), which covers contractors and platforms rather than military operations. SIC 9711 (National Security) and NAICS 9281 (National Security) are the closest government classification codes. GAQP MIL is operationally focused \u2014 doctrine, intelligence, command, warfighting, readiness, law of armed conflict \u2014 distinct from AD (Aerospace & Defense), which covers the contractor, platform, and industrial base side."
     }
   ]
 }
