@@ -203,11 +203,25 @@ The Standards Package shall follow a versioning protocol in which:
 
 **Section 6.3 — Community Proposals**
 
-The Institute shall maintain a public proposal process for Statutory Layer additions. Any person or organization may submit a proposal. The Standards Committee shall acknowledge receipt within five (5) business days and shall act on the proposal within thirty (30) days. Accepted proposals shall be incorporated in the next scheduled Statutory Layer update.
+The Institute shall maintain a public proposal process for Statutory Layer additions. Any person or organization may submit a proposal through the Institute's public repository. The Standards Committee Chair, or any Committee member designated by the Chair, may approve Statutory Layer additions unilaterally and publish them immediately. There is no mandatory waiting period for Statutory Layer changes. The Committee shall review approved additions at its next regular meeting and may reverse an addition that does not meet the standards of the taxonomy; such reversals shall be documented in the release log.
+
+The rationale for this design is explicit: GAQP's Statutory Layer consists of controlled vocabulary — subtags, tag values, and sector crossref corrections. Adding a new subtag harms no one. Delaying a necessary subtag harms the utility of the standard. Speed is a feature of a living vocabulary.
 
 **Section 6.4 — Constitutional Change Process**
 
-Proposed changes to the Constitutional Layer shall be published for public comment for not fewer than thirty (30) days before the Standards Committee votes. Constitutional changes require approval by both the Standards Committee and the Board.
+GAQP governs language synthesis and qualitative knowledge classification. It does not touch financial transactions, safety-critical systems, medical devices, or any other domain where a poorly designed change creates risk to persons or institutions. The constitutional change process reflects this risk profile.
+
+Proposed changes to the Constitutional Layer require:
+
+(a) A written proposal submitted to the Standards Committee describing the change and its rationale;
+
+(b) Notice to registered implementers of not fewer than fourteen (14) days before the Standards Committee vote, so that implementers may prepare for the change;
+
+(c) Approval by a majority vote of the Standards Committee; and
+
+(d) Notification to the Board at its next regular meeting.
+
+Board approval is not required for Constitutional Layer changes. The Standards Committee is the technical authority of the Institute. The Board's role is strategic and financial oversight, not technical gatekeeping. There is no mandatory public comment period. The fourteen-day implementer notice period exists to give compliant systems time to update, not to invite external governance of the Institute's technical decisions.
 
 **Section 6.5 — Conformance Certification**
 
@@ -279,7 +293,7 @@ These Bylaws may be amended, repealed, or replaced by a two-thirds vote of the d
 
 **Section 10.2 — Open Publication Mandate**
 
-Section 6.1 (Open Publication Mandate) may only be amended by a two-thirds vote of the directors then in office and requires that the amendment be published for public comment for not fewer than sixty (60) days before the vote.
+Section 6.1 (Open Publication Mandate) may only be amended by a two-thirds vote of the directors then in office. Written notice of the proposed amendment shall be given to all directors not fewer than thirty (30) days before the vote. There is no mandatory public comment period. The Open Publication Mandate is a commitment to the implementer community and the public; the thirty-day director notice period ensures the Board acts deliberately on this commitment, not that external parties govern it.
 
 ---
 
