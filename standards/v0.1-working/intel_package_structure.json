@@ -1,0 +1,90 @@
+{
+  "gaqp_version": "0.1-working",
+  "source_locality_rule": "A source-level .intel file must contain ONLY artifacts that originated from its corresponding source file.",
+  "forbidden_in_source_intel": [
+    "Cross-document conclusions",
+    "Corpus-wide findings",
+    "Role-specific recommendations",
+    "Strategy synthesized from multiple files",
+    "Multi-source pattern conclusions",
+    "Canonical claim families or theme maps derived from multiple sources",
+    "Any synthesis, summary, implication, or next step"
+  ],
+  "security_rule": "A .intel sidecar may be more sensitive than its source document because it concentrates buried intelligence. Sidecars must inherit or exceed source file access controls. Never weaker.",
+  "sections": [
+    {
+      "section": "manifest",
+      "required": true,
+      "contents": "Package identity, version, creator, generation date"
+    },
+    {
+      "section": "source_binding",
+      "required": true,
+      "contents": "Source file identity, name, type, hash"
+    },
+    {
+      "section": "source_payload",
+      "required": true,
+      "contents": "Native source content or binding pointer"
+    },
+    {
+      "section": "schema",
+      "required": true,
+      "contents": "Schema and standards versions used"
+    },
+    {
+      "section": "anchors",
+      "required": true,
+      "contents": "Source anchors for all admitted claims"
+    },
+    {
+      "section": "claims",
+      "required": true,
+      "contents": "Source-local atomic claims only"
+    },
+    {
+      "section": "evidence",
+      "required": false,
+      "recommended": true,
+      "contents": "Evidence records from the source"
+    },
+    {
+      "section": "entities",
+      "required": false,
+      "recommended": true,
+      "contents": "Named entities from the source"
+    },
+    {
+      "section": "topics",
+      "required": false,
+      "recommended": true,
+      "contents": "Topic tags and concepts"
+    },
+    {
+      "section": "controlled_tags",
+      "required": true,
+      "contents": "Preferred tags and synonym mappings"
+    },
+    {
+      "section": "relationships",
+      "required": false,
+      "recommended": true,
+      "contents": "Local relationships among source claims"
+    },
+    {
+      "section": "validation",
+      "required": true,
+      "contents": "Validation status and errors/warnings"
+    },
+    {
+      "section": "security",
+      "required": true,
+      "contents": "Permissions, classification, access policy"
+    },
+    {
+      "section": "audit",
+      "required": true,
+      "contents": "Generation log and processing metadata"
+    }
+  ]
+}

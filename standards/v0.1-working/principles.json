@@ -1,0 +1,55 @@
+{
+  "gaqp_version": "0.1-working",
+  "principles": [
+    {
+      "id": 1,
+      "name": "Materiality of Judgment",
+      "requirement": "Preserve claims that can influence a decision, interpretation, or risk posture. Discard what cannot."
+    },
+    {
+      "id": 2,
+      "name": "Source Traceability",
+      "requirement": "Every accepted nugget must point back to its precise origin within the source document."
+    },
+    {
+      "id": 3,
+      "name": "Consistency of Application",
+      "requirement": "Apply the same rules uniformly across all claim processing, regardless of source or context."
+    },
+    {
+      "id": 4,
+      "name": "Conservatism",
+      "requirement": "Uncertain qualitative claims must be weighted cautiously unless independently corroborated."
+    },
+    {
+      "id": 5,
+      "name": "Contextual Boundary Disclosure",
+      "requirement": "Disclose when claims are activated in a context different from their source context."
+    },
+    {
+      "id": 6,
+      "name": "Multi-Source Corroboration",
+      "requirement": "Confidence advances through independent convergence, not repetition. Same-source repetition is not corroboration."
+    },
+    {
+      "id": 7,
+      "name": "Judgment Independence",
+      "requirement": "Synthesis must not be contaminated by the interests of any single source or actor."
+    },
+    {
+      "id": 8,
+      "name": "Proportionality",
+      "requirement": "The weight of a claim should be proportional to the strength of its evidence."
+    },
+    {
+      "id": 9,
+      "name": "Revision Standard",
+      "requirement": "GAQP outputs must remain updateable when better information arrives."
+    },
+    {
+      "id": 10,
+      "name": "Scenario Completeness",
+      "requirement": "Synthesis should account for alternative scenarios, not just the most likely."
+    }
+  ]
+}

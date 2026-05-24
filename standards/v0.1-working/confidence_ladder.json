@@ -1,0 +1,37 @@
+{
+  "gaqp_version": "0.1-working",
+  "independence_definition": "A unique (tenant_id, actor_id) pair. The originating source is admission, not corroboration. The same actor corroborating a claim twice counts once.",
+  "promotion_rule": "Confidence advances through independent corroboration only. Same-source or same-tenant repetition does not promote. Structural elevation requires human operator action — never automated.",
+  "levels": [
+    {
+      "level": "seed",
+      "score": 0.50,
+      "condition": "Extracted from one originating source. No independent corroboration yet."
+    },
+    {
+      "level": "single_source",
+      "score": 0.65,
+      "condition": "One credible independent source beyond the origin."
+    },
+    {
+      "level": "developing",
+      "score": 0.72,
+      "condition": "Two independent corroborating sources beyond the origin."
+    },
+    {
+      "level": "corroborated",
+      "score": 0.91,
+      "condition": "Three or more independent corroborating sources beyond the origin."
+    },
+    {
+      "level": "structural",
+      "score": 1.00,
+      "condition": "Operator elevation only. Never automated."
+    },
+    {
+      "level": "disputed",
+      "score": null,
+      "condition": "Active unresolved contradiction. Score frozen. Promotion blocked."
+    }
+  ]
+}

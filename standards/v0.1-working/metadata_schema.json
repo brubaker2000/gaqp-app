@@ -1,0 +1,240 @@
+{
+  "gaqp_version": "0.1-working",
+  "compliance_rule": "Every GAQP-compliant claim record must carry all required fields. A claim missing any required field is not GAQP-compliant. A claim record that exists in a .intel file is by definition admitted — there are no rejected or needs_review records in a compliant .intel file.",
+  "canonical_field_count": 29,
+  "fields": [
+    {
+      "field": "claim_id",
+      "group": "Identity",
+      "required": true,
+      "type": "string",
+      "definition": "Sequential serial handle assigned at extraction time. Unique within the .intel package."
+    },
+    {
+      "field": "fingerprint",
+      "group": "Identity",
+      "required": true,
+      "type": "string",
+      "definition": "SHA-256 deterministic identity hash of claim_text + source_anchor_id. The true unique identifier. Two records with the same fingerprint are the same claim."
+    },
+    {
+      "field": "record_type",
+      "group": "Identity",
+      "required": true,
+      "type": "string",
+      "definition": "Discriminator for unified corpus stores. Always 'claim' for nugget records.",
+      "enum": ["claim"]
+    },
+    {
+      "field": "extracted_at",
+      "group": "Identity",
+      "required": true,
+      "type": "datetime",
+      "definition": "ISO 8601 timestamp of when this nugget was born. When the .intel file was generated."
+    },
+    {
+      "field": "claim_text",
+      "group": "Content",
+      "required": true,
+      "type": "string",
+      "definition": "The governed claim — the atomic nugget. Exact, governed wording as extracted and admitted."
+    },
+    {
+      "field": "claim_type",
+      "group": "Content",
+      "required": true,
+      "type": "string",
+      "definition": "One of the exact 25 canonical types from the closed claim register. No substitution, abbreviation, or inference permitted.",
+      "ref": "claim_types.json"
+    },
+    {
+      "field": "source_quote",
+      "group": "Content",
+      "required": true,
+      "type": "string",
+      "definition": "Verbatim passage from the source document from which this claim was extracted. The raw input before governed extraction."
+    },
+    {
+      "field": "inference_flag",
+      "group": "Content",
+      "required": true,
+      "type": "boolean",
+      "definition": "TRUE if the claim involves any deconstructor inference beyond what the source explicitly states. Inference must be labeled — never hidden."
+    },
+    {
+      "field": "source_id",
+      "group": "Source Provenance",
+      "required": true,
+      "type": "string",
+      "definition": "Foreign key to the source record in the source manifest. Machine-readable reference."
+    },
+    {
+      "field": "source_document",
+      "group": "Source Provenance",
+      "required": true,
+      "type": "string",
+      "definition": "Human-readable name of the source document. For display and citation without requiring a join."
+    },
+    {
+      "field": "source_hash",
+      "group": "Source Provenance",
+      "required": true,
+      "type": "string",
+      "definition": "SHA-256 hash of the source file at time of extraction. Enables stale detection — if source_hash no longer matches the source file, the nugget is stale."
+    },
+    {
+      "field": "source_anchor_id",
+      "group": "Source Provenance",
+      "required": true,
+      "type": "string",
+      "definition": "Foreign key to the anchor record. The anchor carries precise location data (character offsets, quote hash, etc.)."
+    },
+    {
+      "field": "source_page",
+      "group": "Source Provenance",
+      "required": false,
+      "type": "integer",
+      "definition": "Page number within the source document. Human-readable location. Required for the nugget to stand alone without an anchor lookup. NULL for non-paginated sources."
+    },
+    {
+      "field": "source_section",
+      "group": "Source Provenance",
+      "required": false,
+      "type": "string",
+      "definition": "Section heading or label within the source document. Human-readable location."
+    },
+    {
+      "field": "source_paragraph",
+      "group": "Source Provenance",
+      "required": false,
+      "type": "integer",
+      "definition": "Paragraph number within the source section. Human-readable location."
+    },
+    {
+      "field": "primary_sector",
+      "group": "Classification",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "definition": "Single dominant sector from the controlled sector vocabulary. NULL for sector-agnostic nuggets. NULL is valid and common — not an error.",
+      "ref": "sector_vocabulary.json"
+    },
+    {
+      "field": "domain_tags_pipe",
+      "group": "Classification",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "definition": "Pipe-delimited sector:subtag pairs from the domain modules taxonomy. Format: SectorCode:SubtagCode. Example: HC:MOB|HC:Medicare|RE:MOB. NULL for sector-agnostic nuggets.",
+      "ref": "domain_modules.json"
+    },
+    {
+      "field": "tags_pipe",
+      "group": "Classification",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "definition": "Pipe-delimited cross-cutting tags using controlled prefixes. Format: prefix:Value. Prefixes: func (business function), risk (risk category), topic (cross-sector subject), geo (geography). Example: func:Procurement|risk:VendorConcentration|geo:APAC. NULL is valid.",
+      "ref": "tags_vocabulary.json"
+    },
+    {
+      "field": "entities_pipe",
+      "group": "Classification",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "definition": "Pipe-delimited named entities referenced in the claim. Organizations, persons, products, programs, regulations."
+    },
+    {
+      "field": "relationship_hints_pipe",
+      "group": "Classification",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "definition": "Pipe-delimited fingerprints of related nuggets within the same .intel package. Non-authoritative hints for reconstruction graph construction."
+    },
+    {
+      "field": "confidence_level",
+      "group": "Confidence",
+      "required": true,
+      "type": "string",
+      "definition": "Confidence level from the canonical ladder.",
+      "enum": ["seed", "single_source", "developing", "corroborated", "structural", "disputed"],
+      "ref": "confidence_ladder.json"
+    },
+    {
+      "field": "confidence_score",
+      "group": "Confidence",
+      "required": true,
+      "type": "number",
+      "definition": "Numeric score per confidence ladder. seed=0.50, single_source=0.65, developing=0.72, corroborated=0.91, structural=1.00, disputed=null."
+    },
+    {
+      "field": "nugget_status",
+      "group": "Lifecycle",
+      "required": true,
+      "type": "string",
+      "definition": "Lifecycle status of the nugget. active = current and valid. stale = source_hash mismatch detected, regeneration needed.",
+      "enum": ["active", "stale"]
+    },
+    {
+      "field": "validation_flags_pipe",
+      "group": "Validation",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "definition": "Pipe-delimited validation flags raised during or after extraction. NULL means no flags."
+    },
+    {
+      "field": "extraction_method",
+      "group": "Generation",
+      "required": true,
+      "type": "string",
+      "definition": "How the claim was produced.",
+      "enum": ["llm", "human", "hybrid"]
+    },
+    {
+      "field": "deconstruction_profile",
+      "group": "Generation",
+      "required": true,
+      "type": "string",
+      "definition": "Identifier or fingerprint of the instruction set used to govern this deconstruction. Records the art of the extraction without exposing proprietary prompt content."
+    },
+    {
+      "field": "standards_package_version",
+      "group": "Generation",
+      "required": true,
+      "type": "string",
+      "definition": "Version of the GAQP Standards Package (the schematic) that governed this extraction. Must be recorded on every artifact."
+    },
+    {
+      "field": "deconstructor_note",
+      "group": "Annotation",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "definition": "Operator or LLM annotation about the nugget itself — unusual source context, ambiguous classification, notable inference. Not about admission status."
+    },
+    {
+      "field": "review_notes",
+      "group": "Annotation",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "definition": "Post-admission operator notes added during corpus review or corroboration."
+    }
+  ],
+  "removed_fields": [
+    {"field": "admission_status", "reason": "Existence in .intel file = admitted. No rejected records stored."},
+    {"field": "rejection_reason", "reason": "No rejected claims — they are not born, not recorded."},
+    {"field": "reason_for_review", "reason": "Same. Merged concept into review_notes for post-admission use."},
+    {"field": "standalone_test through non_triviality_test", "reason": "Seven test fields removed. Nugget existence is proof of passing all seven."},
+    {"field": "record_id", "reason": "Redundant with claim_id."},
+    {"field": "primary_tag", "reason": "Redundant — first value in tags_pipe or domain_tags_pipe by convention."},
+    {"field": "line_start / line_end", "reason": "Anchor territory. Carried in source_anchor record, not nugget."},
+    {"field": "source_location", "reason": "Replaced by source_page, source_section, source_paragraph."},
+    {"field": "secondary_sectors_pipe", "reason": "Replaced by domain_tags_pipe which encodes sector implicitly."},
+    {"field": "sic_2 / sic_4", "reason": "Domain_tags_pipe provides superior granularity. SIC crossrefs on sector_vocabulary record."},
+    {"field": "duplicate_check_status / quote_support_status / claim_type_validation_status", "reason": "Collapsed into validation_flags_pipe."}
+  ]
+}

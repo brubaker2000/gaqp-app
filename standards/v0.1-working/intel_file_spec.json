@@ -1,0 +1,235 @@
+{
+  "gaqp_version": "0.1-working",
+  "spec_name": "GAQP .intel File Specification",
+  "description": "Defines the format, structure, naming, and validation rules for GAQP-compliant .intel sidecar files.",
+
+  "format": {
+    "container": "Single JSON file",
+    "encoding": "UTF-8",
+    "naming_convention": "{source_filename}.intel",
+    "examples": ["board_deck_Q3_2024.pdf.intel", "earnings_call_transcript.docx.intel", "policy_manual_v4.pdf.intel"],
+    "placement": "Sidecar to the source file. Travels with the source document.",
+    "security_rule": "A .intel sidecar may be more sensitive than its source document because it concentrates buried intelligence. Sidecars must inherit or exceed source file access controls. Never weaker."
+  },
+
+  "structure": {
+    "description": "14 required and recommended sections. All required sections must be present for a .intel file to be GAQP-compliant.",
+    "sections": {
+      "manifest": {
+        "required": true,
+        "description": "Package identity and generation metadata",
+        "fields": {
+          "intel_id": "Unique identifier for this .intel package",
+          "gaqp_version": "GAQP specification version",
+          "standards_package_version": "Version of the schematic used",
+          "deconstruction_profile": "Instruction set identifier used for extraction",
+          "generated_at": "ISO 8601 timestamp of generation",
+          "generated_by": "Deconstruction app identifier",
+          "claim_count": "Total number of admitted claims in this package",
+          "package_hash": "SHA-256 hash of the claims section content"
+        }
+      },
+      "source_binding": {
+        "required": true,
+        "description": "Source document identity and metadata",
+        "fields": {
+          "source_id": "Unique identifier for the source document",
+          "source_filename": "Original filename",
+          "source_type": "Document type: pdf | docx | xlsx | pptx | transcript | email | html | other",
+          "source_created_date": "Document creation date — the authoritative temporal anchor for all claims",
+          "source_hash": "SHA-256 hash of source file at time of extraction",
+          "source_size_bytes": "File size",
+          "page_count": "Total pages (where applicable)",
+          "language": "Primary language of the source document"
+        }
+      },
+      "source_payload": {
+        "required": true,
+        "description": "Pointer to source content. Does not embed the source file.",
+        "fields": {
+          "payload_type": "pointer | embedded_text",
+          "payload_pointer": "File path or URI to the source document",
+          "embedded_text": "Plain text extraction of source content (optional, for search indexing)"
+        }
+      },
+      "schema": {
+        "required": true,
+        "description": "Schema and standards versions governing this package",
+        "fields": {
+          "claim_schema_version": "Version of the claim metadata schema used",
+          "anchor_schema_version": "Version of the source anchor schema used",
+          "domain_modules_version": "Version of the domain modules taxonomy used"
+        }
+      },
+      "anchors": {
+        "required": true,
+        "description": "Source anchor records for all admitted claims. One anchor per claim.",
+        "anchor_fields": {
+          "anchor_id": "Unique anchor identifier — referenced by claim.source_anchor_id",
+          "source_id": "Links back to source_binding",
+          "source_sha256": "SHA-256 hash of the source file — for drift detection",
+          "page": "Page number",
+          "section": "Section heading",
+          "paragraph": "Paragraph number within section",
+          "sentence": "Sentence number within paragraph",
+          "clause": "Contract/legal clause reference (where applicable)",
+          "slide": "Slide number for presentation sources",
+          "speaker_turn": "Speaker turn ID for transcript sources",
+          "timestamp": "Audio/video timestamp for media sources",
+          "char_start": "Character start offset",
+          "char_end": "Character end offset",
+          "quote_hash": "SHA-256 of the anchored text span",
+          "anchor_confidence": "high | medium | low"
+        }
+      },
+      "claims": {
+        "required": true,
+        "description": "Array of admitted claim records. Every record conforms to the canonical 28-field schema. This section contains ONLY source-local claims from this source document. No cross-document content permitted.",
+        "source_locality_rule": "A source .intel file that contains cross-document content fails validation and is non-compliant.",
+        "record_schema_ref": "metadata_schema.json"
+      },
+      "evidence": {
+        "required": false,
+        "recommended": true,
+        "description": "Structured evidence records extracted from the source — data points, statistics, citations, exhibits that support claims but are not claims themselves."
+      },
+      "entities": {
+        "required": false,
+        "recommended": true,
+        "description": "Named entity records extracted from the source. Organizations, persons, products, geographies, regulations referenced across claims."
+      },
+      "topics": {
+        "required": false,
+        "recommended": true,
+        "description": "Topic and concept tags at the document level. Summarizes the primary subjects addressed in the source."
+      },
+      "controlled_tags": {
+        "required": true,
+        "description": "Tag registry for this .intel package. Lists all domain_tags and tags_pipe values used, with synonym mappings and preferred forms."
+      },
+      "relationships": {
+        "required": false,
+        "recommended": true,
+        "description": "Local relationship records between claims within this .intel package. Source-local only — no cross-document relationships."
+      },
+      "validation": {
+        "required": true,
+        "description": "Validation status for this .intel package",
+        "fields": {
+          "validation_status": "passed | failed | warnings",
+          "validated_at": "ISO 8601 timestamp of validation run",
+          "errors": "Array of validation errors — present if validation_status is failed",
+          "warnings": "Array of warnings — present if any non-blocking issues found",
+          "compliance_level": "Highest GAQP conformance level (L1-L7) achieved by this package"
+        }
+      },
+      "security": {
+        "required": true,
+        "description": "Access control and classification",
+        "fields": {
+          "classification": "Sensitivity classification of this .intel package",
+          "access_policy": "Who may access this sidecar",
+          "tenant_id": "Owning tenant or organization identifier",
+          "inherited_from_source": "Boolean — whether classification was inherited from source document"
+        }
+      },
+      "audit": {
+        "required": true,
+        "description": "Processing audit log",
+        "fields": {
+          "extraction_started_at": "ISO 8601 timestamp",
+          "extraction_completed_at": "ISO 8601 timestamp",
+          "extraction_method": "llm | human | hybrid",
+          "deconstruction_profile": "Instruction set identifier",
+          "llm_model": "Model identifier used for extraction (if applicable)",
+          "candidate_count": "Total candidates identified before admission filtering",
+          "admitted_count": "Claims that passed all seven admission tests",
+          "events": "Array of processing log events"
+        }
+      }
+    }
+  },
+
+  "validation_rules": {
+    "required_sections": ["manifest", "source_binding", "source_payload", "schema", "anchors", "claims", "controlled_tags", "validation", "security", "audit"],
+    "claim_count_match": "manifest.claim_count must equal claims array length",
+    "anchor_coverage": "Every claim must have a corresponding anchor in the anchors section",
+    "source_locality": "claims section must contain only claims from this source document. Any cross-document content = validation failure.",
+    "hash_integrity": "manifest.package_hash must match SHA-256 of the serialized claims section",
+    "standards_version": "manifest.standards_package_version must be a known released version of the schematic",
+    "no_stale_on_generate": "source_binding.source_hash must match the actual source file at generation time"
+  },
+
+  "example_skeleton": {
+    "manifest": {
+      "intel_id": "a3f7c2d1-...",
+      "gaqp_version": "0.1-working",
+      "standards_package_version": "0.1-working",
+      "deconstruction_profile": "pe-diligence-v2",
+      "generated_at": "2026-05-22T14:30:00Z",
+      "generated_by": "execalc-deconstructor-v1",
+      "claim_count": 47,
+      "package_hash": "sha256:e3b0c4..."
+    },
+    "source_binding": {
+      "source_id": "src_001",
+      "source_filename": "ProjectAlpha_CIM_2026.pdf",
+      "source_type": "pdf",
+      "source_created_date": "2026-03-15",
+      "source_hash": "sha256:a1b2c3...",
+      "source_size_bytes": 4821344,
+      "page_count": 87,
+      "language": "en"
+    },
+    "source_payload": {
+      "payload_type": "pointer",
+      "payload_pointer": "/corpus/deal_docs/ProjectAlpha_CIM_2026.pdf"
+    },
+    "claims": [
+      {
+        "claim_id": "clm_001",
+        "fingerprint": "sha256:f4a9b2...",
+        "record_type": "claim",
+        "extracted_at": "2026-05-22T14:30:45Z",
+        "claim_text": "The company's top three customers represent 67% of total revenue, creating significant concentration risk.",
+        "claim_type": "Diagnostic Signal",
+        "source_quote": "Our top three customers accounted for approximately 67% of our total revenues for the fiscal year ended December 31, 2025.",
+        "inference_flag": false,
+        "source_id": "src_001",
+        "source_document": "ProjectAlpha_CIM_2026.pdf",
+        "source_hash": "sha256:a1b2c3...",
+        "source_anchor_id": "anc_014",
+        "source_page": 23,
+        "source_section": "Risk Factors",
+        "source_paragraph": 4,
+        "primary_sector": "Financial",
+        "domain_tags_pipe": "FIN:CustomerConcentration|FIN:RevenueGrowth",
+        "tags_pipe": "risk:CustomerConcentration|func:Sales|topic:Valuation",
+        "entities_pipe": null,
+        "relationship_hints_pipe": null,
+        "confidence_level": "seed",
+        "confidence_score": 0.50,
+        "nugget_status": "active",
+        "validation_flags_pipe": null,
+        "extraction_method": "llm",
+        "deconstruction_profile": "pe-diligence-v2",
+        "standards_package_version": "0.1-working",
+        "deconstructor_note": null,
+        "review_notes": null
+      }
+    ],
+    "validation": {
+      "validation_status": "passed",
+      "validated_at": "2026-05-22T14:31:02Z",
+      "errors": [],
+      "warnings": [],
+      "compliance_level": "L5"
+    },
+    "security": {
+      "classification": "confidential",
+      "access_policy": "deal-team-only",
+      "tenant_id": "tenant_xyz",
+      "inherited_from_source": true
+    }
+  }
+}
