@@ -1,0 +1,220 @@
+{
+  "gaqp_version": "0.2-working",
+  "status": "proposed",
+  "title": "GAQP Confidence Modifier Framework",
+  "description": "Multi-dimensional modifiers that adjust the effective confidence of a nugget beyond what corroboration count alone captures. These modifiers operate on top of the corroboration-based confidence ladder — they do not replace it. The base score from confidence_ladder.json reflects how many independent sources have corroborated a claim. The modifiers here reflect how much that base score should be discounted given structural properties of the claim itself.",
+  "architecture_note": "Confidence is two-layered. Layer 1 (constitutional): the corroboration ladder — seed through structural. Layer 2 (this document): modifier dimensions that scale the base score. A claim at corroborated (0.91) with severe recency discount may have an effective confidence well below that. The layers are computed separately and combined. Operators may implement any subset of the modifier dimensions.",
+  "combination_rule": "effective_confidence = base_ladder_score × Π(active_modifier_factors). Each active modifier dimension yields a factor in [floor, 1.0]. Inactive or unimplemented dimensions default to 1.0 (no adjustment). Floors are dimension-specific and set below.",
+
+  "modifier_dimensions": [
+    {
+      "id": "recency",
+      "label": "Recency",
+      "description": "How much the age of the claim degrades confidence in its current applicability. This is not about whether the claim was accurate when made — it was, by definition, if it passed admission. It is about whether a claim that was accurate in year Y is still applicable today.",
+      "key_insight": "Recency decay is a function of TWO variables: claim type and domain. Claim type determines the inherent temporal stability of the assertion class. Domain determines the rate at which knowledge of that type becomes obsolete in that field. The combination determines the actual decay rate.",
+
+      "decay_classes": {
+        "description": "Every claim type belongs to exactly one decay class. Decay class determines the inherent temporal stability of the assertion — the baseline before domain multiplier is applied.",
+        "classes": [
+          {
+            "class": "timeless",
+            "label": "No Decay",
+            "description": "Claims that are definitional or axiomatic within the logic of a source. Their validity is not a function of time — they may be wrong, but age is not the mechanism by which they become wrong.",
+            "recency_factor": 1.0,
+            "claim_types": ["Axiom", "Definition"],
+            "rationale": "An axiom about human nature from a 1950 strategy document is still an axiom. A definition of what a term means within a source is not degraded by age. Whether these claims are correct is a corroboration question, not a recency question."
+          },
+          {
+            "class": "slow_decay",
+            "label": "Structural Decay",
+            "description": "Claims about fundamental organizing beliefs, values, or categories. They shift across decades, not years. Still subject to eventual revision, but recency discount applies slowly.",
+            "half_life_reference": "~20 years at baseline; domain multiplier may compress this",
+            "claim_types": ["Principle", "Ontological Assertion", "Declaration of Value"],
+            "rationale": "A principle governing organizational design may persist for 20+ years before institutional experience shifts it. A declaration of strategic values is authored by humans with long time horizons."
+          },
+          {
+            "class": "moderate_decay",
+            "label": "Practice Decay",
+            "description": "Practical patterns, rules of thumb, and accumulated operational wisdom. These evolve with experience, new evidence, and changing environments — but they change on a years-to-decade scale.",
+            "half_life_reference": "~5–10 years at baseline",
+            "claim_types": ["Heuristic", "Best Practice", "Tendency", "Tradeoff", "Institutional Precedent"],
+            "rationale": "A best practice in software architecture or a heuristic about vendor negotiation evolves as practitioners accumulate experience. It does not become obsolete overnight, but a 10-year-old best practice warrants skepticism."
+          },
+          {
+            "class": "fast_decay",
+            "label": "Governed Decay",
+            "description": "Claims tied to formally governed institutional, regulatory, or doctrinal state. These are intentionally revised by institutions — their revision is not gradual drift but deliberate update. Age is a strong predictor of obsolescence.",
+            "half_life_reference": "~2–5 years at baseline; domain multiplier critical here",
+            "claim_types": ["Doctrine", "Constraint", "Threshold Condition", "Causal Claim", "Stakeholder Complaint Claim"],
+            "rationale": "Military doctrine is formally revised on a documented cycle. Regulatory constraints change with legislation. A causal claim in a clinical study may be overturned by a larger follow-up study. A stakeholder complaint from 2018 may have been addressed. Age is a strong signal for these claim types."
+          },
+          {
+            "class": "world_state",
+            "label": "Snapshot Decay",
+            "description": "Claims about the actual state of the world at a specific moment. These do not 'decay' in the sense of becoming wrong — they were accurate snapshots when made. They become inapplicable as a picture of the present. A 2015 observation about a company's cash position is not incorrect about 2015; it simply does not describe 2025.",
+            "half_life_reference": "~6–24 months at baseline; domain multiplier critical",
+            "claim_types": [
+              "Observation", "Event", "Diagnostic Signal", "Objective",
+              "Strength", "Weakness", "Opportunity", "Threat", "Asset", "Liability"
+            ],
+            "rationale": "World-state claims are the most temporally bounded class. An observation about a competitor's market position, a diagnostic signal about a unit's readiness, or a threat assessment about a geopolitical actor — these are snapshots. Their recency factor declines rapidly because the world moves on regardless of what was true at the moment of observation."
+          }
+        ]
+      },
+
+      "domain_decay_multipliers": {
+        "description": "Domains differ in how quickly knowledge of any given type becomes obsolete. The domain multiplier scales the decay class half-life. A multiplier < 1.0 means faster decay (shorter half-life) than baseline. A multiplier > 1.0 means slower decay.",
+        "implementation_note": "Default values below are reference calibrations. Operators running GAQP-compliant systems in a specific domain should calibrate these against their own evidence of how quickly knowledge turns over in their operational context.",
+        "reference_calibrations": [
+          {
+            "rate": "aggressive",
+            "multiplier": 0.4,
+            "description": "Domains with rapid evidence turnover, doctrine revision cycles, or real-time operational change",
+            "example_sectors": ["HC — clinical evidence; FDA guidance updates; drug approvals supersede earlier studies",
+                                 "MIL — doctrine is formally revised; OPORD-era observations become obsolete within operational timeframes",
+                                 "FIN — financial positions, credit conditions, and market observations degrade within quarters"],
+            "illustrative_case": "A 'fast_decay' (Causal Claim) in HC has a baseline half-life of ~3 years. With an aggressive domain multiplier of 0.4, effective half-life is ~14 months. A 2015 clinical causal claim about drug efficacy may have a recency factor near 0.20 by 2025."
+          },
+          {
+            "rate": "standard",
+            "multiplier": 1.0,
+            "description": "General institutional and business domains with typical change rates",
+            "example_sectors": ["Most business sectors — strategy, operations, product, marketing"],
+            "illustrative_case": "A 'moderate_decay' (Best Practice) in a standard business domain has an ~8-year effective half-life. A 2018 best practice on customer success still retains meaningful signal in 2025."
+          },
+          {
+            "rate": "conservative",
+            "multiplier": 2.5,
+            "description": "Domains where knowledge is precedent-based, legally codified, or structurally stable across long time horizons",
+            "example_sectors": ["LAW — case law precedent; legislative frameworks",
+                                 "Humanities, philosophy — foundational arguments; institutional memory",
+                                 "Physical infrastructure — engineering standards with slow revision cycles"],
+            "illustrative_case": "A 'moderate_decay' (Heuristic) in a conservative legal domain might retain 0.80+ recency factor even after 15 years. The half-life is extended by the domain's inherently slow revision culture."
+          }
+        ]
+      },
+
+      "recency_factor_calculation": {
+        "formula": "recency_factor = max(floor, 0.5 ^ (age_years / effective_half_life))",
+        "where": {
+          "age_years": "Number of years between source_date and evaluation_date",
+          "effective_half_life": "base_half_life_for_decay_class × domain_multiplier",
+          "floor": "Minimum recency factor; prevents complete confidence collapse. Default 0.10. Operators may adjust."
+        },
+        "note": "This is a reference implementation formula. Compliant systems may use alternative decay functions (linear, step-function, etc.) provided the underlying decay class and domain multiplier parameters are preserved and exposed in the runtime interface.",
+        "special_case_timeless": "Claim types in the 'timeless' decay class return recency_factor = 1.0 unconditionally. No formula is applied."
+      },
+
+      "illustrative_examples": [
+        {
+          "claim": "Axiom about the nature of market competition (claim_type: Axiom, domain: FIN, source_date: 2005)",
+          "decay_class": "timeless",
+          "recency_factor": 1.0,
+          "note": "20-year-old axiom. Recency factor = 1.0. Whether the axiom is correct is a corroboration question."
+        },
+        {
+          "claim": "Observation that Unit X had a 78% readiness rating in Q3 2014 (claim_type: Observation, domain: MIL, source_date: 2014)",
+          "decay_class": "world_state",
+          "domain_rate": "aggressive",
+          "effective_half_life_years": 0.6,
+          "age_years": 11,
+          "recency_factor": "~0.10 (floor)",
+          "note": "World-state claim in aggressive decay domain. 11 years old. Recency factor hits floor within ~2 years. This claim is a historical record, not a current intelligence assessment."
+        },
+        {
+          "claim": "Clinical causal claim that Drug A reduces Event B by 22% (claim_type: Causal Claim, domain: HC, source_date: 2016)",
+          "decay_class": "fast_decay",
+          "domain_rate": "aggressive",
+          "effective_half_life_years": 1.2,
+          "age_years": 9,
+          "recency_factor": "~0.12",
+          "note": "Fast-decay claim in aggressive domain. Likely superseded by subsequent clinical evidence. Warrants active re-evaluation before use."
+        },
+        {
+          "claim": "Principle that decentralized command improves unit initiative under ambiguity (claim_type: Principle, domain: MIL, source_date: 2008)",
+          "decay_class": "slow_decay",
+          "domain_rate": "aggressive",
+          "effective_half_life_years": 8,
+          "age_years": 17,
+          "recency_factor": "~0.22",
+          "note": "Even in an aggressive domain, slow-decay claims have extended durability. This principle has meaningful signal even at 17 years, though corroboration from recent doctrine is warranted."
+        },
+        {
+          "claim": "Best practice that vendor contracts should include SLA penalty clauses (claim_type: Best Practice, domain: standard, source_date: 2017)",
+          "decay_class": "moderate_decay",
+          "domain_rate": "standard",
+          "effective_half_life_years": 8,
+          "age_years": 8,
+          "recency_factor": "0.50",
+          "note": "At exactly one half-life. Recency factor 0.50 is appropriate — this is still meaningful guidance but should be weighed against more recent practice literature."
+        }
+      ],
+
+      "floor": 0.10,
+      "ceiling": 1.0
+    },
+
+    {
+      "id": "source_quality",
+      "label": "Source Quality",
+      "description": "Adjusts confidence based on the methodological rigor or credibility class of the originating source. Not all sources that pass the admission tests carry equal epistemic weight.",
+      "implementation_note": "Source quality tiers are operator-defined against the source_anchor_schema source_type and source_credibility fields. This dimension is a multiplier on the base confidence ladder score.",
+      "reference_tiers": [
+        { "tier": "A", "label": "High Rigor", "factor": 1.0, "examples": "Peer-reviewed RCT; sworn testimony; audited financial statements; primary source records" },
+        { "tier": "B", "label": "Professional Authority", "factor": 0.90, "examples": "Expert consensus document; official policy; credentialed analysis; structured regulatory filing" },
+        { "tier": "C", "label": "Institutional Record", "factor": 0.80, "examples": "Internal operational record; meeting notes; non-peer-reviewed white paper; industry report" },
+        { "tier": "D", "label": "Soft Source", "factor": 0.65, "examples": "Journalistic account; secondhand report; informal communication; analyst opinion without primary citation" }
+      ],
+      "floor": 0.50
+    },
+
+    {
+      "id": "evidence_independence",
+      "label": "Evidence Independence",
+      "description": "The confidence ladder counts independent (tenant_id, actor_id) pairs. This modifier applies a discount when apparent independence is undermined by shared upstream data — multiple sources reporting the same underlying dataset or briefing.",
+      "independence_test": "True independence requires independent observation, not independent reporting of the same observation. If Source A and Source B both cite the same underlying study, they count as one independent corroborator regardless of how many documents repeat the finding.",
+      "factor_range": [0.60, 1.0],
+      "application": "Operator-applied. When a deconstructing analyst identifies that multiple sources trace to a common upstream, the independence discount is applied manually and logged in the nugget's provenance chain."
+    },
+
+    {
+      "id": "inferential_distance",
+      "label": "Inferential Distance",
+      "description": "How many inferential steps separate the admitted claim from the direct textual evidence in the source. Claims that are directly stated by the source carry less operator inference than claims that were derived or synthesized.",
+      "levels": [
+        { "level": "direct", "factor": 1.0, "description": "Claim is explicitly stated in the source text. Minimal interpretive step." },
+        { "level": "derived", "factor": 0.90, "description": "Claim follows clearly from stated material with one logical step. Interpretive but defensible." },
+        { "level": "synthesized", "factor": 0.80, "description": "Claim emerges from combining multiple source passages or requires domain expertise to extract." },
+        { "level": "inferred", "factor": 0.65, "description": "Claim is a deconstructing analyst's interpretation that the source implies but does not assert. Should be flagged at extraction." }
+      ],
+      "note": "The admission_tests.json Explicitness Test addresses the outer boundary — claims that are entirely speculative do not pass admission. This modifier addresses the gradient between direct statement and strong implication."
+    },
+
+    {
+      "id": "breadth",
+      "label": "Corroboration Breadth",
+      "description": "This dimension tracks the count of independent corroborating sources — it is the primary driver of the confidence ladder level and is handled by confidence_ladder.json. It is listed here for completeness and to clarify the relationship between the ladder and the modifier framework. No additional multiplier is applied; the ladder score already encodes this dimension.",
+      "factor": "encoded_in_ladder",
+      "note": "Do not double-count. The corroboration ladder IS the breadth modifier. The remaining dimensions above operate on top of it."
+    }
+  ],
+
+  "combined_effective_confidence": {
+    "formula": "effective_confidence = ladder_score × recency_factor × source_quality_factor × independence_factor × inferential_distance_factor",
+    "example": {
+      "claim": "Causal claim in healthcare domain, 9 years old, from an institutional record (Tier C), one apparent corroborator that shares upstream data with origin, synthesized from multiple passages",
+      "ladder_score": 0.65,
+      "recency_factor": 0.12,
+      "source_quality_factor": 0.80,
+      "independence_factor": 0.70,
+      "inferential_distance_factor": 0.80,
+      "effective_confidence": 0.044,
+      "interpretation": "Despite reaching single_source ladder status, the combined modifiers reduce effective confidence below actionable threshold. This is correct behavior — this claim is old, from a weak source, with questionable independence, and was synthesized. It warrants re-extraction from current evidence before use."
+    }
+  },
+
+  "governance": {
+    "layer": "proposed_constitutional",
+    "rationale": "The modifier framework touches the fundamental confidence model defined in confidence_ladder.json. Any change to the decay class assignments for claim types, or to the formula structure, constitutes a constitutional change requiring Standards Committee review and a version increment. Domain decay multipliers (the rate table) are operator-configurable and do not require committee action — operators calibrate them to their operational context. The floor values are constitutional."
+  }
+}

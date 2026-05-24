@@ -24,7 +24,8 @@
     { "file": "runtime_interface.json", "description": "Suggested runtime interface methods" },
     { "file": "domain_modules.json", "description": "Complete domain subtag taxonomy for all 30 sectors — ~3,126 subtags total. Used in domain_tags_pipe field. Statutory layer: updated as industries evolve without requiring a version bump." },
     { "file": "tags_vocabulary.json", "description": "Controlled vocabulary for the tags_pipe field. Four closed prefixes: func (business function), risk (risk category), topic (subject topic), geo (geography). Extensible values via IQS suggestion process." },
-    { "file": "intel_file_spec.json", "description": ".intel sidecar file format specification: naming convention, 14-section structure, validation rules, and example skeleton." }
+    { "file": "intel_file_spec.json", "description": ".intel sidecar file format specification: naming convention, 14-section structure, validation rules, and example skeleton." },
+    { "file": "confidence_modifiers.json", "description": "Proposed confidence modifier framework: five dimensions (recency, source quality, evidence independence, inferential distance, breadth) that scale the base ladder score into an effective confidence. Recency decay uses claim-type decay class × domain multiplier. Status: proposed, pending Standards Committee adoption." }
   ],
   "notes": {
     "domain_modules": "31 sectors with domain subtags in domain_modules.json (GEN General/Cross-Sector carries no subtags by design). v0.2 adds Military (MIL) — 247 subtags across 15 dimensions, including the unique GAQP Intelligence Functions dimension. Subtag taxonomy is statutory — additions do not require a version bump.",
