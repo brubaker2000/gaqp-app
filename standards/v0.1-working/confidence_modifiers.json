@@ -11,10 +11,10 @@
       "id": "recency",
       "label": "Recency",
       "description": "How much the age of the claim degrades confidence in its current applicability. This is not about whether the claim was accurate when made — it was, by definition, if it passed admission. It is about whether a claim that was accurate in year Y is still applicable today.",
-      "key_insight": "Recency decay is a function of TWO variables: claim type and domain. Claim type determines the inherent temporal stability of the assertion class. Domain determines the rate at which knowledge of that type becomes obsolete in that field. The combination determines the actual decay rate.",
+      "key_insight": "Recency decay is a function of THREE variables: claim type, domain, and analyst override. Claim type determines the inherent temporal stability of the assertion class — the default. Domain scales the decay rate. Analyst override corrects for cases where the claim-type default is wrong for a specific claim. The three are applied in sequence: type default → domain multiplier → analyst override (if present).",
 
       "decay_classes": {
-        "description": "Every claim type belongs to exactly one decay class. Decay class determines the inherent temporal stability of the assertion — the baseline before domain multiplier is applied.",
+        "description": "Every claim type has a default decay class. Decay class determines the inherent temporal stability of the assertion — the baseline before domain multiplier and analyst override are applied. The default is a starting point, not a ceiling. See analyst_override below.",
         "classes": [
           {
             "class": "timeless",
@@ -46,7 +46,28 @@
             "description": "Claims tied to formally governed institutional, regulatory, or doctrinal state. These are intentionally revised by institutions — their revision is not gradual drift but deliberate update. Age is a strong predictor of obsolescence.",
             "half_life_reference": "~2–5 years at baseline; domain multiplier critical here",
             "claim_types": ["Doctrine", "Constraint", "Threshold Condition", "Causal Claim", "Stakeholder Complaint Claim"],
-            "rationale": "Military doctrine is formally revised on a documented cycle. Regulatory constraints change with legislation. A causal claim in a clinical study may be overturned by a larger follow-up study. A stakeholder complaint from 2018 may have been addressed. Age is a strong signal for these claim types."
+            "rationale": "Military doctrine is formally revised on a documented cycle. Regulatory constraints change with legislation. A causal claim in a clinical study may be overturned by a larger follow-up study. A stakeholder complaint from 2018 may have been addressed. Age is a strong signal for these claim types.",
+            "intra_type_variance_note": "Doctrine is the claim type with the widest internal temporal variance of any type in the register. 'The advantage of surprise' and 'drone swarm employment doctrine' are both Doctrine — but their stability profiles are entirely different. Two resolution mechanisms apply: (1) Extraction discipline: claims that function as first principles within a source's logic — regardless of the document type they appear in — are better classified as Axiom or Principle. A field manual entry that states surprise is the greatest force multiplier is an Axiom embedded in a doctrinal document, not Doctrine in the GAQP sense. (2) Analyst override: when a claim is legitimately Doctrine but the analyst judges it to have atypical stability, the override mechanism below should be applied.",
+            "extraction_discipline_examples": [
+              {
+                "source_text": "Surprise remains the most decisive force multiplier in offensive operations.",
+                "naive_assignment": "Doctrine (appears in field manual)",
+                "correct_assignment": "Axiom or Principle",
+                "reason": "This claim functions as a first principle within military theory. Its age does not degrade it. Clausewitz, Sun Tzu, and 21st-century doctrine all corroborate it independently. Classifying it as Axiom/Principle correctly assigns it zero recency decay."
+              },
+              {
+                "source_text": "Occupy the high ground to achieve observation and fire superiority over the objective.",
+                "naive_assignment": "Doctrine",
+                "correct_assignment": "Principle (with analyst override flag recommended)",
+                "reason": "This is a general operational principle with millenia of corroboration. However, drone and precision-fire environments have begun to invert the exposure risk of elevated positions in some contexts — an analyst extracting this in 2024 should flag it for override review."
+              },
+              {
+                "source_text": "Small UAS swarms will be employed in packages of 4–8 platforms for urban area denial at the company level.",
+                "naive_assignment": "Doctrine",
+                "correct_assignment": "Doctrine — fast_decay is correct",
+                "reason": "This is specific operational guidance tied to specific platforms and a specific tactical concept that is actively evolving. The default fast_decay class is correct and the aggressive domain multiplier compounds it appropriately. A claim like this from 2021 doctrine may already require review."
+              }
+            ]
           },
           {
             "class": "world_state",
@@ -58,6 +79,44 @@
               "Strength", "Weakness", "Opportunity", "Threat", "Asset", "Liability"
             ],
             "rationale": "World-state claims are the most temporally bounded class. An observation about a competitor's market position, a diagnostic signal about a unit's readiness, or a threat assessment about a geopolitical actor — these are snapshots. Their recency factor declines rapidly because the world moves on regardless of what was true at the moment of observation."
+          }
+        ]
+      },
+
+      "analyst_override": {
+        "description": "The decay class derived from claim type is a default, not a mandate. The extracting analyst may override the decay class for any individual nugget when the default is structurally wrong for that specific claim.",
+        "field_name": "temporal_stability_override",
+        "field_type": "string | null",
+        "allowed_values": ["timeless", "slow", "moderate", "fast", "world_state", null],
+        "null_means": "Use claim-type default. No override applied.",
+        "when_to_override": [
+          "A Doctrine claim expresses a principle of such generality and historical durability that it functions as an Axiom (e.g., operational security, concentration of force, unity of command). Set override to 'timeless' or 'slow'.",
+          "A Doctrine claim is tied to a specific weapons system, platform, or tactical concept that is actively evolving. Set override to 'fast' even if the parent claim type default is moderate.",
+          "A Best Practice claim represents codified institutional precedent with decades of stable application. Set override to 'slow' if warranted.",
+          "A Principle or Heuristic appears in a domain with aggressive decay and is specifically tied to a technological or regulatory condition that is known to be changing. Set override to 'fast'."
+        ],
+        "governance": "The override field is operator-implemented and analyst-applied. It does not require a constitutional change because it operates within the existing decay class vocabulary — it selects from the existing set, not extends it. The metadata schema field addition (temporal_stability_override as field 30) is flagged as a proposed constitutional addition. Pending schema amendment, operators may implement this as an extended field in their own record structure.",
+        "override_examples": [
+          {
+            "nugget_claim_type": "Doctrine",
+            "claim_summary": "Surprise is the decisive offensive force multiplier",
+            "default_decay_class": "fast_decay",
+            "override": "timeless",
+            "analyst_note": "This claim appears in 2018 doctrine but is corroborated across 2,500 years of military history. It is an Axiom of military theory embedded in a doctrinal document. Recency decay does not apply."
+          },
+          {
+            "nugget_claim_type": "Principle",
+            "claim_summary": "Elevated terrain confers observation and fire superiority",
+            "default_decay_class": "slow_decay",
+            "override": "moderate",
+            "analyst_note": "Historically a near-Axiom, but precision fires and drone saturation are actively eroding the universal applicability of this principle in some operational environments. Demoted to moderate to reflect emerging doctrinal uncertainty."
+          },
+          {
+            "nugget_claim_type": "Doctrine",
+            "claim_summary": "Company-level UAS employment: 4–8 platform swarms for urban denial",
+            "default_decay_class": "fast_decay",
+            "override": null,
+            "analyst_note": "No override. Default fast_decay is correct. This is specific platform-and-tactic doctrine in an aggressively evolving domain."
           }
         ]
       },

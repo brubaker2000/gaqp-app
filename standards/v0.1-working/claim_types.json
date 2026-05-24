@@ -26,7 +26,8 @@
     {
       "id": 5,
       "claim_type": "Doctrine",
-      "definition": "A formalized or institutionalized operating belief, policy logic, or governing position"
+      "definition": "A formalized or institutionalized operating belief, policy logic, or governing position",
+      "extraction_note": "Doctrine is assigned based on the nature of the claim, not the nature of the document. A field manual, regulatory framework, or strategic policy document will contain many claim types. Claims within a doctrinal source that function as first principles — with durability across institutional cycles, technologies, or domains — should be classified as Axiom or Principle. Reserve Doctrine for claims that are specific to an institutional version, platform, organizational structure, or regulatory state that is subject to intentional revision. The distinction matters for recency modeling: a doctrinal Axiom is timeless; a doctrinal operational procedure decays with the technology it governs."
     },
     {
       "id": 6,
