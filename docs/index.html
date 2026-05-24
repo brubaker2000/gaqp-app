@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institute for Qualitative Standards — GAQP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --federal-blue: #1B2A4A;
+      --federal-blue-light: #243560;
+      --federal-blue-pale: #E8EDF5;
+      --gold: #8B7536;
+      --gold-light: #C4AA58;
+      --ink: #1A1A1A;
+      --ink-mid: #3D3D3D;
+      --ink-light: #666666;
+      --rule: #C8D0DC;
+      --bg: #F7F6F3;
+      --white: #FFFFFF;
+      --mono: 'DM Mono', monospace;
+      --serif-display: 'EB Garamond', Georgia, serif;
+      --serif-body: 'Spectral', Georgia, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--serif-body);
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--federal-blue);
+      color: var(--white);
+      padding: 0;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 40px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .seal {
+      width: 88px;
+      height: 88px;
+      border: 2px solid var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .seal-inner {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold-light);
+      text-align: center;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+
+    .header-text {}
+
+    .header-text .org-name {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+
+    .header-text h1 {
+      font-family: var(--serif-display);
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .header-text .subtitle {
+      font-family: var(--serif-body);
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.70);
+      font-style: italic;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--federal-blue-light);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      gap: 0;
+    }
+
+    nav a {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      padding: 14px 18px;
+      display: block;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    nav a:hover {
+      color: var(--white);
+      border-bottom-color: var(--gold-light);
+    }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+
+    /* ── Section headers ── */
+    .section-number {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    section {
+      margin-bottom: 72px;
+      padding-top: 8px;
+    }
+
+    section h2 {
+      font-family: var(--serif-display);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--federal-blue);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    section h3 {
+      font-family: var(--serif-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--federal-blue);
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--ink-mid);
+    }
+
+    p strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ── Governing statement ── */
+    .governing-statement {
+      background: var(--federal-blue);
+      color: var(--white);
+      padding: 28px 36px;
+      margin-bottom: 60px;
+      border-left: 4px solid var(--gold);
+    }
+
+    .governing-statement p {
+      color: rgba(255,255,255,0.88);
+      font-size: 16px;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .governing-statement .gs-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 10px;
+      font-style: normal;
+    }
+
+    /* ── Info boxes ── */
+    .info-box {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--federal-blue);
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+
+    .info-box h4 {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--federal-blue);
+      margin-bottom: 10px;
+    }
+
+    .info-box p { margin: 0; font-size: 15px; }
+
+    /* ── Two-column grid ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 24px 0;
+    }
+
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    /* ── Stat blocks ── */
+    .stat-row {
+      display: flex;
+      gap: 24px;
+      margin: 28px 0;
+      flex-wrap: wrap;
+    }
+
+    .stat-block {
+      flex: 1;
+      min-width: 160px;
+      background: var(--federal-blue-pale);
+      padding: 20px 24px;
+      border-top: 3px solid var(--federal-blue);
+    }
+
+    .stat-block .stat-number {
+      font-family: var(--serif-display);
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--federal-blue);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-block .stat-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    /* ── Tag architecture ── */
+    .tag-example {
+      font-family: var(--mono);
+      font-size: 13px;
+      background: var(--ink);
+      color: #A8D8A8;
+      padding: 16px 20px;
+      margin: 16px 0;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .tag-prefix-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: baseline;
+    }
+
+    .tag-prefix-row:last-child { border-bottom: none; }
+
+    .tag-prefix {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--federal-blue);
+      background: var(--federal-blue-pale);
+      padding: 3px 8px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .tag-prefix-desc {
+      font-size: 15px;
+      color: var(--ink-mid);
+    }
+
+    /* ── Sector table ── */
+    .sector-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin: 24px 0;
+    }
+
+    .sector-cell {
+      background: var(--white);
+      padding: 12px 16px;
+    }
+
+    .sector-cell .sector-code {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .sector-cell .sector-name {
+      font-size: 13px;
+      color: var(--ink-mid);
+    }
+
+    .sector-cell.new-sector {
+      background: var(--federal-blue-pale);
+    }
+
+    .sector-cell.new-sector .sector-code { color: var(--federal-blue); }
+
+    /* ── Conformance table ── */
+    .conformance-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      margin: 24px 0;
+    }
+
+    .conformance-table th {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--federal-blue);
+      color: var(--white);
+      padding: 10px 16px;
+      text-align: left;
+    }
+
+    .conformance-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-mid);
+      vertical-align: top;
+    }
+
+    .conformance-table tr:nth-child(even) td { background: var(--federal-blue-pale); }
+
+    .level-badge {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      background: var(--federal-blue);
+      color: var(--white);
+      padding: 2px 8px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    /* ── Download section ── */
+    .download-block {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      padding: 28px 32px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .download-block h4 {
+      font-family: var(--serif-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--federal-blue);
+      margin-bottom: 6px;
+    }
+
+    .download-block p { font-size: 14px; margin: 0; color: var(--ink-light); }
+
+    .download-block .meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-light);
+      margin-top: 6px;
+    }
+
+    .btn {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 20px;
+      text-decoration: none;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--federal-blue);
+      color: var(--white);
+    }
+
+    .btn-primary:hover { background: var(--federal-blue-light); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--federal-blue);
+      border: 1px solid var(--federal-blue);
+    }
+
+    .btn-secondary:hover {
+      background: var(--federal-blue-pale);
+    }
+
+    /* ── Confidence ladder ── */
+    .ladder {
+      margin: 20px 0;
+    }
+
+    .ladder-rung {
+      display: grid;
+      grid-template-columns: 140px 60px 1fr;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: center;
+    }
+
+    .ladder-rung:last-child { border-bottom: none; }
+
+    .rung-level {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--federal-blue);
+    }
+
+    .rung-score {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gold);
+    }
+
+    .rung-desc { font-size: 14px; color: var(--ink-mid); }
+
+    /* ── Principles ── */
+    .principle-item {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .principle-item:last-child { border-bottom: none; }
+
+    .principle-num {
+      font-family: var(--serif-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1.4;
+    }
+
+    .principle-text strong {
+      font-family: var(--serif-body);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .principle-text span {
+      font-size: 14px;
+      color: var(--ink-light);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--federal-blue);
+      color: rgba(255,255,255,0.55);
+      padding: 32px 40px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    footer a:hover { color: var(--gold-light); }
+
+    /* ── Utilities ── */
+    .mono { font-family: var(--mono); font-size: 13px; }
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 40px 0; }
+    ul.std-list { padding-left: 20px; margin: 12px 0; }
+    ul.std-list li { margin-bottom: 6px; color: var(--ink-mid); font-size: 15px; }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header>
+  <div class="header-inner">
+    <div class="seal">
+      <div class="seal-inner">IQS<br>EST.<br>2026</div>
+    </div>
+    <div class="header-text">
+      <div class="org-name">Institute for Qualitative Standards</div>
+      <h1>Generally Accepted Qualitative Principles</h1>
+      <div class="subtitle">The governed standard for qualitative intelligence — Version 0.2-working</div>
+    </div>
+  </div>
+</header>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#problem">1.0 The Problem</a>
+    <a href="#framework">2.0 Framework</a>
+    <a href="#tags">3.0 Tag Architecture</a>
+    <a href="#sectors">4.0 Sectors</a>
+    <a href="#conformance">5.0 Conformance</a>
+    <a href="#download">6.0 Download</a>
+  </div>
+</nav>
+
+<!-- ── Main ── -->
+<main>
+
+  <!-- Governing Statement -->
+  <div class="governing-statement">
+    <span class="gs-label">Governing Statement</span>
+    <p>GAQP is not a feature of any application. Any application that implements it correctly is a GAQP-compliant platform. The standard is separable from any implementation. The implementation is not the standard.</p>
+  </div>
+
+  <!-- ── Section 1: The Problem ── -->
+  <section id="problem">
+    <span class="section-number">Section 1.0</span>
+    <h2>The Foundational Problem</h2>
+
+    <p>For forty years, organizations have built systems to manage numbers. Spreadsheets. Financial models. Analytics platforms. ERP systems. The quantitative infrastructure of the modern organization is deep, auditable, and trusted.</p>
+
+    <p>They have never built a system to manage thinking.</p>
+
+    <p>Every acquisition, every market entry, every leadership hire — the numbers are downstream of qualitative judgment. The signal that a pattern is repeating lives in the head of whoever was in the room, until they leave. Qualitative intelligence has remained ungoverned, undocumented, and unrepeatable.</p>
+
+    <h3>The Container Problem</h3>
+
+    <p>In every existing system — document stores, knowledge bases, vector databases, semantic search — the <strong>document is the smallest indivisible container</strong>. A memo, a transcript, a board deck, a policy manual. The intelligence inside it is trapped in a bulky container.</p>
+
+    <p>This is like trying to run an economy where the smallest denomination is a $100 bill. You can transact, but poorly. You cannot price things precisely. You cannot combine three small insights from different documents into one new strategic conclusion. You cannot audit the exact logic that produced a judgment.</p>
+
+    <p>GAQP replaces the document with the <strong>atomic nugget</strong> as the unit of intelligence. A nugget is the smallest durable unit of qualitative reasoning that can stand alone outside its source, be classified by type, be traced to a source passage, be disputed or corroborated, and be composed with other nuggets into larger judgment structures.</p>
+
+    <div class="info-box">
+      <h4>The Compression Signal</h4>
+      <p>Observation across knowledge domains suggests that a body of discourse compresses to atomic nuggets at approximately <strong>44:1</strong>. A 32,000-word conversation yields approximately 25 governing atomic nuggets. Organizations are currently storing and acting on 44 times more noise than signal. GAQP isolates the signal.</p>
+    </div>
+
+    <h3>The Result: Qualitative Liquidity</h3>
+
+    <p>Breaking the document into governed atomic units produces qualitative liquidity — the ability to divide, compare, combine, audit, route, and reuse qualitative intelligence at any scale:</p>
+
+    <div class="two-col">
+      <div class="info-box">
+        <h4>Divisibility</h4>
+        <p>A document breaks into smaller, independently usable pieces of intelligence.</p>
+      </div>
+      <div class="info-box">
+        <h4>Comparability</h4>
+        <p>One claim compares against another from a different source, time, or author.</p>
+      </div>
+      <div class="info-box">
+        <h4>Auditability</h4>
+        <p>The system shows exactly where a conclusion came from — source, passage, timestamp.</p>
+      </div>
+      <div class="info-box">
+        <h4>Combinability</h4>
+        <p>Nuggets from different documents recombine into new strategic conclusions.</p>
+      </div>
+      <div class="info-box">
+        <h4>Portability</h4>
+        <p>A nugget travels from one context to another without dragging the whole document behind it.</p>
+      </div>
+      <div class="info-box">
+        <h4>Activation</h4>
+        <p>The system reuses the nugget when a future situation matches its conditions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 2: Framework ── -->
+  <section id="framework">
+    <span class="section-number">Section 2.0</span>
+    <h2>Framework</h2>
+
+    <div class="stat-row">
+      <div class="stat-block">
+        <div class="stat-number">25</div>
+        <div class="stat-label">Canonical Claim Types</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Admission Tests</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">29</div>
+        <div class="stat-label">Schema Fields</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">3,827</div>
+        <div class="stat-label">Domain Subtags</div>
+      </div>
+    </div>
+
+    <h3>The Three Functions</h3>
+
+    <p>GAQP governs qualitative intelligence across three distinct functions. Each has a defined jurisdiction.</p>
+
+    <div class="two-col">
+      <div class="info-box">
+        <h4>1 — Harvesting</h4>
+        <p>The operator-driven process of identifying which documents and sources contain qualitative intelligence worth deconstructing. GAQP does not prescribe harvesting decisions. Operators choose what enters the pipeline.</p>
+      </div>
+      <div class="info-box">
+        <h4>2 — Deconstruction</h4>
+        <p>The governed extraction of atomic nuggets from a source document. GAQP's core jurisdiction. Every candidate claim must pass all seven admission tests. Only admitted claims are recorded.</p>
+      </div>
+    </div>
+    <div class="info-box">
+      <h4>3 — Reconstruction</h4>
+      <p>The application-driven synthesis of nuggets into conclusions, reports, recommendations, and actions. Reconstruction is outside GAQP's jurisdiction. GAQP ensures the ingredients are trustworthy. The recipes belong to the operator.</p>
+    </div>
+
+    <h3>The Seven Admission Tests</h3>
+
+    <p>Every candidate claim must pass all seven gates before admission. A claim that fails any test is not born. It is not recorded anywhere. Existence in a compliant system is proof of admission.</p>
+
+    <ul class="std-list">
+      <li><strong>Standalone</strong> — The claim can be understood without its surrounding context.</li>
+      <li><strong>Disputability</strong> — The claim can be meaningfully challenged or contradicted.</li>
+      <li><strong>Governance</strong> — The claim has an identifiable source and author.</li>
+      <li><strong>Activation</strong> — The claim would be useful to retrieve in a future decision context.</li>
+      <li><strong>Durability</strong> — The claim is expected to remain valid beyond the immediate moment.</li>
+      <li><strong>Composability</strong> — The claim can combine with other nuggets into larger conclusions.</li>
+      <li><strong>Non-Triviality</strong> — The claim adds something not already known to the corpus.</li>
+    </ul>
+
+    <h3>The Six-Level Confidence Ladder</h3>
+
+    <div class="ladder">
+      <div class="ladder-rung">
+        <div class="rung-level">seed</div>
+        <div class="rung-score">0.50</div>
+        <div class="rung-desc">Initial extraction from a single source. Unconfirmed.</div>
+      </div>
+      <div class="ladder-rung">
+        <div class="rung-level">single_source</div>
+        <div class="rung-score">0.65</div>
+        <div class="rung-desc">Confirmed within a single source document or corpus.</div>
+      </div>
+      <div class="ladder-rung">
+        <div class="rung-level">developing</div>
+        <div class="rung-score">0.72</div>
+        <div class="rung-desc">Partial corroboration from a second independent source.</div>
+      </div>
+      <div class="ladder-rung">
+        <div class="rung-level">corroborated</div>
+        <div class="rung-score">0.91</div>
+        <div class="rung-desc">Three or more independent sources converge on this claim.</div>
+      </div>
+      <div class="ladder-rung">
+        <div class="rung-level">structural</div>
+        <div class="rung-score">1.00</div>
+        <div class="rung-desc">Foundational truth — definitional or mathematically certain.</div>
+      </div>
+      <div class="ladder-rung">
+        <div class="rung-level">disputed</div>
+        <div class="rung-score">—</div>
+        <div class="rung-desc">Score frozen. Contradicting evidence has been recorded.</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 16px; font-size: 14px; color: var(--ink-light);">Confidence advances only through independent corroboration. Same-source repetition does not promote. A new extraction always begins at seed.</p>
+  </section>
+
+  <!-- ── Section 3: Tag Architecture ── -->
+  <section id="tags">
+    <span class="section-number">Section 3.0</span>
+    <h2>Tag Architecture</h2>
+
+    <p>GAQP uses two tagging dimensions that operate independently and serve different purposes. Both are pipe-delimited fields on the nugget record.</p>
+
+    <!-- 3.1 -->
+    <h3>3.1 Domain Subtags — <span class="mono">domain_tags_pipe</span></h3>
+
+    <p>Domain subtags classify the <strong>subject matter</strong> of a nugget within specific industry sectors. Every subtag is anchored to a sector code, making the sector implicit in the tag itself.</p>
+
+    <p><strong>Format:</strong> <span class="mono">SectorCode:SubtagCode</span></p>
+    <p><strong>Field:</strong> <span class="mono">domain_tags_pipe</span> — pipe-delimited, multiple values permitted</p>
+
+    <div class="tag-example">domain_tags_pipe: "HC:MOB|HC:Medicare|RE:MOB"</div>
+
+    <p>Subtags are organized by dimension within each sector. The Military (MIL) sector, for example, has 15 dimensions including the unique <strong>GAQP Intelligence Functions</strong> dimension — which classifies the type of military document being deconstructed (OPORD, SITREP, AAR, etc.), not just its subject matter.</p>
+
+    <div class="info-box">
+      <h4>Statutory Layer — Extensible Without Version Bump</h4>
+      <p>Domain subtags are part of the statutory layer. New subtags can be added to existing sectors via the IQS community suggestion process without requiring a version bump. The current release contains <strong>3,827 subtags across 31 sectors</strong>.</p>
+    </div>
+
+    <!-- 3.2 -->
+    <h3>3.2 Cross-Cutting Tags — <span class="mono">tags_pipe</span></h3>
+
+    <p>Cross-cutting tags classify dimensions that apply <strong>regardless of sector</strong> — organizational function, risk category, subject topic, and geography. These tags work with nuggets from any sector and enable retrieval across sector boundaries.</p>
+
+    <p><strong>Format:</strong> <span class="mono">prefix:Value</span></p>
+    <p><strong>Field:</strong> <span class="mono">tags_pipe</span> — pipe-delimited, multiple values permitted</p>
+
+    <div class="tag-prefix-row">
+      <div class="tag-prefix">func:</div>
+      <div class="tag-prefix-desc"><strong>Business Function</strong> — The organizational or operational function the claim pertains to. Examples: <span class="mono">func:Strategy</span>, <span class="mono">func:CommandControl</span>, <span class="mono">func:Intelligence</span></div>
+    </div>
+    <div class="tag-prefix-row">
+      <div class="tag-prefix">risk:</div>
+      <div class="tag-prefix-desc"><strong>Risk Category</strong> — The type of risk the claim describes or implies. Examples: <span class="mono">risk:Geopolitical</span>, <span class="mono">risk:MissionFailure</span>, <span class="mono">risk:CyberCompromise</span></div>
+    </div>
+    <div class="tag-prefix-row">
+      <div class="tag-prefix">topic:</div>
+      <div class="tag-prefix-desc"><strong>Subject Topic</strong> — A cross-sector subject the claim addresses. Examples: <span class="mono">topic:Leadership</span>, <span class="mono">topic:Deterrence</span>, <span class="mono">topic:NationalSecurity</span></div>
+    </div>
+    <div class="tag-prefix-row">
+      <div class="tag-prefix">geo:</div>
+      <div class="tag-prefix-desc"><strong>Geography</strong> — Geographic scope relevant to the claim. Examples: <span class="mono">geo:IndoPacific</span>, <span class="mono">geo:NATO_Europe</span>, <span class="mono">geo:Taiwan_Strait</span></div>
+    </div>
+
+    <!-- 3.3 -->
+    <h3>3.3 Combined Tag Structure</h3>
+
+    <p>Both fields are used together on the same nugget record. Domain tags provide vertical specificity. Cross-cutting tags provide horizontal reach. A single nugget from a military intelligence briefing about Chinese naval activity in the South China Sea would carry:</p>
+
+    <div class="tag-example">domain_tags_pipe: "MIL:INTEL_ESTIMATE|MIL:ORDER_BATTLE|MIL:MARITIME_OPS"
+tags_pipe:       "func:Intelligence|risk:StrategicSurprise|topic:NationalSecurity|geo:SouthChinaSea"</div>
+
+    <p>The two fields are additive, never redundant. <span class="mono">domain_tags_pipe</span> answers: <em>what operational subject?</em> <span class="mono">tags_pipe</span> answers: <em>what function, what risk, what topic, what geography?</em></p>
+
+    <!-- 3.4 -->
+    <h3>3.4 Retrieval Implications</h3>
+
+    <p>The two-layer architecture enables retrieval strategies that neither layer supports alone:</p>
+
+    <ul class="std-list">
+      <li><strong>Vertical drill-down</strong> — All nuggets tagged <span class="mono">MIL:COIN</span> across any source document, any time period, any author.</li>
+      <li><strong>Cross-sector horizontal</strong> — All nuggets tagged <span class="mono">risk:StrategicSurprise</span> regardless of whether the source is military, geopolitical, or financial.</li>
+      <li><strong>Intersection queries</strong> — All nuggets tagged both <span class="mono">MIL:DETERRENCE</span> and <span class="mono">geo:Taiwan_Strait</span> — sector-specific subject matter at a specific geography.</li>
+      <li><strong>Confidence-filtered</strong> — Only nuggets at <span class="mono">corroborated</span> (0.91) or above, tagged <span class="mono">topic:NationalSecurity</span>.</li>
+      <li><strong>Structural equivalence</strong> — Nuggets that reason identically despite using different surface language, revealed through matching claim type + tag fingerprint.</li>
+    </ul>
+
+    <div class="info-box">
+      <h4>Semantic Similarity vs. Structural Equivalence</h4>
+      <p>Vector databases answer: <em>where have I seen this before?</em> GAQP answers: <em>what does this mean, and is it trustworthy?</em> Two claims can sound alike and reason differently. GAQP's tag architecture finds structural equivalence — not surface similarity.</p>
+    </div>
+  </section>
+
+  <!-- ── Section 4: Sectors ── -->
+  <section id="sectors">
+    <span class="section-number">Section 4.0</span>
+    <h2>Sector Vocabulary</h2>
+
+    <p>GAQP's sector taxonomy is derived from operational demand structure and is the primary classification. GICS, SIC, and NAICS fields are cross-reference bridges for interoperability with financial and regulatory data systems — they do not govern GAQP classification.</p>
+
+    <p>Version 0.2 adds the <strong>Military (MIL)</strong> sector — 247 subtags across 15 dimensions. MIL is operationally focused: doctrine, intelligence, command, warfighting, readiness, and law of armed conflict. It is distinct from Aerospace &amp; Defense (AD), which covers the contractor, platform, and industrial base side.</p>
+
+    <div class="sector-grid">
+      <div class="sector-cell"><span class="sector-code">AD</span><span class="sector-name">Aerospace &amp; Defense</span></div>
+      <div class="sector-cell"><span class="sector-code">AG</span><span class="sector-name">Agribusiness</span></div>
+      <div class="sector-cell"><span class="sector-code">AUTO</span><span class="sector-name">Automotive</span></div>
+      <div class="sector-cell"><span class="sector-code">BS</span><span class="sector-name">Business Services</span></div>
+      <div class="sector-cell"><span class="sector-code">CE</span><span class="sector-name">Construction &amp; Engineering</span></div>
+      <div class="sector-cell"><span class="sector-code">CHEM</span><span class="sector-name">Chemicals</span></div>
+      <div class="sector-cell"><span class="sector-code">COMM</span><span class="sector-name">Communications</span></div>
+      <div class="sector-cell"><span class="sector-code">CON</span><span class="sector-name">Consumer</span></div>
+      <div class="sector-cell"><span class="sector-code">DIST</span><span class="sector-name">Distribution</span></div>
+      <div class="sector-cell"><span class="sector-code">EDU</span><span class="sector-name">Education</span></div>
+      <div class="sector-cell"><span class="sector-code">ENE</span><span class="sector-name">Energy</span></div>
+      <div class="sector-cell"><span class="sector-code">ENV</span><span class="sector-name">Environmental</span></div>
+      <div class="sector-cell"><span class="sector-code">FB</span><span class="sector-name">Food &amp; Beverage</span></div>
+      <div class="sector-cell"><span class="sector-code">FIN</span><span class="sector-name">Financial Services</span></div>
+      <div class="sector-cell"><span class="sector-code">FRAN</span><span class="sector-name">Franchised Brands</span></div>
+      <div class="sector-cell"><span class="sector-code">GEN</span><span class="sector-name">General / Cross-Sector</span></div>
+      <div class="sector-cell"><span class="sector-code">GOV</span><span class="sector-name">Government Services</span></div>
+      <div class="sector-cell"><span class="sector-code">HC</span><span class="sector-name">Healthcare</span></div>
+      <div class="sector-cell"><span class="sector-code">IND</span><span class="sector-name">Industrials</span></div>
+      <div class="sector-cell"><span class="sector-code">INS</span><span class="sector-name">Insurance</span></div>
+      <div class="sector-cell"><span class="sector-code">LS</span><span class="sector-name">Life Sciences</span></div>
+      <div class="sector-cell"><span class="sector-code">LT</span><span class="sector-name">Logistics &amp; Transportation</span></div>
+      <div class="sector-cell"><span class="sector-code">MAT</span><span class="sector-name">Materials</span></div>
+      <div class="sector-cell"><span class="sector-code">ME</span><span class="sector-name">Media &amp; Entertainment</span></div>
+      <div class="sector-cell"><span class="sector-code">MFG</span><span class="sector-name">Manufacturing</span></div>
+      <div class="sector-cell new-sector"><span class="sector-code">MIL</span><span class="sector-name">Military ✦ new in v0.2</span></div>
+      <div class="sector-cell"><span class="sector-code">RE</span><span class="sector-name">Real Estate</span></div>
+      <div class="sector-cell"><span class="sector-code">RET</span><span class="sector-name">Retail</span></div>
+      <div class="sector-cell"><span class="sector-code">SWF</span><span class="sector-name">Software</span></div>
+      <div class="sector-cell"><span class="sector-code">TECH</span><span class="sector-name">Technology</span></div>
+      <div class="sector-cell"><span class="sector-code">TEL</span><span class="sector-name">Telecom</span></div>
+      <div class="sector-cell"><span class="sector-code">TH</span><span class="sector-name">Travel &amp; Hospitality</span></div>
+    </div>
+
+    <p style="font-size: 14px; color: var(--ink-light);">32 sectors in the sector vocabulary. 31 sectors carry domain subtags in <span class="mono">domain_modules.json</span> (GEN carries no subtags by design — it is the catch-all for sector-agnostic nuggets).</p>
+  </section>
+
+  <!-- ── Section 5: Conformance ── -->
+  <section id="conformance">
+    <span class="section-number">Section 5.0</span>
+    <h2>Conformance Levels</h2>
+
+    <p>GAQP defines a seven-level conformance ladder. Conformance levels create a legible compliance vocabulary for operators, buyers, and auditors evaluating compliant implementations.</p>
+
+    <table class="conformance-table">
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Designation</th>
+          <th>Minimum Requirement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="level-badge">L1</span></td>
+          <td>Schema Compliant</td>
+          <td>All 29 required fields present on every nugget record.</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge">L2</span></td>
+          <td>Type Classified</td>
+          <td>L1 + every nugget mapped to one of the 25 canonical claim types.</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge">L3</span></td>
+          <td>Admission Governed</td>
+          <td>L2 + all seven admission tests applied during extraction. No rejected records stored.</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge">L4</span></td>
+          <td>Source Anchored</td>
+          <td>L3 + source anchor records with character offsets and quote hashes for every nugget.</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge">L5</span></td>
+          <td>Confidence Tracked</td>
+          <td>L4 + confidence ladder maintained, advancing only through independent corroboration.</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge">L6</span></td>
+          <td>Sidecar Packaged</td>
+          <td>L5 + nuggets delivered in .intel sidecar format with all 14 required sections.</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge">L7</span></td>
+          <td>Corpus Governed</td>
+          <td>L6 + cross-document corpus management, stale detection, and hash integrity verification.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Ten Core Principles</h3>
+
+    <div class="principle-item">
+      <div class="principle-num">1</div>
+      <div class="principle-text"><strong>Materiality of Judgment</strong><span>Distinguish decision-relevant qualitative factors from noise. Not all information is a claim.</span></div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">2</div>
+      <div class="principle-text"><strong>Source Traceability</strong><span>Every claim must be traceable to an identifiable source, actor, and passage. No floating assertions.</span></div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">3</div>
+      <div class="principle-text"><strong>Consistency of Framework Application</strong><span>The classification framework applied to claims must remain constant across periods and contexts.</span></div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">4</div>
+      <div class="principle-text"><strong>Conservatism</strong><span>Weight cautious interpretation. Optimistic readings must be explicitly justified.</span></div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">5</div>
+      <div class="principle-text"><strong>Contextual Boundary Disclosure</strong><span>Claims must disclose the conditions under which they are valid and the conditions under which they break down.</span></div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">6</div>
+      <div class="principle-text"><strong>Multi-Source Corroboration</strong><span>Three or more independent sources converging on a claim constitutes a finding. Same-source repetition does not.</span></div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">7</div>
+      <div class="principle-text"><strong>Judgment Independence</strong><span>The analyst or system producing a claim must be separated from distorting incentives.</span></div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">8</div>
+      <div class="principle-text"><strong>Proportionality</strong><span>The depth of analysis applied to a claim should be proportional to the stakes of the decision it supports.</span></div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">9</div>
+      <div class="principle-text"><strong>Revision Standard</strong><span>The conditions under which a claim would require revision must be definable in advance.</span></div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">10</div>
+      <div class="principle-text"><strong>Scenario Completeness</strong><span>Analysis must account for principal alternative interpretations, not only the preferred one.</span></div>
+    </div>
+  </section>
+
+  <!-- ── Section 6: Download ── -->
+  <section id="download">
+    <span class="section-number">Section 6.0</span>
+    <h2>Download</h2>
+
+    <p>The GAQP Standards Package is the machine-readable runtime artifact bundle that any compliant implementation loads to govern its deconstruction process. A compliant application does not hardcode GAQP's rules. It loads the Schematic and executes against it.</p>
+
+    <div class="download-block">
+      <div>
+        <h4>GAQP Standards Package v0.2-working</h4>
+        <p>Complete schematic: 15 JSON files covering claim types, admission tests, confidence ladder, 29-field schema, source anchor schema, .intel sidecar format, conformance levels, 32 sectors, 3,827 domain subtags, cross-cutting tag vocabulary, and core principles.</p>
+        <div class="meta">Status: Working Draft &nbsp;·&nbsp; 32 sectors &nbsp;·&nbsp; 3,827 subtags &nbsp;·&nbsp; Includes MIL sector</div>
+      </div>
+      <a href="https://github.com/brubaker2000/gaqp-app" class="btn btn-primary">GitHub Repository</a>
+    </div>
+
+    <div class="download-block">
+      <div>
+        <h4>Human-Readable Workbook (xlsx)</h4>
+        <p>Spreadsheet rendering of the full Standards Package — claim types, admission tests, schema, sectors, domain subtags, and tag vocabulary. Useful for review, briefings, and manual reference. JSON files are the authoritative source.</p>
+        <div class="meta">Derived artifact — regenerated from JSON on each release &nbsp;·&nbsp; Not for programmatic use</div>
+      </div>
+      <a href="https://github.com/brubaker2000/gaqp-app/raw/main/releases/GAQP_Standards_Package_v0.2-working.xlsx" class="btn btn-secondary">Download xlsx</a>
+    </div>
+
+    <hr class="divider">
+
+    <h3>Governance &amp; Contribution</h3>
+
+    <p>The Schematic has two tiers with different change friction:</p>
+
+    <ul class="std-list">
+      <li><strong>Constitutional layer</strong> — Claim types, admission tests, schema fields, .intel format, conformance levels. These require a formal IQS review and version increment. No compliant application may alter these unilaterally.</li>
+      <li><strong>Statutory layer</strong> — Domain subtags, cross-cutting tag values, sector crossref notes. These accept community contributions via the structured proposal process in <span class="mono">CONTRIBUTING.md</span>. IQS reviews proposals within 30 days.</li>
+    </ul>
+
+    <p>To propose a new subtag or tag value, open an issue in the repository following the format described in <span class="mono">CONTRIBUTING.md</span>.</p>
+  </section>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      Institute for Qualitative Standards (IQS) &nbsp;·&nbsp;
+      GAQP Version 0.2-working — Working Draft &nbsp;·&nbsp;
+      Published May 2026
+    </div>
+    <div>
+      <a href="https://github.com/brubaker2000/gaqp-app">Repository</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/brubaker2000/gaqp-app/blob/main/CONTRIBUTING.md">Contributing</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/brubaker2000/gaqp-app/blob/main/FOUNDING_CHARTER.md">Founding Charter</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
