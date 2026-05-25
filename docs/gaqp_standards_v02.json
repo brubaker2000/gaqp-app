@@ -1,466 +1,1038 @@
 {
   "package": "GAQP Standards Package",
   "abbreviation": "GAQP",
-  "standards_body": "Institute for Qualitative Standards",
+  "standards_body": "Institute for Qualitative Standards (IQS)",
   "version": "0.2-working",
-  "status": "WORKING-DRAFT",
-  "description": "Machine-readable runtime artifact bundle for GAQP-compliant implementations. This is the current working draft. Checksum and release date will be set at version freeze.",
-  "note_domain_modules": "31 sectors with domain subtags in domain_modules.json (GEN General/Cross-Sector carries no subtags by design). v0.2 adds Military (MIL) \u2014 247 subtags across 15 dimensions, including the unique GAQP Intelligence Functions dimension. Subtag taxonomy is statutory \u2014 additions do not require a version bump.",
-  "note_schema_freeze": "Canonical 29-field schema established. Constitutional layer is stable. Checksum and release_date will be set at v1.0 freeze.",
-  "claim_types": [
-    {
-      "id": 1,
-      "claim_type": "Axiom",
-      "definition": "Foundational assertion treated as a first principle within the source's own logic"
+  "status": "working-draft",
+  "description": "Consolidated single-file GAQP standards artifact for LLM and implementation consumption. Flat/denormalized. All constitutional and statutory layer elements included.",
+  "note_domain_modules": "3827 total subtags across 31 sectors",
+  "note_schema_freeze": "Canonical 29-field schema established. Proposed extension: temporal_stability_override as field 30 (pending Standards Committee adoption).",
+  "claim_types": {
+    "gaqp_version": "0.1-working",
+    "register_status": "closed",
+    "register_note": "No implementation may create, infer, rename, abbreviate, pluralize, or substitute claim types. Every admitted claim maps to exactly one of these 25 types.",
+    "claim_types": [
+      {
+        "id": 1,
+        "claim_type": "Axiom",
+        "definition": "Foundational assertion treated as a first principle within the source's own logic"
+      },
+      {
+        "id": 2,
+        "claim_type": "Definition",
+        "definition": "A source-local explanation of what a term, category, process, or concept means"
+      },
+      {
+        "id": 3,
+        "claim_type": "Ontological Assertion",
+        "definition": "A claim that something exists, has a particular nature, or belongs to a stated category"
+      },
+      {
+        "id": 4,
+        "claim_type": "Principle",
+        "definition": "A general rule, standard, or governing idea that guides judgment or action"
+      },
+      {
+        "id": 5,
+        "claim_type": "Doctrine",
+        "definition": "A formalized or institutionalized operating belief, policy logic, or governing position",
+        "extraction_note": "Doctrine is assigned based on the nature of the claim, not the nature of the document. A field manual, regulatory framework, or strategic policy document will contain many claim types. Claims within a doctrinal source that function as first principles \u2014 with durability across institutional cycles, technologies, or domains \u2014 should be classified as Axiom or Principle. Reserve Doctrine for claims that are specific to an institutional version, platform, organizational structure, or regulatory state that is subject to intentional revision. The distinction matters for recency modeling: a doctrinal Axiom is timeless; a doctrinal operational procedure decays with the technology it governs."
+      },
+      {
+        "id": 6,
+        "claim_type": "Heuristic",
+        "definition": "A practical rule of thumb that helps make decisions under uncertainty"
+      },
+      {
+        "id": 7,
+        "claim_type": "Best Practice",
+        "definition": "A recommended method, discipline, or operational pattern presented as preferable"
+      },
+      {
+        "id": 8,
+        "claim_type": "Tendency",
+        "definition": "A recurring pattern, propensity, or direction of movement broader than one event"
+      },
+      {
+        "id": 9,
+        "claim_type": "Observation",
+        "definition": "A source-supported noted fact, condition, or state of affairs without required causal interpretation"
+      },
+      {
+        "id": 10,
+        "claim_type": "Event",
+        "definition": "A discrete occurrence, action, milestone, transaction, or incident anchored to a moment or sequence"
+      },
+      {
+        "id": 11,
+        "claim_type": "Institutional Precedent",
+        "definition": "A prior institutional action, decision, practice, or pattern used as a reference point"
+      },
+      {
+        "id": 12,
+        "claim_type": "Constraint",
+        "definition": "A limitation, boundary, dependency, rule, or operating condition that limits action"
+      },
+      {
+        "id": 13,
+        "claim_type": "Threshold Condition",
+        "definition": "A minimum condition, trigger, breakpoint, or gating criterion that changes eligibility, status, or action"
+      },
+      {
+        "id": 14,
+        "claim_type": "Objective",
+        "definition": "A desired end state, goal, target, mandate, or outcome sought by an actor or institution"
+      },
+      {
+        "id": 15,
+        "claim_type": "Tradeoff",
+        "definition": "A tension or exchange in which pursuing one value or option burdens another"
+      },
+      {
+        "id": 16,
+        "claim_type": "Causal Claim",
+        "definition": "An assertion that one factor produces, drives, prevents, enables, worsens, or improves another"
+      },
+      {
+        "id": 17,
+        "claim_type": "Declaration of Value",
+        "definition": "A claim about importance, preference, worth, priority, or what should be valued"
+      },
+      {
+        "id": 18,
+        "claim_type": "Diagnostic Signal",
+        "definition": "An indicator that suggests an underlying condition, risk, opportunity, weakness, or pattern"
+      },
+      {
+        "id": 19,
+        "claim_type": "Stakeholder Complaint Claim",
+        "definition": "A complaint, objection, grievance, pain point, or dissatisfaction expressed by a stakeholder"
+      },
+      {
+        "id": 20,
+        "claim_type": "Strength",
+        "definition": "A favorable internal attribute, capability, position, resource, or advantage"
+      },
+      {
+        "id": 21,
+        "claim_type": "Weakness",
+        "definition": "An unfavorable internal deficit, vulnerability, limitation, gap, or underperformance"
+      },
+      {
+        "id": 22,
+        "claim_type": "Opportunity",
+        "definition": "An external or situational upside, opening, favorable condition, or exploitable possibility"
+      },
+      {
+        "id": 23,
+        "claim_type": "Threat",
+        "definition": "An external or situational downside, adverse force, risk, or harmful development"
+      },
+      {
+        "id": 24,
+        "claim_type": "Asset",
+        "definition": "A resource, relationship, capability, right, dataset, or item with reusable value"
+      },
+      {
+        "id": 25,
+        "claim_type": "Liability",
+        "definition": "An obligation, exposure, burden, dependency, or source of downside value"
+      }
+    ],
+    "forbidden_labels": [
+      {
+        "forbidden": "Requirement",
+        "remap_to": [
+          "Constraint",
+          "Threshold Condition",
+          "Best Practice"
+        ]
+      },
+      {
+        "forbidden": "Caution",
+        "remap_to": [
+          "Threat",
+          "Weakness",
+          "Constraint",
+          "Diagnostic Signal"
+        ]
+      },
+      {
+        "forbidden": "Data Point",
+        "remap_to": [
+          "Observation",
+          "Event"
+        ]
+      },
+      {
+        "forbidden": "Trend",
+        "remap_to": [
+          "Tendency"
+        ]
+      },
+      {
+        "forbidden": "Capability",
+        "remap_to": [
+          "Strength",
+          "Asset",
+          "Ontological Assertion"
+        ]
+      },
+      {
+        "forbidden": "Problem",
+        "remap_to": [
+          "Weakness",
+          "Threat",
+          "Stakeholder Complaint Claim"
+        ]
+      },
+      {
+        "forbidden": "Risk",
+        "remap_to": [
+          "Threat",
+          "Diagnostic Signal",
+          "Constraint"
+        ]
+      },
+      {
+        "forbidden": "Finding",
+        "remap_to": [
+          "Observation",
+          "Causal Claim"
+        ],
+        "note": "reconstruction artifact only"
+      },
+      {
+        "forbidden": "Pattern",
+        "remap_to": [
+          "Tendency",
+          "Observation"
+        ],
+        "note": "reconstruction artifact only"
+      }
+    ]
+  },
+  "admission_tests": {
+    "gaqp_version": "0.1-working",
+    "operational_discipline": "Be generous at candidate-identification. Be strict at admission. Optimize for governed admissibility, source fidelity, and boundary discipline \u2014 not claim volume.",
+    "admission_statuses": [
+      "admitted",
+      "needs_review",
+      "rejected"
+    ],
+    "tests": [
+      {
+        "id": 1,
+        "name": "Standalone",
+        "pass_condition": "Retains full meaning outside its source paragraph without surrounding context"
+      },
+      {
+        "id": 2,
+        "name": "Disputability",
+        "pass_condition": "A serious person can agree, challenge, or qualify it \u2014 genuinely contentful"
+      },
+      {
+        "id": 3,
+        "name": "Governance",
+        "pass_condition": "Can be tagged, sourced, scoped, and audited under the GAQP schema"
+      },
+      {
+        "id": 4,
+        "name": "Activation",
+        "pass_condition": "A system can determine when and where this claim matters"
+      },
+      {
+        "id": 5,
+        "name": "Durability",
+        "pass_condition": "Remains useful beyond the moment of utterance"
+      },
+      {
+        "id": 6,
+        "name": "Composability",
+        "pass_condition": "Can combine with other governed claims into larger judgment structures"
+      },
+      {
+        "id": 7,
+        "name": "Non-Triviality",
+        "pass_condition": "Carries strategic, interpretive, factual, operational, or diagnostic weight"
+      }
+    ]
+  },
+  "confidence_ladder": {
+    "gaqp_version": "0.1-working",
+    "independence_definition": "A unique (tenant_id, actor_id) pair. The originating source is admission, not corroboration. The same actor corroborating a claim twice counts once.",
+    "promotion_rule": "Confidence advances through independent corroboration only. Same-source or same-tenant repetition does not promote. Structural elevation requires human operator action \u2014 never automated.",
+    "levels": [
+      {
+        "level": "seed",
+        "score": 0.5,
+        "condition": "Extracted from one originating source. No independent corroboration yet."
+      },
+      {
+        "level": "single_source",
+        "score": 0.65,
+        "condition": "One credible independent source beyond the origin."
+      },
+      {
+        "level": "developing",
+        "score": 0.72,
+        "condition": "Two independent corroborating sources beyond the origin."
+      },
+      {
+        "level": "corroborated",
+        "score": 0.91,
+        "condition": "Three or more independent corroborating sources beyond the origin."
+      },
+      {
+        "level": "structural",
+        "score": 1.0,
+        "condition": "Operator elevation only. Never automated."
+      },
+      {
+        "level": "disputed",
+        "score": null,
+        "condition": "Active unresolved contradiction. Score frozen. Promotion blocked."
+      }
+    ]
+  },
+  "confidence_modifiers": {
+    "gaqp_version": "0.2-working",
+    "status": "proposed",
+    "title": "GAQP Confidence Modifier Framework",
+    "description": "Multi-dimensional modifiers that adjust the effective confidence of a nugget beyond what corroboration count alone captures. These modifiers operate on top of the corroboration-based confidence ladder \u2014 they do not replace it. The base score from confidence_ladder.json reflects how many independent sources have corroborated a claim. The modifiers here reflect how much that base score should be discounted given structural properties of the claim itself.",
+    "architecture_note": "Confidence is two-layered. Layer 1 (constitutional): the corroboration ladder \u2014 seed through structural. Layer 2 (this document): modifier dimensions that scale the base score. A claim at corroborated (0.91) with severe recency discount may have an effective confidence well below that. The layers are computed separately and combined. Operators may implement any subset of the modifier dimensions.",
+    "combination_rule": "effective_confidence = base_ladder_score \u00d7 \u03a0(active_modifier_factors). Each active modifier dimension yields a factor in [floor, 1.0]. Inactive or unimplemented dimensions default to 1.0 (no adjustment). Floors are dimension-specific and set below.",
+    "modifier_dimensions": [
+      {
+        "id": "recency",
+        "label": "Recency",
+        "description": "How much the age of the claim degrades confidence in its current applicability. This is not about whether the claim was accurate when made \u2014 it was, by definition, if it passed admission. It is about whether a claim that was accurate in year Y is still applicable today.",
+        "key_insight": "Recency decay is a function of THREE variables: claim type, domain, and analyst override. Claim type determines the inherent temporal stability of the assertion class \u2014 the default. Domain scales the decay rate. Analyst override corrects for cases where the claim-type default is wrong for a specific claim. The three are applied in sequence: type default \u2192 domain multiplier \u2192 analyst override (if present).",
+        "decay_classes": {
+          "description": "Every claim type has a default decay class. Decay class determines the inherent temporal stability of the assertion \u2014 the baseline before domain multiplier and analyst override are applied. The default is a starting point, not a ceiling. See analyst_override below.",
+          "classes": [
+            {
+              "class": "timeless",
+              "label": "No Decay",
+              "description": "Claims that are definitional or axiomatic within the logic of a source. Their validity is not a function of time \u2014 they may be wrong, but age is not the mechanism by which they become wrong.",
+              "recency_factor": 1.0,
+              "claim_types": [
+                "Axiom",
+                "Definition"
+              ],
+              "rationale": "An axiom about human nature from a 1950 strategy document is still an axiom. A definition of what a term means within a source is not degraded by age. Whether these claims are correct is a corroboration question, not a recency question."
+            },
+            {
+              "class": "slow_decay",
+              "label": "Structural Decay",
+              "description": "Claims about fundamental organizing beliefs, values, or categories. They shift across decades, not years. Still subject to eventual revision, but recency discount applies slowly.",
+              "half_life_reference": "~20 years at baseline; domain multiplier may compress this",
+              "claim_types": [
+                "Principle",
+                "Ontological Assertion",
+                "Declaration of Value"
+              ],
+              "rationale": "A principle governing organizational design may persist for 20+ years before institutional experience shifts it. A declaration of strategic values is authored by humans with long time horizons."
+            },
+            {
+              "class": "moderate_decay",
+              "label": "Practice Decay",
+              "description": "Practical patterns, rules of thumb, and accumulated operational wisdom. These evolve with experience, new evidence, and changing environments \u2014 but they change on a years-to-decade scale.",
+              "half_life_reference": "~5\u201310 years at baseline",
+              "claim_types": [
+                "Heuristic",
+                "Best Practice",
+                "Tendency",
+                "Tradeoff",
+                "Institutional Precedent"
+              ],
+              "rationale": "A best practice in software architecture or a heuristic about vendor negotiation evolves as practitioners accumulate experience. It does not become obsolete overnight, but a 10-year-old best practice warrants skepticism."
+            },
+            {
+              "class": "fast_decay",
+              "label": "Governed Decay",
+              "description": "Claims tied to formally governed institutional, regulatory, or doctrinal state. These are intentionally revised by institutions \u2014 their revision is not gradual drift but deliberate update. Age is a strong predictor of obsolescence.",
+              "half_life_reference": "~2\u20135 years at baseline; domain multiplier critical here",
+              "claim_types": [
+                "Doctrine",
+                "Constraint",
+                "Threshold Condition",
+                "Causal Claim",
+                "Stakeholder Complaint Claim"
+              ],
+              "rationale": "Military doctrine is formally revised on a documented cycle. Regulatory constraints change with legislation. A causal claim in a clinical study may be overturned by a larger follow-up study. A stakeholder complaint from 2018 may have been addressed. Age is a strong signal for these claim types.",
+              "intra_type_variance_note": "Doctrine is the claim type with the widest internal temporal variance of any type in the register. 'The advantage of surprise' and 'drone swarm employment doctrine' are both Doctrine \u2014 but their stability profiles are entirely different. Two resolution mechanisms apply: (1) Extraction discipline: claims that function as first principles within a source's logic \u2014 regardless of the document type they appear in \u2014 are better classified as Axiom or Principle. A field manual entry that states surprise is the greatest force multiplier is an Axiom embedded in a doctrinal document, not Doctrine in the GAQP sense. (2) Analyst override: when a claim is legitimately Doctrine but the analyst judges it to have atypical stability, the override mechanism below should be applied.",
+              "extraction_discipline_examples": [
+                {
+                  "source_text": "Surprise remains the most decisive force multiplier in offensive operations.",
+                  "naive_assignment": "Doctrine (appears in field manual)",
+                  "correct_assignment": "Axiom or Principle",
+                  "reason": "This claim functions as a first principle within military theory. Its age does not degrade it. Clausewitz, Sun Tzu, and 21st-century doctrine all corroborate it independently. Classifying it as Axiom/Principle correctly assigns it zero recency decay."
+                },
+                {
+                  "source_text": "Occupy the high ground to achieve observation and fire superiority over the objective.",
+                  "naive_assignment": "Doctrine",
+                  "correct_assignment": "Principle (with analyst override flag recommended)",
+                  "reason": "This is a general operational principle with millenia of corroboration. However, drone and precision-fire environments have begun to invert the exposure risk of elevated positions in some contexts \u2014 an analyst extracting this in 2024 should flag it for override review."
+                },
+                {
+                  "source_text": "Small UAS swarms will be employed in packages of 4\u20138 platforms for urban area denial at the company level.",
+                  "naive_assignment": "Doctrine",
+                  "correct_assignment": "Doctrine \u2014 fast_decay is correct",
+                  "reason": "This is specific operational guidance tied to specific platforms and a specific tactical concept that is actively evolving. The default fast_decay class is correct and the aggressive domain multiplier compounds it appropriately. A claim like this from 2021 doctrine may already require review."
+                }
+              ]
+            },
+            {
+              "class": "world_state",
+              "label": "Snapshot Decay",
+              "description": "Claims about the actual state of the world at a specific moment. These do not 'decay' in the sense of becoming wrong \u2014 they were accurate snapshots when made. They become inapplicable as a picture of the present. A 2015 observation about a company's cash position is not incorrect about 2015; it simply does not describe 2025.",
+              "half_life_reference": "~6\u201324 months at baseline; domain multiplier critical",
+              "claim_types": [
+                "Observation",
+                "Event",
+                "Diagnostic Signal",
+                "Objective",
+                "Strength",
+                "Weakness",
+                "Opportunity",
+                "Threat",
+                "Asset",
+                "Liability"
+              ],
+              "rationale": "World-state claims are the most temporally bounded class. An observation about a competitor's market position, a diagnostic signal about a unit's readiness, or a threat assessment about a geopolitical actor \u2014 these are snapshots. Their recency factor declines rapidly because the world moves on regardless of what was true at the moment of observation."
+            }
+          ]
+        },
+        "analyst_override": {
+          "description": "The decay class derived from claim type is a default, not a mandate. The extracting analyst may override the decay class for any individual nugget when the default is structurally wrong for that specific claim.",
+          "field_name": "temporal_stability_override",
+          "field_type": "string | null",
+          "allowed_values": [
+            "timeless",
+            "slow",
+            "moderate",
+            "fast",
+            "world_state",
+            null
+          ],
+          "null_means": "Use claim-type default. No override applied.",
+          "when_to_override": [
+            "A Doctrine claim expresses a principle of such generality and historical durability that it functions as an Axiom (e.g., operational security, concentration of force, unity of command). Set override to 'timeless' or 'slow'.",
+            "A Doctrine claim is tied to a specific weapons system, platform, or tactical concept that is actively evolving. Set override to 'fast' even if the parent claim type default is moderate.",
+            "A Best Practice claim represents codified institutional precedent with decades of stable application. Set override to 'slow' if warranted.",
+            "A Principle or Heuristic appears in a domain with aggressive decay and is specifically tied to a technological or regulatory condition that is known to be changing. Set override to 'fast'."
+          ],
+          "governance": "The override field is operator-implemented and analyst-applied. It does not require a constitutional change because it operates within the existing decay class vocabulary \u2014 it selects from the existing set, not extends it. The metadata schema field addition (temporal_stability_override as field 30) is flagged as a proposed constitutional addition. Pending schema amendment, operators may implement this as an extended field in their own record structure.",
+          "override_examples": [
+            {
+              "nugget_claim_type": "Doctrine",
+              "claim_summary": "Surprise is the decisive offensive force multiplier",
+              "default_decay_class": "fast_decay",
+              "override": "timeless",
+              "analyst_note": "This claim appears in 2018 doctrine but is corroborated across 2,500 years of military history. It is an Axiom of military theory embedded in a doctrinal document. Recency decay does not apply."
+            },
+            {
+              "nugget_claim_type": "Principle",
+              "claim_summary": "Elevated terrain confers observation and fire superiority",
+              "default_decay_class": "slow_decay",
+              "override": "moderate",
+              "analyst_note": "Historically a near-Axiom, but precision fires and drone saturation are actively eroding the universal applicability of this principle in some operational environments. Demoted to moderate to reflect emerging doctrinal uncertainty."
+            },
+            {
+              "nugget_claim_type": "Doctrine",
+              "claim_summary": "Company-level UAS employment: 4\u20138 platform swarms for urban denial",
+              "default_decay_class": "fast_decay",
+              "override": null,
+              "analyst_note": "No override. Default fast_decay is correct. This is specific platform-and-tactic doctrine in an aggressively evolving domain."
+            }
+          ]
+        },
+        "domain_decay_multipliers": {
+          "description": "Domains differ in how quickly knowledge of any given type becomes obsolete. The domain multiplier scales the decay class half-life. A multiplier < 1.0 means faster decay (shorter half-life) than baseline. A multiplier > 1.0 means slower decay.",
+          "implementation_note": "Default values below are reference calibrations. Operators running GAQP-compliant systems in a specific domain should calibrate these against their own evidence of how quickly knowledge turns over in their operational context.",
+          "reference_calibrations": [
+            {
+              "rate": "aggressive",
+              "multiplier": 0.4,
+              "description": "Domains with rapid evidence turnover, doctrine revision cycles, or real-time operational change",
+              "example_sectors": [
+                "HC \u2014 clinical evidence; FDA guidance updates; drug approvals supersede earlier studies",
+                "MIL \u2014 doctrine is formally revised; OPORD-era observations become obsolete within operational timeframes",
+                "FIN \u2014 financial positions, credit conditions, and market observations degrade within quarters"
+              ],
+              "illustrative_case": "A 'fast_decay' (Causal Claim) in HC has a baseline half-life of ~3 years. With an aggressive domain multiplier of 0.4, effective half-life is ~14 months. A 2015 clinical causal claim about drug efficacy may have a recency factor near 0.20 by 2025."
+            },
+            {
+              "rate": "standard",
+              "multiplier": 1.0,
+              "description": "General institutional and business domains with typical change rates",
+              "example_sectors": [
+                "Most business sectors \u2014 strategy, operations, product, marketing"
+              ],
+              "illustrative_case": "A 'moderate_decay' (Best Practice) in a standard business domain has an ~8-year effective half-life. A 2018 best practice on customer success still retains meaningful signal in 2025."
+            },
+            {
+              "rate": "conservative",
+              "multiplier": 2.5,
+              "description": "Domains where knowledge is precedent-based, legally codified, or structurally stable across long time horizons",
+              "example_sectors": [
+                "LAW \u2014 case law precedent; legislative frameworks",
+                "Humanities, philosophy \u2014 foundational arguments; institutional memory",
+                "Physical infrastructure \u2014 engineering standards with slow revision cycles"
+              ],
+              "illustrative_case": "A 'moderate_decay' (Heuristic) in a conservative legal domain might retain 0.80+ recency factor even after 15 years. The half-life is extended by the domain's inherently slow revision culture."
+            }
+          ]
+        },
+        "recency_factor_calculation": {
+          "formula": "recency_factor = max(floor, 0.5 ^ (age_years / effective_half_life))",
+          "where": {
+            "age_years": "Number of years between source_date and evaluation_date",
+            "effective_half_life": "base_half_life_for_decay_class \u00d7 domain_multiplier",
+            "floor": "Minimum recency factor; prevents complete confidence collapse. Default 0.10. Operators may adjust."
+          },
+          "note": "This is a reference implementation formula. Compliant systems may use alternative decay functions (linear, step-function, etc.) provided the underlying decay class and domain multiplier parameters are preserved and exposed in the runtime interface.",
+          "special_case_timeless": "Claim types in the 'timeless' decay class return recency_factor = 1.0 unconditionally. No formula is applied."
+        },
+        "illustrative_examples": [
+          {
+            "claim": "Axiom about the nature of market competition (claim_type: Axiom, domain: FIN, source_date: 2005)",
+            "decay_class": "timeless",
+            "recency_factor": 1.0,
+            "note": "20-year-old axiom. Recency factor = 1.0. Whether the axiom is correct is a corroboration question."
+          },
+          {
+            "claim": "Observation that Unit X had a 78% readiness rating in Q3 2014 (claim_type: Observation, domain: MIL, source_date: 2014)",
+            "decay_class": "world_state",
+            "domain_rate": "aggressive",
+            "effective_half_life_years": 0.6,
+            "age_years": 11,
+            "recency_factor": "~0.10 (floor)",
+            "note": "World-state claim in aggressive decay domain. 11 years old. Recency factor hits floor within ~2 years. This claim is a historical record, not a current intelligence assessment."
+          },
+          {
+            "claim": "Clinical causal claim that Drug A reduces Event B by 22% (claim_type: Causal Claim, domain: HC, source_date: 2016)",
+            "decay_class": "fast_decay",
+            "domain_rate": "aggressive",
+            "effective_half_life_years": 1.2,
+            "age_years": 9,
+            "recency_factor": "~0.12",
+            "note": "Fast-decay claim in aggressive domain. Likely superseded by subsequent clinical evidence. Warrants active re-evaluation before use."
+          },
+          {
+            "claim": "Principle that decentralized command improves unit initiative under ambiguity (claim_type: Principle, domain: MIL, source_date: 2008)",
+            "decay_class": "slow_decay",
+            "domain_rate": "aggressive",
+            "effective_half_life_years": 8,
+            "age_years": 17,
+            "recency_factor": "~0.22",
+            "note": "Even in an aggressive domain, slow-decay claims have extended durability. This principle has meaningful signal even at 17 years, though corroboration from recent doctrine is warranted."
+          },
+          {
+            "claim": "Best practice that vendor contracts should include SLA penalty clauses (claim_type: Best Practice, domain: standard, source_date: 2017)",
+            "decay_class": "moderate_decay",
+            "domain_rate": "standard",
+            "effective_half_life_years": 8,
+            "age_years": 8,
+            "recency_factor": "0.50",
+            "note": "At exactly one half-life. Recency factor 0.50 is appropriate \u2014 this is still meaningful guidance but should be weighed against more recent practice literature."
+          }
+        ],
+        "floor": 0.1,
+        "ceiling": 1.0
+      },
+      {
+        "id": "source_quality",
+        "label": "Source Quality",
+        "description": "Adjusts confidence based on the methodological rigor or credibility class of the originating source. Not all sources that pass the admission tests carry equal epistemic weight.",
+        "implementation_note": "Source quality tiers are operator-defined against the source_anchor_schema source_type and source_credibility fields. This dimension is a multiplier on the base confidence ladder score.",
+        "reference_tiers": [
+          {
+            "tier": "A",
+            "label": "High Rigor",
+            "factor": 1.0,
+            "examples": "Peer-reviewed RCT; sworn testimony; audited financial statements; primary source records"
+          },
+          {
+            "tier": "B",
+            "label": "Professional Authority",
+            "factor": 0.9,
+            "examples": "Expert consensus document; official policy; credentialed analysis; structured regulatory filing"
+          },
+          {
+            "tier": "C",
+            "label": "Institutional Record",
+            "factor": 0.8,
+            "examples": "Internal operational record; meeting notes; non-peer-reviewed white paper; industry report"
+          },
+          {
+            "tier": "D",
+            "label": "Soft Source",
+            "factor": 0.65,
+            "examples": "Journalistic account; secondhand report; informal communication; analyst opinion without primary citation"
+          }
+        ],
+        "floor": 0.5
+      },
+      {
+        "id": "evidence_independence",
+        "label": "Evidence Independence",
+        "description": "The confidence ladder counts independent (tenant_id, actor_id) pairs. This modifier applies a discount when apparent independence is undermined by shared upstream data \u2014 multiple sources reporting the same underlying dataset or briefing.",
+        "independence_test": "True independence requires independent observation, not independent reporting of the same observation. If Source A and Source B both cite the same underlying study, they count as one independent corroborator regardless of how many documents repeat the finding.",
+        "factor_range": [
+          0.6,
+          1.0
+        ],
+        "application": "Operator-applied. When a deconstructing analyst identifies that multiple sources trace to a common upstream, the independence discount is applied manually and logged in the nugget's provenance chain."
+      },
+      {
+        "id": "inferential_distance",
+        "label": "Inferential Distance",
+        "description": "How many inferential steps separate the admitted claim from the direct textual evidence in the source. Claims that are directly stated by the source carry less operator inference than claims that were derived or synthesized.",
+        "levels": [
+          {
+            "level": "direct",
+            "factor": 1.0,
+            "description": "Claim is explicitly stated in the source text. Minimal interpretive step."
+          },
+          {
+            "level": "derived",
+            "factor": 0.9,
+            "description": "Claim follows clearly from stated material with one logical step. Interpretive but defensible."
+          },
+          {
+            "level": "synthesized",
+            "factor": 0.8,
+            "description": "Claim emerges from combining multiple source passages or requires domain expertise to extract."
+          },
+          {
+            "level": "inferred",
+            "factor": 0.65,
+            "description": "Claim is a deconstructing analyst's interpretation that the source implies but does not assert. Should be flagged at extraction."
+          }
+        ],
+        "note": "The admission_tests.json Explicitness Test addresses the outer boundary \u2014 claims that are entirely speculative do not pass admission. This modifier addresses the gradient between direct statement and strong implication."
+      },
+      {
+        "id": "breadth",
+        "label": "Corroboration Breadth",
+        "description": "This dimension tracks the count of independent corroborating sources \u2014 it is the primary driver of the confidence ladder level and is handled by confidence_ladder.json. It is listed here for completeness and to clarify the relationship between the ladder and the modifier framework. No additional multiplier is applied; the ladder score already encodes this dimension.",
+        "factor": "encoded_in_ladder",
+        "note": "Do not double-count. The corroboration ladder IS the breadth modifier. The remaining dimensions above operate on top of it."
+      }
+    ],
+    "combined_effective_confidence": {
+      "formula": "effective_confidence = ladder_score \u00d7 recency_factor \u00d7 source_quality_factor \u00d7 independence_factor \u00d7 inferential_distance_factor",
+      "example": {
+        "claim": "Causal claim in healthcare domain, 9 years old, from an institutional record (Tier C), one apparent corroborator that shares upstream data with origin, synthesized from multiple passages",
+        "ladder_score": 0.65,
+        "recency_factor": 0.12,
+        "source_quality_factor": 0.8,
+        "independence_factor": 0.7,
+        "inferential_distance_factor": 0.8,
+        "effective_confidence": 0.044,
+        "interpretation": "Despite reaching single_source ladder status, the combined modifiers reduce effective confidence below actionable threshold. This is correct behavior \u2014 this claim is old, from a weak source, with questionable independence, and was synthesized. It warrants re-extraction from current evidence before use."
+      }
     },
-    {
-      "id": 2,
-      "claim_type": "Definition",
-      "definition": "A source-local explanation of what a term, category, process, or concept means"
-    },
-    {
-      "id": 3,
-      "claim_type": "Ontological Assertion",
-      "definition": "A claim that something exists, has a particular nature, or belongs to a stated category"
-    },
-    {
-      "id": 4,
-      "claim_type": "Principle",
-      "definition": "A general rule, standard, or governing idea that guides judgment or action"
-    },
-    {
-      "id": 5,
-      "claim_type": "Doctrine",
-      "definition": "A formalized or institutionalized operating belief, policy logic, or governing position"
-    },
-    {
-      "id": 6,
-      "claim_type": "Heuristic",
-      "definition": "A practical rule of thumb that helps make decisions under uncertainty"
-    },
-    {
-      "id": 7,
-      "claim_type": "Best Practice",
-      "definition": "A recommended method, discipline, or operational pattern presented as preferable"
-    },
-    {
-      "id": 8,
-      "claim_type": "Tendency",
-      "definition": "A recurring pattern, propensity, or direction of movement broader than one event"
-    },
-    {
-      "id": 9,
-      "claim_type": "Observation",
-      "definition": "A source-supported noted fact, condition, or state of affairs without required causal interpretation"
-    },
-    {
-      "id": 10,
-      "claim_type": "Event",
-      "definition": "A discrete occurrence, action, milestone, transaction, or incident anchored to a moment or sequence"
-    },
-    {
-      "id": 11,
-      "claim_type": "Institutional Precedent",
-      "definition": "A prior institutional action, decision, practice, or pattern used as a reference point"
-    },
-    {
-      "id": 12,
-      "claim_type": "Constraint",
-      "definition": "A limitation, boundary, dependency, rule, or operating condition that limits action"
-    },
-    {
-      "id": 13,
-      "claim_type": "Threshold Condition",
-      "definition": "A minimum condition, trigger, breakpoint, or gating criterion that changes eligibility, status, or action"
-    },
-    {
-      "id": 14,
-      "claim_type": "Objective",
-      "definition": "A desired end state, goal, target, mandate, or outcome sought by an actor or institution"
-    },
-    {
-      "id": 15,
-      "claim_type": "Tradeoff",
-      "definition": "A tension or exchange in which pursuing one value or option burdens another"
-    },
-    {
-      "id": 16,
-      "claim_type": "Causal Claim",
-      "definition": "An assertion that one factor produces, drives, prevents, enables, worsens, or improves another"
-    },
-    {
-      "id": 17,
-      "claim_type": "Declaration of Value",
-      "definition": "A claim about importance, preference, worth, priority, or what should be valued"
-    },
-    {
-      "id": 18,
-      "claim_type": "Diagnostic Signal",
-      "definition": "An indicator that suggests an underlying condition, risk, opportunity, weakness, or pattern"
-    },
-    {
-      "id": 19,
-      "claim_type": "Stakeholder Complaint Claim",
-      "definition": "A complaint, objection, grievance, pain point, or dissatisfaction expressed by a stakeholder"
-    },
-    {
-      "id": 20,
-      "claim_type": "Strength",
-      "definition": "A favorable internal attribute, capability, position, resource, or advantage"
-    },
-    {
-      "id": 21,
-      "claim_type": "Weakness",
-      "definition": "An unfavorable internal deficit, vulnerability, limitation, gap, or underperformance"
-    },
-    {
-      "id": 22,
-      "claim_type": "Opportunity",
-      "definition": "An external or situational upside, opening, favorable condition, or exploitable possibility"
-    },
-    {
-      "id": 23,
-      "claim_type": "Threat",
-      "definition": "An external or situational downside, adverse force, risk, or harmful development"
-    },
-    {
-      "id": 24,
-      "claim_type": "Asset",
-      "definition": "A resource, relationship, capability, right, dataset, or item with reusable value"
-    },
-    {
-      "id": 25,
-      "claim_type": "Liability",
-      "definition": "An obligation, exposure, burden, dependency, or source of downside value"
+    "governance": {
+      "layer": "proposed_constitutional",
+      "rationale": "The modifier framework touches the fundamental confidence model defined in confidence_ladder.json. Any change to the decay class assignments for claim types, or to the formula structure, constitutes a constitutional change requiring Standards Committee review and a version increment. Domain decay multipliers (the rate table) are operator-configurable and do not require committee action \u2014 operators calibrate them to their operational context. The floor values are constitutional."
     }
-  ],
-  "admission_tests": [
-    {
-      "id": 1,
-      "name": "Standalone",
-      "pass_condition": "Retains full meaning outside its source paragraph without surrounding context"
-    },
-    {
-      "id": 2,
-      "name": "Disputability",
-      "pass_condition": "A serious person can agree, challenge, or qualify it \u2014 genuinely contentful"
-    },
-    {
-      "id": 3,
-      "name": "Governance",
-      "pass_condition": "Can be tagged, sourced, scoped, and audited under the GAQP schema"
-    },
-    {
-      "id": 4,
-      "name": "Activation",
-      "pass_condition": "A system can determine when and where this claim matters"
-    },
-    {
-      "id": 5,
-      "name": "Durability",
-      "pass_condition": "Remains useful beyond the moment of utterance"
-    },
-    {
-      "id": 6,
-      "name": "Composability",
-      "pass_condition": "Can combine with other governed claims into larger judgment structures"
-    },
-    {
-      "id": 7,
-      "name": "Non-Triviality",
-      "pass_condition": "Carries strategic, interpretive, factual, operational, or diagnostic weight"
-    }
-  ],
-  "confidence_ladder": [
-    {
-      "level": "seed",
-      "score": 0.5,
-      "condition": "Extracted from one originating source. No independent corroboration yet."
-    },
-    {
-      "level": "single_source",
-      "score": 0.65,
-      "condition": "One credible independent source beyond the origin."
-    },
-    {
-      "level": "developing",
-      "score": 0.72,
-      "condition": "Two independent corroborating sources beyond the origin."
-    },
-    {
-      "level": "corroborated",
-      "score": 0.91,
-      "condition": "Three or more independent corroborating sources beyond the origin."
-    },
-    {
-      "level": "structural",
-      "score": 1.0,
-      "condition": "Operator elevation only. Never automated."
-    },
-    {
-      "level": "disputed",
-      "score": null,
-      "condition": "Active unresolved contradiction. Score frozen. Promotion blocked."
-    }
-  ],
-  "sector_vocabulary": [
-    {
-      "code": "AD",
-      "sector_name": "Aerospace & Defense",
-      "gics_sector": "Industrials",
-      "sic_range": "3720-3769, 3812",
-      "naics_range": "3364, 3369, 336992",
-      "mapping_notes": "Clean alignment with GICS Aerospace & Defense industry."
-    },
-    {
-      "code": "AG",
-      "sector_name": "Agribusiness",
-      "gics_sector": "Consumer Staples",
-      "sic_range": "0100-0999, 2000-2099",
-      "naics_range": "111, 112, 115, 311",
-      "mapping_notes": "GICS has no direct Agribusiness sector. Spans Consumer Staples and Materials. GAQP classification is more precise for PE purposes."
-    },
-    {
-      "code": "AUTO",
-      "sector_name": "Automotive",
-      "gics_sector": "Consumer Discretionary",
-      "sic_range": "3710-3716, 5510-5521",
-      "naics_range": "3361-3363, 4411",
-      "mapping_notes": "Aligns well with GICS Automobiles & Components group."
-    },
-    {
-      "code": "BS",
-      "sector_name": "Business Services",
-      "gics_sector": "Industrials",
-      "sic_range": "7000-7399",
-      "naics_range": "541, 561",
-      "mapping_notes": "Broad GICS alignment. GAQP Business Services is more specific to PE-relevant B2B service businesses."
-    },
-    {
-      "code": "CHEM",
-      "sector_name": "Chemicals",
-      "gics_sector": "Materials",
-      "sic_range": "2800-2899",
-      "naics_range": "325",
-      "mapping_notes": "Clean alignment with GICS Chemicals industry."
-    },
-    {
-      "code": "COMM",
-      "sector_name": "Communications",
-      "gics_sector": "Communication Services",
-      "sic_range": "4800-4899",
-      "naics_range": "515, 517, 519",
-      "mapping_notes": "Partial GICS alignment. GAQP Communications is broader than GICS Telecom Services, including media and interactive communications."
-    },
-    {
-      "code": "CE",
-      "sector_name": "Construction & Engineering",
-      "gics_sector": "Industrials",
-      "sic_range": "1500-1799",
-      "naics_range": "236, 237, 238",
-      "mapping_notes": "Clean alignment with GICS Construction & Engineering industry."
-    },
-    {
-      "code": "CON",
-      "sector_name": "Consumer",
-      "gics_sector": "Consumer Discretionary",
-      "sic_range": "5900-5999, 2000-2300",
-      "naics_range": "44, 45, 314, 315, 316",
-      "mapping_notes": "GAQP Consumer maps across GICS Consumer Discretionary and Consumer Staples. Deliberately broad for PE deal flow purposes."
-    },
-    {
-      "code": "DIST",
-      "sector_name": "Distribution",
-      "gics_sector": "Industrials",
-      "sic_range": "5000-5199",
-      "naics_range": "42, 493",
-      "mapping_notes": "GICS has no dedicated Distribution sector. Closest is Wholesale Trade (SIC) or Transportation (GICS). GAQP classification reflects PE demand for distribution businesses as a distinct category."
-    },
-    {
-      "code": "EDU",
-      "sector_name": "Education",
-      "gics_sector": "Consumer Discretionary",
-      "sic_range": "8200-8299",
-      "naics_range": "61",
-      "mapping_notes": "GICS buries Education in Diversified Consumer Services. GAQP elevates it as a standalone PE-relevant sector."
-    },
-    {
-      "code": "ENE",
-      "sector_name": "Energy",
-      "gics_sector": "Energy",
-      "sic_range": "1300-1389, 4900-4991",
-      "naics_range": "211, 213, 221",
-      "mapping_notes": "Aligns with GICS Energy sector. GAQP Energy includes utilities which GICS separates."
-    },
-    {
-      "code": "ENV",
-      "sector_name": "Environmental",
-      "gics_sector": "Industrials",
-      "sic_range": "4950-4959, 8711-8742",
-      "naics_range": "562, 541620",
-      "mapping_notes": "GICS has no standalone Environmental sector. GAQP elevates it given PE interest in sustainability, waste management, and environmental services."
-    },
-    {
-      "code": "FIN",
-      "sector_name": "Financial",
-      "gics_sector": "Financials",
-      "sic_range": "6000-6299",
-      "naics_range": "522, 523, 525",
-      "mapping_notes": "Aligns with GICS Financials sector. GAQP Financial covers PE, credit, investment banking, asset management as subtags rather than separate sectors."
-    },
-    {
-      "code": "FB",
-      "sector_name": "Food & Beverage",
-      "gics_sector": "Consumer Staples",
-      "sic_range": "2000-2099, 5810-5812",
-      "naics_range": "311, 312",
-      "mapping_notes": "Clean alignment with GICS Food, Beverage & Tobacco industry group."
-    },
-    {
-      "code": "FRAN",
-      "sector_name": "Franchised Brands",
-      "gics_sector": "Consumer Discretionary",
-      "sic_range": "5812, 7011, 7231-7299",
-      "naics_range": "722, 721, 812",
-      "mapping_notes": "No GICS equivalent. Franchised Brands is a GAQP-native sector reflecting PE demand for franchise business models across QSR, hospitality, personal services. Spans multiple GICS industries."
-    },
-    {
-      "code": "GEN",
-      "sector_name": "General / Cross-Sector",
-      "gics_sector": null,
-      "sic_range": null,
-      "naics_range": null,
-      "mapping_notes": "Fallback classification for nuggets that are genuinely sector-agnostic. Not a GICS or SIC category."
-    },
-    {
-      "code": "GOV",
-      "sector_name": "Government Services",
-      "gics_sector": "Industrials",
-      "sic_range": "9000-9999",
-      "naics_range": "92",
-      "mapping_notes": "GICS does not cover government directly. GAQP Government Services reflects PE interest in government contractors and public-private service businesses."
-    },
-    {
-      "code": "HC",
-      "sector_name": "Healthcare",
-      "gics_sector": "Health Care",
-      "sic_range": "8000-8099",
-      "naics_range": "621, 622, 623",
-      "mapping_notes": "Clean alignment with GICS Health Care sector. GAQP separates Healthcare (delivery, services, facilities) from Life Sciences (pharma, biotech, R&D) consistent with GICS distinction."
-    },
-    {
-      "code": "IND",
-      "sector_name": "Industrials",
-      "gics_sector": "Industrials",
-      "sic_range": "3400-3599",
-      "naics_range": "332, 333",
-      "mapping_notes": "Aligns with GICS Industrials sector, focused on capital goods and industrial machinery subsegment."
-    },
-    {
-      "code": "INS",
-      "sector_name": "Insurance",
-      "gics_sector": "Financials",
-      "sic_range": "6300-6411",
-      "naics_range": "524",
-      "mapping_notes": "Clean alignment with GICS Insurance industry group."
-    },
-    {
-      "code": "LS",
-      "sector_name": "Life Sciences",
-      "gics_sector": "Health Care",
-      "sic_range": "2830-2836, 8731-8734",
-      "naics_range": "3254, 5417",
-      "mapping_notes": "Aligns with GICS Pharma, Biotech & Life Sciences group. GAQP separates Life Sciences from Healthcare consistent with GICS distinction between delivery and discovery."
-    },
-    {
-      "code": "LT",
-      "sector_name": "Logistics & Transportation",
-      "gics_sector": "Industrials",
-      "sic_range": "4000-4799",
-      "naics_range": "48, 49",
-      "mapping_notes": "Aligns with GICS Transportation industry group. GAQP combines logistics and transportation as PE-relevant deal category."
-    },
-    {
-      "code": "MFG",
-      "sector_name": "Manufacturing",
-      "gics_sector": "Industrials",
-      "sic_range": "2000-3999",
-      "naics_range": "31, 32, 33",
-      "mapping_notes": "Broad SIC alignment. GAQP Manufacturing is intentionally broad to capture general manufacturing PE deal flow distinct from specialized Industrials, Chemicals, or Materials."
-    },
-    {
-      "code": "MAT",
-      "sector_name": "Materials",
-      "gics_sector": "Materials",
-      "sic_range": "1000-1499, 2600-2661, 3300-3399",
-      "naics_range": "212, 321, 322, 331",
-      "mapping_notes": "Aligns with GICS Materials sector covering metals, mining, paper, construction materials."
-    },
-    {
-      "code": "ME",
-      "sector_name": "Media & Entertainment",
-      "gics_sector": "Communication Services",
-      "sic_range": "2710-2796, 7810-7819, 7900-7999",
-      "naics_range": "512, 515, 711, 713",
-      "mapping_notes": "Aligns with GICS Media & Entertainment industry group within Communication Services."
-    },
-    {
-      "code": "RE",
-      "sector_name": "Real Estate",
-      "gics_sector": "Real Estate",
-      "sic_range": "6500-6552",
-      "naics_range": "531",
-      "mapping_notes": "Clean alignment with GICS Real Estate sector."
-    },
-    {
-      "code": "RET",
-      "sector_name": "Retail",
-      "gics_sector": "Consumer Discretionary",
-      "sic_range": "5200-5999",
-      "naics_range": "44, 45",
-      "mapping_notes": "Aligns with GICS Retailing industry group. GAQP separates Retail from Consumer and Food & Beverage for PE deal flow precision."
-    },
-    {
-      "code": "SWF",
-      "sector_name": "Software",
-      "gics_sector": "Information Technology",
-      "sic_range": "7372-7379",
-      "naics_range": "5112, 5415",
-      "mapping_notes": "Clean alignment with GICS Software industry. GAQP separates Software from Technology reflecting PE distinction between software businesses and hardware/semiconductor businesses."
-    },
-    {
-      "code": "TECH",
-      "sector_name": "Technology",
-      "gics_sector": "Information Technology",
-      "sic_range": "3570-3579, 3670-3679",
-      "naics_range": "334, 5415",
-      "mapping_notes": "Aligns with GICS Information Technology sector hardware and equipment segment. GAQP Technology covers hardware, semiconductors, and IT infrastructure distinct from Software."
-    },
-    {
-      "code": "TEL",
-      "sector_name": "Telecom",
-      "gics_sector": "Communication Services",
-      "sic_range": "4810-4813",
-      "naics_range": "517",
-      "mapping_notes": "Clean alignment with GICS Telecommunication Services industry group."
-    },
-    {
-      "code": "TH",
-      "sector_name": "Travel & Hospitality",
-      "gics_sector": "Consumer Discretionary",
-      "sic_range": "4510-4522, 7000-7011",
-      "naics_range": "481, 721, 722",
-      "mapping_notes": "Aligns with GICS Hotels, Restaurants & Leisure industry. GAQP separates Travel & Hospitality from Franchised Brands despite overlap in QSR."
-    },
-    {
-      "code": "MIL",
-      "sector_name": "Military",
-      "gics_sector": "Industrials",
-      "sic_range": "9711, 9721",
-      "naics_range": "9281, 9282",
-      "mapping_notes": "No direct GICS equivalent for military operations. Closest GICS proxy is Aerospace & Defense (Industrials), which covers contractors and platforms rather than military operations. SIC 9711 (National Security) and NAICS 9281 (National Security) are the closest government classification codes. GAQP MIL is operationally focused \u2014 doctrine, intelligence, command, warfighting, readiness, law of armed conflict \u2014 distinct from AD (Aerospace & Defense), which covers the contractor, platform, and industrial base side."
-    }
-  ],
+  },
+  "sector_vocabulary": {
+    "gaqp_version": "0.2-working",
+    "field": "primary_sector",
+    "fallback": "General / Cross-Sector",
+    "notes": "GAQP sector taxonomy is derived from private equity demand structure and is the primary classification. GICS and SIC fields are cross-reference bridges for interoperability with financial data systems and regulatory databases \u2014 they do not govern GAQP classification.",
+    "sectors": [
+      {
+        "sector_id": 1,
+        "sector_name": "Aerospace & Defense",
+        "sector_code": "AD",
+        "gics_sector": "Industrials",
+        "gics_industry_group": "Capital Goods",
+        "gics_industry": "Aerospace & Defense",
+        "gics_code": "20101010",
+        "sic_range": "3720-3769, 3812",
+        "naics_range": "3364, 3369, 336992",
+        "mapping_notes": "Clean alignment with GICS Aerospace & Defense industry."
+      },
+      {
+        "sector_id": 2,
+        "sector_name": "Agribusiness",
+        "sector_code": "AG",
+        "gics_sector": "Consumer Staples",
+        "gics_industry_group": "Food, Beverage & Tobacco",
+        "gics_industry": "Food Products",
+        "gics_code": "30202010",
+        "sic_range": "0100-0999, 2000-2099",
+        "naics_range": "111, 112, 115, 311",
+        "mapping_notes": "GICS has no direct Agribusiness sector. Spans Consumer Staples and Materials. GAQP classification is more precise for PE purposes."
+      },
+      {
+        "sector_id": 3,
+        "sector_name": "Automotive",
+        "sector_code": "AUTO",
+        "gics_sector": "Consumer Discretionary",
+        "gics_industry_group": "Automobiles & Components",
+        "gics_industry": "Automobile Manufacturers",
+        "gics_code": "25102010",
+        "sic_range": "3710-3716, 5510-5521",
+        "naics_range": "3361-3363, 4411",
+        "mapping_notes": "Aligns well with GICS Automobiles & Components group."
+      },
+      {
+        "sector_id": 4,
+        "sector_name": "Business Services",
+        "sector_code": "BS",
+        "gics_sector": "Industrials",
+        "gics_industry_group": "Commercial & Professional Services",
+        "gics_industry": "Professional Services",
+        "gics_code": "20202010",
+        "sic_range": "7000-7399",
+        "naics_range": "541, 561",
+        "mapping_notes": "Broad GICS alignment. GAQP Business Services is more specific to PE-relevant B2B service businesses."
+      },
+      {
+        "sector_id": 5,
+        "sector_name": "Chemicals",
+        "sector_code": "CHEM",
+        "gics_sector": "Materials",
+        "gics_industry_group": "Materials",
+        "gics_industry": "Chemicals",
+        "gics_code": "15101010",
+        "sic_range": "2800-2899",
+        "naics_range": "325",
+        "mapping_notes": "Clean alignment with GICS Chemicals industry."
+      },
+      {
+        "sector_id": 6,
+        "sector_name": "Communications",
+        "sector_code": "COMM",
+        "gics_sector": "Communication Services",
+        "gics_industry_group": "Media & Entertainment",
+        "gics_industry": "Interactive Media & Services",
+        "gics_code": "50203010",
+        "sic_range": "4800-4899",
+        "naics_range": "515, 517, 519",
+        "mapping_notes": "Partial GICS alignment. GAQP Communications is broader than GICS Telecom Services, including media and interactive communications."
+      },
+      {
+        "sector_id": 7,
+        "sector_name": "Construction & Engineering",
+        "sector_code": "CE",
+        "gics_sector": "Industrials",
+        "gics_industry_group": "Capital Goods",
+        "gics_industry": "Construction & Engineering",
+        "gics_code": "20103010",
+        "sic_range": "1500-1799",
+        "naics_range": "236, 237, 238",
+        "mapping_notes": "Clean alignment with GICS Construction & Engineering industry."
+      },
+      {
+        "sector_id": 8,
+        "sector_name": "Consumer",
+        "sector_code": "CON",
+        "gics_sector": "Consumer Discretionary",
+        "gics_industry_group": "Consumer Durables & Apparel",
+        "gics_industry": "Household Durables",
+        "gics_code": "25201010",
+        "sic_range": "5900-5999, 2000-2300",
+        "naics_range": "44, 45, 314, 315, 316",
+        "mapping_notes": "GAQP Consumer maps across GICS Consumer Discretionary and Consumer Staples. Deliberately broad for PE deal flow purposes."
+      },
+      {
+        "sector_id": 9,
+        "sector_name": "Distribution",
+        "sector_code": "DIST",
+        "gics_sector": "Industrials",
+        "gics_industry_group": "Transportation",
+        "gics_industry": "Air Freight & Logistics",
+        "gics_code": "20301010",
+        "sic_range": "5000-5199",
+        "naics_range": "42, 493",
+        "mapping_notes": "GICS has no dedicated Distribution sector. Closest is Wholesale Trade (SIC) or Transportation (GICS). GAQP classification reflects PE demand for distribution businesses as a distinct category."
+      },
+      {
+        "sector_id": 10,
+        "sector_name": "Education",
+        "sector_code": "EDU",
+        "gics_sector": "Consumer Discretionary",
+        "gics_industry_group": "Consumer Services",
+        "gics_industry": "Diversified Consumer Services",
+        "gics_code": "25302010",
+        "sic_range": "8200-8299",
+        "naics_range": "61",
+        "mapping_notes": "GICS buries Education in Diversified Consumer Services. GAQP elevates it as a standalone PE-relevant sector."
+      },
+      {
+        "sector_id": 11,
+        "sector_name": "Energy",
+        "sector_code": "ENE",
+        "gics_sector": "Energy",
+        "gics_industry_group": "Energy",
+        "gics_industry": "Oil, Gas & Consumable Fuels",
+        "gics_code": "10102010",
+        "sic_range": "1300-1389, 4900-4991",
+        "naics_range": "211, 213, 221",
+        "mapping_notes": "Aligns with GICS Energy sector. GAQP Energy includes utilities which GICS separates."
+      },
+      {
+        "sector_id": 12,
+        "sector_name": "Environmental",
+        "sector_code": "ENV",
+        "gics_sector": "Industrials",
+        "gics_industry_group": "Commercial & Professional Services",
+        "gics_industry": "Environmental & Facilities Services",
+        "gics_code": "20201050",
+        "sic_range": "4950-4959, 8711-8742",
+        "naics_range": "562, 541620",
+        "mapping_notes": "GICS has no standalone Environmental sector. GAQP elevates it given PE interest in sustainability, waste management, and environmental services."
+      },
+      {
+        "sector_id": 13,
+        "sector_name": "Financial",
+        "sector_code": "FIN",
+        "gics_sector": "Financials",
+        "gics_industry_group": "Diversified Financials",
+        "gics_industry": "Capital Markets",
+        "gics_code": "40201020",
+        "sic_range": "6000-6299",
+        "naics_range": "522, 523, 525",
+        "mapping_notes": "Aligns with GICS Financials sector. GAQP Financial covers PE, credit, investment banking, asset management as subtags rather than separate sectors."
+      },
+      {
+        "sector_id": 14,
+        "sector_name": "Food & Beverage",
+        "sector_code": "FB",
+        "gics_sector": "Consumer Staples",
+        "gics_industry_group": "Food, Beverage & Tobacco",
+        "gics_industry": "Beverages",
+        "gics_code": "30201010",
+        "sic_range": "2000-2099, 5810-5812",
+        "naics_range": "311, 312",
+        "mapping_notes": "Clean alignment with GICS Food, Beverage & Tobacco industry group."
+      },
+      {
+        "sector_id": 15,
+        "sector_name": "Franchised Brands",
+        "sector_code": "FRAN",
+        "gics_sector": "Consumer Discretionary",
+        "gics_industry_group": "Consumer Services",
+        "gics_industry": "Hotels, Restaurants & Leisure",
+        "gics_code": "25301010",
+        "sic_range": "5812, 7011, 7231-7299",
+        "naics_range": "722, 721, 812",
+        "mapping_notes": "No GICS equivalent. Franchised Brands is a GAQP-native sector reflecting PE demand for franchise business models across QSR, hospitality, personal services. Spans multiple GICS industries."
+      },
+      {
+        "sector_id": 16,
+        "sector_name": "General / Cross-Sector",
+        "sector_code": "GEN",
+        "gics_sector": null,
+        "gics_industry_group": null,
+        "gics_industry": null,
+        "gics_code": null,
+        "sic_range": null,
+        "naics_range": null,
+        "mapping_notes": "Fallback classification for nuggets that are genuinely sector-agnostic. Not a GICS or SIC category.",
+        "is_fallback": true
+      },
+      {
+        "sector_id": 17,
+        "sector_name": "Government Services",
+        "sector_code": "GOV",
+        "gics_sector": "Industrials",
+        "gics_industry_group": "Commercial & Professional Services",
+        "gics_industry": "Professional Services",
+        "gics_code": "20202010",
+        "sic_range": "9000-9999",
+        "naics_range": "92",
+        "mapping_notes": "GICS does not cover government directly. GAQP Government Services reflects PE interest in government contractors and public-private service businesses."
+      },
+      {
+        "sector_id": 18,
+        "sector_name": "Healthcare",
+        "sector_code": "HC",
+        "gics_sector": "Health Care",
+        "gics_industry_group": "Health Care Equipment & Services",
+        "gics_industry": "Health Care Providers & Services",
+        "gics_code": "35102010",
+        "sic_range": "8000-8099",
+        "naics_range": "621, 622, 623",
+        "mapping_notes": "Clean alignment with GICS Health Care sector. GAQP separates Healthcare (delivery, services, facilities) from Life Sciences (pharma, biotech, R&D) consistent with GICS distinction."
+      },
+      {
+        "sector_id": 19,
+        "sector_name": "Industrials",
+        "sector_code": "IND",
+        "gics_sector": "Industrials",
+        "gics_industry_group": "Capital Goods",
+        "gics_industry": "Industrial Machinery",
+        "gics_code": "20106010",
+        "sic_range": "3400-3599",
+        "naics_range": "332, 333",
+        "mapping_notes": "Aligns with GICS Industrials sector, focused on capital goods and industrial machinery subsegment."
+      },
+      {
+        "sector_id": 20,
+        "sector_name": "Insurance",
+        "sector_code": "INS",
+        "gics_sector": "Financials",
+        "gics_industry_group": "Insurance",
+        "gics_industry": "Insurance",
+        "gics_code": "40301010",
+        "sic_range": "6300-6411",
+        "naics_range": "524",
+        "mapping_notes": "Clean alignment with GICS Insurance industry group."
+      },
+      {
+        "sector_id": 21,
+        "sector_name": "Life Sciences",
+        "sector_code": "LS",
+        "gics_sector": "Health Care",
+        "gics_industry_group": "Pharmaceuticals, Biotechnology & Life Sciences",
+        "gics_industry": "Life Sciences Tools & Services",
+        "gics_code": "35203010",
+        "sic_range": "2830-2836, 8731-8734",
+        "naics_range": "3254, 5417",
+        "mapping_notes": "Aligns with GICS Pharma, Biotech & Life Sciences group. GAQP separates Life Sciences from Healthcare consistent with GICS distinction between delivery and discovery."
+      },
+      {
+        "sector_id": 22,
+        "sector_name": "Logistics & Transportation",
+        "sector_code": "LT",
+        "gics_sector": "Industrials",
+        "gics_industry_group": "Transportation",
+        "gics_industry": "Air Freight & Logistics",
+        "gics_code": "20301010",
+        "sic_range": "4000-4799",
+        "naics_range": "48, 49",
+        "mapping_notes": "Aligns with GICS Transportation industry group. GAQP combines logistics and transportation as PE-relevant deal category."
+      },
+      {
+        "sector_id": 23,
+        "sector_name": "Manufacturing",
+        "sector_code": "MFG",
+        "gics_sector": "Industrials",
+        "gics_industry_group": "Capital Goods",
+        "gics_industry": "Machinery",
+        "gics_code": "20106010",
+        "sic_range": "2000-3999",
+        "naics_range": "31, 32, 33",
+        "mapping_notes": "Broad SIC alignment. GAQP Manufacturing is intentionally broad to capture general manufacturing PE deal flow distinct from specialized Industrials, Chemicals, or Materials."
+      },
+      {
+        "sector_id": 24,
+        "sector_name": "Materials",
+        "sector_code": "MAT",
+        "gics_sector": "Materials",
+        "gics_industry_group": "Materials",
+        "gics_industry": "Construction Materials",
+        "gics_code": "15102010",
+        "sic_range": "1000-1499, 2600-2661, 3300-3399",
+        "naics_range": "212, 321, 322, 331",
+        "mapping_notes": "Aligns with GICS Materials sector covering metals, mining, paper, construction materials."
+      },
+      {
+        "sector_id": 25,
+        "sector_name": "Media & Entertainment",
+        "sector_code": "ME",
+        "gics_sector": "Communication Services",
+        "gics_industry_group": "Media & Entertainment",
+        "gics_industry": "Entertainment",
+        "gics_code": "50202010",
+        "sic_range": "2710-2796, 7810-7819, 7900-7999",
+        "naics_range": "512, 515, 711, 713",
+        "mapping_notes": "Aligns with GICS Media & Entertainment industry group within Communication Services."
+      },
+      {
+        "sector_id": 26,
+        "sector_name": "Real Estate",
+        "sector_code": "RE",
+        "gics_sector": "Real Estate",
+        "gics_industry_group": "Real Estate",
+        "gics_industry": "Real Estate Management & Development",
+        "gics_code": "60102010",
+        "sic_range": "6500-6552",
+        "naics_range": "531",
+        "mapping_notes": "Clean alignment with GICS Real Estate sector."
+      },
+      {
+        "sector_id": 27,
+        "sector_name": "Retail",
+        "sector_code": "RET",
+        "gics_sector": "Consumer Discretionary",
+        "gics_industry_group": "Retailing",
+        "gics_industry": "Specialty Retail",
+        "gics_code": "25504010",
+        "sic_range": "5200-5999",
+        "naics_range": "44, 45",
+        "mapping_notes": "Aligns with GICS Retailing industry group. GAQP separates Retail from Consumer and Food & Beverage for PE deal flow precision."
+      },
+      {
+        "sector_id": 28,
+        "sector_name": "Software",
+        "sector_code": "SWF",
+        "gics_sector": "Information Technology",
+        "gics_industry_group": "Software & Services",
+        "gics_industry": "Software",
+        "gics_code": "45103020",
+        "sic_range": "7372-7379",
+        "naics_range": "5112, 5415",
+        "mapping_notes": "Clean alignment with GICS Software industry. GAQP separates Software from Technology reflecting PE distinction between software businesses and hardware/semiconductor businesses."
+      },
+      {
+        "sector_id": 29,
+        "sector_name": "Technology",
+        "sector_code": "TECH",
+        "gics_sector": "Information Technology",
+        "gics_industry_group": "Technology Hardware & Equipment",
+        "gics_industry": "Electronic Equipment & Instruments",
+        "gics_code": "45203010",
+        "sic_range": "3570-3579, 3670-3679",
+        "naics_range": "334, 5415",
+        "mapping_notes": "Aligns with GICS Information Technology sector hardware and equipment segment. GAQP Technology covers hardware, semiconductors, and IT infrastructure distinct from Software."
+      },
+      {
+        "sector_id": 30,
+        "sector_name": "Telecom",
+        "sector_code": "TEL",
+        "gics_sector": "Communication Services",
+        "gics_industry_group": "Telecommunication Services",
+        "gics_industry": "Diversified Telecommunication Services",
+        "gics_code": "50101010",
+        "sic_range": "4810-4813",
+        "naics_range": "517",
+        "mapping_notes": "Clean alignment with GICS Telecommunication Services industry group."
+      },
+      {
+        "sector_id": 31,
+        "sector_name": "Travel & Hospitality",
+        "sector_code": "TH",
+        "gics_sector": "Consumer Discretionary",
+        "gics_industry_group": "Consumer Services",
+        "gics_industry": "Hotels, Restaurants & Leisure",
+        "gics_code": "25301010",
+        "sic_range": "4510-4522, 7000-7011",
+        "naics_range": "481, 721, 722",
+        "mapping_notes": "Aligns with GICS Hotels, Restaurants & Leisure industry. GAQP separates Travel & Hospitality from Franchised Brands despite overlap in QSR."
+      },
+      {
+        "sector_id": 32,
+        "sector_name": "Military",
+        "sector_code": "MIL",
+        "gics_sector": "Industrials",
+        "gics_industry_group": "Capital Goods",
+        "gics_industry": "Aerospace & Defense",
+        "gics_code": "20101010",
+        "sic_range": "9711, 9721",
+        "naics_range": "9281, 9282",
+        "mapping_notes": "No direct GICS equivalent for military operations. Closest GICS proxy is Aerospace & Defense (Industrials), which covers contractors and platforms rather than military operations. SIC 9711 (National Security) and NAICS 9281 (National Security) are the closest government classification codes. GAQP MIL is operationally focused \u2014 doctrine, intelligence, command, warfighting, readiness, law of armed conflict \u2014 distinct from AD (Aerospace & Defense), which covers the contractor, platform, and industrial base side."
+      }
+    ]
+  },
   "domain_subtags": [
     {
       "sector_code": "AD",
@@ -27253,6 +27825,10 @@
     }
   ],
   "tags_vocabulary": {
+    "gaqp_version": "0.2-working",
+    "field": "tags_pipe",
+    "description": "Cross-cutting tags for the tags_pipe field. Format: prefix:Value|prefix:Value. Prefixes are a closed set. Values within each prefix are a controlled but extensible vocabulary \u2014 new values may be added via the standard suggestion process.",
+    "note": "sector and vertical dimensions are handled by primary_sector and domain_tags_pipe respectively. tags_pipe carries only cross-cutting dimensions that apply regardless of sector.",
     "prefixes": [
       {
         "prefix": "func",
@@ -27395,333 +27971,393 @@
           "EasternEurope"
         ]
       }
+    ],
+    "example": "func:Procurement|risk:VendorConcentration|topic:SupplyChain|geo:APAC",
+    "null_rule": "tags_pipe may be NULL for nuggets where no cross-cutting dimension applies. This is valid and common."
+  },
+  "principles": {
+    "gaqp_version": "0.1-working",
+    "principles": [
+      {
+        "id": 1,
+        "name": "Materiality of Judgment",
+        "requirement": "Preserve claims that can influence a decision, interpretation, or risk posture. Discard what cannot."
+      },
+      {
+        "id": 2,
+        "name": "Source Traceability",
+        "requirement": "Every accepted nugget must point back to its precise origin within the source document."
+      },
+      {
+        "id": 3,
+        "name": "Consistency of Application",
+        "requirement": "Apply the same rules uniformly across all claim processing, regardless of source or context."
+      },
+      {
+        "id": 4,
+        "name": "Conservatism",
+        "requirement": "Uncertain qualitative claims must be weighted cautiously unless independently corroborated."
+      },
+      {
+        "id": 5,
+        "name": "Contextual Boundary Disclosure",
+        "requirement": "Disclose when claims are activated in a context different from their source context."
+      },
+      {
+        "id": 6,
+        "name": "Multi-Source Corroboration",
+        "requirement": "Confidence advances through independent convergence, not repetition. Same-source repetition is not corroboration."
+      },
+      {
+        "id": 7,
+        "name": "Judgment Independence",
+        "requirement": "Synthesis must not be contaminated by the interests of any single source or actor."
+      },
+      {
+        "id": 8,
+        "name": "Proportionality",
+        "requirement": "The weight of a claim should be proportional to the strength of its evidence."
+      },
+      {
+        "id": 9,
+        "name": "Revision Standard",
+        "requirement": "GAQP outputs must remain updateable when better information arrives."
+      },
+      {
+        "id": 10,
+        "name": "Scenario Completeness",
+        "requirement": "Synthesis should account for alternative scenarios, not just the most likely."
+      }
     ]
   },
-  "principles": [
-    {
-      "id": 1,
-      "name": "Materiality of Judgment",
-      "requirement": "Preserve claims that can influence a decision, interpretation, or risk posture. Discard what cannot."
-    },
-    {
-      "id": 2,
-      "name": "Source Traceability",
-      "requirement": "Every accepted nugget must point back to its precise origin within the source document."
-    },
-    {
-      "id": 3,
-      "name": "Consistency of Application",
-      "requirement": "Apply the same rules uniformly across all claim processing, regardless of source or context."
-    },
-    {
-      "id": 4,
-      "name": "Conservatism",
-      "requirement": "Uncertain qualitative claims must be weighted cautiously unless independently corroborated."
-    },
-    {
-      "id": 5,
-      "name": "Contextual Boundary Disclosure",
-      "requirement": "Disclose when claims are activated in a context different from their source context."
-    },
-    {
-      "id": 6,
-      "name": "Multi-Source Corroboration",
-      "requirement": "Confidence advances through independent convergence, not repetition. Same-source repetition is not corroboration."
-    },
-    {
-      "id": 7,
-      "name": "Judgment Independence",
-      "requirement": "Synthesis must not be contaminated by the interests of any single source or actor."
-    },
-    {
-      "id": 8,
-      "name": "Proportionality",
-      "requirement": "The weight of a claim should be proportional to the strength of its evidence."
-    },
-    {
-      "id": 9,
-      "name": "Revision Standard",
-      "requirement": "GAQP outputs must remain updateable when better information arrives."
-    },
-    {
-      "id": 10,
-      "name": "Scenario Completeness",
-      "requirement": "Synthesis should account for alternative scenarios, not just the most likely."
-    }
-  ],
-  "metadata_schema": [
-    {
-      "field": "claim_id",
-      "group": "Identity",
-      "required": true,
-      "type": "string",
-      "definition": "Sequential serial handle assigned at extraction time. Unique within the .intel package."
-    },
-    {
-      "field": "fingerprint",
-      "group": "Identity",
-      "required": true,
-      "type": "string",
-      "definition": "SHA-256 deterministic identity hash of claim_text + source_anchor_id. The true unique identifier. Two records with the same fingerprint are the same claim."
-    },
-    {
-      "field": "record_type",
-      "group": "Identity",
-      "required": true,
-      "type": "string",
-      "definition": "Discriminator for unified corpus stores. Always 'claim' for nugget records.",
-      "enum": [
-        "claim"
-      ]
-    },
-    {
-      "field": "extracted_at",
-      "group": "Identity",
-      "required": true,
-      "type": "datetime",
-      "definition": "ISO 8601 timestamp of when this nugget was born. When the .intel file was generated."
-    },
-    {
-      "field": "claim_text",
-      "group": "Content",
-      "required": true,
-      "type": "string",
-      "definition": "The governed claim \u2014 the atomic nugget. Exact, governed wording as extracted and admitted."
-    },
-    {
-      "field": "claim_type",
-      "group": "Content",
-      "required": true,
-      "type": "string",
-      "definition": "One of the exact 25 canonical types from the closed claim register. No substitution, abbreviation, or inference permitted.",
-      "ref": "claim_types.json"
-    },
-    {
-      "field": "source_quote",
-      "group": "Content",
-      "required": true,
-      "type": "string",
-      "definition": "Verbatim passage from the source document from which this claim was extracted. The raw input before governed extraction."
-    },
-    {
-      "field": "inference_flag",
-      "group": "Content",
-      "required": true,
-      "type": "boolean",
-      "definition": "TRUE if the claim involves any deconstructor inference beyond what the source explicitly states. Inference must be labeled \u2014 never hidden."
-    },
-    {
-      "field": "source_id",
-      "group": "Source Provenance",
-      "required": true,
-      "type": "string",
-      "definition": "Foreign key to the source record in the source manifest. Machine-readable reference."
-    },
-    {
-      "field": "source_document",
-      "group": "Source Provenance",
-      "required": true,
-      "type": "string",
-      "definition": "Human-readable name of the source document. For display and citation without requiring a join."
-    },
-    {
-      "field": "source_hash",
-      "group": "Source Provenance",
-      "required": true,
-      "type": "string",
-      "definition": "SHA-256 hash of the source file at time of extraction. Enables stale detection \u2014 if source_hash no longer matches the source file, the nugget is stale."
-    },
-    {
-      "field": "source_anchor_id",
-      "group": "Source Provenance",
-      "required": true,
-      "type": "string",
-      "definition": "Foreign key to the anchor record. The anchor carries precise location data (character offsets, quote hash, etc.)."
-    },
-    {
-      "field": "source_page",
-      "group": "Source Provenance",
-      "required": false,
-      "type": "integer",
-      "definition": "Page number within the source document. Human-readable location. Required for the nugget to stand alone without an anchor lookup. NULL for non-paginated sources."
-    },
-    {
-      "field": "source_section",
-      "group": "Source Provenance",
-      "required": false,
-      "type": "string",
-      "definition": "Section heading or label within the source document. Human-readable location."
-    },
-    {
-      "field": "source_paragraph",
-      "group": "Source Provenance",
-      "required": false,
-      "type": "integer",
-      "definition": "Paragraph number within the source section. Human-readable location."
-    },
-    {
-      "field": "primary_sector",
-      "group": "Classification",
-      "required": false,
-      "type": "string",
-      "nullable": true,
-      "definition": "Single dominant sector from the controlled sector vocabulary. NULL for sector-agnostic nuggets. NULL is valid and common \u2014 not an error.",
-      "ref": "sector_vocabulary.json"
-    },
-    {
-      "field": "domain_tags_pipe",
-      "group": "Classification",
-      "required": false,
-      "type": "string",
-      "nullable": true,
-      "definition": "Pipe-delimited sector:subtag pairs from the domain modules taxonomy. Format: SectorCode:SubtagCode. Example: HC:MOB|HC:Medicare|RE:MOB. NULL for sector-agnostic nuggets.",
-      "ref": "domain_modules.json"
-    },
-    {
-      "field": "tags_pipe",
-      "group": "Classification",
-      "required": false,
-      "type": "string",
-      "nullable": true,
-      "definition": "Pipe-delimited cross-cutting tags using controlled prefixes. Format: prefix:Value. Prefixes: func (business function), risk (risk category), topic (cross-sector subject), geo (geography). Example: func:Procurement|risk:VendorConcentration|geo:APAC. NULL is valid.",
-      "ref": "tags_vocabulary.json"
-    },
-    {
-      "field": "entities_pipe",
-      "group": "Classification",
-      "required": false,
-      "type": "string",
-      "nullable": true,
-      "definition": "Pipe-delimited named entities referenced in the claim. Organizations, persons, products, programs, regulations."
-    },
-    {
-      "field": "relationship_hints_pipe",
-      "group": "Classification",
-      "required": false,
-      "type": "string",
-      "nullable": true,
-      "definition": "Pipe-delimited fingerprints of related nuggets within the same .intel package. Non-authoritative hints for reconstruction graph construction."
-    },
-    {
-      "field": "confidence_level",
-      "group": "Confidence",
-      "required": true,
-      "type": "string",
-      "definition": "Confidence level from the canonical ladder.",
-      "enum": [
-        "seed",
-        "single_source",
-        "developing",
-        "corroborated",
-        "structural",
-        "disputed"
-      ],
-      "ref": "confidence_ladder.json"
-    },
-    {
-      "field": "confidence_score",
-      "group": "Confidence",
-      "required": true,
-      "type": "number",
-      "definition": "Numeric score per confidence ladder. seed=0.50, single_source=0.65, developing=0.72, corroborated=0.91, structural=1.00, disputed=null."
-    },
-    {
-      "field": "nugget_status",
-      "group": "Lifecycle",
-      "required": true,
-      "type": "string",
-      "definition": "Lifecycle status of the nugget. active = current and valid. stale = source_hash mismatch detected, regeneration needed.",
-      "enum": [
-        "active",
-        "stale"
-      ]
-    },
-    {
-      "field": "validation_flags_pipe",
-      "group": "Validation",
-      "required": false,
-      "type": "string",
-      "nullable": true,
-      "definition": "Pipe-delimited validation flags raised during or after extraction. NULL means no flags."
-    },
-    {
-      "field": "extraction_method",
-      "group": "Generation",
-      "required": true,
-      "type": "string",
-      "definition": "How the claim was produced.",
-      "enum": [
-        "llm",
-        "human",
-        "hybrid"
-      ]
-    },
-    {
-      "field": "deconstruction_profile",
-      "group": "Generation",
-      "required": true,
-      "type": "string",
-      "definition": "Identifier or fingerprint of the instruction set used to govern this deconstruction. Records the art of the extraction without exposing proprietary prompt content."
-    },
-    {
-      "field": "standards_package_version",
-      "group": "Generation",
-      "required": true,
-      "type": "string",
-      "definition": "Version of the GAQP Standards Package (the schematic) that governed this extraction. Must be recorded on every artifact."
-    },
-    {
-      "field": "deconstructor_note",
-      "group": "Annotation",
-      "required": false,
-      "type": "string",
-      "nullable": true,
-      "definition": "Operator or LLM annotation about the nugget itself \u2014 unusual source context, ambiguous classification, notable inference. Not about admission status."
-    },
-    {
-      "field": "review_notes",
-      "group": "Annotation",
-      "required": false,
-      "type": "string",
-      "nullable": true,
-      "definition": "Post-admission operator notes added during corpus review or corroboration."
-    }
-  ],
-  "conformance_levels": [
-    {
-      "level": "L1",
-      "name": "Classification",
-      "capability": "Claims classified using the 25-type GAQP register"
-    },
-    {
-      "level": "L2",
-      "name": "Provenance",
-      "capability": "Claims carry source anchors to specific source locations"
-    },
-    {
-      "level": "L3",
-      "name": "Admissibility",
-      "capability": "Claims pass all seven admission tests before entering corpus"
-    },
-    {
-      "level": "L4",
-      "name": "Confidence",
-      "capability": "Claims carry governed confidence levels based on corroboration"
-    },
-    {
-      "level": "L5",
-      "name": "Sidecar-Enabled",
-      "capability": "Source documents carry .intel sidecar files"
-    },
-    {
-      "level": "L6",
-      "name": "Cross-Document Corpus",
-      "capability": "Multiple .intel files queryable as a governed corpus"
-    },
-    {
-      "level": "L7",
-      "name": "Activation",
-      "capability": "Claims surface at moment of decision in role-aware applications"
-    }
-  ]
+  "metadata_schema": {
+    "gaqp_version": "0.1-working",
+    "compliance_rule": "Every GAQP-compliant claim record must carry all required fields. A claim missing any required field is not GAQP-compliant. A claim record that exists in a .intel file is by definition admitted \u2014 there are no rejected or needs_review records in a compliant .intel file.",
+    "canonical_field_count": 29,
+    "fields": [
+      {
+        "field": "claim_id",
+        "group": "Identity",
+        "required": true,
+        "type": "string",
+        "definition": "Sequential serial handle assigned at extraction time. Unique within the .intel package."
+      },
+      {
+        "field": "fingerprint",
+        "group": "Identity",
+        "required": true,
+        "type": "string",
+        "definition": "SHA-256 deterministic identity hash of claim_text + source_anchor_id. The true unique identifier. Two records with the same fingerprint are the same claim."
+      },
+      {
+        "field": "record_type",
+        "group": "Identity",
+        "required": true,
+        "type": "string",
+        "definition": "Discriminator for unified corpus stores. Always 'claim' for nugget records.",
+        "enum": [
+          "claim"
+        ]
+      },
+      {
+        "field": "extracted_at",
+        "group": "Identity",
+        "required": true,
+        "type": "datetime",
+        "definition": "ISO 8601 timestamp of when this nugget was born. When the .intel file was generated."
+      },
+      {
+        "field": "claim_text",
+        "group": "Content",
+        "required": true,
+        "type": "string",
+        "definition": "The governed claim \u2014 the atomic nugget. Exact, governed wording as extracted and admitted."
+      },
+      {
+        "field": "claim_type",
+        "group": "Content",
+        "required": true,
+        "type": "string",
+        "definition": "One of the exact 25 canonical types from the closed claim register. No substitution, abbreviation, or inference permitted.",
+        "ref": "claim_types.json"
+      },
+      {
+        "field": "source_quote",
+        "group": "Content",
+        "required": true,
+        "type": "string",
+        "definition": "Verbatim passage from the source document from which this claim was extracted. The raw input before governed extraction."
+      },
+      {
+        "field": "inference_flag",
+        "group": "Content",
+        "required": true,
+        "type": "boolean",
+        "definition": "TRUE if the claim involves any deconstructor inference beyond what the source explicitly states. Inference must be labeled \u2014 never hidden."
+      },
+      {
+        "field": "source_id",
+        "group": "Source Provenance",
+        "required": true,
+        "type": "string",
+        "definition": "Foreign key to the source record in the source manifest. Machine-readable reference."
+      },
+      {
+        "field": "source_document",
+        "group": "Source Provenance",
+        "required": true,
+        "type": "string",
+        "definition": "Human-readable name of the source document. For display and citation without requiring a join."
+      },
+      {
+        "field": "source_hash",
+        "group": "Source Provenance",
+        "required": true,
+        "type": "string",
+        "definition": "SHA-256 hash of the source file at time of extraction. Enables stale detection \u2014 if source_hash no longer matches the source file, the nugget is stale."
+      },
+      {
+        "field": "source_anchor_id",
+        "group": "Source Provenance",
+        "required": true,
+        "type": "string",
+        "definition": "Foreign key to the anchor record. The anchor carries precise location data (character offsets, quote hash, etc.)."
+      },
+      {
+        "field": "source_page",
+        "group": "Source Provenance",
+        "required": false,
+        "type": "integer",
+        "definition": "Page number within the source document. Human-readable location. Required for the nugget to stand alone without an anchor lookup. NULL for non-paginated sources."
+      },
+      {
+        "field": "source_section",
+        "group": "Source Provenance",
+        "required": false,
+        "type": "string",
+        "definition": "Section heading or label within the source document. Human-readable location."
+      },
+      {
+        "field": "source_paragraph",
+        "group": "Source Provenance",
+        "required": false,
+        "type": "integer",
+        "definition": "Paragraph number within the source section. Human-readable location."
+      },
+      {
+        "field": "primary_sector",
+        "group": "Classification",
+        "required": false,
+        "type": "string",
+        "nullable": true,
+        "definition": "Single dominant sector from the controlled sector vocabulary. NULL for sector-agnostic nuggets. NULL is valid and common \u2014 not an error.",
+        "ref": "sector_vocabulary.json"
+      },
+      {
+        "field": "domain_tags_pipe",
+        "group": "Classification",
+        "required": false,
+        "type": "string",
+        "nullable": true,
+        "definition": "Pipe-delimited sector:subtag pairs from the domain modules taxonomy. Format: SectorCode:SubtagCode. Example: HC:MOB|HC:Medicare|RE:MOB. NULL for sector-agnostic nuggets.",
+        "ref": "domain_modules.json"
+      },
+      {
+        "field": "tags_pipe",
+        "group": "Classification",
+        "required": false,
+        "type": "string",
+        "nullable": true,
+        "definition": "Pipe-delimited cross-cutting tags using controlled prefixes. Format: prefix:Value. Prefixes: func (business function), risk (risk category), topic (cross-sector subject), geo (geography). Example: func:Procurement|risk:VendorConcentration|geo:APAC. NULL is valid.",
+        "ref": "tags_vocabulary.json"
+      },
+      {
+        "field": "entities_pipe",
+        "group": "Classification",
+        "required": false,
+        "type": "string",
+        "nullable": true,
+        "definition": "Pipe-delimited named entities referenced in the claim. Organizations, persons, products, programs, regulations."
+      },
+      {
+        "field": "relationship_hints_pipe",
+        "group": "Classification",
+        "required": false,
+        "type": "string",
+        "nullable": true,
+        "definition": "Pipe-delimited fingerprints of related nuggets within the same .intel package. Non-authoritative hints for reconstruction graph construction."
+      },
+      {
+        "field": "confidence_level",
+        "group": "Confidence",
+        "required": true,
+        "type": "string",
+        "definition": "Confidence level from the canonical ladder.",
+        "enum": [
+          "seed",
+          "single_source",
+          "developing",
+          "corroborated",
+          "structural",
+          "disputed"
+        ],
+        "ref": "confidence_ladder.json"
+      },
+      {
+        "field": "confidence_score",
+        "group": "Confidence",
+        "required": true,
+        "type": "number",
+        "definition": "Numeric score per confidence ladder. seed=0.50, single_source=0.65, developing=0.72, corroborated=0.91, structural=1.00, disputed=null."
+      },
+      {
+        "field": "nugget_status",
+        "group": "Lifecycle",
+        "required": true,
+        "type": "string",
+        "definition": "Lifecycle status of the nugget. active = current and valid. stale = source_hash mismatch detected, regeneration needed.",
+        "enum": [
+          "active",
+          "stale"
+        ]
+      },
+      {
+        "field": "validation_flags_pipe",
+        "group": "Validation",
+        "required": false,
+        "type": "string",
+        "nullable": true,
+        "definition": "Pipe-delimited validation flags raised during or after extraction. NULL means no flags."
+      },
+      {
+        "field": "extraction_method",
+        "group": "Generation",
+        "required": true,
+        "type": "string",
+        "definition": "How the claim was produced.",
+        "enum": [
+          "llm",
+          "human",
+          "hybrid"
+        ]
+      },
+      {
+        "field": "deconstruction_profile",
+        "group": "Generation",
+        "required": true,
+        "type": "string",
+        "definition": "Identifier or fingerprint of the instruction set used to govern this deconstruction. Records the art of the extraction without exposing proprietary prompt content."
+      },
+      {
+        "field": "standards_package_version",
+        "group": "Generation",
+        "required": true,
+        "type": "string",
+        "definition": "Version of the GAQP Standards Package (the schematic) that governed this extraction. Must be recorded on every artifact."
+      },
+      {
+        "field": "deconstructor_note",
+        "group": "Annotation",
+        "required": false,
+        "type": "string",
+        "nullable": true,
+        "definition": "Operator or LLM annotation about the nugget itself \u2014 unusual source context, ambiguous classification, notable inference. Not about admission status."
+      },
+      {
+        "field": "review_notes",
+        "group": "Annotation",
+        "required": false,
+        "type": "string",
+        "nullable": true,
+        "definition": "Post-admission operator notes added during corpus review or corroboration."
+      }
+    ],
+    "removed_fields": [
+      {
+        "field": "admission_status",
+        "reason": "Existence in .intel file = admitted. No rejected records stored."
+      },
+      {
+        "field": "rejection_reason",
+        "reason": "No rejected claims \u2014 they are not born, not recorded."
+      },
+      {
+        "field": "reason_for_review",
+        "reason": "Same. Merged concept into review_notes for post-admission use."
+      },
+      {
+        "field": "standalone_test through non_triviality_test",
+        "reason": "Seven test fields removed. Nugget existence is proof of passing all seven."
+      },
+      {
+        "field": "record_id",
+        "reason": "Redundant with claim_id."
+      },
+      {
+        "field": "primary_tag",
+        "reason": "Redundant \u2014 first value in tags_pipe or domain_tags_pipe by convention."
+      },
+      {
+        "field": "line_start / line_end",
+        "reason": "Anchor territory. Carried in source_anchor record, not nugget."
+      },
+      {
+        "field": "source_location",
+        "reason": "Replaced by source_page, source_section, source_paragraph."
+      },
+      {
+        "field": "secondary_sectors_pipe",
+        "reason": "Replaced by domain_tags_pipe which encodes sector implicitly."
+      },
+      {
+        "field": "sic_2 / sic_4",
+        "reason": "Domain_tags_pipe provides superior granularity. SIC crossrefs on sector_vocabulary record."
+      },
+      {
+        "field": "duplicate_check_status / quote_support_status / claim_type_validation_status",
+        "reason": "Collapsed into validation_flags_pipe."
+      }
+    ]
+  },
+  "conformance_levels": {
+    "gaqp_version": "0.1-working",
+    "note": "Seven staged levels. Compliant tools adopt progressively.",
+    "levels": [
+      {
+        "level": "L1",
+        "name": "Classification",
+        "capability": "Claims classified using the 25-type GAQP register"
+      },
+      {
+        "level": "L2",
+        "name": "Provenance",
+        "capability": "Claims carry source anchors to specific source locations"
+      },
+      {
+        "level": "L3",
+        "name": "Admissibility",
+        "capability": "Claims pass all seven admission tests before entering corpus"
+      },
+      {
+        "level": "L4",
+        "name": "Confidence",
+        "capability": "Claims carry governed confidence levels based on corroboration"
+      },
+      {
+        "level": "L5",
+        "name": "Sidecar-Enabled",
+        "capability": "Source documents carry .intel sidecar files"
+      },
+      {
+        "level": "L6",
+        "name": "Cross-Document Corpus",
+        "capability": "Multiple .intel files queryable as a governed corpus"
+      },
+      {
+        "level": "L7",
+        "name": "Activation",
+        "capability": "Claims surface at moment of decision in role-aware applications"
+      }
+    ]
+  }
 }
