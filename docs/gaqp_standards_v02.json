@@ -6,7 +6,7 @@
   "status": "working-draft",
   "description": "Consolidated single-file GAQP standards artifact for LLM and implementation consumption. Flat/denormalized. All constitutional and statutory layer elements included.",
   "note_domain_modules": "3827 total subtags across 31 sectors",
-  "note_schema_freeze": "Canonical 29-field schema established. Proposed extension: temporal_stability_override as field 30 (pending Standards Committee adoption).",
+  "note_schema": "Canonical 30-field schema. Confidence modifier framework: constitutional as of 2026-05-25.",
   "claim_types": {
     "gaqp_version": "0.1-working",
     "register_status": "closed",
@@ -297,7 +297,8 @@
   },
   "confidence_modifiers": {
     "gaqp_version": "0.2-working",
-    "status": "proposed",
+    "status": "constitutional",
+    "adopted": "2026-05-25",
     "title": "GAQP Confidence Modifier Framework",
     "description": "Multi-dimensional modifiers that adjust the effective confidence of a nugget beyond what corroboration count alone captures. These modifiers operate on top of the corroboration-based confidence ladder \u2014 they do not replace it. The base score from confidence_ladder.json reflects how many independent sources have corroborated a claim. The modifiers here reflect how much that base score should be discounted given structural properties of the claim itself.",
     "architecture_note": "Confidence is two-layered. Layer 1 (constitutional): the corroboration ladder \u2014 seed through structural. Layer 2 (this document): modifier dimensions that scale the base score. A claim at corroborated (0.91) with severe recency discount may have an effective confidence well below that. The layers are computed separately and combined. Operators may implement any subset of the modifier dimensions.",
@@ -423,7 +424,7 @@
             "A Best Practice claim represents codified institutional precedent with decades of stable application. Set override to 'slow' if warranted.",
             "A Principle or Heuristic appears in a domain with aggressive decay and is specifically tied to a technological or regulatory condition that is known to be changing. Set override to 'fast'."
           ],
-          "governance": "The override field is operator-implemented and analyst-applied. It does not require a constitutional change because it operates within the existing decay class vocabulary \u2014 it selects from the existing set, not extends it. The metadata schema field addition (temporal_stability_override as field 30) is flagged as a proposed constitutional addition. Pending schema amendment, operators may implement this as an extended field in their own record structure.",
+          "governance": "Constitutional. temporal_stability_override is field 30 in the canonical metadata schema (metadata_schema.json), adopted 2026-05-25. All GAQP-compliant implementations must support this field. NULL is always a valid value \u2014 the field is optional, not required.",
           "override_examples": [
             {
               "nugget_claim_type": "Doctrine",
@@ -636,8 +637,23 @@
       }
     },
     "governance": {
-      "layer": "proposed_constitutional",
-      "rationale": "The modifier framework touches the fundamental confidence model defined in confidence_ladder.json. Any change to the decay class assignments for claim types, or to the formula structure, constitutes a constitutional change requiring Standards Committee review and a version increment. Domain decay multipliers (the rate table) are operator-configurable and do not require committee action \u2014 operators calibrate them to their operational context. The floor values are constitutional."
+      "layer": "constitutional",
+      "adopted": "2026-05-25",
+      "adoption_basis": "Elevated from proposed to constitutional by IQS Standards Committee. Independent architectural review confirmed: (1) the two-layer confidence model (base corroboration + effective modifiers) is the correct architecture; (2) the temporal_stability_override field is necessary to handle genuine intra-type temporal variance, particularly for Doctrine in fast-moving domains; (3) recency as a function of claim type \u00d7 domain \u00d7 analyst override is the minimal correct model. Review finding: 'My instinct: this should become constitutional after review.'",
+      "constitutional_elements": [
+        "Decay class assignments for each claim type",
+        "The five decay class labels (timeless, slow, moderate, fast, world_state)",
+        "The recency factor formula structure",
+        "Floor values for all modifier dimensions",
+        "The effective_confidence combination rule",
+        "The temporal_stability_override field vocabulary"
+      ],
+      "operator_configurable": [
+        "Domain decay multiplier values (aggressive/standard/conservative rates)",
+        "Source quality tier assignments for specific source types",
+        "Floor value adjustments within stated bounds"
+      ],
+      "change_rule": "Any change to the constitutional elements above requires Standards Committee review and a version increment. Operator-configurable elements may be adjusted by implementers without committee action."
     }
   },
   "sector_vocabulary": {
@@ -28031,9 +28047,9 @@
     ]
   },
   "metadata_schema": {
-    "gaqp_version": "0.1-working",
+    "gaqp_version": "0.2-working",
     "compliance_rule": "Every GAQP-compliant claim record must carry all required fields. A claim missing any required field is not GAQP-compliant. A claim record that exists in a .intel file is by definition admitted \u2014 there are no rejected or needs_review records in a compliant .intel file.",
-    "canonical_field_count": 29,
+    "canonical_field_count": 30,
     "fields": [
       {
         "field": "claim_id",
@@ -28270,6 +28286,24 @@
         "type": "string",
         "nullable": true,
         "definition": "Post-admission operator notes added during corpus review or corroboration."
+      },
+      {
+        "field": "temporal_stability_override",
+        "group": "Confidence",
+        "required": false,
+        "type": "string",
+        "nullable": true,
+        "enum": [
+          "timeless",
+          "slow",
+          "moderate",
+          "fast",
+          "world_state",
+          null
+        ],
+        "definition": "Analyst-applied override to the default recency decay class derived from claim_type. NULL means use the claim-type default from confidence_modifiers.json. Non-null means the extracting analyst has judged that this specific claim has atypical temporal stability relative to its type default. Example: a Doctrine claim that functions as a timeless operational principle receives 'timeless' regardless of the default fast_decay class assigned to Doctrine. Required when inference_flag is TRUE and the inferential distance affects temporal stability.",
+        "ref": "confidence_modifiers.json",
+        "adoption_note": "Added as field 30 per IQS Standards Committee adoption 2026-05-25. Elevated from proposed to constitutional based on independent architectural review confirming the override mechanism is necessary to handle intra-type temporal variance, particularly for Doctrine in fast-moving domains."
       }
     ],
     "removed_fields": [

@@ -1,7 +1,7 @@
 {
-  "gaqp_version": "0.1-working",
+  "gaqp_version": "0.2-working",
   "compliance_rule": "Every GAQP-compliant claim record must carry all required fields. A claim missing any required field is not GAQP-compliant. A claim record that exists in a .intel file is by definition admitted — there are no rejected or needs_review records in a compliant .intel file.",
-  "canonical_field_count": 29,
+  "canonical_field_count": 30,
   "fields": [
     {
       "field": "claim_id",
@@ -222,6 +222,17 @@
       "type": "string",
       "nullable": true,
       "definition": "Post-admission operator notes added during corpus review or corroboration."
+    },
+    {
+      "field": "temporal_stability_override",
+      "group": "Confidence",
+      "required": false,
+      "type": "string",
+      "nullable": true,
+      "enum": ["timeless", "slow", "moderate", "fast", "world_state", null],
+      "definition": "Analyst-applied override to the default recency decay class derived from claim_type. NULL means use the claim-type default from confidence_modifiers.json. Non-null means the extracting analyst has judged that this specific claim has atypical temporal stability relative to its type default. Example: a Doctrine claim that functions as a timeless operational principle receives 'timeless' regardless of the default fast_decay class assigned to Doctrine. Required when inference_flag is TRUE and the inferential distance affects temporal stability.",
+      "ref": "confidence_modifiers.json",
+      "adoption_note": "Added as field 30 per IQS Standards Committee adoption 2026-05-25. Elevated from proposed to constitutional based on independent architectural review confirming the override mechanism is necessary to handle intra-type temporal variance, particularly for Doctrine in fast-moving domains."
     }
   ],
   "removed_fields": [

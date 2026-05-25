@@ -29,6 +29,6 @@
   ],
   "notes": {
     "domain_modules": "31 sectors with domain subtags in domain_modules.json (GEN General/Cross-Sector carries no subtags by design). v0.2 adds Military (MIL) — 247 subtags across 15 dimensions, including the unique GAQP Intelligence Functions dimension. Subtag taxonomy is statutory — additions do not require a version bump.",
-    "schema_freeze": "Canonical 29-field schema established. Constitutional layer is stable. Checksum and release_date will be set at v1.0 freeze."
+    "schema_freeze": "Canonical 30-field schema established (field 30: temporal_stability_override, adopted 2026-05-25). Confidence modifier framework elevated to constitutional. Checksum and release_date will be set at v1.0 freeze."
   }
 }
